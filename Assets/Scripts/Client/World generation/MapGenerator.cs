@@ -8,7 +8,7 @@ public class MapGenerator : MonoBehaviour
 {
     // Serialized variables
     [Header("Dependencies")]
-    [SerializeField] Tilemap tilemap;
+    [SerializeField] public Tilemap natureTilemap;
     [SerializeField] RuleTile defaultTile;
 
     [Header("Map generation parameters")]
@@ -23,10 +23,11 @@ public class MapGenerator : MonoBehaviour
     [SerializeField] NoiseMap temperatureMap;
     [SerializeField] NoiseMap fertilityMap;
 
-    Dictionary<Vector3Int, TileBase> mapDictionary;
+    // Unserialized variables
+    Dictionary<Vector3Int, TileBase> natureMap;
 
 
-    void Start()
+    void Awake()
     {
         GenerateMap();
     }
@@ -36,16 +37,16 @@ public class MapGenerator : MonoBehaviour
     public void GenerateMap()
     {
         // Initializing dictionary
-        mapDictionary = new Dictionary<Vector3Int, TileBase>();
+        natureMap = new Dictionary<Vector3Int, TileBase>();
 
         // Height map generation
         heightMap.map = Noise.GenerateNoiseMap
             (
-            heightMap.seed, 
-            mapWidth, mapHeight, 
-            heightMap.scale, 
-            heightMap.octaves, 
-            heightMap.persistance, 
+            heightMap.seed,
+            mapWidth, mapHeight,
+            heightMap.scale,
+            heightMap.octaves,
+            heightMap.persistance,
             heightMap.lacunarity
             );
 
@@ -72,11 +73,22 @@ public class MapGenerator : MonoBehaviour
             );
 
         //Deciding which tiles to use
-        mapDictionary = MapDisplay.Initialize(defaultTile, mapWidth, mapHeight, heightMap.map, temperatureMap.map, fertilityMap.map);
+        natureMap = MapDisplay.Initialize(defaultTile, mapWidth, mapHeight, heightMap.map, temperatureMap.map, fertilityMap.map);
         //Clearing map
-        tilemap.ClearAllTiles();
+        natureTilemap.ClearAllTiles();
         //Drawing tiles onto tilemap
-        tilemap.SetTiles(mapDictionary.Keys.ToArray(), mapDictionary.Values.ToArray());
+        natureTilemap.SetTiles(natureMap.Keys.ToArray(), natureMap.Values.ToArray());
+
+        UpdatePlayerData();
+    }
+
+
+    // Update static PlayerData class
+    void UpdatePlayerData()
+    {
+        PlayerData.SetMapWidth(mapWidth);
+        PlayerData.SetMapHeight(mapHeight);
+        PlayerData.SetNatureMap(natureMap);
     }
 }
 
