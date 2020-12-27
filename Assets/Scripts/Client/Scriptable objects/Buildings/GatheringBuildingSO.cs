@@ -5,7 +5,7 @@ using UnityEngine;
 /// </summary>
 public class GatheringBuildingSO : BuildingSO
 {
-    [Header("Type-specific parameters\t")]
+    [Header("Type-specific parameters")]
     public int baseProduction;
     public Resource[] gatherableResources;
 }

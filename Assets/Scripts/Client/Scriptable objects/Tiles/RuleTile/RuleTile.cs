@@ -44,6 +44,13 @@ namespace UnityEngine
         //                               ======================== CUSTOM PARAMETERS ======================== 
 
         /// <summary>
+        /// Type of a RuleTile used to clear the Editor
+        /// </summary>
+        public RuleTileType tileType;
+
+        // MapZone RuleTile
+
+        /// <summary>
         /// The Elevation Zome in which tile can appear
         /// </summary>
         public ElevationZone elevationZone;
@@ -58,6 +65,20 @@ namespace UnityEngine
         /// </summary>
         public FertilityZone fertilityZone;
         public bool isRestrictedByFertility;
+
+        // Resource RuleTile
+
+        /// <summary>
+        /// Resource held by this RuleTile
+        /// </summary>
+        public Resource resource;
+
+        // Building RuleTile
+
+        /// <summary>
+        /// Building held by this RuleTile
+        /// </summary>
+        public BuildingSO building;
 
         //                              ======================== CUSTOM PARAMETERS ======================== 
 
@@ -790,3 +811,6 @@ namespace UnityEngine
         }
     }
 }
+
+
+public enum RuleTileType { Default, MapZone, Resource, Builidng }

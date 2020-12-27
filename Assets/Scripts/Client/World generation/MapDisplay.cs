@@ -32,7 +32,7 @@ public static class MapDisplay
         mapDictionary = new Dictionary<Vector3Int, TileBase>();
 
         // Load Rule Tiles from Resource folder and Initializing RuleTile DataBase HashSet
-        tileDB = new HashSet<RuleTile>(Resources.LoadAll<RuleTile>("Tiles"));
+        tileDB = new HashSet<RuleTile>(Resources.LoadAll<RuleTile>("Tiles/MapZoneRuleTiles"));
         // Default Tile
         defaultTile = defaultTile_;
         // Size data

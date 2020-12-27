@@ -10,6 +10,9 @@ public abstract class BuildingSO : ScriptableObject
     // Rule Tile of a building used to display it.
     public RuleTile graphics;
 
+    // Prefab with MonoBehaviours used to instantiate building
+    public GameObject prefab;
+
     // Starting size of a building in tiles
     public int width = 1;
     public int length = 1;
