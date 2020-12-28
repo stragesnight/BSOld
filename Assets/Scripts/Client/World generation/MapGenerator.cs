@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
@@ -8,7 +7,6 @@ public class MapGenerator : MonoBehaviour
 {
     [Header("Dependencies")]
     [SerializeField] private MapData mapData;
-    [SerializeField] private Tilemap natureTilemap;
     private MapTileGenerator mapTileGenerator;
 
     [Header("Map generation parameters")]
@@ -86,10 +84,9 @@ public class MapGenerator : MonoBehaviour
         natureMap = mapTileGenerator.Initialize();
         // Update natureMap of a mapData
         mapData.SetNatureMap(natureMap);
-        // Clearing map
-        natureTilemap.ClearAllTiles();
-        // Drawing tiles onto tilemap
-        natureTilemap.SetTiles(natureMap.Keys.ToArray(), natureMap.Values.ToArray());
+
+        // Apply natureMap to naturre Tilemap
+        TilemapDrawer.Instance.SetNatureTilemap(natureMap);
     }
 }
 

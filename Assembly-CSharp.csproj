@@ -8,7 +8,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <RootNamespace></RootNamespace>
+    <RootNamespace>
+    </RootNamespace>
     <ProjectGuid>{8A4916B7-36CE-FF0C-C60E-FD6981D37B23}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -61,10 +62,10 @@
     <Compile Include="Assets\Scripts\Client\Scriptable objects\MapResources\Resource.cs" />
     <Compile Include="Assets\Scripts\Client\World generation\MapTileGenerator.cs" />
     <Compile Include="Assets\Scripts\Client\Scriptable objects\Tiles\RuleOverrideTile\RuleOverrideTile.cs" />
-    <Compile Include="Assets\Scripts\Client\Misc\PlacingAccessibilityHandler.cs" />
+    <Compile Include="Assets\Scripts\Client\Helpers\PlacingAccessibilityHandler.cs" />
     <Compile Include="Assets\Scripts\Client\World generation\MapGenerator.cs" />
     <Compile Include="Assets\Scripts\Client\Scriptable objects\Tiles\RuleTile\RuleTile.cs" />
-    <Compile Include="Assets\Scripts\Client\Data\MapData.cs" />
+    <Compile Include="Assets\Scripts\Client\Scriptable objects\Data\MapData.cs" />
     <Compile Include="Assets\Scripts\Client\Player\PlayerController.cs" />
     <Compile Include="Assets\Scripts\Client\World generation\Helper classes\Noise.cs" />
     <Compile Include="Assets\Scripts\Client\Scriptable objects\Tiles\RuleOverrideTile\AdvancedRuleOverrideTile.cs" />
@@ -72,6 +73,7 @@
     <Compile Include="Assets\Scripts\Client\BuildingMonoBehaviours\GatheringBuildingBehaviour.cs" />
     <Compile Include="Assets\Scripts\Client\Scriptable objects\Tiles\AnimatedTile\AnimatedTile.cs" />
     <Compile Include="Assets\Scripts\Client\World generation\Helper classes\MapZones.cs" />
+    <Compile Include="Assets\Scripts\Client\Helpers\TilemapDrawer.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
