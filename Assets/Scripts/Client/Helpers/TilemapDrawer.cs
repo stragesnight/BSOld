@@ -4,12 +4,15 @@ using UnityEngine;
 using UnityEngine.Tilemaps;
 
 /// <summary>
-/// TilemapDrawer class is responsible for any Tilemap manipulations. use TilemapDrawer.Instance to reference TilemapDrawer from anywhere
+/// TilemapDrawer class is responsible for any Tilemap manipulations. use TilemapDrawer.Instance to reference TilemapDrawer from everywhere
 /// </summary>
 public class TilemapDrawer : MonoBehaviour
 {   
     // Singleton Instance
     public static TilemapDrawer Instance;
+
+    [SerializeField] private RuleTile accessibilityTile;
+    [SerializeField] private RuleTile nonAccessibilityTile;
 
 
     private void Awake()
@@ -17,45 +20,45 @@ public class TilemapDrawer : MonoBehaviour
         CheckInstance();
     }
 
+    // buildingTilemap
+    [SerializeField] private Tilemap buildingTilemap;
+    public void SetBuildingTilemapEntry(Vector3Int position, BuildingSO building) { buildingTilemap.SetTile(position, building.graphics); }
+    public void SetBuildingTilemap(Dictionary<Vector3Int, BuildingSO> buildings)
+    {
+        buildingTilemap.ClearAllTiles();
+        buildingTilemap.SetTiles(buildings.Keys.ToArray(), buildings.Values.Select(x => x.graphics).ToArray());
+    }
+
+    // resourceTilemap
+    [SerializeField] private Tilemap resourceTilemap;
+    public void SetResourceTilemapEntry(Vector3Int position, TileBase tile) { resourceTilemap.SetTile(position, tile); }
+    public void SetResourceTilemap(Dictionary<Vector3Int, TileBase> tiles)
+    {
+        resourceTilemap.ClearAllTiles();
+        resourceTilemap.SetTiles(tiles.Keys.ToArray(), tiles.Values.ToArray());
+    }
 
     // natureTilemap
     [SerializeField] private Tilemap natureTilemap;
-    // Set
-    public void SetNatureTilemapEntry(Vector3Int position, TileBase tile) => natureTilemap.SetTile(position, tile);
+    public void SetNatureTilemapEntry(Vector3Int position, TileBase tile) { natureTilemap.SetTile(position, tile); }
     public void SetNatureTilemap(Dictionary<Vector3Int, TileBase> tiles)
     {
         natureTilemap.ClearAllTiles();
         natureTilemap.SetTiles(tiles.Keys.ToArray(), tiles.Values.ToArray());
     }
-    // Get
-    public RuleTile GetNatureTilemapEntry(Vector3Int position) => natureTilemap.GetTile(position) as RuleTile; 
-    public RuleTile[] GetNatureTilemap() => natureTilemap.GetTilesBlock(natureTilemap.cellBounds) as RuleTile[];
-
-    // buildingTilemap
-    [SerializeField] private Tilemap buildingTilemap;
-    // Set
-    public void SetBuildingTilemapEntry(Vector3Int position, TileBase tile) => buildingTilemap.SetTile(position, tile);
-    public void SetBuildingTilemap(Dictionary<Vector3Int, TileBase> tiles)
-    {
-        buildingTilemap.ClearAllTiles();
-        buildingTilemap.SetTiles(tiles.Keys.ToArray(), tiles.Values.ToArray());
-    }
-    // Get
-    public RuleTile GetBuildingTilemapEntry(Vector3Int position) => buildingTilemap.GetTile(position) as RuleTile;
-    public RuleTile[] GetBuildingTilemap() => buildingTilemap.GetTilesBlock(buildingTilemap.cellBounds) as RuleTile[];
 
     // placingAccessibilityTilemap
     [SerializeField] private Tilemap placingAccessibilityTilemap;
-    // Set
-    public void SetPlacingAccessibilityTilemapEntry(Vector3Int position, TileBase tile) => placingAccessibilityTilemap.SetTile(position, tile);
-    public void SetPlacingAccessibilityTilemap(Dictionary<Vector3Int, TileBase> tiles)
-    {
-        placingAccessibilityTilemap.ClearAllTiles();
-        placingAccessibilityTilemap.SetTiles(tiles.Keys.ToArray(), tiles.Values.ToArray());
+    public void SetPlacingAccessibilityTilemapEntry(Vector3Int position, bool value) 
+    { 
+        placingAccessibilityTilemap.SetTile(position, value ? accessibilityTile : nonAccessibilityTile); 
     }
-    // Get
-    public RuleTile GetPlacingAccessibilityTilemapEntry(Vector3Int position) => placingAccessibilityTilemap.GetTile(position) as RuleTile;
-    public RuleTile[] GetPlacingAccessibilityTilemap() => placingAccessibilityTilemap.GetTilesBlock(placingAccessibilityTilemap.cellBounds) as RuleTile[];
+    public void SetPlacingAccessibilityTilemap(Dictionary<Vector3Int, bool> values)
+    {
+        // IMPLEMENT
+        //placingAccessibilityTilemap.ClearAllTiles();
+        //placingAccessibilityTilemap.SetTiles(tiles.Keys.ToArray(), tiles.Values.ToArray());
+    }
 
 
     private void CheckInstance() { if (Instance == null) Instance = this; }

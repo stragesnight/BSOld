@@ -46,6 +46,7 @@ public class MapTileGenerator : MonoBehaviour
         // Fill dictionary
         FillNatureMap();
 
+        // Update natureMap of a mapData
         mapData.SetNatureMap(natureMap);
 
         // Return Map Dictionary

@@ -24,7 +24,7 @@ public class MapGenerator : MonoBehaviour
     private Dictionary<Vector3Int, TileBase> natureMap;
 
 
-    private void Awake()
+    private void Start()
     {
         GenerateMap();
     }
@@ -82,8 +82,6 @@ public class MapGenerator : MonoBehaviour
 
         // Decide which tiles to use
         natureMap = mapTileGenerator.Initialize();
-        // Update natureMap of a mapData
-        mapData.SetNatureMap(natureMap);
 
         // Apply natureMap to naturre Tilemap
         TilemapDrawer.Instance.SetNatureTilemap(natureMap);
