@@ -2,46 +2,41 @@ using System.Collections.Generic;
 using UnityEngine.Tilemaps;
 using UnityEngine;
 
-/* Class that chooses which tiles to draw depending on their parameters and noise maps
-   And then assigning those tiles to Tilemap */
-public static class MapDisplay
+/* Class that chooses which tiles to draw depending on their parameters and noise maps */
+public class MapTileGenerator : MonoBehaviour
 {
-    static HashSet<RuleTile> tileDB;
-    static RuleTile defaultTile;
-    // Size data
-    static int mapWidth;
-    static int mapHeight;
+    [SerializeField] private MapData mapData;
+    [SerializeField] private RuleTile defaultTile;
+
+    private HashSet<RuleTile> tileDB;
+
     // Maps
-    static float[,] heightMap;
-    static float[,] temperatureMap;
-    static float[,] fertilityMap;
+    private float[,] heightMap;
+    private float[,] temperatureMap;
+    private float[,] fertilityMap;
+
     // Map Dictionary
-    static Dictionary<Vector3Int, TileBase> mapDictionary;
+    private Dictionary<Vector3Int, TileBase> natureMap;
+
     // Zone and Biomes arrays
-    static ElevationZone[] elevationZones;
-    static TemperatureBiome[] temperatureBiomes;
-    static FertilityZone[] fertilityZones;
+    private ElevationZone[] elevationZones;
+    private TemperatureBiome[] temperatureBiomes;
+    private FertilityZone[] fertilityZones;
 
 
     // Algorithm initialization
-    public static Dictionary<Vector3Int, TileBase> Initialize(RuleTile defaultTile_, int mapWidth_, int mapHeight_, float[,] heightMap_, float[,] temperatureMap_, float[,] fertilityMap_)
+    public Dictionary<Vector3Int, TileBase> Initialize()
     {
-        // VARIABLES INITIALIZATION
-
-        // Map Dictionary
-        mapDictionary = new Dictionary<Vector3Int, TileBase>();
+        // Map Dictionary initialization
+        natureMap = new Dictionary<Vector3Int, TileBase>();
 
         // Load Rule Tiles from Resource folder and Initializing RuleTile DataBase HashSet
         tileDB = new HashSet<RuleTile>(Resources.LoadAll<RuleTile>("Tiles/MapZoneRuleTiles"));
-        // Default Tile
-        defaultTile = defaultTile_;
-        // Size data
-        mapWidth = mapWidth_;
-        mapHeight = mapHeight_;
-        // Maps
-        heightMap = heightMap_;
-        temperatureMap = temperatureMap_;
-        fertilityMap = fertilityMap_;
+
+        // Maps initialization
+        heightMap = mapData.GetHeightMap();
+        temperatureMap = mapData.GetTemperatureMap();
+        fertilityMap = mapData.GetFertilityMap();
 
         // Fill Arrays
         elevationZones = MapZones.GetValues<ElevationZone>();
@@ -49,32 +44,34 @@ public static class MapDisplay
         fertilityZones = MapZones.GetValues<FertilityZone>();
 
         // Fill dictionary
-        FillDictionary();
+        FillNatureMap();
+
+        mapData.SetNatureMap(natureMap);
 
         // Return Map Dictionary
-        return mapDictionary;
+        return natureMap;
     }
 
 
     // Looping through every slot in map, choosing proper tile and adding value to dictionary
-    static void FillDictionary()
+    private void FillNatureMap()
     {
-        for (int x = 0; x < mapWidth; x++)
+        for (int x = 0; x < mapData.GetMapWidth(); x++)
         {
-            for (int y = 0; y < mapHeight; y++)
+            for (int y = 0; y < mapData.GetMapHeight(); y++)
             {
                 Vector3Int currSlot = new Vector3Int(x, y, 0);
                 TileBase currTile = ChooseValidTile(currSlot);
 
                 // Adding entry to dictionary
-                mapDictionary.Add(currSlot, currTile);
+                natureMap.Add(currSlot, currTile);
             }
         }
     }
 
 
     // Choosing valid tile depending on it's properties and map information
-    static RuleTile ChooseValidTile(Vector3Int pos)
+    private RuleTile ChooseValidTile(Vector3Int pos)
     {
         // Looping through every tile in DataBase
         foreach (RuleTile tile in tileDB)
@@ -100,7 +97,7 @@ public static class MapDisplay
 
 
     //Get current integer value of type T (Elevation Zone, Temperature Biome, etc) on current map position
-    static int GetCurrentMapEnumValue<T>(float mapValue)
+    private int GetCurrentMapEnumValue<T>(float mapValue)
     {
         // Elevation Zone
         if (typeof(T) == typeof(ElevationZone))

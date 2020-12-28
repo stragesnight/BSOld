@@ -9,28 +9,29 @@ using UnityEngine.Tilemaps;
 public class PlacingAccessibilityHandler : MonoBehaviour
 {
     // Serialized variables
-    [SerializeField] Tilemap placingAccessibilityTilemap;
+    [SerializeField] private Tilemap placingAccessibilityTilemap;
+    [SerializeField] private MapData mapData;
 
     // Unserialized variables
 
-    Dictionary<Vector3Int, TileBase> natureMapDictionary;
-    public bool[,] accessibilityMap;
+    private Dictionary<Vector3Int, TileBase> natureMap;
+    private bool[,] accessibilityMap;
 
 
-    private void Awake()
+    private void Start()
     {
         Initialize();
         GenerateAccessibilityMap();
 
-        PlayerData.SetPlacingAccessibilityMap(accessibilityMap);
+        mapData.SetPlacingAccessibilityMap(accessibilityMap);
     }
 
 
     // Get required components and initialize variables
-    void Initialize()
+    private void Initialize()
     {
-        natureMapDictionary = PlayerData.GetNatureMap();
-        accessibilityMap = new bool[PlayerData.GetMapWidth(), PlayerData.GetMapHeight()];
+        natureMap = mapData.GetNatureMap();
+        accessibilityMap = new bool[mapData.GetMapWidth(), mapData.GetMapHeight()];
     }
 
 
@@ -38,12 +39,12 @@ public class PlacingAccessibilityHandler : MonoBehaviour
     public void GenerateAccessibilityMap()
     {
         // Get array of positions
-        Vector3Int[] mapPositions = natureMapDictionary.Keys.ToArray();
+        Vector3Int[] mapPositions = natureMap.Keys.ToArray();
 
         foreach (Vector3Int position in mapPositions)
         {
             // Get current tile
-            RuleTile currentTile = natureMapDictionary[position] as RuleTile;
+            RuleTile currentTile = natureMap[position] as RuleTile;
 
             // Set accessibility to true if current tile is a land tile
             // Will be changed later

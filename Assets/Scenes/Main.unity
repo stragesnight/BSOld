@@ -438,6 +438,8 @@ GameObject:
   m_Component:
   - component: {fileID: 543532136}
   - component: {fileID: 543532135}
+  - component: {fileID: 543532138}
+  - component: {fileID: 543532137}
   m_Layer: 0
   m_Name: MapManager
   m_TagString: Untagged
@@ -457,8 +459,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4fad2933ba359a741b269548e7aa00f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  natureTilemap: {fileID: 0}
-  defaultTile: {fileID: 11400000, guid: 0cabed6b8ca1bb147a9473b8a4668439, type: 2}
+  mapData: {fileID: 11400000, guid: 3d266f9b4ca436b45a8e70586b4125c6, type: 2}
+  natureTilemap: {fileID: 1484946181}
   mapWidth: 160
   mapHeight: 90
   autoUpdate: 1
@@ -494,6 +496,34 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &543532137
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 543532134}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48ed50b22aa97cd4b9f79f34b717d059, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  placingAccessibilityTilemap: {fileID: 41272510}
+  mapData: {fileID: 11400000, guid: 3d266f9b4ca436b45a8e70586b4125c6, type: 2}
+--- !u!114 &543532138
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 543532134}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51cf4e8d743a39a4297f2921219e12cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mapData: {fileID: 11400000, guid: 3d266f9b4ca436b45a8e70586b4125c6, type: 2}
+  defaultTile: {fileID: 11400000, guid: 0cabed6b8ca1bb147a9473b8a4668439, type: 2}
 --- !u!1 &1037783656
 GameObject:
   m_ObjectHideFlags: 0

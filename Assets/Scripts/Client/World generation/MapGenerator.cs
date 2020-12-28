@@ -6,28 +6,27 @@ using UnityEngine.Tilemaps;
 /* General map generation class that ties generation parts together */
 public class MapGenerator : MonoBehaviour
 {
-    // Serialized variables
     [Header("Dependencies")]
-    [SerializeField] public Tilemap natureTilemap;
-    [SerializeField] RuleTile defaultTile;
+    [SerializeField] private MapData mapData;
+    [SerializeField] private Tilemap natureTilemap;
+    private MapTileGenerator mapTileGenerator;
 
     [Header("Map generation parameters")]
-    [SerializeField] int mapWidth;  //in tiles
-    [SerializeField] int mapHeight;
+    [SerializeField] private int mapWidth;    //in tiles
+    [SerializeField] private int mapHeight;   //in tiles
 
     [Header("Editor parameters")]
     [SerializeField] public bool autoUpdate;
 
     // Maps
-    [SerializeField] NoiseMap heightMap;
-    [SerializeField] NoiseMap temperatureMap;
-    [SerializeField] NoiseMap fertilityMap;
+    [SerializeField] private NoiseMap heightMap;
+    [SerializeField] private NoiseMap temperatureMap;
+    [SerializeField] private NoiseMap fertilityMap;
 
-    // Unserialized variables
-    Dictionary<Vector3Int, TileBase> natureMap;
+    private Dictionary<Vector3Int, TileBase> natureMap;
 
 
-    void Awake()
+    private void Awake()
     {
         GenerateMap();
     }
@@ -36,6 +35,12 @@ public class MapGenerator : MonoBehaviour
     // Main generation function
     public void GenerateMap()
     {
+        mapTileGenerator = GetComponent<MapTileGenerator>();
+
+        // Update mapData variables
+        mapData.SetMapWidth(mapWidth);
+        mapData.SetMapHeight(mapHeight);
+
         // Initializing dictionary
         natureMap = new Dictionary<Vector3Int, TileBase>();
 
@@ -72,23 +77,19 @@ public class MapGenerator : MonoBehaviour
             fertilityMap.lacunarity
             );
 
-        //Deciding which tiles to use
-        natureMap = MapDisplay.Initialize(defaultTile, mapWidth, mapHeight, heightMap.map, temperatureMap.map, fertilityMap.map);
-        //Clearing map
+        // Update maps in mapData
+        mapData.SetHeightMap(heightMap.map);
+        mapData.SetTemperatureMap(temperatureMap.map);
+        mapData.SetFertilityMap(fertilityMap.map);
+
+        // Decide which tiles to use
+        natureMap = mapTileGenerator.Initialize();
+        // Update natureMap of a mapData
+        mapData.SetNatureMap(natureMap);
+        // Clearing map
         natureTilemap.ClearAllTiles();
-        //Drawing tiles onto tilemap
+        // Drawing tiles onto tilemap
         natureTilemap.SetTiles(natureMap.Keys.ToArray(), natureMap.Values.ToArray());
-
-        UpdatePlayerData();
-    }
-
-
-    // Update static PlayerData class
-    void UpdatePlayerData()
-    {
-        PlayerData.SetMapWidth(mapWidth);
-        PlayerData.SetMapHeight(mapHeight);
-        PlayerData.SetNatureMap(natureMap);
     }
 }
 
