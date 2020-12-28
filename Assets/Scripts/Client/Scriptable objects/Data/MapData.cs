@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
@@ -8,6 +7,40 @@ using UnityEngine.Tilemaps;
 /// </summary>
 public class MapData : ScriptableObject
 {
+    [System.NonSerialized] public TilemapDrawer tilemapDrawer;
+    [System.NonSerialized] public BuildingPlacer buildingPlacer;
+
+    // Singleton Instance
+    public static MapData Instance;
+    public void CheckInstance() { if (Instance == null) Instance = this; }
+    public void EnableActions()
+    {
+        // Building
+        buildingPlacer.OnPlaceBuilding += SetBuildingMapEntry;
+        buildingPlacer.OnPlaceBuildingMap += SetBuildingMap;
+
+        // Resource
+        tilemapDrawer.OnSetResourceTilemapEntry += SetResourceMapEntry;
+        tilemapDrawer.OnSetResourceTilemap += SetResourceMap;
+        // Nature
+        tilemapDrawer.OnSetNatureTilemapEntry += SetNatureMapEntry;
+        tilemapDrawer.OnSetNatureTilemap += SetNatureMap;
+    }
+
+    public void DisableActions()
+    {
+        // Building
+        buildingPlacer.OnPlaceBuilding -= SetBuildingMapEntry;
+        buildingPlacer.OnPlaceBuildingMap -= SetBuildingMap;
+
+        // Resource
+        tilemapDrawer.OnSetResourceTilemapEntry -= SetResourceMapEntry;
+        tilemapDrawer.OnSetResourceTilemap -= SetResourceMap;
+        // Nature
+        tilemapDrawer.OnSetNatureTilemapEntry -= SetNatureMapEntry;
+        tilemapDrawer.OnSetNatureTilemap -= SetNatureMap;
+    }
+
     // ========================================= GENERAL DATA =========================================
 
     // mapWidth 
@@ -26,18 +59,8 @@ public class MapData : ScriptableObject
     // buildingMap
     [SerializeField] private Dictionary<Vector3Int, BuildingSO> buildingMap;
     // Set
-    public void SetBuildingMapEntry(Vector3Int position, BuildingSO building) 
-    { 
-        buildingMap[position] = building; 
-        TilemapDrawer.Instance.SetBuildingTilemapEntry(position, building);
-        BuildingPlacer.Instance.PlaceBuilding(position, building);
-    }
-    public void SetBuildingMap(Dictionary<Vector3Int, BuildingSO> map) 
-    { 
-        buildingMap = map;
-        TilemapDrawer.Instance.SetBuildingTilemap(map);
-        BuildingPlacer.Instance.PlaceBuildingMap(map);
-    }
+    private void SetBuildingMapEntry(Vector3Int position, BuildingSO building) { buildingMap[position] = building; }
+    private void SetBuildingMap(Dictionary<Vector3Int, BuildingSO> map) { buildingMap = map; }
     // Get
     public BuildingSO GetBuildingMapEntry(Vector3Int position) => buildingMap[position];
     public Dictionary<Vector3Int, BuildingSO> GetBuildingMap() => buildingMap;
@@ -46,16 +69,8 @@ public class MapData : ScriptableObject
     // resourceMap
     [SerializeField] private Dictionary<Vector3Int, TileBase> resourceMap;
     // Set
-    public void SetResourceMapEntry(Vector3Int position, TileBase tile) 
-    { 
-        resourceMap[position] = tile; 
-        TilemapDrawer.Instance.SetResourceTilemapEntry(position, tile); 
-    }
-    public void SetResourceMap(Dictionary<Vector3Int, TileBase> map) 
-    { 
-        resourceMap = map; 
-        TilemapDrawer.Instance.SetResourceTilemap(map);
-    }
+    private void SetResourceMapEntry(Vector3Int position, TileBase tile) { resourceMap[position] = tile; }
+    private void SetResourceMap(Dictionary<Vector3Int, TileBase> map) { resourceMap = map; }
     // Get
     public TileBase GetResourceMapEntry(Vector3Int position) => resourceMap[position];
     public Dictionary<Vector3Int, TileBase> GetResourceMap() => resourceMap;
@@ -64,16 +79,8 @@ public class MapData : ScriptableObject
     // natureMap
     [SerializeField] private Dictionary<Vector3Int, TileBase> natureMap;
     // Set
-    public void SetNatureMapEntry(Vector3Int position, TileBase tile) 
-    { 
-        natureMap[position] = tile; 
-        TilemapDrawer.Instance.SetNatureTilemapEntry(position, tile); 
-    }
-    public void SetNatureMap(Dictionary<Vector3Int, TileBase> map) 
-    { 
-        natureMap = map; 
-        TilemapDrawer.Instance.SetNatureTilemap(map); 
-    }
+    private void SetNatureMapEntry(Vector3Int position, TileBase tile) { natureMap[position] = tile; }
+    private void SetNatureMap(Dictionary<Vector3Int, TileBase> map) { natureMap = map; }
     // Get
     public TileBase GetNatureMapEntry(Vector3Int position) => natureMap[position];
     public Dictionary<Vector3Int, TileBase> GetNatureMap() => natureMap;
@@ -81,16 +88,8 @@ public class MapData : ScriptableObject
     // placingAccessibilityMap
     [SerializeField] private Dictionary<Vector3Int, bool> placingAccessibilityMap;
     // Set
-    public void SetPlacingAccessibilityMapEntry(Vector3Int position, bool value) 
-    { 
-        placingAccessibilityMap[position] = value;
-        TilemapDrawer.Instance.SetPlacingAccessibilityTilemapEntry(position, value);
-    }
-    public void SetPlacingAccessibilityMap(Dictionary<Vector3Int, bool> map) 
-    { 
-        placingAccessibilityMap = map;
-        TilemapDrawer.Instance.SetPlacingAccessibilityTilemap(map);
-    }
+    private void SetPlacingAccessibilityMapEntry(Vector3Int position, bool value) { placingAccessibilityMap[position] = value; }
+    private void SetPlacingAccessibilityMap(Dictionary<Vector3Int, bool> map) { placingAccessibilityMap = map; }
     // Get
     public bool GetPlacingAccessibilityMapEntry(Vector3Int position) => placingAccessibilityMap[position];
     public Dictionary<Vector3Int, bool> GetPlacingAccessibilityMap() => placingAccessibilityMap;

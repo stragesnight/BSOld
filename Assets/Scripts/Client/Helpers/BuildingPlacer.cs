@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -8,12 +9,9 @@ public class BuildingPlacer : MonoBehaviour
 {
     [SerializeField] private Transform parentTransform;
 
-    public static BuildingPlacer Instance;
-
-    private void Awake()
-    {
-        CheckInstance();
-    }
+    // Actions
+    public Action<Vector3Int, BuildingSO> OnPlaceBuilding;
+    public Action<Dictionary<Vector3Int, BuildingSO>> OnPlaceBuildingMap;
 
 
     public void PlaceBuilding(Vector3Int position, BuildingSO building)
@@ -21,6 +19,8 @@ public class BuildingPlacer : MonoBehaviour
         GameObject buildingObject = Instantiate(building.prefab);
         buildingObject.transform.position = position;
         buildingObject.transform.SetParent(parentTransform);
+
+        OnPlaceBuilding?.Invoke(position, building);
     }
 
 
@@ -32,6 +32,8 @@ public class BuildingPlacer : MonoBehaviour
         {
             PlaceBuilding(position, buildings[position]);
         }
+
+        OnPlaceBuildingMap?.Invoke(buildings);
     }
 
 
@@ -42,7 +44,4 @@ public class BuildingPlacer : MonoBehaviour
             DestroyImmediate(parentTransform.GetChild(0));
         }
     }
-
-
-    private void CheckInstance() { if (Instance == null) Instance = this; }
 }

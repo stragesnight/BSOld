@@ -5,8 +5,8 @@ using UnityEngine;
 /* Class that chooses which tiles to draw depending on their parameters and noise maps */
 public class MapTileGenerator : MonoBehaviour
 {
-    [SerializeField] private MapData mapData;
     [SerializeField] private RuleTile defaultTile;
+    private TilemapDrawer tilemapDrawer;
 
     private HashSet<RuleTile> tileDB;
 
@@ -27,6 +27,8 @@ public class MapTileGenerator : MonoBehaviour
     // Algorithm initialization
     public Dictionary<Vector3Int, TileBase> Initialize()
     {
+        tilemapDrawer = GetComponent<TilemapDrawer>();
+
         // Map Dictionary initialization
         natureMap = new Dictionary<Vector3Int, TileBase>();
 
@@ -34,9 +36,9 @@ public class MapTileGenerator : MonoBehaviour
         tileDB = new HashSet<RuleTile>(Resources.LoadAll<RuleTile>("Tiles/MapZoneRuleTiles"));
 
         // Maps initialization
-        heightMap = mapData.GetHeightMap();
-        temperatureMap = mapData.GetTemperatureMap();
-        fertilityMap = mapData.GetFertilityMap();
+        heightMap = MapData.Instance.GetHeightMap();
+        temperatureMap = MapData.Instance.GetTemperatureMap();
+        fertilityMap = MapData.Instance.GetFertilityMap();
 
         // Fill Arrays
         elevationZones = MapZones.GetValues<ElevationZone>();
@@ -47,7 +49,7 @@ public class MapTileGenerator : MonoBehaviour
         FillNatureMap();
 
         // Update natureMap of a mapData
-        mapData.SetNatureMap(natureMap);
+        tilemapDrawer.SetNatureTilemap(natureMap);
 
         // Return Map Dictionary
         return natureMap;
@@ -57,9 +59,9 @@ public class MapTileGenerator : MonoBehaviour
     // Looping through every slot in map, choosing proper tile and adding value to dictionary
     private void FillNatureMap()
     {
-        for (int x = 0; x < mapData.GetMapWidth(); x++)
+        for (int x = 0; x < MapData.Instance.GetMapWidth(); x++)
         {
-            for (int y = 0; y < mapData.GetMapHeight(); y++)
+            for (int y = 0; y < MapData.Instance.GetMapHeight(); y++)
             {
                 Vector3Int currSlot = new Vector3Int(x, y, 0);
                 TileBase currTile = ChooseValidTile(currSlot);

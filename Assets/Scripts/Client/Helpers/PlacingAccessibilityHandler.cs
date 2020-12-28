@@ -23,7 +23,7 @@ public class PlacingAccessibilityHandler : MonoBehaviour
         Initialize();
         GenerateAccessibilityMap();
 
-        mapData.SetPlacingAccessibilityMap(accessibilityMap);
+        //mapData.SetPlacingAccessibilityMap(accessibilityMap);
     }
 
 

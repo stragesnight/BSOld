@@ -6,8 +6,8 @@ using UnityEngine.Tilemaps;
 public class MapGenerator : MonoBehaviour
 {
     [Header("Dependencies")]
-    [SerializeField] private MapData mapData;
     private MapTileGenerator mapTileGenerator;
+    private TilemapDrawer tilemapDrawer;
 
     [Header("Map generation parameters")]
     [SerializeField] private int mapWidth;    //in tiles
@@ -26,18 +26,28 @@ public class MapGenerator : MonoBehaviour
 
     private void Start()
     {
+        mapTileGenerator = GetComponent<MapTileGenerator>();
+        tilemapDrawer = GetComponent<TilemapDrawer>();
+
         GenerateMap();
+    }
+
+    // Get required components
+    private void Initialize()
+    {
+        mapTileGenerator = GetComponent<MapTileGenerator>();
+        tilemapDrawer = GetComponent<TilemapDrawer>();
     }
 
 
     // Main generation function
     public void GenerateMap()
     {
-        mapTileGenerator = GetComponent<MapTileGenerator>();
+        Initialize();
 
         // Update mapData variables
-        mapData.SetMapWidth(mapWidth);
-        mapData.SetMapHeight(mapHeight);
+        MapData.Instance.SetMapWidth(mapWidth);
+        MapData.Instance.SetMapHeight(mapHeight);
 
         // Initializing dictionary
         natureMap = new Dictionary<Vector3Int, TileBase>();
@@ -76,15 +86,15 @@ public class MapGenerator : MonoBehaviour
             );
 
         // Update maps in mapData
-        mapData.SetHeightMap(heightMap.map);
-        mapData.SetTemperatureMap(temperatureMap.map);
-        mapData.SetFertilityMap(fertilityMap.map);
+        MapData.Instance.SetHeightMap(heightMap.map);
+        MapData.Instance.SetTemperatureMap(temperatureMap.map);
+        MapData.Instance.SetFertilityMap(fertilityMap.map);
 
         // Decide which tiles to use
         natureMap = mapTileGenerator.Initialize();
 
         // Apply natureMap to naturre Tilemap
-        TilemapDrawer.Instance.SetNatureTilemap(natureMap);
+        tilemapDrawer.SetNatureTilemap(natureMap);
     }
 }
 
