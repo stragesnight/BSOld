@@ -393,6 +393,7 @@ namespace UnityEditor
                 // Resource RuleTile Custom parameters
                 case RuleTileType.Resource:
                     tile.resource = EditorGUILayout.ObjectField("Resource", tile.resource, typeof(Resource), false) as Resource;
+                    tile.resourceAmount = EditorGUILayout.IntField("Amount", tile.resourceAmount);
                     break;
 
                 // Building RuleTile Custom parameters

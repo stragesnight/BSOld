@@ -72,6 +72,10 @@ namespace UnityEngine
         /// Resource held by this RuleTile
         /// </summary>
         public Resource resource;
+        /// <summary>
+        /// Starting amount of resource held
+        /// </summary>
+        public int resourceAmount;
 
         // Building RuleTile
 

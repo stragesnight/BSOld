@@ -43,7 +43,7 @@ public class NoisemapHandler : MonoBehaviour
     private void SetHeightNoisemapEntry(Vector3Int position, TileBase tile)
     {
         if ((tile as RuleTile).isRestrictedByTemperature)
-            mapData.SetHeightMapEntry(position, (int)(tile as RuleTile).elevationZone / 100f);
+            mapData.SetHeightAtPoint(position, (int)(tile as RuleTile).elevationZone / 100f);
     }
     private void SetHeightNoisemap(Dictionary<Vector3Int, TileBase> map)
     {
@@ -54,7 +54,7 @@ public class NoisemapHandler : MonoBehaviour
     private void SetTemperatureNoisemapEntry(Vector3Int position, TileBase tile)
     {
         if ((tile as RuleTile).isRestrictedByTemperature)
-            mapData.SetTemperatureMapEntry(position, (int)(tile as RuleTile).temperatureBiome / 100f);
+            mapData.SetTemperatureAtPoint(position, (int)(tile as RuleTile).temperatureBiome / 100f);
     }
     private void SetTemperatureNoisemap(Dictionary<Vector3Int, TileBase> map)
     {
@@ -65,7 +65,7 @@ public class NoisemapHandler : MonoBehaviour
     private void SetFertilityNoisemapEntry(Vector3Int position, TileBase tile)
     {
         if ((tile as RuleTile).isRestrictedByFertility) 
-            mapData.SetFertilityMapEntry(position, (int)(tile as RuleTile).fertilityZone / 100f);
+            mapData.SetFertilityAtPoint(position, (int)(tile as RuleTile).fertilityZone / 100f);
     }
     private void SetFertilityNoisemap(Dictionary<Vector3Int, TileBase> map)
     {

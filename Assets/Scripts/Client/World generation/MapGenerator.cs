@@ -6,7 +6,6 @@ using UnityEngine.Tilemaps;
 public class MapGenerator : MonoBehaviour
 {
     [Header("Dependencies")]
-    [SerializeField] private TilemapActions tilemapActions;
     private MapTileGenerator mapTileGenerator;
 
     [Header("Map generation parameters")]
@@ -88,9 +87,6 @@ public class MapGenerator : MonoBehaviour
 
         // Decide which tiles to use
         natureMap = mapTileGenerator.Initialize();
-
-        // Apply natureMap to naturre Tilemap
-        tilemapActions.SetNatureTilemap(natureMap);
     }
 }
 

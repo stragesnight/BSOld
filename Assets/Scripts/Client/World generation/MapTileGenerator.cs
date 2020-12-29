@@ -6,7 +6,6 @@ using UnityEngine;
 public class MapTileGenerator : MonoBehaviour
 {
     [SerializeField] private RuleTile defaultTile;
-    [SerializeField] private TilemapActions tilemapActions;
 
     private HashSet<RuleTile> tileDB;
 
@@ -47,7 +46,7 @@ public class MapTileGenerator : MonoBehaviour
         FillNatureMap();
 
         // Update natureMap of a mapData
-        tilemapActions.SetNatureTilemap(natureMap);
+        MapData.Instance.SetNatureMap(natureMap);
 
         // Return Map Dictionary
         return natureMap;

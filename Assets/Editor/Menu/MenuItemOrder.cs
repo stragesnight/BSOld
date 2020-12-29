@@ -12,6 +12,7 @@ namespace UnityEditor.Tilemaps
     {
         MapData = 150,
         BuildingActions = 160,
+        ResourceActions,
         TilemapActions
     }
 
@@ -74,6 +75,12 @@ namespace UnityEditor.Tilemaps
         static void CreateTilemapActions()
         {
             ProjectWindowUtil.CreateAsset(ScriptableObject.CreateInstance<TilemapActions>(), "New Tilemap Actions.asset");
+        }
+
+        [MenuItem("Assets/Create/Actions and Data/Actions/Resource Actions", priority = (int)EActionsAndDataMenuItemOrder.ResourceActions)]
+        static void CreateResourceActions()
+        {
+            ProjectWindowUtil.CreateAsset(ScriptableObject.CreateInstance<ResourceActions>(), "New Resource Actions.asset");
         }
 
         // ================================================== DATA ==================================================

@@ -10,9 +10,6 @@ public class TilemapActions : ScriptableObject
 {
     // Actions
 
-    // Resource
-    public Action<Vector3Int, TileBase> OnSetResourceTilemapEntry;
-    public Action<Dictionary<Vector3Int, TileBase>> OnSetResourceTilemap;
     // Nature
     public Action<Vector3Int, TileBase> OnSetNatureTilemapEntry;
     public Action<Dictionary<Vector3Int, TileBase>> OnSetNatureTilemap;
@@ -20,16 +17,6 @@ public class TilemapActions : ScriptableObject
     public Action<Vector3Int, bool> OnSetPlacingAccessibilityTilemapEntry;
     public Action<Dictionary<Vector3Int, bool>> OnSetPlacingAccessibilityTilemap;
 
-
-    // Resource Tilemap
-    public void SetResourceTilemapEntry(Vector3Int position, TileBase tile) 
-    { 
-        OnSetResourceTilemapEntry?.Invoke(position, tile);
-    }
-    public void SetResourceTilemap(Dictionary<Vector3Int, TileBase> tiles)
-    {
-        OnSetResourceTilemap?.Invoke(tiles);
-    }
 
     // Nature Tilemap
     public void SetNatureTilemapEntry(Vector3Int position, TileBase tile) 

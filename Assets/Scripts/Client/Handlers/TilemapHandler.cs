@@ -10,6 +10,7 @@ public class TilemapHandler : MonoBehaviour
 {
     [Header("Dependencies")]
     [SerializeField] private BuildingActions buildingActions;
+    [SerializeField] private ResourceActions resourceActions;
     [SerializeField] private TilemapActions tilemapActions;
     [Header("Accessibility tiles")]
     [SerializeField] private RuleTile accessibilityTile;
@@ -23,8 +24,8 @@ public class TilemapHandler : MonoBehaviour
         buildingActions.OnPlaceBuilding += SetBuildingTilemapEntry;
         buildingActions.OnPlaceBuildingMap += SetBuildingTilemap;
         // Resource Rilemap
-        tilemapActions.OnSetResourceTilemapEntry += SetResourceTilemapEntry;
-        tilemapActions.OnSetResourceTilemap += SetResourceTilemap;
+        resourceActions.OnSetResourceAtPoint += SetResourceTilemapEntry;
+        resourceActions.OnSetResourceMap += SetResourceTilemap;
         // Nature Tilemap
         tilemapActions.OnSetNatureTilemapEntry += SetNatureTilemapEntry;
         tilemapActions.OnSetNatureTilemap += SetNatureTilemap;
@@ -40,8 +41,8 @@ public class TilemapHandler : MonoBehaviour
         buildingActions.OnPlaceBuilding -= SetBuildingTilemapEntry;
         buildingActions.OnPlaceBuildingMap -= SetBuildingTilemap;
         // Resource Rilemap
-        tilemapActions.OnSetResourceTilemapEntry -= SetResourceTilemapEntry;
-        tilemapActions.OnSetResourceTilemap -= SetResourceTilemap;
+        resourceActions.OnSetResourceAtPoint -= SetResourceTilemapEntry;
+        resourceActions.OnSetResourceMap -= SetResourceTilemap;
         // Nature Tilemap
         tilemapActions.OnSetNatureTilemapEntry -= SetNatureTilemapEntry;
         tilemapActions.OnSetNatureTilemap -= SetNatureTilemap;

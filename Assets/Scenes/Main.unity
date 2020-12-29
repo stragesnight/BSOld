@@ -610,7 +610,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4fad2933ba359a741b269548e7aa00f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tilemapActions: {fileID: 11400000, guid: 856f862cfa4a553458548710dfc2dbaa, type: 2}
   mapWidth: 320
   mapHeight: 180
   autoUpdate: 0
@@ -673,7 +672,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   defaultTile: {fileID: 11400000, guid: 0cabed6b8ca1bb147a9473b8a4668439, type: 2}
-  tilemapActions: {fileID: 11400000, guid: 856f862cfa4a553458548710dfc2dbaa, type: 2}
 --- !u!114 &543532139
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -687,6 +685,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buildingActions: {fileID: 11400000, guid: 3af691a46a1b048488831b810008ff42, type: 2}
+  resourceActions: {fileID: 11400000, guid: 06d32b193682a354e8dab96d4c6ca975, type: 2}
   tilemapActions: {fileID: 11400000, guid: 856f862cfa4a553458548710dfc2dbaa, type: 2}
   accessibilityTile: {fileID: 11400000, guid: 0cabed6b8ca1bb147a9473b8a4668439, type: 2}
   nonAccessibilityTile: {fileID: 11400000, guid: 0cabed6b8ca1bb147a9473b8a4668439, type: 2}
@@ -753,6 +752,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mapData: {fileID: 11400000, guid: 3d266f9b4ca436b45a8e70586b4125c6, type: 2}
   buildingActions: {fileID: 11400000, guid: 3af691a46a1b048488831b810008ff42, type: 2}
+  resourceActions: {fileID: 11400000, guid: 06d32b193682a354e8dab96d4c6ca975, type: 2}
   tilemapActions: {fileID: 11400000, guid: 856f862cfa4a553458548710dfc2dbaa, type: 2}
 --- !u!4 &1034538980
 Transform:
