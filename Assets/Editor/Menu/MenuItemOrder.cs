@@ -5,24 +5,26 @@ namespace UnityEditor.Tilemaps
 {
     internal enum EBuildingsMenuItemOrder
     {
-        GatheringBuilding = 170
+        GatheringBuilding = 149
     }
 
-    internal enum EDataMenuItemOrder
+    internal enum EActionsAndDataMenuItemOrder
     {
-        mapData = 160
+        MapData = 150,
+        BuildingActions = 160,
+        TilemapActions
     }
 
     internal enum ETilesMenuItemOrder
     {
-        RuleTile = 180,
+        RuleTile = 151,
         AnimatedTile,
         RandomTile,
         //RuleOverrideTile,
         //AdvanceRuleOverrideTile,
         //CustomRuleTile,
     }
-    
+
     static internal partial class AssetCreation
     {
         // ================================================= TILES =================================================
@@ -46,7 +48,7 @@ namespace UnityEditor.Tilemaps
 
         // =============================================== BUILDINGS ===============================================
 
-        [MenuItem("Assets/Create/Buildings/Gathering BuildingSO", priority = (int)EBuildingsMenuItemOrder.GatheringBuilding)]
+        [MenuItem("Assets/Create/Content/Buildings/Gathering BuildingSO", priority = (int)EBuildingsMenuItemOrder.GatheringBuilding)]
         static void CreateGatheringBuilding()
         {
             ProjectWindowUtil.CreateAsset(ScriptableObject.CreateInstance<GatheringBuildingSO>(), "New Gathering BuildingSO.asset");
@@ -54,19 +56,35 @@ namespace UnityEditor.Tilemaps
 
         // =============================================== RESOURCES ===============================================
 
-        [MenuItem("Assets/Create/Resource", priority = 169)]
+        [MenuItem("Assets/Create/Content/Resource", priority = 150)]
         static void CreateResource()
         {
             ProjectWindowUtil.CreateAsset(ScriptableObject.CreateInstance<Resource>(), "New Resource.asset");
         }
 
-        // ================================================== Data ==================================================
+        //================================================= ACTIONS =================================================
 
-        [MenuItem("Assets/Create/Data/Map Data", priority = (int)EDataMenuItemOrder.mapData)]
+        [MenuItem("Assets/Create/Actions and Data/Actions/Building Actions", priority = (int)EActionsAndDataMenuItemOrder.BuildingActions)]
+        static void CreateBuildingActions()
+        {
+            ProjectWindowUtil.CreateAsset(ScriptableObject.CreateInstance<BuildingActions>(), "New Building Actions.asset");
+        }
+
+        [MenuItem("Assets/Create/Actions and Data/Actions/Tilemap Actions", priority = (int)EActionsAndDataMenuItemOrder.TilemapActions)]
+        static void CreateTilemapActions()
+        {
+            ProjectWindowUtil.CreateAsset(ScriptableObject.CreateInstance<TilemapActions>(), "New Tilemap Actions.asset");
+        }
+
+        // ================================================== DATA ==================================================
+
+        [MenuItem("Assets/Create/Actions and Data/Data/Map Data", priority = (int)EActionsAndDataMenuItemOrder.MapData)]
         static void CreateMapData()
         {
             ProjectWindowUtil.CreateAsset(ScriptableObject.CreateInstance<MapData>(), "New Map Data.asset");
         }
+
+
 
         /*
         [MenuItem("Assets/Create/2D/Tiles/Advanced Rule Override Tile", priority = (int)ETilesMenuItemOrder.AdvanceRuleOverrideTile)]

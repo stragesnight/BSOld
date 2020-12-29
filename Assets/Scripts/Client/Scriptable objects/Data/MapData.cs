@@ -7,38 +7,46 @@ using UnityEngine.Tilemaps;
 /// </summary>
 public class MapData : ScriptableObject
 {
-    [System.NonSerialized] public TilemapDrawer tilemapDrawer;
-    [System.NonSerialized] public BuildingPlacer buildingPlacer;
+    [System.NonSerialized] public BuildingActions buildingActions;
+    [System.NonSerialized] public TilemapActions tilemapActions;
 
     // Singleton Instance
     public static MapData Instance;
     public void CheckInstance() { if (Instance == null) Instance = this; }
+
+
+    // Subscribe to Actions
     public void EnableActions()
     {
         // Building
-        buildingPlacer.OnPlaceBuilding += SetBuildingMapEntry;
-        buildingPlacer.OnPlaceBuildingMap += SetBuildingMap;
-
+        buildingActions.OnPlaceBuilding += SetBuildingMapEntry;
+        buildingActions.OnPlaceBuildingMap += SetBuildingMap;
         // Resource
-        tilemapDrawer.OnSetResourceTilemapEntry += SetResourceMapEntry;
-        tilemapDrawer.OnSetResourceTilemap += SetResourceMap;
+        tilemapActions.OnSetResourceTilemapEntry += SetResourceMapEntry;
+        tilemapActions.OnSetResourceTilemap += SetResourceMap;
         // Nature
-        tilemapDrawer.OnSetNatureTilemapEntry += SetNatureMapEntry;
-        tilemapDrawer.OnSetNatureTilemap += SetNatureMap;
+        tilemapActions.OnSetNatureTilemapEntry += SetNatureMapEntry;
+        tilemapActions.OnSetNatureTilemap += SetNatureMap;
+        // Placing Accessibility
+        tilemapActions.OnSetPlacingAccessibilityTilemapEntry += SetPlacingAccessibilityMapEntry;
+        tilemapActions.OnSetPlacingAccessibilityTilemap += SetPlacingAccessibilityMap;
     }
 
+    // Unsubscribe from Actions
     public void DisableActions()
     {
         // Building
-        buildingPlacer.OnPlaceBuilding -= SetBuildingMapEntry;
-        buildingPlacer.OnPlaceBuildingMap -= SetBuildingMap;
-
+        buildingActions.OnPlaceBuilding -= SetBuildingMapEntry;
+        buildingActions.OnPlaceBuildingMap -= SetBuildingMap;
         // Resource
-        tilemapDrawer.OnSetResourceTilemapEntry -= SetResourceMapEntry;
-        tilemapDrawer.OnSetResourceTilemap -= SetResourceMap;
+        tilemapActions.OnSetResourceTilemapEntry -= SetResourceMapEntry;
+        tilemapActions.OnSetResourceTilemap -= SetResourceMap;
         // Nature
-        tilemapDrawer.OnSetNatureTilemapEntry -= SetNatureMapEntry;
-        tilemapDrawer.OnSetNatureTilemap -= SetNatureMap;
+        tilemapActions.OnSetNatureTilemapEntry -= SetNatureMapEntry;
+        tilemapActions.OnSetNatureTilemap -= SetNatureMap;
+        // Placing Accessibility
+        tilemapActions.OnSetPlacingAccessibilityTilemapEntry -= SetPlacingAccessibilityMapEntry;
+        tilemapActions.OnSetPlacingAccessibilityTilemap -= SetPlacingAccessibilityMap;
     }
 
     // ========================================= GENERAL DATA =========================================

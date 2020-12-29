@@ -58,12 +58,13 @@
     <Compile Include="Assets\Scripts\Client\Scriptable objects\Buildings\GatheringBuildingSO.cs" />
     <Compile Include="Assets\Scripts\Client\Scriptable objects\Tiles\RandomTile\RandomTile.cs" />
     <Compile Include="Assets\Dependencies\RuleTiles\GridInformation\GridInformation.cs" />
-    <Compile Include="Assets\Scripts\Client\Helpers\TilemapDrawer.cs" />
+    <Compile Include="Assets\Scripts\Client\Scriptable objects\Actions\TilemapActions.cs" />
     <Compile Include="Assets\Scripts\Client\Scriptable objects\MapResources\Resource.cs" />
     <Compile Include="Assets\Scripts\Client\World generation\MapTileGenerator.cs" />
     <Compile Include="Assets\Scripts\Client\Scriptable objects\Tiles\RuleOverrideTile\RuleOverrideTile.cs" />
-    <Compile Include="Assets\Scripts\Client\Helpers\BuildingPlacer.cs" />
-    <Compile Include="Assets\Scripts\Client\Helpers\PlacingAccessibilityHandler.cs" />
+    <Compile Include="Assets\Scripts\Client\Scriptable objects\Actions\BuildingActions.cs" />
+    <Compile Include="Assets\Scripts\Client\Handlers\PlacingAccessibilityHandler.cs" />
+    <Compile Include="Assets\Scripts\Client\Handlers\GeneralHandler.cs" />
     <Compile Include="Assets\Scripts\Client\World generation\MapGenerator.cs" />
     <Compile Include="Assets\Scripts\Client\Scriptable objects\Tiles\RuleTile\RuleTile.cs" />
     <Compile Include="Assets\Scripts\Client\Scriptable objects\Data\MapData.cs" />
@@ -74,7 +75,8 @@
     <Compile Include="Assets\Scripts\Client\BuildingMonoBehaviours\GatheringBuildingBehaviour.cs" />
     <Compile Include="Assets\Scripts\Client\Scriptable objects\Tiles\AnimatedTile\AnimatedTile.cs" />
     <Compile Include="Assets\Scripts\Client\World generation\Helper classes\MapZones.cs" />
-    <Compile Include="Assets\Scripts\Client\Helpers\GeneralManager.cs" />
+    <Compile Include="Assets\Scripts\Client\Handlers\BuildingHandler.cs" />
+    <Compile Include="Assets\Scripts\Client\Handlers\TilemapHandler.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

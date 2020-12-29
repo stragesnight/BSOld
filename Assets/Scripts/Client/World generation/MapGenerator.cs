@@ -6,8 +6,8 @@ using UnityEngine.Tilemaps;
 public class MapGenerator : MonoBehaviour
 {
     [Header("Dependencies")]
+    [SerializeField] private TilemapActions tilemapActions;
     private MapTileGenerator mapTileGenerator;
-    private TilemapDrawer tilemapDrawer;
 
     [Header("Map generation parameters")]
     [SerializeField] private int mapWidth;    //in tiles
@@ -26,9 +26,6 @@ public class MapGenerator : MonoBehaviour
 
     private void Start()
     {
-        mapTileGenerator = GetComponent<MapTileGenerator>();
-        tilemapDrawer = GetComponent<TilemapDrawer>();
-
         GenerateMap();
     }
 
@@ -36,7 +33,6 @@ public class MapGenerator : MonoBehaviour
     private void Initialize()
     {
         mapTileGenerator = GetComponent<MapTileGenerator>();
-        tilemapDrawer = GetComponent<TilemapDrawer>();
     }
 
 
@@ -94,7 +90,7 @@ public class MapGenerator : MonoBehaviour
         natureMap = mapTileGenerator.Initialize();
 
         // Apply natureMap to naturre Tilemap
-        tilemapDrawer.SetNatureTilemap(natureMap);
+        tilemapActions.SetNatureTilemap(natureMap);
     }
 }
 
