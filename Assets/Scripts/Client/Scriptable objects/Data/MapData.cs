@@ -131,6 +131,6 @@ public class MapData : ScriptableObject
     public void SetFertilityMapEntry(Vector3Int position, float value) { fertilityMap[position.x, position.y] = value; }
     public void SetFertilityMap(float[,] map) { fertilityMap = map; }
     // Get
-    public float GetFertilityMap(Vector3Int position) => fertilityMap[position.x, position.y];
+    public float GetFertilityMapEntry(Vector3Int position) => fertilityMap[position.x, position.y];
     public float[,] GetFertilityMap() => fertilityMap;
 }
