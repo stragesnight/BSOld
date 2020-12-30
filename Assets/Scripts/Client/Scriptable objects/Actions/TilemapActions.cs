@@ -1,7 +1,6 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Tilemaps;
 
 /// <summary>
 /// TilemapActions class is responsible for any Tilemap manipulations.
@@ -11,21 +10,21 @@ public class TilemapActions : ScriptableObject
     // Actions
 
     // Nature
-    public Action<Vector3Int, TileBase> OnSetNatureTilemapEntry;
-    public Action<Dictionary<Vector3Int, TileBase>> OnSetNatureTilemap;
+    public Action<Vector3Int, MapZone> OnSetNatureTilemapEntry;
+    public Action<Dictionary<Vector3Int, MapZone>> OnSetNatureTilemap;
     // Placing accessibility
     public Action<Vector3Int, bool> OnSetPlacingAccessibilityTilemapEntry;
     public Action<Dictionary<Vector3Int, bool>> OnSetPlacingAccessibilityTilemap;
 
 
     // Nature Tilemap
-    public void SetNatureTilemapEntry(Vector3Int position, TileBase tile) 
+    public void SetNatureTilemapEntry(Vector3Int position, MapZone mapZone) 
     { 
-        OnSetNatureTilemapEntry?.Invoke(position, tile);
+        OnSetNatureTilemapEntry?.Invoke(position, mapZone);
     }
-    public void SetNatureTilemap(Dictionary<Vector3Int, TileBase> tiles)
+    public void SetNatureTilemap(Dictionary<Vector3Int, MapZone> mapZones)
     {
-        OnSetNatureTilemap?.Invoke(tiles);
+        OnSetNatureTilemap?.Invoke(mapZones);
     }
 
     // Placing Accessibility Tilemap

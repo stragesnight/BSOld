@@ -3,7 +3,7 @@ using UnityEngine;
 /* Noise generator that generates float[,] with values ranging from 0 to 1 using Perlin noise */
 public static class Noise
 {
-    public static float[,] GenerateNoiseMap(int seed, int mapWidth, int mapHeight, float scale, int octaves, float persistance, float lacunarity)
+    public static float[,] GenerateNoiseMap(int seed, int mapWidth, int mapHeight, float scale, int octaves, float persistance, float lacunarity, float bias = 0f)
     {
         float[,] noiseMap = new float[mapWidth, mapHeight];
 
@@ -76,7 +76,9 @@ public static class Noise
         {
             for (int y = 0; y < mapHeight; y++)
             {
-                noiseMap[x, y] = Mathf.InverseLerp(minNoiseHeight, maxNoiseHeight, noiseMap[x, y]);
+                noiseMap[x, y] = Mathf.InverseLerp(minNoiseHeight, maxNoiseHeight, noiseMap[x, y]) + bias;
+                // Clamp map in case of it exceeding values from 0 to 1 as result of biasing 
+                noiseMap[x, y] = Mathf.Clamp01(noiseMap[x, y]);
             }
         }
 

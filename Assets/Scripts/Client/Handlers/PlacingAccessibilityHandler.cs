@@ -14,7 +14,7 @@ public class PlacingAccessibilityHandler : MonoBehaviour
 
     // Unserialized variables
 
-    private Dictionary<Vector3Int, TileBase> natureMap;
+    private Dictionary<Vector3Int, MapZone> natureMap;
     private Dictionary<Vector3Int, bool> accessibilityMap;
 
 
@@ -43,12 +43,9 @@ public class PlacingAccessibilityHandler : MonoBehaviour
 
         foreach (Vector3Int position in mapPositions)
         {
-            // Get current tile
-            RuleTile currentTile = natureMap[position] as RuleTile;
-
             // Set accessibility to true if current tile is a land tile
             // Will be changed later
-            accessibilityMap.Add(position, currentTile.elevationZone == ElevationZone.land);
+            accessibilityMap.Add(position, natureMap[position].elevationZone == ElevationZone.land);
         }
     }
 }

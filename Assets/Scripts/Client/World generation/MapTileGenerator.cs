@@ -1,13 +1,12 @@
 using System.Collections.Generic;
-using UnityEngine.Tilemaps;
 using UnityEngine;
 
 /* Class that chooses which tiles to draw depending on their parameters and noise maps */
 public class MapTileGenerator : MonoBehaviour
 {
-    [SerializeField] private RuleTile defaultTile;
+    [SerializeField] private MapZone defaultZone;
 
-    private HashSet<RuleTile> tileDB;
+    private HashSet<MapZone> mapZoneDB;
 
     // Maps
     private float[,] heightMap;
@@ -15,7 +14,7 @@ public class MapTileGenerator : MonoBehaviour
     private float[,] fertilityMap;
 
     // Map Dictionary
-    private Dictionary<Vector3Int, TileBase> natureMap;
+    private Dictionary<Vector3Int, MapZone> natureMap;
 
     // Zone and Biomes arrays
     private ElevationZone[] elevationZones;
@@ -24,13 +23,13 @@ public class MapTileGenerator : MonoBehaviour
 
 
     // Algorithm initialization
-    public Dictionary<Vector3Int, TileBase> Initialize()
+    public Dictionary<Vector3Int, MapZone> Initialize()
     {
         // Map Dictionary initialization
-        natureMap = new Dictionary<Vector3Int, TileBase>();
+        natureMap = new Dictionary<Vector3Int, MapZone>();
 
         // Load Rule Tiles from Resource folder and Initializing RuleTile DataBase HashSet
-        tileDB = new HashSet<RuleTile>(Resources.LoadAll<RuleTile>("Tiles/MapZoneRuleTiles"));
+        mapZoneDB = new HashSet<MapZone>(Resources.LoadAll<MapZone>("Map Zones"));
 
         // Maps initialization
         heightMap = MapData.Instance.GetHeightMap();
@@ -61,38 +60,38 @@ public class MapTileGenerator : MonoBehaviour
             for (int y = 0; y < MapData.Instance.GetMapHeight(); y++)
             {
                 Vector3Int currSlot = new Vector3Int(x, y, 0);
-                TileBase currTile = ChooseValidTile(currSlot);
+                MapZone currMapZone = ChooseValidMapZone(currSlot);
 
                 // Adding entry to dictionary
-                natureMap.Add(currSlot, currTile);
+                natureMap.Add(currSlot, currMapZone);
             }
         }
     }
 
 
     // Choosing valid tile depending on it's properties and map information
-    private RuleTile ChooseValidTile(Vector3Int pos)
+    private MapZone ChooseValidMapZone(Vector3Int pos)
     {
         // Looping through every tile in DataBase
-        foreach (RuleTile tile in tileDB)
+        foreach (MapZone mapZone in mapZoneDB)
         {
             // ADD ENTRY TO NEW BIOME/ZONE
             // Check Elevation Zone
-            if (((int)tile.elevationZone == GetCurrentMapEnumValue<ElevationZone>(heightMap[pos.x, pos.y])
-                || !tile.isRestrictedByElevation)
+            if (((int)mapZone.elevationZone == GetCurrentMapEnumValue<ElevationZone>(heightMap[pos.x, pos.y])
+                || !mapZone.isRestrictedByElevation)
                 // Check Temperature Zone
-                && ((int)tile.temperatureBiome == GetCurrentMapEnumValue<TemperatureBiome>(temperatureMap[pos.x, pos.y])
-                || !tile.isRestrictedByTemperature)
+                && ((int)mapZone.temperatureBiome == GetCurrentMapEnumValue<TemperatureBiome>(temperatureMap[pos.x, pos.y])
+                || !mapZone.isRestrictedByTemperature)
                 // Check Fertility Zone
-                && ((int)tile.fertilityZone == GetCurrentMapEnumValue<FertilityZone>(fertilityMap[pos.x, pos.y])
-                || !tile.isRestrictedByFertility))
+                && ((int)mapZone.fertilityZone == GetCurrentMapEnumValue<FertilityZone>(fertilityMap[pos.x, pos.y])
+                || !mapZone.isRestrictedByFertility))
 
                 // Return current Tile if it meets all conditions
-                return tile;
+                return mapZone;
         }
 
         // Return default if noone of avilable tiles are valid
-        return defaultTile;
+        return defaultZone;
     }
 
 

@@ -7,7 +7,7 @@ using UnityEngine.Tilemaps;
 /// </summary>
 public class MapData : ScriptableObject
 {
-    [System.NonSerialized] public BuildingActions buildingActions;
+    [System.NonSerialized] public ConstructionActions constructionActions;
     [System.NonSerialized] public ResourceActions resourceActions;
     [System.NonSerialized] public TilemapActions tilemapActions;
 
@@ -31,41 +31,41 @@ public class MapData : ScriptableObject
 
     // =========================================== BUILDINGS ===========================================
 
-    // buildingMap
-    [SerializeField] private Dictionary<Vector3Int, BuildingSO> buildingMap = new Dictionary<Vector3Int, BuildingSO>();
+    // constructionMap
+    [SerializeField] private Dictionary<Vector3Int, ConstructionSO> constructionMap = new Dictionary<Vector3Int, ConstructionSO>();
     // Set
-    public void SetBuildingAtPoint(Vector3Int position, BuildingSO building) 
+    public void SetConstructionAtPoint(Vector3Int position, ConstructionSO construction) 
     { 
-        buildingMap[position] = building; 
-        buildingActions.PlaceBuilding(position, building); 
+        constructionMap[position] = construction; 
+        constructionActions.PlaceBuilding(position, construction); 
     }
-    public void SetBuildingMap(Dictionary<Vector3Int, BuildingSO> map) 
+    public void SetConstructionMap(Dictionary<Vector3Int, ConstructionSO> map) 
     { 
-        buildingMap = map;
-        buildingActions.PlaceBuildingMap(map);
+        constructionMap = map;
+        constructionActions.PlaceBuildingMap(map);
     }
     // Get
-    public BuildingSO GetBuildingAtPoint(Vector3Int position) => buildingMap[position];
-    public Dictionary<Vector3Int, BuildingSO> GetBuildingMap() => buildingMap;
+    public ConstructionSO GetConstructionAtPoint(Vector3Int position) => constructionMap[position];
+    public Dictionary<Vector3Int, ConstructionSO> GetConstructionMap() => constructionMap;
 
     // =========================================== RESOURCES ===========================================
 
     // resourceMap
-    [SerializeField] private Dictionary<Vector3Int, TileBase> resourceMap = new Dictionary<Vector3Int, TileBase>();
+    [SerializeField] private Dictionary<Vector3Int, Resource> resourceMap = new Dictionary<Vector3Int, Resource>();
     // Set
-    public void SetResourceAtPoint(Vector3Int position, TileBase tile) 
+    public void SetResourceAtPoint(Vector3Int position, Resource resource) 
     {
-        resourceMap[position] = tile;
-        resourceActions.SetResourceAtPoint(position, tile);
+        resourceMap[position] = resource;
+        resourceActions.SetResourceAtPoint(position, resource);
     }
-    public void SetResourceMap(Dictionary<Vector3Int, TileBase> map) 
+    public void SetResourceMap(Dictionary<Vector3Int, Resource> map) 
     {
         resourceMap = map;
         resourceActions.SetResourceMap(map);
     }
     // Get
-    public TileBase GetResourceAtPoint(Vector3Int position) => resourceMap[position];
-    public Dictionary<Vector3Int, TileBase> GetResourceMap() => resourceMap;
+    public Resource GetResourceAtPoint(Vector3Int position) => resourceMap[position];
+    public Dictionary<Vector3Int, Resource> GetResourceMap() => resourceMap;
 
     // resourceAmounts
     [SerializeField] private Dictionary<Vector3Int, int> resourceAmounts = new Dictionary<Vector3Int, int>();
@@ -84,24 +84,24 @@ public class MapData : ScriptableObject
     public int GetResourceAmountAtPoint(Vector3Int position) => resourceAmounts[position];
     public Dictionary<Vector3Int, int> GetResourceAmounts() => resourceAmounts;
 
-    // =========================================== TILEMAPS ===========================================
+    // =========================================== NATURE ===========================================
 
     // natureMap
-    [SerializeField] private Dictionary<Vector3Int, TileBase> natureMap = new Dictionary<Vector3Int, TileBase>();
+    [SerializeField] private Dictionary<Vector3Int, MapZone> natureMap = new Dictionary<Vector3Int, MapZone>();
     // Set
-    public void SetNatureAtPoint(Vector3Int position, TileBase tile) 
+    public void SetNatureAtPoint(Vector3Int position, MapZone tile) 
     { 
         natureMap[position] = tile;
         tilemapActions.SetNatureTilemapEntry(position, tile);
     }
-    public void SetNatureMap(Dictionary<Vector3Int, TileBase> map) 
+    public void SetNatureMap(Dictionary<Vector3Int, MapZone> map) 
     {
         natureMap = map;
         tilemapActions.SetNatureTilemap(map);
     }
     // Get
-    public TileBase GetNatureAtPoint(Vector3Int position) => natureMap[position];
-    public Dictionary<Vector3Int, TileBase> GetNatureMap() => natureMap;
+    public MapZone GetNatureAtPoint(Vector3Int position) => natureMap[position];
+    public Dictionary<Vector3Int, MapZone> GetNatureMap() => natureMap;
 
     // placingAccessibilityMap
     [SerializeField] private Dictionary<Vector3Int, bool> placingAccessibilityMap = new Dictionary<Vector3Int, bool>();

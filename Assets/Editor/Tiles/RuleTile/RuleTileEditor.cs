@@ -359,53 +359,7 @@ namespace UnityEditor
             EditorGUI.BeginChangeCheck();
 
             tile.m_DefaultSprite = EditorGUILayout.ObjectField("Default Sprite", tile.m_DefaultSprite, typeof(Sprite), false) as Sprite;
-            tile.m_DefaultGameObject = EditorGUILayout.ObjectField("Default GameObject", tile.m_DefaultGameObject, typeof(GameObject), false) as GameObject;
-
-            // ============================= CUSTOM PARAMETERS =============================
-
-            EditorGUILayout.Space();
-
-            // RuleTile Type
-            tile.tileType = (RuleTileType)EditorGUILayout.EnumPopup("Type", tile.tileType);
-
-            switch (tile.tileType)
-            {
-                // MapZone RuleTile Custom parameters
-                case RuleTileType.MapZone:
-                    // Elevation Zone
-                    tile.isRestrictedByElevation = EditorGUILayout.Toggle("Is Restricted By Elevation", tile.isRestrictedByElevation);
-                    if (tile.isRestrictedByElevation)
-                        tile.elevationZone = (ElevationZone)EditorGUILayout.EnumPopup("Elevation Zone", tile.elevationZone);
-
-                    EditorGUILayout.Space();
-                    // Temperature Biome
-                    tile.isRestrictedByTemperature = EditorGUILayout.Toggle("Is Restricted By Temperature", tile.isRestrictedByTemperature);
-                    if (tile.isRestrictedByTemperature)
-                        tile.temperatureBiome = (TemperatureBiome)EditorGUILayout.EnumPopup("Temperature Biome", tile.temperatureBiome);
-
-                    EditorGUILayout.Space();
-                    // Fertility Zone
-                    tile.isRestrictedByFertility = EditorGUILayout.Toggle("Is Restricted By Fertility", tile.isRestrictedByFertility);
-                    if (tile.isRestrictedByFertility)
-                        tile.fertilityZone = (FertilityZone)EditorGUILayout.EnumPopup("Fertility Zone", tile.fertilityZone);
-                    break;
-
-                // Resource RuleTile Custom parameters
-                case RuleTileType.Resource:
-                    tile.resource = EditorGUILayout.ObjectField("Resource", tile.resource, typeof(Resource), false) as Resource;
-                    tile.resourceAmount = EditorGUILayout.IntField("Amount", tile.resourceAmount);
-                    break;
-
-                // Building RuleTile Custom parameters
-                case RuleTileType.Builidng:
-                    tile.building = EditorGUILayout.ObjectField("Building", tile.building, typeof(BuildingSO), false) as BuildingSO;
-                    break;
-            }
-
-            EditorGUILayout.Space();
-
-            // ============================= CUSTOM PARAMETERS =============================
-
+            tile.m_DefaultGameObject = EditorGUILayout.ObjectField("Default GameObject", tile.m_DefaultGameObject, typeof(GameObject), false) as GameObject;    
             tile.m_DefaultColliderType = (Tile.ColliderType)EditorGUILayout.EnumPopup("Default Collider", tile.m_DefaultColliderType);
 
             DrawCustomFields(false);

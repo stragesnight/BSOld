@@ -63,22 +63,23 @@
     <Compile Include="Assets\Scripts\Client\Handlers\NoisemapHandler.cs" />
     <Compile Include="Assets\Scripts\Client\World generation\MapTileGenerator.cs" />
     <Compile Include="Assets\Scripts\Client\Scriptable objects\Tiles\RuleOverrideTile\RuleOverrideTile.cs" />
-    <Compile Include="Assets\Scripts\Client\Scriptable objects\Actions\BuildingActions.cs" />
+    <Compile Include="Assets\Scripts\Client\Scriptable objects\Actions\ConstructionActions.cs" />
     <Compile Include="Assets\Scripts\Client\Handlers\PlacingAccessibilityHandler.cs" />
     <Compile Include="Assets\Scripts\Client\Handlers\GeneralHandler.cs" />
     <Compile Include="Assets\Scripts\Client\World generation\MapGenerator.cs" />
     <Compile Include="Assets\Scripts\Client\Scriptable objects\Tiles\RuleTile\RuleTile.cs" />
     <Compile Include="Assets\Scripts\Client\Scriptable objects\Data\MapData.cs" />
     <Compile Include="Assets\Scripts\Client\Player\PlayerController.cs" />
-    <Compile Include="Assets\Scripts\Client\Handlers\BuildingHandler.cs" />
+    <Compile Include="Assets\Scripts\Client\Handlers\CounstructionHandler.cs" />
     <Compile Include="Assets\Scripts\Client\World generation\Helper classes\Noise.cs" />
     <Compile Include="Assets\Scripts\Client\Scriptable objects\Tiles\RuleOverrideTile\AdvancedRuleOverrideTile.cs" />
-    <Compile Include="Assets\Scripts\Client\Scriptable objects\Buildings\BuildingSO.cs" />
+    <Compile Include="Assets\Scripts\Client\Scriptable objects\Actions\ResourceActions.cs" />
     <Compile Include="Assets\Scripts\Client\Handlers\TilemapHandler.cs" />
     <Compile Include="Assets\Scripts\Client\BuildingMonoBehaviours\GatheringBuildingBehaviour.cs" />
     <Compile Include="Assets\Scripts\Client\Scriptable objects\Tiles\AnimatedTile\AnimatedTile.cs" />
     <Compile Include="Assets\Scripts\Client\World generation\Helper classes\MapZones.cs" />
-    <Compile Include="Assets\Scripts\Client\Scriptable objects\Actions\ResourceActions.cs" />
+    <Compile Include="Assets\Scripts\Client\Scriptable objects\Buildings\ConstructionSO.cs" />
+    <Compile Include="Assets\Scripts\Client\Scriptable objects\MapZones\MapZone.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

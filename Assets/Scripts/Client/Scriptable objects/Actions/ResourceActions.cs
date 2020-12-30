@@ -9,20 +9,20 @@ using UnityEngine.Tilemaps;
 public class ResourceActions : ScriptableObject
 {
     // Actions
-    public Action<Vector3Int, TileBase> OnSetResourceAtPoint;
-    public Action<Dictionary<Vector3Int, TileBase>> OnSetResourceMap;
+    public Action<Vector3Int, Resource> OnSetResourceAtPoint;
+    public Action<Dictionary<Vector3Int, Resource>> OnSetResourceMap;
     public Action<Vector3Int, int> OnSetResourceAmountAtPoint;
     public Action<Dictionary<Vector3Int, int>> OnSetResourceAmounts;
 
 
-    public void SetResourceAtPoint(Vector3Int position, TileBase resourceTile)
+    public void SetResourceAtPoint(Vector3Int position, Resource resource)
     {
-        OnSetResourceAtPoint?.Invoke(position, resourceTile);
-        SetResourceAmountAtPoint(position, (resourceTile as RuleTile).resourceAmount);
+        OnSetResourceAtPoint?.Invoke(position, resource);
+        SetResourceAmountAtPoint(position, resource.startingAmount);
     }
 
 
-    public void SetResourceMap(Dictionary<Vector3Int, TileBase> map)
+    public void SetResourceMap(Dictionary<Vector3Int, Resource> map)
     {
         OnSetResourceMap?.Invoke(map);
         SetResourceAmounts(GetStartResourceAmounts(map));
@@ -41,13 +41,13 @@ public class ResourceActions : ScriptableObject
     }
 
 
-    private Dictionary<Vector3Int, int> GetStartResourceAmounts(Dictionary<Vector3Int, TileBase> map)
+    private Dictionary<Vector3Int, int> GetStartResourceAmounts(Dictionary<Vector3Int, Resource> map)
     {
         Dictionary<Vector3Int, int> startingAmounts = new Dictionary<Vector3Int, int>();
 
         foreach (Vector3Int position in map.Keys)
         {
-            startingAmounts.Add(position, (map[position] as RuleTile).resourceAmount);
+            startingAmounts.Add(position, map[position].startingAmount);
         }
 
         return startingAmounts;

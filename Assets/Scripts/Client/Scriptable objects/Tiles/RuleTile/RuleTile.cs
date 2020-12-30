@@ -41,51 +41,6 @@ namespace UnityEngine
         /// </summary>
         public GameObject m_DefaultGameObject;
 
-        //                               ======================== CUSTOM PARAMETERS ======================== 
-
-        /// <summary>
-        /// Type of a RuleTile used to clear the Editor
-        /// </summary>
-        public RuleTileType tileType;
-
-        // MapZone RuleTile
-
-        /// <summary>
-        /// The Elevation Zome in which tile can appear
-        /// </summary>
-        public ElevationZone elevationZone;
-        public bool isRestrictedByElevation;
-        /// <summary>
-        /// The Temperature Biome in which tile can appear
-        /// </summary>
-        public TemperatureBiome temperatureBiome;
-        public bool isRestrictedByTemperature;
-        /// <summary>
-        /// The Fertility Zone in which tile can appear
-        /// </summary>
-        public FertilityZone fertilityZone;
-        public bool isRestrictedByFertility;
-
-        // Resource RuleTile
-
-        /// <summary>
-        /// Resource held by this RuleTile
-        /// </summary>
-        public Resource resource;
-        /// <summary>
-        /// Starting amount of resource held
-        /// </summary>
-        public int resourceAmount;
-
-        // Building RuleTile
-
-        /// <summary>
-        /// Building held by this RuleTile
-        /// </summary>
-        public BuildingSO building;
-
-        //                              ======================== CUSTOM PARAMETERS ======================== 
-
         /// <summary>
         /// The Default Collider Type set when creating a new Rule.
         /// </summary>

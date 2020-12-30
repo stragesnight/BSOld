@@ -6,7 +6,7 @@ using UnityEngine;
 public class GeneralHandler : MonoBehaviour
 {
     [SerializeField] private MapData mapData;
-    [SerializeField] private BuildingActions buildingActions;
+    [SerializeField] private ConstructionActions buildingActions;
     [SerializeField] private ResourceActions resourceActions;
     [SerializeField] private TilemapActions tilemapActions;
 
@@ -15,7 +15,7 @@ public class GeneralHandler : MonoBehaviour
     {
         mapData.CheckInstance();
 
-        mapData.buildingActions = buildingActions;
+        mapData.constructionActions = buildingActions;
         mapData.resourceActions = resourceActions;
         mapData.tilemapActions = tilemapActions;
     }

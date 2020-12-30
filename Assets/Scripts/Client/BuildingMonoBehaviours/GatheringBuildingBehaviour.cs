@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class GatheringBuildingBehaviour : MonoBehaviour
 {
-    public BuildingSO type;
+    public ConstructionSO type;
     float timer = 0f;
 
 

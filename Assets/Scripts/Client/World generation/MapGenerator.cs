@@ -20,7 +20,7 @@ public class MapGenerator : MonoBehaviour
     [SerializeField] private NoiseMap temperatureMap;
     [SerializeField] private NoiseMap fertilityMap;
 
-    private Dictionary<Vector3Int, TileBase> natureMap;
+    private Dictionary<Vector3Int, MapZone> natureMap;
 
 
     private void Start()
@@ -45,7 +45,7 @@ public class MapGenerator : MonoBehaviour
         MapData.Instance.SetMapHeight(mapHeight);
 
         // Initializing dictionary
-        natureMap = new Dictionary<Vector3Int, TileBase>();
+        natureMap = new Dictionary<Vector3Int, MapZone>();
 
         // Height map generation
         heightMap.map = Noise.GenerateNoiseMap

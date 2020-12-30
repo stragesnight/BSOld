@@ -9,7 +9,7 @@ using UnityEngine.Tilemaps;
 public class TilemapHandler : MonoBehaviour
 {
     [Header("Dependencies")]
-    [SerializeField] private BuildingActions buildingActions;
+    [SerializeField] private ConstructionActions constructionActions;
     [SerializeField] private ResourceActions resourceActions;
     [SerializeField] private TilemapActions tilemapActions;
     [Header("Accessibility tiles")]
@@ -21,8 +21,8 @@ public class TilemapHandler : MonoBehaviour
     private void OnEnable()
     {
         // Buildings
-        buildingActions.OnPlaceBuilding += SetBuildingTilemapEntry;
-        buildingActions.OnPlaceBuildingMap += SetBuildingTilemap;
+        constructionActions.OnPlaceConstruction += SetConstructionTilemapEntry;
+        constructionActions.OnPlaceBuildingMap += SetConstructionTilemap;
         // Resource Rilemap
         resourceActions.OnSetResourceAtPoint += SetResourceTilemapEntry;
         resourceActions.OnSetResourceMap += SetResourceTilemap;
@@ -38,8 +38,8 @@ public class TilemapHandler : MonoBehaviour
     private void OnDisable()
     {
         // Buildings
-        buildingActions.OnPlaceBuilding -= SetBuildingTilemapEntry;
-        buildingActions.OnPlaceBuildingMap -= SetBuildingTilemap;
+        constructionActions.OnPlaceConstruction -= SetConstructionTilemapEntry;
+        constructionActions.OnPlaceBuildingMap -= SetConstructionTilemap;
         // Resource Rilemap
         resourceActions.OnSetResourceAtPoint -= SetResourceTilemapEntry;
         resourceActions.OnSetResourceMap -= SetResourceTilemap;
@@ -52,40 +52,40 @@ public class TilemapHandler : MonoBehaviour
     }
 
     [Header("Tilemaps")]
-    // Building Tilemap
-    [SerializeField] private Tilemap buildingTilemap;
-    private void SetBuildingTilemapEntry(Vector3Int position, BuildingSO building)
+    // Construction Tilemap
+    [SerializeField] private Tilemap constructionTilemap;
+    private void SetConstructionTilemapEntry(Vector3Int position, ConstructionSO construction)
     {
-        buildingTilemap.SetTile(position, building.graphics);
+        constructionTilemap.SetTile(position, construction.ruleTile);
     }
-    private void SetBuildingTilemap(Dictionary<Vector3Int, BuildingSO> buildings)
+    private void SetConstructionTilemap(Dictionary<Vector3Int, ConstructionSO> map)
     {
-        buildingTilemap.ClearAllTiles();
-        buildingTilemap.SetTiles(buildings.Keys.ToArray(), buildings.Values.Select(x => x.graphics).ToArray());
+        constructionTilemap.ClearAllTiles();
+        constructionTilemap.SetTiles(map.Keys.ToArray(), map.Values.Select(x => x.ruleTile).ToArray());
     }
 
     // Resource Tilemap
     [SerializeField] private Tilemap resourceTilemap;
-    private void SetResourceTilemapEntry(Vector3Int position, TileBase tile)
+    private void SetResourceTilemapEntry(Vector3Int position, Resource resource)
     {
-        resourceTilemap.SetTile(position, tile);
+        resourceTilemap.SetTile(position, resource.ruleTile);
     }
-    private void SetResourceTilemap(Dictionary<Vector3Int, TileBase> tiles)
+    private void SetResourceTilemap(Dictionary<Vector3Int, Resource> resources)
     {
         resourceTilemap.ClearAllTiles();
-        resourceTilemap.SetTiles(tiles.Keys.ToArray(), tiles.Values.ToArray());
+        resourceTilemap.SetTiles(resources.Keys.ToArray(), resources.Values.Select(x => x.ruleTile).ToArray());
     }
 
     // Nature Tilemap
     [SerializeField] private Tilemap natureTilemap;
-    private void SetNatureTilemapEntry(Vector3Int position, TileBase tile)
+    private void SetNatureTilemapEntry(Vector3Int position, MapZone mapZone)
     {
-        natureTilemap.SetTile(position, tile);
+        natureTilemap.SetTile(position, mapZone.ruleTile);
     }
-    private void SetNatureTilemap(Dictionary<Vector3Int, TileBase> tiles)
+    private void SetNatureTilemap(Dictionary<Vector3Int, MapZone> mapZones)
     {
         natureTilemap.ClearAllTiles();
-        natureTilemap.SetTiles(tiles.Keys.ToArray(), tiles.Values.ToArray());
+        natureTilemap.SetTiles(mapZones.Keys.ToArray(), mapZones.Values.Select(x => x.ruleTile).ToArray());
     }
 
     // Placing Accessibility Tilemap

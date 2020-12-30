@@ -5,30 +5,43 @@ using UnityEngine;
 /// </summary>
 public class PlayerController : MonoBehaviour
 {
-    // Serialized variables
     [Header("Dependencies")]
-    [SerializeField] Camera cam;
+    [SerializeField] private Camera cam;
+    [SerializeField] private ConstructionSO building;
+    [SerializeField] private MapZone mapZone;
 
     [Header("Player parameters")]
-    [SerializeField] [Range(0, 1)] float cameraSensitivity;
-
-    //Unserialized variables
-
-    Vector3 mouseScreenPos;
-    Vector3 deltaMouseScreenPos = Vector3.zero;
+    [SerializeField] [Range(0, 1)] private float cameraSensitivity;
 
 
-    void Update()
+    private Vector3 mouseScreenPos;
+    private Vector3 deltaMouseScreenPos = Vector3.zero;
+
+
+    private void Update()
     {
         GetInputs();
 
         if (Input.GetMouseButton(0))
             HandleCameraMovement();
+
+        Vector3 position = cam.ScreenToWorldPoint(mouseScreenPos);
+        Vector3Int cellPosition = new Vector3Int((int)position.x, (int)position.y, 0);
+
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            MapData.Instance.SetConstructionAtPoint(cellPosition, building);
+        }
+
+        if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            MapData.Instance.SetNatureAtPoint(cellPosition, mapZone);
+        }
     }
 
 
     // Gather inputs and store them
-    void GetInputs()
+    private void GetInputs()
     {
         // Compare previous mouse position and it's position last frame
         deltaMouseScreenPos = mouseScreenPos - Input.mousePosition;
@@ -40,7 +53,7 @@ public class PlayerController : MonoBehaviour
     }
 
 
-    void HandleCameraMovement()
+    private void HandleCameraMovement()
     {
         cam.transform.position += deltaMouseScreenPos * cameraSensitivity;
     }

@@ -5,8 +5,8 @@ using UnityEngine;
 /// </summary>
 public class Resource : ScriptableObject
 {
-    // Icon displayed on UI elements
-    public Sprite icon;
-    // Sprite used to display resource on a map
-    public Sprite mapSprite;
+    // RuleTile that Resource is represented by
+    public RuleTile ruleTile;
+    // Starting amount of resource
+    public int startingAmount;
 }

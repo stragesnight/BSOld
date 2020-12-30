@@ -671,7 +671,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51cf4e8d743a39a4297f2921219e12cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  defaultTile: {fileID: 11400000, guid: 0cabed6b8ca1bb147a9473b8a4668439, type: 2}
+  defaultZone: {fileID: 11400000, guid: 17524c52d65cb7f4daffe3a2646e6058, type: 2}
 --- !u!114 &543532139
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -684,12 +684,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40bb03fbe0a523a4cab64cec427a4f5e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buildingActions: {fileID: 11400000, guid: 3af691a46a1b048488831b810008ff42, type: 2}
+  constructionActions: {fileID: 11400000, guid: 3af691a46a1b048488831b810008ff42, type: 2}
   resourceActions: {fileID: 11400000, guid: 06d32b193682a354e8dab96d4c6ca975, type: 2}
   tilemapActions: {fileID: 11400000, guid: 856f862cfa4a553458548710dfc2dbaa, type: 2}
   accessibilityTile: {fileID: 11400000, guid: 0cabed6b8ca1bb147a9473b8a4668439, type: 2}
   nonAccessibilityTile: {fileID: 11400000, guid: 0cabed6b8ca1bb147a9473b8a4668439, type: 2}
-  buildingTilemap: {fileID: 1037783657}
+  constructionTilemap: {fileID: 1037783657}
   resourceTilemap: {fileID: 54889094}
   natureTilemap: {fileID: 1484946181}
   placingAccessibilityTilemap: {fileID: 41272510}
@@ -705,7 +705,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cdeed89054bd363469b61c38ba889dee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buildingActions: {fileID: 11400000, guid: 3af691a46a1b048488831b810008ff42, type: 2}
+  constructionActions: {fileID: 11400000, guid: 3af691a46a1b048488831b810008ff42, type: 2}
   parentTransform: {fileID: 191608805}
 --- !u!114 &543532141
 MonoBehaviour:
@@ -780,7 +780,7 @@ GameObject:
   - component: {fileID: 1037783657}
   - component: {fileID: 1037783658}
   m_Layer: 0
-  m_Name: BuildingTilemap
+  m_Name: ConstructionTilemap
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -940,6 +940,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cam: {fileID: 519420031}
+  building: {fileID: 11400000, guid: e9c6952a6f28c1d4f96f3aa34feb6f8c, type: 2}
+  mapZone: {fileID: 11400000, guid: 84e3d9c6e4f7f6447a9e3468a08812d3, type: 2}
   cameraSensitivity: 0.05
 --- !u!4 &1178557597
 Transform:
