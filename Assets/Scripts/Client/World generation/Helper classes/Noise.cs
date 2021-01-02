@@ -3,8 +3,11 @@ using UnityEngine;
 /* Noise generator that generates float[,] with values ranging from 0 to 1 using Perlin noise */
 public static class Noise
 {
-    public static float[,] GenerateNoiseMap(int seed, int mapWidth, int mapHeight, float scale, int octaves, float persistance, float lacunarity, float bias = 0f)
+    public static float[,] GenerateNoiseMap(int seed, float scale, int octaves, float persistance, float lacunarity, float bias = 0f)
     {
+        int mapWidth = MapData.Instance.GetMapWidth();
+        int mapHeight = MapData.Instance.GetMapHeight();
+
         float[,] noiseMap = new float[mapWidth, mapHeight];
 
         // Initiating System.Random module with given seed

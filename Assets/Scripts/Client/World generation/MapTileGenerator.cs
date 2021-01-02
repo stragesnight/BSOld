@@ -1,7 +1,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-/* Class that chooses which tiles to draw depending on their parameters and noise maps */
+/// <summary>
+/// MapTileGenerator is responsible for choosing which tiles to draw depending on map properties 
+/// </summary>
 public class MapTileGenerator : MonoBehaviour
 {
     [SerializeField] private MapZone defaultZone;

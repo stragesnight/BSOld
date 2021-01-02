@@ -66,6 +66,7 @@
     <Compile Include="Assets\Scripts\Client\Scriptable objects\Actions\ConstructionActions.cs" />
     <Compile Include="Assets\Scripts\Client\Handlers\PlacingAccessibilityHandler.cs" />
     <Compile Include="Assets\Scripts\Client\Handlers\GeneralHandler.cs" />
+    <Compile Include="Assets\Scripts\Client\Scriptable objects\Buildings\ConstructionSO.cs" />
     <Compile Include="Assets\Scripts\Client\World generation\MapGenerator.cs" />
     <Compile Include="Assets\Scripts\Client\Scriptable objects\Tiles\RuleTile\RuleTile.cs" />
     <Compile Include="Assets\Scripts\Client\Scriptable objects\Data\MapData.cs" />
@@ -76,10 +77,11 @@
     <Compile Include="Assets\Scripts\Client\Scriptable objects\Actions\ResourceActions.cs" />
     <Compile Include="Assets\Scripts\Client\Handlers\TilemapHandler.cs" />
     <Compile Include="Assets\Scripts\Client\BuildingMonoBehaviours\GatheringBuildingBehaviour.cs" />
+    <Compile Include="Assets\Scripts\Client\Scriptable objects\MapZones\MapZone.cs" />
     <Compile Include="Assets\Scripts\Client\Scriptable objects\Tiles\AnimatedTile\AnimatedTile.cs" />
     <Compile Include="Assets\Scripts\Client\World generation\Helper classes\MapZones.cs" />
-    <Compile Include="Assets\Scripts\Client\Scriptable objects\Buildings\ConstructionSO.cs" />
-    <Compile Include="Assets\Scripts\Client\Scriptable objects\MapZones\MapZone.cs" />
+    <Compile Include="Assets\Scripts\Client\BuildingMonoBehaviours\BuildingBehavoiur.cs" />
+    <Compile Include="Assets\Scripts\Client\World generation\ResourceMapGenerator.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

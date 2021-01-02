@@ -1,12 +1,13 @@
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Tilemaps;
 
-/* General map generation class that ties generation parts together */
+/// <summary>
+/// MapGenerator class ties generation system together 
+/// </summary>
 public class MapGenerator : MonoBehaviour
 {
     [Header("Dependencies")]
     private MapTileGenerator mapTileGenerator;
+    private ResourceMapGenerator resourceMapGenerator;
 
     [Header("Map generation parameters")]
     [SerializeField] private int mapWidth;    //in tiles
@@ -20,7 +21,8 @@ public class MapGenerator : MonoBehaviour
     [SerializeField] private NoiseMap temperatureMap;
     [SerializeField] private NoiseMap fertilityMap;
 
-    private Dictionary<Vector3Int, MapZone> natureMap;
+    // Resources
+    [SerializeField] private ResourceNoiseMap[] resourceNoiseMaps;
 
 
     private void Start()
@@ -29,29 +31,38 @@ public class MapGenerator : MonoBehaviour
     }
 
     // Get required components
-    private void Initialize()
+    private void GetRequiredComponents()
     {
         mapTileGenerator = GetComponent<MapTileGenerator>();
+        resourceMapGenerator = GetComponent<ResourceMapGenerator>();
     }
 
 
     // Main generation function
     public void GenerateMap()
     {
-        Initialize();
+        GetRequiredComponents();
 
         // Update mapData variables
         MapData.Instance.SetMapWidth(mapWidth);
         MapData.Instance.SetMapHeight(mapHeight);
 
-        // Initializing dictionary
-        natureMap = new Dictionary<Vector3Int, MapZone>();
+        GenerateNatureMap();
 
+        // Initialize tile generator
+        mapTileGenerator.Initialize();
+
+        // Generate map of resources
+        GenerateResourceMap();
+    }
+
+
+    private void GenerateNatureMap()
+    {
         // Height map generation
         heightMap.map = Noise.GenerateNoiseMap
             (
             heightMap.seed,
-            mapWidth, mapHeight,
             heightMap.scale,
             heightMap.octaves,
             heightMap.persistance,
@@ -62,7 +73,6 @@ public class MapGenerator : MonoBehaviour
         temperatureMap.map = Noise.GenerateNoiseMap
             (
             temperatureMap.seed,
-            mapWidth, mapHeight,
             temperatureMap.scale,
             temperatureMap.octaves,
             temperatureMap.persistance,
@@ -73,7 +83,6 @@ public class MapGenerator : MonoBehaviour
         fertilityMap.map = Noise.GenerateNoiseMap
             (
             fertilityMap.seed,
-            mapWidth, mapHeight,
             fertilityMap.scale,
             fertilityMap.octaves,
             fertilityMap.persistance,
@@ -84,15 +93,20 @@ public class MapGenerator : MonoBehaviour
         MapData.Instance.SetHeightMap(heightMap.map);
         MapData.Instance.SetTemperatureMap(temperatureMap.map);
         MapData.Instance.SetFertilityMap(fertilityMap.map);
+    }
 
-        // Decide which tiles to use
-        natureMap = mapTileGenerator.Initialize();
+
+    private void GenerateResourceMap()
+    {
+        resourceMapGenerator.Initialize(resourceNoiseMaps);
     }
 }
 
 
-/* NoiseMap struct holds information about parameters used in noise generation
- And float[,] map itself */
+/// <summary>
+/// NoiseMap struct holds information about parameters used in noise generation
+///And float[,] map itself
+/// </summary>
 [System.Serializable]
 public struct NoiseMap
 {

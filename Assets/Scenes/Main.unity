@@ -194,7 +194,7 @@ TilemapRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 3
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
   m_MaxChunkCount: 16
@@ -312,7 +312,7 @@ TilemapRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
   m_MaxChunkCount: 16
@@ -591,6 +591,7 @@ GameObject:
   - component: {fileID: 543532140}
   - component: {fileID: 543532139}
   - component: {fileID: 543532141}
+  - component: {fileID: 543532142}
   m_Layer: 0
   m_Name: MapManager
   m_TagString: Untagged
@@ -631,6 +632,19 @@ MonoBehaviour:
     persistance: 0.564
     lacunarity: 4
     seed: 81
+  resourceNoiseMaps:
+  - resource: {fileID: 11400000, guid: a581de5b440917f41a676fc98db89b9a, type: 2}
+    mapZones:
+    - {fileID: 11400000, guid: d8cb60724c2705d4283b8179fc139768, type: 2}
+    - {fileID: 11400000, guid: e0ad4d1263824f94c9c3c7b17b257e65, type: 2}
+    - {fileID: 11400000, guid: 3b1466f86c84abe4fbfcb068adad51d9, type: 2}
+    minHeight: 0.827
+    noiseMap:
+      scale: 84
+      octaves: 5
+      persistance: 0.297
+      lacunarity: 4
+      seed: 213
 --- !u!4 &543532136
 Transform:
   m_ObjectHideFlags: 0
@@ -721,6 +735,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mapData: {fileID: 11400000, guid: 3d266f9b4ca436b45a8e70586b4125c6, type: 2}
   tilemapActions: {fileID: 11400000, guid: 856f862cfa4a553458548710dfc2dbaa, type: 2}
+--- !u!114 &543532142
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 543532134}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e7dbf25eea33cc49bc14e9ccc740534, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nullResource: {fileID: 11400000, guid: 3bad4a39a92cdd741bdc8c233c6278e1, type: 2}
 --- !u!1 &1034538978
 GameObject:
   m_ObjectHideFlags: 0
@@ -887,7 +914,7 @@ TilemapRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
   m_MaxChunkCount: 16
@@ -941,8 +968,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cam: {fileID: 519420031}
   building: {fileID: 11400000, guid: e9c6952a6f28c1d4f96f3aa34feb6f8c, type: 2}
-  mapZone: {fileID: 11400000, guid: 84e3d9c6e4f7f6447a9e3468a08812d3, type: 2}
-  cameraSensitivity: 0.05
+  resource: {fileID: 11400000, guid: a581de5b440917f41a676fc98db89b9a, type: 2}
+  cameraSensitivity: 0.04
 --- !u!4 &1178557597
 Transform:
   m_ObjectHideFlags: 0

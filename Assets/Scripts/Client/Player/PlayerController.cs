@@ -8,7 +8,7 @@ public class PlayerController : MonoBehaviour
     [Header("Dependencies")]
     [SerializeField] private Camera cam;
     [SerializeField] private ConstructionSO building;
-    [SerializeField] private MapZone mapZone;
+    [SerializeField] private Resource resource;
 
     [Header("Player parameters")]
     [SerializeField] [Range(0, 1)] private float cameraSensitivity;
@@ -35,7 +35,7 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Alpha2))
         {
-            MapData.Instance.SetNatureAtPoint(cellPosition, mapZone);
+            MapData.Instance.SetResourceAtPoint(cellPosition, resource);
         }
     }
 

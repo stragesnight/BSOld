@@ -1,7 +1,6 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Tilemaps;
 
 /// <summary>
 /// ResourceActions class is responsible for any Resource manipulations on the map

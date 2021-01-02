@@ -36,7 +36,10 @@ public class MapData : ScriptableObject
     // Set
     public void SetConstructionAtPoint(Vector3Int position, ConstructionSO construction) 
     { 
-        constructionMap[position] = construction; 
+        if (constructionMap.ContainsKey(position))
+            constructionMap[position] = construction;
+        else
+            constructionMap.Add(position, construction);
         constructionActions.PlaceBuilding(position, construction); 
     }
     public void SetConstructionMap(Dictionary<Vector3Int, ConstructionSO> map) 
@@ -45,7 +48,10 @@ public class MapData : ScriptableObject
         constructionActions.PlaceBuildingMap(map);
     }
     // Get
-    public ConstructionSO GetConstructionAtPoint(Vector3Int position) => constructionMap[position];
+    public bool GetConstructionAtPoint(Vector3Int position, out ConstructionSO construction)
+    {
+        return constructionMap.TryGetValue(position, out construction);
+    }
     public Dictionary<Vector3Int, ConstructionSO> GetConstructionMap() => constructionMap;
 
     // =========================================== RESOURCES ===========================================
@@ -55,7 +61,10 @@ public class MapData : ScriptableObject
     // Set
     public void SetResourceAtPoint(Vector3Int position, Resource resource) 
     {
-        resourceMap[position] = resource;
+        if (resourceMap.ContainsKey(position))
+            resourceMap[position] = resource;
+        else
+            resourceMap.Add(position, resource);
         resourceActions.SetResourceAtPoint(position, resource);
     }
     public void SetResourceMap(Dictionary<Vector3Int, Resource> map) 
@@ -64,7 +73,10 @@ public class MapData : ScriptableObject
         resourceActions.SetResourceMap(map);
     }
     // Get
-    public Resource GetResourceAtPoint(Vector3Int position) => resourceMap[position];
+    public bool GetResourceAtPoint(Vector3Int position, out Resource resource)
+    {
+        return resourceMap.TryGetValue(position, out resource);
+    }
     public Dictionary<Vector3Int, Resource> GetResourceMap() => resourceMap;
 
     // resourceAmounts
@@ -72,7 +84,10 @@ public class MapData : ScriptableObject
     // Set
     public void SetResourceAmountAtPoint(Vector3Int position, int amount) 
     {
-        resourceAmounts[position] = amount;
+        if (resourceAmounts.ContainsKey(position))
+            resourceAmounts[position] = amount;
+        else
+            resourceAmounts.Add(position, amount);
         resourceActions.SetResourceAmountAtPoint(position, amount);
     }
     public void SetResourceAmounts(Dictionary<Vector3Int, int> amounts) 
@@ -81,7 +96,10 @@ public class MapData : ScriptableObject
         resourceActions.SetResourceAmounts(amounts);
     }
     // Get
-    public int GetResourceAmountAtPoint(Vector3Int position) => resourceAmounts[position];
+    public bool GetResourceAmountAtPoint(Vector3Int position, out int amount)
+    {
+        return resourceAmounts.TryGetValue(position, out amount);
+    }
     public Dictionary<Vector3Int, int> GetResourceAmounts() => resourceAmounts;
 
     // =========================================== NATURE ===========================================
@@ -91,7 +109,10 @@ public class MapData : ScriptableObject
     // Set
     public void SetNatureAtPoint(Vector3Int position, MapZone tile) 
     { 
-        natureMap[position] = tile;
+        if (natureMap.ContainsKey(position))
+            natureMap[position] = tile;
+        else
+            natureMap.Add(position, tile);
         tilemapActions.SetNatureTilemapEntry(position, tile);
     }
     public void SetNatureMap(Dictionary<Vector3Int, MapZone> map) 
@@ -100,7 +121,10 @@ public class MapData : ScriptableObject
         tilemapActions.SetNatureTilemap(map);
     }
     // Get
-    public MapZone GetNatureAtPoint(Vector3Int position) => natureMap[position];
+    public bool GetNatureAtPoint(Vector3Int position, out MapZone mapZone)
+    {
+        return natureMap.TryGetValue(position, out mapZone);
+    }
     public Dictionary<Vector3Int, MapZone> GetNatureMap() => natureMap;
 
     // placingAccessibilityMap
@@ -108,7 +132,10 @@ public class MapData : ScriptableObject
     // Set
     public void SetPlacingAccessibilityMapAtPoint(Vector3Int position, bool value) 
     {
-        placingAccessibilityMap[position] = value;
+        if (placingAccessibilityMap.ContainsKey(position))
+            placingAccessibilityMap[position] = value;
+        else
+            placingAccessibilityMap.Add(position, value);
         tilemapActions.SetPlacingAccessibilityTilemapEntry(position, value);
     }
     public void SetPlacingAccessibilityMap(Dictionary<Vector3Int, bool> map) 
@@ -117,7 +144,10 @@ public class MapData : ScriptableObject
         tilemapActions.SetPlacingAccessibilityTilemap(map);
     }
     // Get
-    public bool GetPlacingAccessibilityMapAtPoint(Vector3Int position) => placingAccessibilityMap[position];
+    public bool GetPlacingAccessibilityMapAtPoint(Vector3Int position, out bool accessible)
+    {
+        return placingAccessibilityMap.TryGetValue(position, out accessible);
+    }
     public Dictionary<Vector3Int, bool> GetPlacingAccessibilityMap() => placingAccessibilityMap;
 
 
