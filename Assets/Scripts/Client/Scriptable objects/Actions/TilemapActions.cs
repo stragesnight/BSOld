@@ -10,43 +10,43 @@ public class TilemapActions : ScriptableObject
     // Actions
 
     // Walkable Nature
-    public Action<Vector3Int, MapZone> OnSetWalkableNatureTilemapEntry;
-    public Action<Dictionary<Vector3Int, MapZone>> OnSetWalkableNatureTilemap;
+    public Action<Vector3Int, MapZone> setWalkableNatureTilemapEntryAction;
+    public Action<Dictionary<Vector3Int, MapZone>> setWalkableNatureTilemapAction;
     // Unwalkable Nature
-    public Action<Vector3Int, MapZone> OnSetUnWalkableNatureTilemapEntry;
-    public Action<Dictionary<Vector3Int, MapZone>> OnSetUnWalkableNatureTilemap;
+    public Action<Vector3Int, MapZone> setUnWalkableNatureTilemapEntryAction;
+    public Action<Dictionary<Vector3Int, MapZone>> setUnWalkableNatureTilemapAction;
     // Placing accessibility
-    public Action<Vector3Int, bool> OnSetPlacingAccessibilityTilemapEntry;
-    public Action<Dictionary<Vector3Int, bool>> OnSetPlacingAccessibilityTilemap;
+    public Action<Vector3Int, bool> setPlacingAccessibilityTilemapEntryAction;
+    public Action<Dictionary<Vector3Int, bool>> setPlacingAccessibilityTilemapAction;
 
 
     // Walkable Nature Tilemap
-    public void SetWalkableNatureTilemapEntry(Vector3Int position, MapZone mapZone) 
+    public void OnSetWalkableNatureTilemapEntry(Vector3Int position, MapZone mapZone) 
     { 
-        OnSetWalkableNatureTilemapEntry?.Invoke(position, mapZone);
+        setWalkableNatureTilemapEntryAction?.Invoke(position, mapZone);
     }
-    public void SetWalkableNatureTilemap(Dictionary<Vector3Int, MapZone> mapZones)
+    public void OnSetWalkableNatureTilemap(Dictionary<Vector3Int, MapZone> mapZones)
     {
-        OnSetWalkableNatureTilemap?.Invoke(mapZones);
+        setWalkableNatureTilemapAction?.Invoke(mapZones);
     }
 
     // Unwalkable Nature Tilemap
-    public void SetUnWalkableNatureTilemapEntry(Vector3Int position, MapZone mapZone)
+    public void OnSetUnWalkableNatureTilemapEntry(Vector3Int position, MapZone mapZone)
     {
-        OnSetUnWalkableNatureTilemapEntry?.Invoke(position, mapZone);
+        setUnWalkableNatureTilemapEntryAction?.Invoke(position, mapZone);
     }
-    public void SetUnWalkableNatureTilemap(Dictionary<Vector3Int, MapZone> mapZones)
+    public void OnSetUnWalkableNatureTilemap(Dictionary<Vector3Int, MapZone> mapZones)
     {
-        OnSetUnWalkableNatureTilemap?.Invoke(mapZones);
+        setUnWalkableNatureTilemapAction?.Invoke(mapZones);
     }
 
     // Placing Accessibility Tilemap
-    public void SetPlacingAccessibilityTilemapEntry(Vector3Int position, bool value) 
+    public void OnSetPlacingAccessibilityTilemapEntry(Vector3Int position, bool value) 
     {
-        OnSetPlacingAccessibilityTilemapEntry?.Invoke(position, value);
+        setPlacingAccessibilityTilemapEntryAction?.Invoke(position, value);
     }
-    public void SetPlacingAccessibilityTilemap(Dictionary<Vector3Int, bool> values)
+    public void OnSetPlacingAccessibilityTilemap(Dictionary<Vector3Int, bool> values)
     {
-        OnSetPlacingAccessibilityTilemap?.Invoke(values);
+        setPlacingAccessibilityTilemapAction?.Invoke(values);
     }
 }

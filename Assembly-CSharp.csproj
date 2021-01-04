@@ -58,15 +58,18 @@
     <Compile Include="Assets\Scripts\Client\Scriptable objects\Buildings\GatheringBuildingSO.cs" />
     <Compile Include="Assets\Scripts\Client\Scriptable objects\Tiles\RandomTile\RandomTile.cs" />
     <Compile Include="Assets\Dependencies\RuleTiles\GridInformation\GridInformation.cs" />
+    <Compile Include="Assets\Scripts\Client\Entity composition\EntityMovement.cs" />
     <Compile Include="Assets\Scripts\Client\World generation\ResourceMapGenerator.cs" />
     <Compile Include="Assets\Scripts\Client\Scriptable objects\Actions\TilemapActions.cs" />
     <Compile Include="Assets\Scripts\Client\Scriptable objects\MapResources\Resource.cs" />
+    <Compile Include="Assets\Scripts\Client\Scriptable objects\Entity\InventorySO.cs" />
     <Compile Include="Assets\Scripts\Client\Handlers\NoisemapHandler.cs" />
     <Compile Include="Assets\Scripts\Client\World generation\MapTileGenerator.cs" />
     <Compile Include="Assets\Scripts\Client\Scriptable objects\Tiles\RuleOverrideTile\RuleOverrideTile.cs" />
     <Compile Include="Assets\Scripts\Client\Scriptable objects\Actions\ConstructionActions.cs" />
     <Compile Include="Assets\Scripts\Client\Handlers\PlacingAccessibilityHandler.cs" />
     <Compile Include="Assets\Scripts\Client\Handlers\GeneralHandler.cs" />
+    <Compile Include="Assets\Scripts\Client\Scriptable objects\Data\EntityData.cs" />
     <Compile Include="Assets\Scripts\Client\Scriptable objects\Buildings\ConstructionSO.cs" />
     <Compile Include="Assets\Scripts\Client\World generation\MapGenerator.cs" />
     <Compile Include="Assets\Scripts\Client\Scriptable objects\Tiles\RuleTile\RuleTile.cs" />
@@ -82,7 +85,8 @@
     <Compile Include="Assets\Scripts\Client\BuildingMonoBehaviours\BuildingBehavoiur.cs" />
     <Compile Include="Assets\Scripts\Client\Scriptable objects\Tiles\AnimatedTile\AnimatedTile.cs" />
     <Compile Include="Assets\Scripts\Client\World generation\Helper classes\MapZones.cs" />
-    <Compile Include="Assets\Scripts\Client\Entity composition\Entity.cs" />
+    <Compile Include="Assets\Scripts\Client\Entity composition\EntityBehavoiur.cs" />
+    <Compile Include="Assets\Scripts\Client\Scriptable objects\Entity\InputReader.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

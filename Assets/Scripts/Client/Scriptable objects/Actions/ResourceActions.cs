@@ -8,35 +8,35 @@ using UnityEngine;
 public class ResourceActions : ScriptableObject
 {
     // Actions
-    public Action<Vector3Int, Resource> OnSetResourceAtPoint;
-    public Action<Dictionary<Vector3Int, Resource>> OnSetResourceMap;
-    public Action<Vector3Int, int> OnSetResourceAmountAtPoint;
-    public Action<Dictionary<Vector3Int, int>> OnSetResourceAmounts;
+    public Action<Vector3Int, Resource> setResouceAtPointAction;
+    public Action<Dictionary<Vector3Int, Resource>> setResourceMapAction;
+    public Action<Vector3Int, int> setResourceAmountAtPointAction;
+    public Action<Dictionary<Vector3Int, int>> setResourceAmountsAction;
 
 
-    public void SetResourceAtPoint(Vector3Int position, Resource resource)
+    public void OnSetResourceAtPoint(Vector3Int position, Resource resource)
     {
-        OnSetResourceAtPoint?.Invoke(position, resource);
-        SetResourceAmountAtPoint(position, resource.startingAmount);
+        setResouceAtPointAction?.Invoke(position, resource);
+        OnSetResourceAmountAtPoint(position, resource.startingAmount);
     }
 
 
-    public void SetResourceMap(Dictionary<Vector3Int, Resource> map)
+    public void OnSetResourceMap(Dictionary<Vector3Int, Resource> map)
     {
-        OnSetResourceMap?.Invoke(map);
-        SetResourceAmounts(GetStartResourceAmounts(map));
+        setResourceMapAction?.Invoke(map);
+        OnSetResourceAmounts(GetStartResourceAmounts(map));
     }
 
 
-    public void SetResourceAmountAtPoint(Vector3Int position, int amount)
+    public void OnSetResourceAmountAtPoint(Vector3Int position, int amount)
     {
-        OnSetResourceAmountAtPoint?.Invoke(position, amount);
+        setResourceAmountAtPointAction?.Invoke(position, amount);
     }
 
 
-    public void SetResourceAmounts(Dictionary<Vector3Int, int> amounts)
+    public void OnSetResourceAmounts(Dictionary<Vector3Int, int> amounts)
     {
-        OnSetResourceAmounts?.Invoke(amounts);
+        setResourceAmountsAction?.Invoke(amounts);
     }
 
 

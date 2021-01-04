@@ -15,26 +15,26 @@ public class NoisemapHandler : MonoBehaviour
     // Subscribe to Actions
     private void OnEnable()
     {
-        tilemapActions.OnSetWalkableNatureTilemapEntry += SetHeightNoisemapEntry;
-        tilemapActions.OnSetWalkableNatureTilemapEntry += SetTemperatureNoisemapEntry;
-        tilemapActions.OnSetWalkableNatureTilemapEntry += SetFertilityNoisemapEntry;
+        tilemapActions.setWalkableNatureTilemapEntryAction += SetHeightNoisemapEntry;
+        tilemapActions.setWalkableNatureTilemapEntryAction += SetTemperatureNoisemapEntry;
+        tilemapActions.setWalkableNatureTilemapEntryAction += SetFertilityNoisemapEntry;
 
-        tilemapActions.OnSetWalkableNatureTilemap += SetHeightNoisemap;
-        tilemapActions.OnSetWalkableNatureTilemap += SetTemperatureNoisemap;
-        tilemapActions.OnSetWalkableNatureTilemap += SetFertilityNoisemap;
+        tilemapActions.setWalkableNatureTilemapAction += SetHeightNoisemap;
+        tilemapActions.setWalkableNatureTilemapAction += SetTemperatureNoisemap;
+        tilemapActions.setWalkableNatureTilemapAction += SetFertilityNoisemap;
 
     }
 
     // Unsublscribe from Actions
     private void OnDisable()
     {
-        tilemapActions.OnSetWalkableNatureTilemapEntry -= SetHeightNoisemapEntry;
-        tilemapActions.OnSetWalkableNatureTilemapEntry -= SetTemperatureNoisemapEntry;
-        tilemapActions.OnSetWalkableNatureTilemapEntry -= SetFertilityNoisemapEntry;
+        tilemapActions.setWalkableNatureTilemapEntryAction -= SetHeightNoisemapEntry;
+        tilemapActions.setWalkableNatureTilemapEntryAction -= SetTemperatureNoisemapEntry;
+        tilemapActions.setWalkableNatureTilemapEntryAction -= SetFertilityNoisemapEntry;
 
-        tilemapActions.OnSetWalkableNatureTilemap -= SetHeightNoisemap;
-        tilemapActions.OnSetWalkableNatureTilemap -= SetTemperatureNoisemap;
-        tilemapActions.OnSetWalkableNatureTilemap -= SetFertilityNoisemap;
+        tilemapActions.setWalkableNatureTilemapAction -= SetHeightNoisemap;
+        tilemapActions.setWalkableNatureTilemapAction -= SetTemperatureNoisemap;
+        tilemapActions.setWalkableNatureTilemapAction -= SetFertilityNoisemap;
 
     }
 

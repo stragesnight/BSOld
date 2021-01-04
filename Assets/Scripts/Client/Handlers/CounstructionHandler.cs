@@ -18,15 +18,15 @@ public class CounstructionHandler : MonoBehaviour
     // Subscrible to Actions
     private void OnEnable()
     {
-        constructionActions.OnPlaceConstruction += InstantiateConstructionObject;
-        constructionActions.OnPlaceBuildingMap += InstantiateConstructionMap;
+        constructionActions.placeConstructionAction += InstantiateConstructionObject;
+        constructionActions.placeConstructionMapAction += InstantiateConstructionMap;
     }
 
     // Unsubscribe from Actions
     private void OnDisable()
     {
-        constructionActions.OnPlaceConstruction -= InstantiateConstructionObject;
-        constructionActions.OnPlaceBuildingMap -= InstantiateConstructionMap;
+        constructionActions.placeConstructionAction -= InstantiateConstructionObject;
+        constructionActions.placeConstructionMapAction -= InstantiateConstructionMap;
     }
 
 

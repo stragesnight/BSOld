@@ -8,18 +8,18 @@ using UnityEngine;
 public class ConstructionActions : ScriptableObject
 {
     // Actions
-    public Action<Vector3Int, ConstructionSO> OnPlaceConstruction;
-    public Action<Dictionary<Vector3Int, ConstructionSO>> OnPlaceBuildingMap;
+    public Action<Vector3Int, ConstructionSO> placeConstructionAction;
+    public Action<Dictionary<Vector3Int, ConstructionSO>> placeConstructionMapAction;
 
 
-    public void PlaceBuilding(Vector3Int position, ConstructionSO construction)
+    public void OnPlaceConstruction(Vector3Int position, ConstructionSO construction)
     {
-        OnPlaceConstruction?.Invoke(position, construction);
+        placeConstructionAction?.Invoke(position, construction);
     }
 
 
-    public void PlaceBuildingMap(Dictionary<Vector3Int, ConstructionSO> construction)
+    public void OnPlaceConstructionMap(Dictionary<Vector3Int, ConstructionSO> construction)
     {
-        OnPlaceBuildingMap?.Invoke(construction);
+        placeConstructionMapAction?.Invoke(construction);
     }
 }

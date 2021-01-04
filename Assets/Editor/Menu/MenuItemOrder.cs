@@ -20,6 +20,8 @@ namespace UnityEditor.Tilemaps
     internal enum EActionsAndDataMenuItemOrder
     {
         MapData = 150,
+        PlayerData,
+        Inventory,
         BuildingActions = 160,
         ResourceActions,
         TilemapActions
@@ -31,8 +33,21 @@ namespace UnityEditor.Tilemaps
         MapZone
     }
 
+    internal enum RelayersMenuItemOrder
+    {
+        InputReader = 180
+    }
+
     static internal partial class AssetCreation
     {
+        // ============================================ ACTION CHANNELS ============================================
+
+        [MenuItem("Assets/Create/Relayers/Input Reader", priority = (int)RelayersMenuItemOrder.InputReader)]
+        static void CreateEntityMovementChannelSO()
+        {
+            ProjectWindowUtil.CreateAsset(ScriptableObject.CreateInstance<InputReader>(), "New Input Reader.asset");
+        }
+
         // ================================================= TILES =================================================
         [MenuItem("Assets/Create/2D/Tiles/Rule Tile", priority = (int)ETilesMenuItemOrder.RuleTile)]
         static void CreateRuleTile()
@@ -102,7 +117,17 @@ namespace UnityEditor.Tilemaps
             ProjectWindowUtil.CreateAsset(ScriptableObject.CreateInstance<MapData>(), "New Map Data.asset");
         }
 
+        [MenuItem("Assets/Create/Actions and Data/Data/Player Data", priority = (int)EActionsAndDataMenuItemOrder.PlayerData)]
+        static void CreatePlayerData()
+        {
+            ProjectWindowUtil.CreateAsset(ScriptableObject.CreateInstance<EntityData>(), "New Player Data.asset");
+        }
 
+        [MenuItem("Assets/Create/Actions and Data/Data/Inventory", priority = (int)EActionsAndDataMenuItemOrder.Inventory)]
+        static void CreateInventory()
+        {
+            ProjectWindowUtil.CreateAsset(ScriptableObject.CreateInstance<InventorySO>(), "New Inventory.asset");
+        }
 
         /*
         [MenuItem("Assets/Create/2D/Tiles/Advanced Rule Override Tile", priority = (int)ETilesMenuItemOrder.AdvanceRuleOverrideTile)]

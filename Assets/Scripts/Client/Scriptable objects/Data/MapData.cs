@@ -1,9 +1,8 @@
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Tilemaps;
 
 /// <summary>
-/// Scriptable Object class responsible for trasmitting map data between project components. Use MapData.Instance to access it from everywhere
+/// MapData Scriptable Object class responsible for trasmitting map data between project components. Use MapData.Instance to access it from everywhere
 /// </summary>
 public class MapData : ScriptableObject
 {
@@ -40,12 +39,12 @@ public class MapData : ScriptableObject
             constructionMap[position] = construction;
         else
             constructionMap.Add(position, construction);
-        constructionActions.PlaceBuilding(position, construction); 
+        constructionActions.OnPlaceConstruction(position, construction); 
     }
     public void SetConstructionMap(Dictionary<Vector3Int, ConstructionSO> map) 
     { 
         constructionMap = map;
-        constructionActions.PlaceBuildingMap(map);
+        constructionActions.OnPlaceConstructionMap(map);
     }
     // Get
     public bool GetConstructionAtPoint(Vector3Int position, out ConstructionSO construction)
@@ -65,12 +64,12 @@ public class MapData : ScriptableObject
             resourceMap[position] = resource;
         else
             resourceMap.Add(position, resource);
-        resourceActions.SetResourceAtPoint(position, resource);
+        resourceActions.OnSetResourceAtPoint(position, resource);
     }
     public void SetResourceMap(Dictionary<Vector3Int, Resource> map) 
     {
         resourceMap = map;
-        resourceActions.SetResourceMap(map);
+        resourceActions.OnSetResourceMap(map);
     }
     // Get
     public bool GetResourceAtPoint(Vector3Int position, out Resource resource)
@@ -88,12 +87,12 @@ public class MapData : ScriptableObject
             resourceAmounts[position] = amount;
         else
             resourceAmounts.Add(position, amount);
-        resourceActions.SetResourceAmountAtPoint(position, amount);
+        resourceActions.OnSetResourceAmountAtPoint(position, amount);
     }
     public void SetResourceAmounts(Dictionary<Vector3Int, int> amounts) 
     {
         resourceAmounts = amounts;
-        resourceActions.SetResourceAmounts(amounts);
+        resourceActions.OnSetResourceAmounts(amounts);
     }
     // Get
     public bool GetResourceAmountAtPoint(Vector3Int position, out int amount)
@@ -112,12 +111,12 @@ public class MapData : ScriptableObject
             walkableNatureMap[position] = tile;
         else
             walkableNatureMap.Add(position, tile);
-        tilemapActions.SetWalkableNatureTilemapEntry(position, tile);
+        tilemapActions.OnSetWalkableNatureTilemapEntry(position, tile);
     }
     public void SetWalkableNatureMap(Dictionary<Vector3Int, MapZone> map) 
     {
         walkableNatureMap = map;
-        tilemapActions.SetWalkableNatureTilemap(map);
+        tilemapActions.OnSetWalkableNatureTilemap(map);
     }
     // Get
     public bool GetWalkableNatureAtPoint(Vector3Int position, out MapZone mapZone)
@@ -136,12 +135,12 @@ public class MapData : ScriptableObject
             unWalkableNatureMap[position] = tile;
         else
             unWalkableNatureMap.Add(position, tile);
-        tilemapActions.SetUnWalkableNatureTilemapEntry(position, tile);
+        tilemapActions.OnSetUnWalkableNatureTilemapEntry(position, tile);
     }
     public void SetUnWalkableNatureMap(Dictionary<Vector3Int, MapZone> map)
     {
         unWalkableNatureMap = map;
-        tilemapActions.SetUnWalkableNatureTilemap(map);
+        tilemapActions.OnSetUnWalkableNatureTilemap(map);
     }
     // Get
     public bool GetUnWalkableNatureAtPoint(Vector3Int position, out MapZone mapZone)
@@ -160,12 +159,12 @@ public class MapData : ScriptableObject
             placingAccessibilityMap[position] = value;
         else
             placingAccessibilityMap.Add(position, value);
-        tilemapActions.SetPlacingAccessibilityTilemapEntry(position, value);
+        tilemapActions.OnSetPlacingAccessibilityTilemapEntry(position, value);
     }
     public void SetPlacingAccessibilityMap(Dictionary<Vector3Int, bool> map) 
     {
         placingAccessibilityMap = map;
-        tilemapActions.SetPlacingAccessibilityTilemap(map);
+        tilemapActions.OnSetPlacingAccessibilityTilemap(map);
     }
     // Get
     public bool GetPlacingAccessibilityMapAtPoint(Vector3Int position, out bool accessible)
