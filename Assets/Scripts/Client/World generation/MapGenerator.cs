@@ -47,7 +47,7 @@ public class MapGenerator : MonoBehaviour
         MapData.Instance.SetMapWidth(mapWidth);
         MapData.Instance.SetMapHeight(mapHeight);
 
-        GenerateNatureMap();
+        GenerateNoiseMaps();
 
         // Initialize tile generator
         mapTileGenerator.Initialize();
@@ -57,7 +57,7 @@ public class MapGenerator : MonoBehaviour
     }
 
 
-    private void GenerateNatureMap()
+    private void GenerateNoiseMaps()
     {
         // Height map generation
         heightMap.map = Noise.GenerateNoiseMap

@@ -26,9 +26,12 @@ public class TilemapHandler : MonoBehaviour
         // Resource Rilemap
         resourceActions.OnSetResourceAtPoint += SetResourceTilemapEntry;
         resourceActions.OnSetResourceMap += SetResourceTilemap;
-        // Nature Tilemap
-        tilemapActions.OnSetNatureTilemapEntry += SetNatureTilemapEntry;
-        tilemapActions.OnSetNatureTilemap += SetNatureTilemap;
+        // Walkable Nature Tilemap
+        tilemapActions.OnSetWalkableNatureTilemapEntry += SetWalkableNatureTilemapEntry;
+        tilemapActions.OnSetWalkableNatureTilemap += SetWalkableNatureTilemap;
+        // Unwalkable Nature Tilemap
+        tilemapActions.OnSetUnWalkableNatureTilemapEntry += SetUnWalkableNatureTilemapEntry;
+        tilemapActions.OnSetUnWalkableNatureTilemap += SetUnWalkableNatureTilemap;
         // Placing Accessibility Tilemap
         tilemapActions.OnSetPlacingAccessibilityTilemapEntry += SetPlacingAccessibilityTilemapEntry;
         tilemapActions.OnSetPlacingAccessibilityTilemap += SetPlacingAccessibilityTilemap;
@@ -43,9 +46,12 @@ public class TilemapHandler : MonoBehaviour
         // Resource Rilemap
         resourceActions.OnSetResourceAtPoint -= SetResourceTilemapEntry;
         resourceActions.OnSetResourceMap -= SetResourceTilemap;
-        // Nature Tilemap
-        tilemapActions.OnSetNatureTilemapEntry -= SetNatureTilemapEntry;
-        tilemapActions.OnSetNatureTilemap -= SetNatureTilemap;
+        // Walkable Nature Tilemap
+        tilemapActions.OnSetWalkableNatureTilemapEntry -= SetWalkableNatureTilemapEntry;
+        tilemapActions.OnSetWalkableNatureTilemap -= SetWalkableNatureTilemap;
+        // Unwalkable Nature Tilemap
+        tilemapActions.OnSetUnWalkableNatureTilemapEntry -= SetUnWalkableNatureTilemapEntry;
+        tilemapActions.OnSetUnWalkableNatureTilemap -= SetUnWalkableNatureTilemap;
         // Placing Accessibility Tilemap
         tilemapActions.OnSetPlacingAccessibilityTilemapEntry -= SetPlacingAccessibilityTilemapEntry;
         tilemapActions.OnSetPlacingAccessibilityTilemap -= SetPlacingAccessibilityTilemap;
@@ -76,16 +82,30 @@ public class TilemapHandler : MonoBehaviour
         resourceTilemap.SetTiles(resources.Keys.ToArray(), resources.Values.Select(x => x.ruleTile).ToArray());
     }
 
-    // Nature Tilemap
-    [SerializeField] private Tilemap natureTilemap;
-    private void SetNatureTilemapEntry(Vector3Int position, MapZone mapZone)
+    // Walkable Nature Tilemap
+    [SerializeField] private Tilemap walkableNatureTilemap;
+    private void SetWalkableNatureTilemapEntry(Vector3Int position, MapZone mapZone)
     {
-        natureTilemap.SetTile(position, mapZone.ruleTile);
+        walkableNatureTilemap.SetTile(position, mapZone.ruleTile);
     }
-    private void SetNatureTilemap(Dictionary<Vector3Int, MapZone> mapZones)
+    private void SetWalkableNatureTilemap(Dictionary<Vector3Int, MapZone> mapZones)
     {
-        natureTilemap.ClearAllTiles();
-        natureTilemap.SetTiles(mapZones.Keys.ToArray(), mapZones.Values.Select(x => x.ruleTile).ToArray());
+        walkableNatureTilemap.ClearAllTiles();
+        walkableNatureTilemap.SetTiles(mapZones.Keys.ToArray(), mapZones.Values.Select(x => x.ruleTile).ToArray());
+    }
+
+    // Unwalkable Nature Tilemap
+    [SerializeField] private Tilemap unWalkableNatureTilemap;
+    private void SetUnWalkableNatureTilemapEntry(Vector3Int position, MapZone mapZone)
+    {
+        unWalkableNatureTilemap.SetTile(position, mapZone.ruleTile);
+        UpdateTilemapCollider();
+    }
+    private void SetUnWalkableNatureTilemap(Dictionary<Vector3Int, MapZone> mapZones)
+    {
+        unWalkableNatureTilemap.ClearAllTiles();
+        unWalkableNatureTilemap.SetTiles(mapZones.Keys.ToArray(), mapZones.Values.Select(x => x.ruleTile).ToArray());
+        UpdateTilemapCollider();
     }
 
     // Placing Accessibility Tilemap
@@ -95,11 +115,10 @@ public class TilemapHandler : MonoBehaviour
         TileBase tile = value ? accessibilityTile : nonAccessibilityTile;
         placingAccessibilityTilemap.SetTile(position, tile);
     }
-    private void SetPlacingAccessibilityTilemap(Dictionary<Vector3Int, bool> values)
+    private void SetPlacingAccessibilityTilemap(Dictionary<Vector3Int, bool> map)
     {
         placingAccessibilityTilemap.ClearAllTiles();
-
-        placingAccessibilityTilemap.SetTiles(values.Keys.ToArray(), GetTilesFromBools(values.Values.ToArray()));
+        placingAccessibilityTilemap.SetTiles(map.Keys.ToArray(), GetTilesFromBools(map.Values.ToArray()));
     }
 
 
@@ -114,5 +133,14 @@ public class TilemapHandler : MonoBehaviour
         }
 
         return tilesFromBools;
+    }
+
+
+    // Update TilemapCollider2D and CompositeCollider to match the actual map
+    private void UpdateTilemapCollider()
+    {
+        TilemapCollider2D tilemapCollider = unWalkableNatureTilemap.GetComponent<TilemapCollider2D>();
+        tilemapCollider.ProcessTilemapChanges();
+        tilemapCollider.composite.GenerateGeometry();
     }
 }

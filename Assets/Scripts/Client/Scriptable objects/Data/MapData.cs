@@ -102,32 +102,56 @@ public class MapData : ScriptableObject
     }
     public Dictionary<Vector3Int, int> GetResourceAmounts() => resourceAmounts;
 
-    // =========================================== NATURE ===========================================
+    // ======================================== WALKABLE NATURE ========================================
 
-    // natureMap
-    [SerializeField] private Dictionary<Vector3Int, MapZone> natureMap = new Dictionary<Vector3Int, MapZone>();
+    [SerializeField] private Dictionary<Vector3Int, MapZone> walkableNatureMap = new Dictionary<Vector3Int, MapZone>();
     // Set
-    public void SetNatureAtPoint(Vector3Int position, MapZone tile) 
+    public void SetWalkableNatureAtPoint(Vector3Int position, MapZone tile) 
     { 
-        if (natureMap.ContainsKey(position))
-            natureMap[position] = tile;
+        if (walkableNatureMap.ContainsKey(position))
+            walkableNatureMap[position] = tile;
         else
-            natureMap.Add(position, tile);
-        tilemapActions.SetNatureTilemapEntry(position, tile);
+            walkableNatureMap.Add(position, tile);
+        tilemapActions.SetWalkableNatureTilemapEntry(position, tile);
     }
-    public void SetNatureMap(Dictionary<Vector3Int, MapZone> map) 
+    public void SetWalkableNatureMap(Dictionary<Vector3Int, MapZone> map) 
     {
-        natureMap = map;
-        tilemapActions.SetNatureTilemap(map);
+        walkableNatureMap = map;
+        tilemapActions.SetWalkableNatureTilemap(map);
     }
     // Get
-    public bool GetNatureAtPoint(Vector3Int position, out MapZone mapZone)
+    public bool GetWalkableNatureAtPoint(Vector3Int position, out MapZone mapZone)
     {
-        return natureMap.TryGetValue(position, out mapZone);
+        return walkableNatureMap.TryGetValue(position, out mapZone);
     }
-    public Dictionary<Vector3Int, MapZone> GetNatureMap() => natureMap;
+    public Dictionary<Vector3Int, MapZone> GetWalkableNatureMap() => walkableNatureMap;
 
-    // placingAccessibilityMap
+    // ======================================= UNWALKABLE NATURE =======================================
+
+    [SerializeField] private Dictionary<Vector3Int, MapZone> unWalkableNatureMap = new Dictionary<Vector3Int, MapZone>();
+    // Set
+    public void SetUnWalkableNatureAtPoint(Vector3Int position, MapZone tile)
+    {
+        if (unWalkableNatureMap.ContainsKey(position))
+            unWalkableNatureMap[position] = tile;
+        else
+            unWalkableNatureMap.Add(position, tile);
+        tilemapActions.SetUnWalkableNatureTilemapEntry(position, tile);
+    }
+    public void SetUnWalkableNatureMap(Dictionary<Vector3Int, MapZone> map)
+    {
+        unWalkableNatureMap = map;
+        tilemapActions.SetUnWalkableNatureTilemap(map);
+    }
+    // Get
+    public bool GetUnWalkableNatureAtPoint(Vector3Int position, out MapZone mapZone)
+    {
+        return unWalkableNatureMap.TryGetValue(position, out mapZone);
+    }
+    public Dictionary<Vector3Int, MapZone> GetUnWalkableNatureMap() => unWalkableNatureMap;
+
+    // ===================================== PLACING ACCESSIBILITY =====================================
+
     [SerializeField] private Dictionary<Vector3Int, bool> placingAccessibilityMap = new Dictionary<Vector3Int, bool>();
     // Set
     public void SetPlacingAccessibilityMapAtPoint(Vector3Int position, bool value) 
@@ -149,7 +173,6 @@ public class MapData : ScriptableObject
         return placingAccessibilityMap.TryGetValue(position, out accessible);
     }
     public Dictionary<Vector3Int, bool> GetPlacingAccessibilityMap() => placingAccessibilityMap;
-
 
     // ========================================== NOISEMAPS ==========================================
 

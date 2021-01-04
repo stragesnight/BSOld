@@ -30,7 +30,7 @@ public class PlacingAccessibilityHandler : MonoBehaviour
     // Get required components and initialize variables
     private void Initialize()
     {
-        natureMap = mapData.GetNatureMap();
+        natureMap = mapData.GetWalkableNatureMap();
         accessibilityMap = new Dictionary<Vector3Int, bool>();
     }
 

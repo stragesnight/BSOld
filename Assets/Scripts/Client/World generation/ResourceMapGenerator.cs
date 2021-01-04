@@ -7,9 +7,6 @@ using UnityEngine;
 /// </summary>
 public class ResourceMapGenerator : MonoBehaviour
 {
-    // Default resource that will fill the empty space
-    [SerializeField] private Resource nullResource;
-
     private Dictionary<Vector3Int, Resource> resourceMap;
     private ResourceNoiseMap[] resourceNoiseMaps;
 
@@ -40,9 +37,10 @@ public class ResourceMapGenerator : MonoBehaviour
             for (int y = 0; y < mapHeight; y++)
             {
                 Vector3Int position = new Vector3Int(x, y, 0);
-                Resource resource = GetValidResource(position);
+                bool isFound = GetValidResource(position, out Resource resource);
 
-                resourceMap.Add(position, resource);
+                if (isFound)
+                    resourceMap.Add(position, resource);
             }
         }
     }
@@ -67,7 +65,7 @@ public class ResourceMapGenerator : MonoBehaviour
 
 
     // Get resource that can appear at given point
-    private Resource GetValidResource(Vector3Int position)
+    private bool GetValidResource(Vector3Int position, out Resource resource)
     {
         foreach (ResourceNoiseMap resourceNoiseMap in resourceNoiseMaps)
         {
@@ -75,16 +73,20 @@ public class ResourceMapGenerator : MonoBehaviour
             float currentHeight = resourceNoiseMap.noiseMap.map[position.x, position.y];
             // Get MapZone at fiven point
             MapZone currentMapZone;
-            MapData.Instance.GetNatureAtPoint(position, out currentMapZone);
+            MapData.Instance.GetWalkableNatureAtPoint(position, out currentMapZone);
 
             // Return current Resource if conditions are satisfied
             if (currentHeight > resourceNoiseMap.minHeight
                 && resourceNoiseMap.mapZones.Contains(currentMapZone))
-                return resourceNoiseMap.resource;
+            {
+                resource = resourceNoiseMap.resource;
+                return true;
+            }
         }
 
-        // Otherwise return nullResource
-        return nullResource;
+        // Otherwise return null
+        resource = null;
+        return false;
     }
 }
 

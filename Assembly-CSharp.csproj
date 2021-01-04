@@ -58,6 +58,7 @@
     <Compile Include="Assets\Scripts\Client\Scriptable objects\Buildings\GatheringBuildingSO.cs" />
     <Compile Include="Assets\Scripts\Client\Scriptable objects\Tiles\RandomTile\RandomTile.cs" />
     <Compile Include="Assets\Dependencies\RuleTiles\GridInformation\GridInformation.cs" />
+    <Compile Include="Assets\Scripts\Client\World generation\ResourceMapGenerator.cs" />
     <Compile Include="Assets\Scripts\Client\Scriptable objects\Actions\TilemapActions.cs" />
     <Compile Include="Assets\Scripts\Client\Scriptable objects\MapResources\Resource.cs" />
     <Compile Include="Assets\Scripts\Client\Handlers\NoisemapHandler.cs" />
@@ -78,10 +79,10 @@
     <Compile Include="Assets\Scripts\Client\Handlers\TilemapHandler.cs" />
     <Compile Include="Assets\Scripts\Client\BuildingMonoBehaviours\GatheringBuildingBehaviour.cs" />
     <Compile Include="Assets\Scripts\Client\Scriptable objects\MapZones\MapZone.cs" />
+    <Compile Include="Assets\Scripts\Client\BuildingMonoBehaviours\BuildingBehavoiur.cs" />
     <Compile Include="Assets\Scripts\Client\Scriptable objects\Tiles\AnimatedTile\AnimatedTile.cs" />
     <Compile Include="Assets\Scripts\Client\World generation\Helper classes\MapZones.cs" />
-    <Compile Include="Assets\Scripts\Client\BuildingMonoBehaviours\BuildingBehavoiur.cs" />
-    <Compile Include="Assets\Scripts\Client\World generation\ResourceMapGenerator.cs" />
+    <Compile Include="Assets\Scripts\Client\Entity composition\Entity.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

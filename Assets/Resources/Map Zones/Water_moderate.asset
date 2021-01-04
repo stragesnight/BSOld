@@ -13,9 +13,10 @@ MonoBehaviour:
   m_Name: Water_moderate
   m_EditorClassIdentifier: 
   ruleTile: {fileID: 11400000, guid: e0ef807452b684d45a69c2848be51dd6, type: 2}
-  elevationZone: 20
+  isWalkable: 0
   isRestrictedByElevation: 1
-  temperatureBiome: 80
+  elevationZone: 20
   isRestrictedByTemperature: 1
-  fertilityZone: 10
+  temperatureBiome: 80
   isRestrictedByFertility: 0
+  fertilityZone: 10

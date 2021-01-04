@@ -15,26 +15,26 @@ public class NoisemapHandler : MonoBehaviour
     // Subscribe to Actions
     private void OnEnable()
     {
-        tilemapActions.OnSetNatureTilemapEntry += SetHeightNoisemapEntry;
-        tilemapActions.OnSetNatureTilemapEntry += SetTemperatureNoisemapEntry;
-        tilemapActions.OnSetNatureTilemapEntry += SetFertilityNoisemapEntry;
+        tilemapActions.OnSetWalkableNatureTilemapEntry += SetHeightNoisemapEntry;
+        tilemapActions.OnSetWalkableNatureTilemapEntry += SetTemperatureNoisemapEntry;
+        tilemapActions.OnSetWalkableNatureTilemapEntry += SetFertilityNoisemapEntry;
 
-        tilemapActions.OnSetNatureTilemap += SetHeightNoisemap;
-        tilemapActions.OnSetNatureTilemap += SetTemperatureNoisemap;
-        tilemapActions.OnSetNatureTilemap += SetFertilityNoisemap;
+        tilemapActions.OnSetWalkableNatureTilemap += SetHeightNoisemap;
+        tilemapActions.OnSetWalkableNatureTilemap += SetTemperatureNoisemap;
+        tilemapActions.OnSetWalkableNatureTilemap += SetFertilityNoisemap;
 
     }
 
     // Unsublscribe from Actions
     private void OnDisable()
     {
-        tilemapActions.OnSetNatureTilemapEntry -= SetHeightNoisemapEntry;
-        tilemapActions.OnSetNatureTilemapEntry -= SetTemperatureNoisemapEntry;
-        tilemapActions.OnSetNatureTilemapEntry -= SetFertilityNoisemapEntry;
+        tilemapActions.OnSetWalkableNatureTilemapEntry -= SetHeightNoisemapEntry;
+        tilemapActions.OnSetWalkableNatureTilemapEntry -= SetTemperatureNoisemapEntry;
+        tilemapActions.OnSetWalkableNatureTilemapEntry -= SetFertilityNoisemapEntry;
 
-        tilemapActions.OnSetNatureTilemap -= SetHeightNoisemap;
-        tilemapActions.OnSetNatureTilemap -= SetTemperatureNoisemap;
-        tilemapActions.OnSetNatureTilemap -= SetFertilityNoisemap;
+        tilemapActions.OnSetWalkableNatureTilemap -= SetHeightNoisemap;
+        tilemapActions.OnSetWalkableNatureTilemap -= SetTemperatureNoisemap;
+        tilemapActions.OnSetWalkableNatureTilemap -= SetFertilityNoisemap;
 
     }
 

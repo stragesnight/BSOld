@@ -6,8 +6,6 @@ using UnityEngine;
 /// </summary>
 public class MapTileGenerator : MonoBehaviour
 {
-    [SerializeField] private MapZone defaultZone;
-
     private HashSet<MapZone> mapZoneDB;
 
     // Maps
@@ -15,8 +13,9 @@ public class MapTileGenerator : MonoBehaviour
     private float[,] temperatureMap;
     private float[,] fertilityMap;
 
-    // Map Dictionary
-    private Dictionary<Vector3Int, MapZone> natureMap;
+    // Map Dictionaries
+    private Dictionary<Vector3Int, MapZone> walkableNatureMap;
+    private Dictionary<Vector3Int, MapZone> unWalkableNatureMap;
 
     // Zone and Biomes arrays
     private ElevationZone[] elevationZones;
@@ -25,10 +24,11 @@ public class MapTileGenerator : MonoBehaviour
 
 
     // Algorithm initialization
-    public Dictionary<Vector3Int, MapZone> Initialize()
+    public void Initialize()
     {
         // Map Dictionary initialization
-        natureMap = new Dictionary<Vector3Int, MapZone>();
+        walkableNatureMap = new Dictionary<Vector3Int, MapZone>();
+        unWalkableNatureMap = new Dictionary<Vector3Int, MapZone>();
 
         // Load Rule Tiles from Resource folder and Initializing RuleTile DataBase HashSet
         mapZoneDB = new HashSet<MapZone>(Resources.LoadAll<MapZone>("Map Zones"));
@@ -46,11 +46,9 @@ public class MapTileGenerator : MonoBehaviour
         // Fill dictionary
         FillNatureMap();
 
-        // Update natureMap of a mapData
-        MapData.Instance.SetNatureMap(natureMap);
-
-        // Return Map Dictionary
-        return natureMap;
+        // Update natureMaps of a mapData
+        MapData.Instance.SetWalkableNatureMap(walkableNatureMap);
+        MapData.Instance.SetUnWalkableNatureMap(unWalkableNatureMap);
     }
 
 
@@ -62,17 +60,23 @@ public class MapTileGenerator : MonoBehaviour
             for (int y = 0; y < MapData.Instance.GetMapHeight(); y++)
             {
                 Vector3Int currSlot = new Vector3Int(x, y, 0);
-                MapZone currMapZone = ChooseValidMapZone(currSlot);
+                bool isFound = ChooseValidMapZone(currSlot, out MapZone mapZone, out bool isWalkable);
 
                 // Adding entry to dictionary
-                natureMap.Add(currSlot, currMapZone);
+                if (isFound)
+                {
+                    if (isWalkable)
+                        walkableNatureMap.Add(currSlot, mapZone);
+                    else
+                        unWalkableNatureMap.Add(currSlot, mapZone);
+                }
             }
         }
     }
 
 
     // Choosing valid tile depending on it's properties and map information
-    private MapZone ChooseValidMapZone(Vector3Int pos)
+    private bool ChooseValidMapZone(Vector3Int pos, out MapZone validMapZone, out bool isWalkable)
     {
         // Looping through every tile in DataBase
         foreach (MapZone mapZone in mapZoneDB)
@@ -87,13 +91,19 @@ public class MapTileGenerator : MonoBehaviour
                 // Check Fertility Zone
                 && ((int)mapZone.fertilityZone == GetCurrentMapEnumValue<FertilityZone>(fertilityMap[pos.x, pos.y])
                 || !mapZone.isRestrictedByFertility))
-
-                // Return current Tile if it meets all conditions
-                return mapZone;
+            {
+                // Assing values to out variables
+                validMapZone = mapZone;
+                isWalkable = mapZone.isWalkable;
+                // true signifies that valid tile was found
+                return true;
+            }
         }
 
-        // Return default if noone of avilable tiles are valid
-        return defaultZone;
+        // Return false if noone of avilable tiles are valid
+        validMapZone = null;
+        isWalkable = false;
+        return false;
     }
 
 

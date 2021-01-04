@@ -13,9 +13,10 @@ MonoBehaviour:
   m_Name: Land_moderate_low
   m_EditorClassIdentifier: 
   ruleTile: {fileID: 11400000, guid: f6fc010cf0a99704784f603b8f6a8f6f, type: 2}
-  elevationZone: 80
+  isWalkable: 1
   isRestrictedByElevation: 1
-  temperatureBiome: 80
+  elevationZone: 80
   isRestrictedByTemperature: 1
-  fertilityZone: 10
+  temperatureBiome: 80
   isRestrictedByFertility: 1
+  fertilityZone: 10

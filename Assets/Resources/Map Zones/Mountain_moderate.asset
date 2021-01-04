@@ -13,9 +13,10 @@ MonoBehaviour:
   m_Name: Mountain_moderate
   m_EditorClassIdentifier: 
   ruleTile: {fileID: 11400000, guid: 72b71153cf6c1b0419bb79d502822ac2, type: 2}
-  elevationZone: 100
+  isWalkable: 0
   isRestrictedByElevation: 1
-  temperatureBiome: 80
+  elevationZone: 100
   isRestrictedByTemperature: 1
-  fertilityZone: 10
+  temperatureBiome: 80
   isRestrictedByFertility: 0
+  fertilityZone: 10

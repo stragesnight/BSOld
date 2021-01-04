@@ -13,9 +13,10 @@ MonoBehaviour:
   m_Name: Water_desert
   m_EditorClassIdentifier: 
   ruleTile: {fileID: 11400000, guid: 9bc6aea0efb443243bfde1e47368ddbf, type: 2}
-  elevationZone: 20
+  isWalkable: 0
   isRestrictedByElevation: 1
-  temperatureBiome: 19
+  elevationZone: 20
   isRestrictedByTemperature: 1
-  fertilityZone: 10
+  temperatureBiome: 19
   isRestrictedByFertility: 0
+  fertilityZone: 10

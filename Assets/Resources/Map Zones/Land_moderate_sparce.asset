@@ -13,9 +13,10 @@ MonoBehaviour:
   m_Name: Land_moderate_sparce
   m_EditorClassIdentifier: 
   ruleTile: {fileID: 11400000, guid: 31c8d77f2c723d547b6b3820408b700e, type: 2}
-  elevationZone: 80
+  isWalkable: 1
   isRestrictedByElevation: 1
-  temperatureBiome: 80
+  elevationZone: 80
   isRestrictedByTemperature: 1
-  fertilityZone: 75
+  temperatureBiome: 80
   isRestrictedByFertility: 1
+  fertilityZone: 75
