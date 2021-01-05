@@ -7,7 +7,7 @@ public class PlayerController : MonoBehaviour
 {
     [Header("Dependencies")]
     [SerializeField] private Camera cam;
-    [SerializeField] private ConstructionSO building;
+    [SerializeField] private GameObject building;
     [SerializeField] private Resource resource;
 
     [Header("Player parameters")]
@@ -27,7 +27,7 @@ public class PlayerController : MonoBehaviour
 
         Vector3 position = cam.ScreenToWorldPoint(mouseScreenPos);
         Vector3Int cellPosition = new Vector3Int((int)position.x, (int)position.y, 0);
-
+            
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
             MapData.Instance.SetConstructionAtPoint(cellPosition, building);

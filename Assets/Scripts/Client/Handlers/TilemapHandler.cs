@@ -60,14 +60,15 @@ public class TilemapHandler : MonoBehaviour
     [Header("Tilemaps")]
     // Construction Tilemap
     [SerializeField] private Tilemap constructionTilemap;
-    private void SetConstructionTilemapEntry(Vector3Int position, ConstructionSO construction)
+    private void SetConstructionTilemapEntry(Vector3Int position, GameObject construction)
     {
-        constructionTilemap.SetTile(position, construction.ruleTile);
+        constructionTilemap.SetTile(position, construction.GetComponent<BuildingBehavoiur>().type.ruleTile);
     }
-    private void SetConstructionTilemap(Dictionary<Vector3Int, ConstructionSO> map)
+    private void SetConstructionTilemap(Dictionary<Vector3Int, GameObject> map)
     {
+        TileBase[] constructions = map.Values.Select(x => x.GetComponent<BuildingBehavoiur>().type.ruleTile).ToArray();
         constructionTilemap.ClearAllTiles();
-        constructionTilemap.SetTiles(map.Keys.ToArray(), map.Values.Select(x => x.ruleTile).ToArray());
+        constructionTilemap.SetTiles(map.Keys.ToArray(), constructions);
     }
 
     // Resource Tilemap

@@ -11,6 +11,8 @@ public class EntityMovement : MonoBehaviour
     private EntityBehavoiur entity;
     private CharacterController controller;
 
+    private Vector2 movementDirection;
+
 
     // Get required components
     private void Start()
@@ -22,18 +24,24 @@ public class EntityMovement : MonoBehaviour
 
     private void OnEnable()
     {
-        inputReader.moveAction += Move;
+        inputReader.moveAction += OnEntityMove;
     }
 
 
     private void OnDisable()
     {
-        inputReader.moveAction -= Move;
+        inputReader.moveAction -= OnEntityMove;
     }
 
 
-    private void Move(Vector2 direction)
+    private void Update()
     {
-        controller.SimpleMove(direction * entity.speed * Time.deltaTime);
+        controller.Move(movementDirection * entity.speed * Time.deltaTime);
+    }
+
+
+    private void OnEntityMove(Vector2 direction)
+    {
+        movementDirection = direction;
     }
 }

@@ -5,6 +5,7 @@ using UnityEngine;
 /// </summary>
 public class GeneralHandler : MonoBehaviour
 {
+    [Header("Map")]
     [SerializeField] private MapData mapData;
     [SerializeField] private ConstructionActions buildingActions;
     [SerializeField] private ResourceActions resourceActions;
@@ -12,6 +13,12 @@ public class GeneralHandler : MonoBehaviour
 
 
     private void Awake()
+    {
+        EnableMap();
+    }
+
+
+    private void EnableMap()
     {
         mapData.CheckInstance();
 

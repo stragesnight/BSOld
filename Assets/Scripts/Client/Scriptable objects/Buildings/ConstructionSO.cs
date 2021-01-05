@@ -10,9 +10,6 @@ public abstract class ConstructionSO : ScriptableObject
     // Rule Tile of a building used to display it.
     public RuleTile ruleTile;
 
-    // Prefab with MonoBehaviours used to instantiate building
-    public GameObject prefab;
-
     // Starting health of a construction
     public int startingHealth;
 

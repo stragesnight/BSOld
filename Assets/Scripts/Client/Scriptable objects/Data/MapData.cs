@@ -31,27 +31,27 @@ public class MapData : ScriptableObject
     // =========================================== BUILDINGS ===========================================
 
     // constructionMap
-    [SerializeField] private Dictionary<Vector3Int, ConstructionSO> constructionMap = new Dictionary<Vector3Int, ConstructionSO>();
+    [SerializeField] private Dictionary<Vector3Int, GameObject> constructionMap = new Dictionary<Vector3Int, GameObject>();
     // Set
-    public void SetConstructionAtPoint(Vector3Int position, ConstructionSO construction) 
-    { 
+    public void SetConstructionAtPoint(Vector3Int position, GameObject construction) 
+    {
         if (constructionMap.ContainsKey(position))
             constructionMap[position] = construction;
         else
             constructionMap.Add(position, construction);
         constructionActions.OnPlaceConstruction(position, construction); 
     }
-    public void SetConstructionMap(Dictionary<Vector3Int, ConstructionSO> map) 
+    public void SetConstructionMap(Dictionary<Vector3Int, GameObject> map) 
     { 
         constructionMap = map;
         constructionActions.OnPlaceConstructionMap(map);
     }
     // Get
-    public bool GetConstructionAtPoint(Vector3Int position, out ConstructionSO construction)
+    public bool GetConstructionAtPoint(Vector3Int position, out GameObject construction)
     {
         return constructionMap.TryGetValue(position, out construction);
     }
-    public Dictionary<Vector3Int, ConstructionSO> GetConstructionMap() => constructionMap;
+    public Dictionary<Vector3Int, GameObject> GetConstructionMap() => constructionMap;
 
     // =========================================== RESOURCES ===========================================
 

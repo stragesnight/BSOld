@@ -31,16 +31,16 @@ public class CounstructionHandler : MonoBehaviour
 
 
     // Instantiate desired Construction prefab and set parent
-    private void InstantiateConstructionObject(Vector3Int position, ConstructionSO construction)
+    private void InstantiateConstructionObject(Vector3Int position, GameObject construction)
     {
-        GameObject buildingObject = Instantiate(construction.prefab);
+        GameObject buildingObject = Instantiate(construction);
         buildingObject.transform.position = position;
         buildingObject.transform.SetParent(parentTransform);
     }
 
 
     // Instantiate entire Construction map
-    private void InstantiateConstructionMap(Dictionary<Vector3Int, ConstructionSO> constructions)
+    private void InstantiateConstructionMap(Dictionary<Vector3Int, GameObject> constructions)
     {
         ClearParent();
 
