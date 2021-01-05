@@ -3,13 +3,13 @@ using UnityEngine;
 /// <summary>
 /// Handles Entity's movement.
 /// </summary>
-[RequireComponent(typeof(EntityBehavoiur), typeof(CharacterController))]
+[RequireComponent(typeof(EntityBehavoiur), typeof(Rigidbody2D))]
 public class EntityMovement : MonoBehaviour
 {
     [SerializeField] private InputReader inputReader;
 
     private EntityBehavoiur entity;
-    private CharacterController controller;
+    private Rigidbody2D rb;
 
     private Vector2 movementDirection;
 
@@ -18,7 +18,7 @@ public class EntityMovement : MonoBehaviour
     private void Start()
     {
         entity = GetComponent<EntityBehavoiur>();
-        controller = GetComponent<CharacterController>();
+        rb = GetComponent<Rigidbody2D>();
     }
 
 
@@ -34,9 +34,9 @@ public class EntityMovement : MonoBehaviour
     }
 
 
-    private void Update()
+    private void FixedUpdate()
     {
-        controller.Move(movementDirection * entity.speed * Time.deltaTime);
+        rb.velocity = movementDirection * entity.speed * Time.fixedDeltaTime;
     }
 
 

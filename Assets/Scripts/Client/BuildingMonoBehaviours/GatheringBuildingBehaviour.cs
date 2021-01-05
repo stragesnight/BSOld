@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GatheringBuildingBehaviour : BuildingBehavoiur
+public class GatheringBuildingBehaviour : ConstructionBehavoiur
 {
     private List<Resource> resourcesTouched;
     private int amountGathered = 0;

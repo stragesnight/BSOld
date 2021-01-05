@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 /// <summary>
@@ -31,17 +32,17 @@ public class MapData : ScriptableObject
     // =========================================== BUILDINGS ===========================================
 
     // constructionMap
-    [SerializeField] private Dictionary<Vector3Int, GameObject> constructionMap = new Dictionary<Vector3Int, GameObject>();
+    [SerializeField] private Dictionary<Vector3Int[], GameObject> constructionMap = new Dictionary<Vector3Int[], GameObject>();
     // Set
-    public void SetConstructionAtPoint(Vector3Int position, GameObject construction) 
+    public void SetConstructionAtPoint(Vector3Int[] positions, GameObject construction) 
     {
-        if (constructionMap.ContainsKey(position))
-            constructionMap[position] = construction;
+        if (constructionMap.ContainsKey(positions))
+            constructionMap[positions] = construction;
         else
-            constructionMap.Add(position, construction);
-        constructionActions.OnPlaceConstruction(position, construction); 
+            constructionMap.Add(positions, construction);
+        constructionActions.OnPlaceConstruction(positions, construction); 
     }
-    public void SetConstructionMap(Dictionary<Vector3Int, GameObject> map) 
+    public void SetConstructionMap(Dictionary<Vector3Int[], GameObject> map) 
     { 
         constructionMap = map;
         constructionActions.OnPlaceConstructionMap(map);
@@ -49,9 +50,16 @@ public class MapData : ScriptableObject
     // Get
     public bool GetConstructionAtPoint(Vector3Int position, out GameObject construction)
     {
-        return constructionMap.TryGetValue(position, out construction);
+        foreach (Vector3Int[] positions in constructionMap.Keys)
+        {
+            if (positions.Contains(position))
+                return constructionMap.TryGetValue(positions, out construction);
+        }
+
+        construction = null;
+        return false;
     }
-    public Dictionary<Vector3Int, GameObject> GetConstructionMap() => constructionMap;
+    public Dictionary<Vector3Int[], GameObject> GetConstructionMap() => constructionMap;
 
     // =========================================== RESOURCES ===========================================
 

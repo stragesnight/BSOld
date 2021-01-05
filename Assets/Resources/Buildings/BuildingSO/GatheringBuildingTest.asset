@@ -13,10 +13,9 @@ MonoBehaviour:
   m_Name: GatheringBuildingTest
   m_EditorClassIdentifier: 
   ruleTile: {fileID: 11400000, guid: 43ebf498b505ee945836a05c8e97b201, type: 2}
-  prefab: {fileID: 3759091132409201751, guid: ec984808508297e4695d17e2787d5678, type: 3}
-  startingHealth: 0
-  width: 1
-  length: 1
+  startingHealth: 10
+  positions:
+  - {x: 0, y: 0, z: 0}
   requiredResources: []
   preferredNeighbours: []
   unwantedNeighbours: []

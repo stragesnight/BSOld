@@ -60,15 +60,16 @@ public class TilemapHandler : MonoBehaviour
     [Header("Tilemaps")]
     // Construction Tilemap
     [SerializeField] private Tilemap constructionTilemap;
-    private void SetConstructionTilemapEntry(Vector3Int position, GameObject construction)
+    private void SetConstructionTilemapEntry(Vector3Int[] positions, GameObject construction)
     {
-        constructionTilemap.SetTile(position, construction.GetComponent<BuildingBehavoiur>().type.ruleTile);
+        constructionTilemap.SetTile(positions[0], construction.GetComponent<ConstructionBehavoiur>().type.ruleTile);
     }
-    private void SetConstructionTilemap(Dictionary<Vector3Int, GameObject> map)
+    private void SetConstructionTilemap(Dictionary<Vector3Int[], GameObject> map)
     {
-        TileBase[] constructions = map.Values.Select(x => x.GetComponent<BuildingBehavoiur>().type.ruleTile).ToArray();
+        TileBase[] constructions = map.Values.Select(x => x.GetComponent<ConstructionBehavoiur>().type.ruleTile).ToArray();
         constructionTilemap.ClearAllTiles();
-        constructionTilemap.SetTiles(map.Keys.ToArray(), constructions);
+        foreach (Vector3Int[] positions in map.Keys)
+            constructionTilemap.SetTiles(positions, constructions);
     }
 
     // Resource Tilemap
@@ -100,11 +101,13 @@ public class TilemapHandler : MonoBehaviour
     private void SetUnWalkableNatureTilemapEntry(Vector3Int position, MapZone mapZone)
     {
         unWalkableNatureTilemap.SetTile(position, mapZone.ruleTile);
+        UpdateCollider();
     }
     private void SetUnWalkableNatureTilemap(Dictionary<Vector3Int, MapZone> mapZones)
     {
         unWalkableNatureTilemap.ClearAllTiles();
         unWalkableNatureTilemap.SetTiles(mapZones.Keys.ToArray(), mapZones.Values.Select(x => x.ruleTile).ToArray());
+        UpdateCollider();
     }
 
     // Placing Accessibility Tilemap
@@ -132,5 +135,13 @@ public class TilemapHandler : MonoBehaviour
         }
 
         return tilesFromBools;
+    }
+
+
+    private void UpdateCollider()
+    {
+        TilemapCollider2D collider = unWalkableNatureTilemap.GetComponent<TilemapCollider2D>();
+        collider.ProcessTilemapChanges();
+        collider.composite.GenerateGeometry();
     }
 }
