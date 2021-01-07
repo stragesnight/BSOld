@@ -55,81 +55,81 @@
     <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio Tools for Unity\16.0\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\AstarPathfindingProject\Core\AstarPath.cs" />
-    <Compile Include="Assets\AstarPathfindingProject\Core\Misc\GraphUpdateProcessor.cs" />
-    <Compile Include="Assets\AstarPathfindingProject\Generators\Utilities\EuclideanEmbedding.cs" />
-    <Compile Include="Assets\AstarPathfindingProject\Modifiers\RaycastModifier.cs" />
-    <Compile Include="Assets\AstarPathfindingProject\Core\Misc\GraphEditorBase.cs" />
-    <Compile Include="Assets\AstarPathfindingProject\Generators\Base.cs" />
-    <Compile Include="Assets\AstarPathfindingProject\Core\Misc\PathInterpolator.cs" />
-    <Compile Include="Assets\AstarPathfindingProject\Core\Misc\PathProcessor.cs" />
-    <Compile Include="Assets\AstarPathfindingProject\Core\Misc\EditorResourceHelper.cs" />
-    <Compile Include="Assets\AstarPathfindingProject\Core\Misc\WorkItemProcessor.cs" />
-    <Compile Include="Assets\AstarPathfindingProject\Core\AstarData.cs" />
-    <Compile Include="Assets\AstarPathfindingProject\Core\AstarMath.cs" />
-    <Compile Include="Assets\AstarPathfindingProject\Core\Misc\BinaryHeap.cs" />
-    <Compile Include="Assets\AstarPathfindingProject\Core\Misc\Int3.cs" />
-    <Compile Include="Assets\AstarPathfindingProject\Modifiers\SimpleSmoothModifier.cs" />
-    <Compile Include="Assets\AstarPathfindingProject\Utilities\GraphGizmoHelper.cs" />
-    <Compile Include="Assets\AstarPathfindingProject\Core\GraphUpdateScene.cs" />
-    <Compile Include="Assets\AstarPathfindingProject\PackageTools\VersionedMonoBehaviour.cs" />
-    <Compile Include="Assets\AstarPathfindingProject\Utilities\UnityReferenceHelper.cs" />
-    <Compile Include="Assets\AstarPathfindingProject\Core\Misc\AstarDebugger.cs" />
-    <Compile Include="Assets\AstarPathfindingProject\Core\PathHandler.cs" />
-    <Compile Include="Assets\AstarPathfindingProject\PackageTools\UniqueComponentAttribute.cs" />
-    <Compile Include="Assets\AstarPathfindingProject\Generators\Utilities\ObjImporter.cs" />
-    <Compile Include="Assets\AstarPathfindingProject\Pathfinders\ABPath.cs" />
-    <Compile Include="Assets\AstarPathfindingProject\Generators\NodeClasses\GridNode.cs" />
-    <Compile Include="Assets\AstarPathfindingProject\Core\Misc\HierarchicalGraph.cs" />
-    <Compile Include="Assets\AstarPathfindingProject\Core\Serialization\SimpleZipReplacement.cs" />
-    <Compile Include="Assets\AstarPathfindingProject\Generators\Utilities\GridLookup.cs" />
-    <Compile Include="Assets\AstarPathfindingProject\Core\Misc\PathReturnQueue.cs" />
-    <Compile Include="Assets\AstarPathfindingProject\Core\Path.cs" />
-    <Compile Include="Assets\AstarPathfindingProject\Utilities\ProfileHelper.cs" />
-    <Compile Include="Assets\AstarPathfindingProject\Core\Misc\MovementUtilities.cs" />
-    <Compile Include="Assets\AstarPathfindingProject\Generators\GridGenerator.cs" />
-    <Compile Include="Assets\AstarPathfindingProject\Core\Misc\PathPool.cs" />
-    <Compile Include="Assets\AstarPathfindingProject\Utilities\AstarMemory.cs" />
-    <Compile Include="Assets\AstarPathfindingProject\Core\Misc\Draw.cs" />
-    <Compile Include="Assets\AstarPathfindingProject\Core\Misc\ArrayPool.cs" />
-    <Compile Include="Assets\AstarPathfindingProject\Utilities\Funnel.cs" />
-    <Compile Include="Assets\AstarPathfindingProject\Core\Misc\StackPool.cs" />
-    <Compile Include="Assets\AstarPathfindingProject\Modifiers\Modifiers.cs" />
-    <Compile Include="Assets\AstarPathfindingProject\Core\Misc\WindowsStoreCompatibility.cs" />
-    <Compile Include="Assets\AstarPathfindingProject\Generators\Utilities\GraphTransform.cs" />
-    <Compile Include="Assets\AstarPathfindingProject\Utilities\DotNetReplacements.cs" />
-    <Compile Include="Assets\AstarPathfindingProject\Core\Nodes\GraphNode.cs" />
-    <Compile Include="Assets\AstarPathfindingProject\Core\Misc\GraphModifier.cs" />
-    <Compile Include="Assets\AstarPathfindingProject\Core\Misc\ThreadControlQueue.cs" />
-    <Compile Include="Assets\AstarPathfindingProject\PackageTools\EnumFlagAttribute.cs" />
-    <Compile Include="Assets\AstarPathfindingProject\Generators\NodeClasses\GridNodeBase.cs" />
-    <Compile Include="Assets\AstarPathfindingProject\Core\Serialization\JsonConverters.cs" />
-    <Compile Include="Assets\AstarPathfindingProject\Core\astarclasses.cs" />
-    <Compile Include="Assets\AstarPathfindingProject\Core\Serialization\TinyJson.cs" />
-    <Compile Include="Assets\AstarPathfindingProject\Modifiers\AlternativePath.cs" />
-    <Compile Include="Assets\AstarPathfindingProject\Modifiers\FunnelModifier.cs" />
-    <Compile Include="Assets\AstarPathfindingProject\Utilities\RetainedGizmos.cs" />
-    <Compile Include="Assets\AstarPathfindingProject\Utilities\PathUtilities.cs" />
-    <Compile Include="Assets\AstarPathfindingProject\Core\Misc\GraphUtilities.cs" />
-    <Compile Include="Assets\AstarPathfindingProject\Utilities\AstarProfiler.cs" />
-    <Compile Include="Assets\AstarPathfindingProject\Core\GraphUpdateShape.cs" />
-    <Compile Include="Assets\AstarPathfindingProject\Core\Misc\ObjectPool.cs" />
-    <Compile Include="Assets\AstarPathfindingProject\Utilities\AstarChecksum.cs" />
-    <Compile Include="Assets\AstarPathfindingProject\Core\Serialization\JsonSerializer.cs" />
-    <Compile Include="Assets\AstarPathfindingProject\Utilities\GraphUpdateUtilities.cs" />
-    <Compile Include="Assets\AstarPathfindingProject\Core\AI\Seeker.cs" />
-    <Compile Include="Assets\AstarPathfindingProject\Core\Serialization\SimpleJsonReplacement.cs" />
-    <Compile Include="Assets\AstarPathfindingProject\Core\Misc\ListPool.cs" />
-    <Compile Include="Assets\AstarPathfindingProject\Modifiers\StartEndModifier.cs" />
-    <Compile Include="Assets\AstarPathfindingProject\Generators\QuadtreeGraph.cs" />
-    <Compile Include="Assets\AstarPathfindingProject\Utilities\AstarParallel.cs" />
+    <Compile Include="Assets\Dependencies\AstarPathfindingProject\Core\GraphUpdateScene.cs" />
+    <Compile Include="Assets\Dependencies\AstarPathfindingProject\Core\AstarPath.cs" />
+    <Compile Include="Assets\Dependencies\AstarPathfindingProject\Modifiers\SimpleSmoothModifier.cs" />
+    <Compile Include="Assets\Dependencies\AstarPathfindingProject\Core\Path.cs" />
+    <Compile Include="Assets\Dependencies\AstarPathfindingProject\Modifiers\AlternativePath.cs" />
+    <Compile Include="Assets\Dependencies\AstarPathfindingProject\Core\Misc\GraphModifier.cs" />
+    <Compile Include="Assets\Dependencies\AstarPathfindingProject\PackageTools\EnumFlagAttribute.cs" />
+    <Compile Include="Assets\Dependencies\AstarPathfindingProject\Generators\NodeClasses\GridNodeBase.cs" />
+    <Compile Include="Assets\Dependencies\AstarPathfindingProject\Core\Serialization\JsonConverters.cs" />
+    <Compile Include="Assets\Dependencies\AstarPathfindingProject\Core\Misc\WindowsStoreCompatibility.cs" />
+    <Compile Include="Assets\Dependencies\AstarPathfindingProject\Core\Serialization\TinyJson.cs" />
+    <Compile Include="Assets\Dependencies\AstarPathfindingProject\Core\Misc\PathProcessor.cs" />
+    <Compile Include="Assets\Dependencies\AstarPathfindingProject\Core\Misc\AstarDebugger.cs" />
+    <Compile Include="Assets\Dependencies\AstarPathfindingProject\Core\Misc\MovementUtilities.cs" />
+    <Compile Include="Assets\Dependencies\AstarPathfindingProject\Core\Misc\WorkItemProcessor.cs" />
+    <Compile Include="Assets\Dependencies\AstarPathfindingProject\Core\Misc\Draw.cs" />
+    <Compile Include="Assets\Dependencies\AstarPathfindingProject\Utilities\Funnel.cs" />
+    <Compile Include="Assets\Dependencies\AstarPathfindingProject\Core\Misc\EditorResourceHelper.cs" />
+    <Compile Include="Assets\Dependencies\AstarPathfindingProject\Core\Misc\ListPool.cs" />
+    <Compile Include="Assets\Dependencies\AstarPathfindingProject\Core\Misc\BinaryHeap.cs" />
+    <Compile Include="Assets\Dependencies\AstarPathfindingProject\Core\Misc\HierarchicalGraph.cs" />
+    <Compile Include="Assets\Dependencies\AstarPathfindingProject\Core\Nodes\GraphNode.cs" />
+    <Compile Include="Assets\Dependencies\AstarPathfindingProject\Core\Misc\PathPool.cs" />
+    <Compile Include="Assets\Dependencies\AstarPathfindingProject\Core\GraphUpdateShape.cs" />
+    <Compile Include="Assets\Dependencies\AstarPathfindingProject\Utilities\AstarProfiler.cs" />
+    <Compile Include="Assets\Dependencies\AstarPathfindingProject\Core\Serialization\JsonSerializer.cs" />
+    <Compile Include="Assets\Dependencies\AstarPathfindingProject\Utilities\GraphGizmoHelper.cs" />
+    <Compile Include="Assets\Dependencies\AstarPathfindingProject\Core\AI\Seeker.cs" />
+    <Compile Include="Assets\Dependencies\AstarPathfindingProject\Core\Misc\GraphUpdateProcessor.cs" />
+    <Compile Include="Assets\Dependencies\AstarPathfindingProject\Generators\Base.cs" />
+    <Compile Include="Assets\Dependencies\AstarPathfindingProject\Core\PathHandler.cs" />
+    <Compile Include="Assets\Dependencies\AstarPathfindingProject\Generators\Utilities\ObjImporter.cs" />
+    <Compile Include="Assets\Dependencies\AstarPathfindingProject\Core\Serialization\SimpleZipReplacement.cs" />
+    <Compile Include="Assets\Dependencies\AstarPathfindingProject\Generators\QuadtreeGraph.cs" />
+    <Compile Include="Assets\Dependencies\AstarPathfindingProject\Utilities\AstarParallel.cs" />
+    <Compile Include="Assets\Dependencies\AstarPathfindingProject\Core\Misc\Int3.cs" />
+    <Compile Include="Assets\Dependencies\AstarPathfindingProject\PackageTools\UniqueComponentAttribute.cs" />
+    <Compile Include="Assets\Dependencies\AstarPathfindingProject\Generators\Utilities\GridLookup.cs" />
+    <Compile Include="Assets\Dependencies\AstarPathfindingProject\Utilities\AstarChecksum.cs" />
+    <Compile Include="Assets\Dependencies\AstarPathfindingProject\Generators\Utilities\EuclideanEmbedding.cs" />
+    <Compile Include="Assets\Dependencies\AstarPathfindingProject\Core\Misc\ThreadControlQueue.cs" />
+    <Compile Include="Assets\Dependencies\AstarPathfindingProject\Utilities\UnityReferenceHelper.cs" />
+    <Compile Include="Assets\Dependencies\AstarPathfindingProject\Utilities\PathUtilities.cs" />
+    <Compile Include="Assets\Dependencies\AstarPathfindingProject\Generators\GridGenerator.cs" />
+    <Compile Include="Assets\Dependencies\AstarPathfindingProject\Core\Misc\StackPool.cs" />
+    <Compile Include="Assets\Dependencies\AstarPathfindingProject\Utilities\RetainedGizmos.cs" />
+    <Compile Include="Assets\Dependencies\AstarPathfindingProject\Core\Serialization\SimpleJsonReplacement.cs" />
+    <Compile Include="Assets\Dependencies\AstarPathfindingProject\Modifiers\RaycastModifier.cs" />
+    <Compile Include="Assets\Dependencies\AstarPathfindingProject\Core\AstarData.cs" />
+    <Compile Include="Assets\Dependencies\AstarPathfindingProject\Generators\NodeClasses\GridNode.cs" />
+    <Compile Include="Assets\Dependencies\AstarPathfindingProject\Utilities\AstarMemory.cs" />
+    <Compile Include="Assets\Dependencies\AstarPathfindingProject\Utilities\DotNetReplacements.cs" />
+    <Compile Include="Assets\Dependencies\AstarPathfindingProject\Core\Misc\GraphEditorBase.cs" />
+    <Compile Include="Assets\Dependencies\AstarPathfindingProject\Core\Misc\ArrayPool.cs" />
+    <Compile Include="Assets\Dependencies\AstarPathfindingProject\Core\Misc\PathInterpolator.cs" />
+    <Compile Include="Assets\Dependencies\AstarPathfindingProject\Core\AstarMath.cs" />
+    <Compile Include="Assets\Dependencies\AstarPathfindingProject\Utilities\ProfileHelper.cs" />
+    <Compile Include="Assets\Dependencies\AstarPathfindingProject\Utilities\GraphUpdateUtilities.cs" />
+    <Compile Include="Assets\Dependencies\AstarPathfindingProject\Generators\Utilities\GraphTransform.cs" />
+    <Compile Include="Assets\Dependencies\AstarPathfindingProject\Modifiers\StartEndModifier.cs" />
+    <Compile Include="Assets\Dependencies\AstarPathfindingProject\Modifiers\Modifiers.cs" />
+    <Compile Include="Assets\Dependencies\AstarPathfindingProject\Core\Misc\GraphUtilities.cs" />
+    <Compile Include="Assets\Dependencies\AstarPathfindingProject\Core\Misc\ObjectPool.cs" />
+    <Compile Include="Assets\Dependencies\AstarPathfindingProject\PackageTools\VersionedMonoBehaviour.cs" />
+    <Compile Include="Assets\Dependencies\AstarPathfindingProject\Modifiers\FunnelModifier.cs" />
+    <Compile Include="Assets\Dependencies\AstarPathfindingProject\Pathfinders\ABPath.cs" />
+    <Compile Include="Assets\Dependencies\AstarPathfindingProject\Core\Misc\PathReturnQueue.cs" />
+    <Compile Include="Assets\Dependencies\AstarPathfindingProject\Core\astarclasses.cs" />
   </ItemGroup>
   <ItemGroup>
-     <None Include="Assets\AstarPathfindingProject\Plugins\DotNetZip\DotNetZipLicense.txt" />
-     <None Include="Assets\AstarPathfindingProject\link.xml" />
-     <None Include="Assets\AstarPathfindingProject\Plugins\DotNetZip\Pathfinding.Ionic.Zip.Reduced.dll" />
-     <None Include="Assets\AstarPathfindingProject\Plugins\dependencies.txt" />
-     <None Include="Assets\AstarPathfindingProject\AstarPathfindingProject.asmdef" />
+     <None Include="Assets\Dependencies\AstarPathfindingProject\Plugins\DotNetZip\DotNetZipLicense.txt" />
+     <None Include="Assets\Dependencies\AstarPathfindingProject\link.xml" />
+     <None Include="Assets\Dependencies\AstarPathfindingProject\Plugins\DotNetZip\Pathfinding.Ionic.Zip.Reduced.dll" />
+     <None Include="Assets\Dependencies\AstarPathfindingProject\Plugins\dependencies.txt" />
+     <None Include="Assets\Dependencies\AstarPathfindingProject\AstarPathfindingProject.asmdef" />
     <Reference Include="UnityEngine">
       <HintPath>D:\Unity\2020.2.0b2\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
     </Reference>
@@ -367,11 +367,11 @@
     <Reference Include="SyntaxTree.VisualStudio.Unity.Bridge">
       <HintPath>C:\Program Files (x86)\Microsoft Visual Studio Tools for Unity\16.0\Editor\SyntaxTree.VisualStudio.Unity.Bridge.dll</HintPath>
     </Reference>
+    <Reference Include="Pathfinding.Ionic.Zip.Reduced">
+      <HintPath>Assets\Dependencies\AstarPathfindingProject\Plugins\DotNetZip\Pathfinding.Ionic.Zip.Reduced.dll</HintPath>
+    </Reference>
     <Reference Include="ICSharpCode.NRefactory">
       <HintPath>Library\PackageCache\com.unity.render-pipelines.core@8.1.0\Editor\ShaderGenerator\ICSharpCode.NRefactory.dll</HintPath>
-    </Reference>
-    <Reference Include="Pathfinding.Ionic.Zip.Reduced">
-      <HintPath>Assets\AstarPathfindingProject\Plugins\DotNetZip\Pathfinding.Ionic.Zip.Reduced.dll</HintPath>
     </Reference>
     <Reference Include="mscorlib">
       <HintPath>D:\Unity\2020.2.0b2\Editor\Data\MonoBleedingEdge\lib\mono\4.7.1-api\mscorlib.dll</HintPath>

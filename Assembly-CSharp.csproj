@@ -64,11 +64,12 @@
     <Compile Include="Assets\Scripts\Client\Scriptable objects\Data\EntityData.cs" />
     <Compile Include="Assets\Scripts\Client\Scriptable objects\Buildings\ConstructionSO.cs" />
     <Compile Include="Assets\Input\Controls.cs" />
+    <Compile Include="Assets\Scripts\Client\Entity composition\Health\EntityHealth.cs" />
     <Compile Include="Assets\Scripts\Client\Scriptable objects\Data\MapData.cs" />
     <Compile Include="Assets\Scripts\Client\Handlers\CounstructionHandler.cs" />
     <Compile Include="Assets\Scripts\Client\World generation\Helper classes\Noise.cs" />
     <Compile Include="Assets\Scripts\Client\Scriptable objects\Tiles\RuleOverrideTile\AdvancedRuleOverrideTile.cs" />
-    <Compile Include="Assets\Scripts\Client\Entity composition\EntityBehavoiur.cs" />
+    <Compile Include="Assets\Scripts\Client\Entity composition\Behaviour\EntityBehavoiur.cs" />
     <Compile Include="Assets\Scripts\Client\Handlers\TilemapHandler.cs" />
     <Compile Include="Assets\Scripts\Client\BuildingMonoBehaviours\GatheringBuildingBehaviour.cs" />
     <Compile Include="Assets\Scripts\Client\Scriptable objects\MapZones\MapZone.cs" />
@@ -89,6 +90,9 @@
     <Compile Include="Assets\Scripts\Client\Entity composition\Movement\EntityInputMovement.cs" />
     <Compile Include="Assets\Scripts\Client\Scriptable objects\Actions\ResourceActions.cs" />
     <Compile Include="Assets\Scripts\Client\BuildingMonoBehaviours\ConstructionBehavoiur.cs" />
+    <Compile Include="Assets\Scripts\Client\Scriptable objects\Items\ItemSO.cs" />
+    <Compile Include="Assets\Scripts\Client\Scriptable objects\Items\MeleeWeaponItemSO.cs" />
+    <Compile Include="Assets\Scripts\Client\Entity composition\EntityAttack.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
@@ -314,7 +318,7 @@
       <HintPath>D:\Unity\2020.2.0b2\Editor\Data\Managed\UnityEngine\UnityEditor.UnityConnectModule.dll</HintPath>
     </Reference>
     <Reference Include="Pathfinding.Ionic.Zip.Reduced">
-      <HintPath>Assets\AstarPathfindingProject\Plugins\DotNetZip\Pathfinding.Ionic.Zip.Reduced.dll</HintPath>
+      <HintPath>Assets\Dependencies\AstarPathfindingProject\Plugins\DotNetZip\Pathfinding.Ionic.Zip.Reduced.dll</HintPath>
     </Reference>
     <Reference Include="mscorlib">
       <HintPath>D:\Unity\2020.2.0b2\Editor\Data\MonoBleedingEdge\lib\mono\4.7.1-api\mscorlib.dll</HintPath>
@@ -787,13 +791,13 @@
       <Project>{21464ABC-3823-56F2-F906-AE5FB8072DFD}</Project>
       <Name>PackageToolsEditor</Name>
     </ProjectReference>
-    <ProjectReference Include="AstarPathfindingProjectEditor.csproj">
-      <Project>{4E161F08-04D5-9E1E-C038-8AE4F60C74A3}</Project>
-      <Name>AstarPathfindingProjectEditor</Name>
-    </ProjectReference>
     <ProjectReference Include="AstarPathfindingProject.csproj">
       <Project>{0AFF7316-A459-7661-64BF-55D5B982EE51}</Project>
       <Name>AstarPathfindingProject</Name>
+    </ProjectReference>
+    <ProjectReference Include="AstarPathfindingProjectEditor.csproj">
+      <Project>{4E161F08-04D5-9E1E-C038-8AE4F60C74A3}</Project>
+      <Name>AstarPathfindingProjectEditor</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

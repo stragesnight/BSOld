@@ -21,7 +21,7 @@ public class EntityPathfindingMovement : EntityMovement
         base.Start();
         seeker = GetComponent<Seeker>();
         // Path will be updated every second
-        InvokeRepeating("UpdatePath", 0f, 1f);
+        InvokeRepeating(nameof(UpdatePath), 0f, 1f);
     }
 
 
@@ -29,9 +29,7 @@ public class EntityPathfindingMovement : EntityMovement
     private void UpdatePath()
     {
         if (seeker.IsDone())
-        {
             seeker.StartPath(rb.position, target.position, OnPathComplete);
-        }
     }
 
 

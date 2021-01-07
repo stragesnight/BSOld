@@ -9,6 +9,7 @@ public class InputReader : ScriptableObject, Controls.IEntityActions
 {
     // Actions
     public Action<Vector2> moveAction;
+    public Action attackAction;
     //...
 
 
@@ -36,6 +37,13 @@ public class InputReader : ScriptableObject, Controls.IEntityActions
     public void OnMove(InputAction.CallbackContext context)
     {
         moveAction?.Invoke(context.ReadValue<Vector2>());
+    }
+
+
+    public void OnAttack(InputAction.CallbackContext context)
+    {
+        if (context.phase == InputActionPhase.Performed)
+            attackAction?.Invoke();
     }
 
 

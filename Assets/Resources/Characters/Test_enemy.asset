@@ -15,6 +15,6 @@ MonoBehaviour:
   entityName: test_enemy
   entityPosition: {x: 0, y: 0}
   entitySpawnPoint: {x: 10, y: 10}
-  entityMaxHP: 15
+  entityMaxHealthPoints: 25
   entitySpeed: 2000
   entityInventory: {fileID: 0}

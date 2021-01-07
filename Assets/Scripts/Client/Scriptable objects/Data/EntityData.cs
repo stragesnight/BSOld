@@ -9,34 +9,39 @@ public class EntityData : ScriptableObject
 
     // Name
     [SerializeField] private string entityName;
-    public void SetEntityName(string newName) { entityName = newName; }
-    public string GetEntityName() => entityName;
+    public void SetName(string newName) { entityName = newName; }
+    public string GetName() => entityName;
 
     // Position
     [SerializeField] Vector2 entityPosition;
-    public void SetEntityPosition(Vector2 newPosition) { entityPosition = newPosition; }
-    public Vector2 GetEntityPosition() => entityPosition;
+    public void SetPosition(Vector2 newPosition) { entityPosition = newPosition; }
+    public Vector2 GetPosition() => entityPosition;
 
     // Spawn point
     [SerializeField] Vector2 entitySpawnPoint;
-    public void SetEntitySpawnPoint(Vector2 newSpawnPoint) { entitySpawnPoint = newSpawnPoint; }
-    public Vector2 GetEntitySpawnPoint() => entitySpawnPoint;
+    public void SetSpawnPoint(Vector2 newSpawnPoint) { entitySpawnPoint = newSpawnPoint; }
+    public Vector2 GetSpawnPoint() => entitySpawnPoint;
 
     // ======================================== CHARACTERISTICS ========================================
 
     // Max HP
-    [SerializeField] private int entityMaxHP;
-    public void SetEntityMaxHP(int newMaxHP) { entityMaxHP = newMaxHP; }
-    public int GetEntityMaxHP() => entityMaxHP;
+    [SerializeField] private int entityMaxHealthPoints;
+    public void SetMaxHealthPoints(int newMaxHealthPoints) { entityMaxHealthPoints = newMaxHealthPoints; }
+    public int GetMaxHealthPoints() => entityMaxHealthPoints;
 
     // Speed
     [SerializeField] private float entitySpeed;
-    public void SetEntitySpeed(float newSpeed) { entitySpeed = newSpeed; }
-    public float GetEntitySpeed() => entitySpeed;
+    public void SetSpeed(float newSpeed) { entitySpeed = newSpeed; }
+    public float GetSpeed() => entitySpeed;
 
     // =========================================== INVENTORY ===========================================
 
     [SerializeField] private InventorySO entityInventory;
-    public void SetEntityInventory(InventorySO newInventory) { entityInventory = newInventory; }
-    public InventorySO GetEntityInventory() => entityInventory;
+    public void SetInventory(InventorySO newInventory) { entityInventory = newInventory; }
+    public InventorySO GetInventory() => entityInventory;
+
+    // Held Weapon
+    [SerializeField] private MeleeWeaponItemSO entityHeldWeapon;
+    public void SetHeldWeapon(MeleeWeaponItemSO newWeapon) { entityHeldWeapon = newWeapon; }
+    public MeleeWeaponItemSO GetHeldWeapon() => entityHeldWeapon;
 }

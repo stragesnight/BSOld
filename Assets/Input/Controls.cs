@@ -25,6 +25,14 @@ public class @Controls : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Vector2"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""Attack"",
+                    ""type"": ""Button"",
+                    ""id"": ""2d5d4061-87f1-4e6d-bbc5-9cc142d63535"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -137,6 +145,17 @@ public class @Controls : IInputActionCollection, IDisposable
                     ""action"": ""Move"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""55bb230d-5b2d-4376-bf0c-00708a1fd914"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard + mouse"",
+                    ""action"": ""Attack"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -152,6 +171,7 @@ public class @Controls : IInputActionCollection, IDisposable
         // Entity
         m_Entity = asset.FindActionMap("Entity", throwIfNotFound: true);
         m_Entity_Move = m_Entity.FindAction("Move", throwIfNotFound: true);
+        m_Entity_Attack = m_Entity.FindAction("Attack", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -202,11 +222,13 @@ public class @Controls : IInputActionCollection, IDisposable
     private readonly InputActionMap m_Entity;
     private IEntityActions m_EntityActionsCallbackInterface;
     private readonly InputAction m_Entity_Move;
+    private readonly InputAction m_Entity_Attack;
     public struct EntityActions
     {
         private @Controls m_Wrapper;
         public EntityActions(@Controls wrapper) { m_Wrapper = wrapper; }
         public InputAction @Move => m_Wrapper.m_Entity_Move;
+        public InputAction @Attack => m_Wrapper.m_Entity_Attack;
         public InputActionMap Get() { return m_Wrapper.m_Entity; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -219,6 +241,9 @@ public class @Controls : IInputActionCollection, IDisposable
                 @Move.started -= m_Wrapper.m_EntityActionsCallbackInterface.OnMove;
                 @Move.performed -= m_Wrapper.m_EntityActionsCallbackInterface.OnMove;
                 @Move.canceled -= m_Wrapper.m_EntityActionsCallbackInterface.OnMove;
+                @Attack.started -= m_Wrapper.m_EntityActionsCallbackInterface.OnAttack;
+                @Attack.performed -= m_Wrapper.m_EntityActionsCallbackInterface.OnAttack;
+                @Attack.canceled -= m_Wrapper.m_EntityActionsCallbackInterface.OnAttack;
             }
             m_Wrapper.m_EntityActionsCallbackInterface = instance;
             if (instance != null)
@@ -226,6 +251,9 @@ public class @Controls : IInputActionCollection, IDisposable
                 @Move.started += instance.OnMove;
                 @Move.performed += instance.OnMove;
                 @Move.canceled += instance.OnMove;
+                @Attack.started += instance.OnAttack;
+                @Attack.performed += instance.OnAttack;
+                @Attack.canceled += instance.OnAttack;
             }
         }
     }
@@ -242,5 +270,6 @@ public class @Controls : IInputActionCollection, IDisposable
     public interface IEntityActions
     {
         void OnMove(InputAction.CallbackContext context);
+        void OnAttack(InputAction.CallbackContext context);
     }
 }

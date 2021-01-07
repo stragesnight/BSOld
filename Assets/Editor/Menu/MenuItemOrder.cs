@@ -29,6 +29,7 @@ namespace UnityEditor.Tilemaps
     {
         EntityData = 150,
         Inventory,
+        Item,
         Resource = 170,
         MapZone
     }
@@ -99,6 +100,12 @@ namespace UnityEditor.Tilemaps
         static void CreateInventory()
         {
             ProjectWindowUtil.CreateAsset(ScriptableObject.CreateInstance<InventorySO>(), "New Inventory.asset");
+        }
+
+        [MenuItem("Assets/Create/Content/Items/Melee Weapon", priority = (int)EContentMenuItemOrder.Item)]
+        static void CreateItem()
+        {
+            ProjectWindowUtil.CreateAsset(ScriptableObject.CreateInstance<MeleeWeaponItemSO>(), "New Item.asset");
         }
 
         //================================================= ACTIONS =================================================

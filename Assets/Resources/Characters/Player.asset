@@ -15,6 +15,7 @@ MonoBehaviour:
   entityName: kekus
   entityPosition: {x: 0, y: 0}
   entitySpawnPoint: {x: 0, y: 0}
-  entityMaxHP: 100
+  entityMaxHealthPoints: 11
   entitySpeed: 2750
   entityInventory: {fileID: 0}
+  entityHeldWeapon: {fileID: 11400000, guid: 074838d5f955c7c409d7572619337b57, type: 2}
