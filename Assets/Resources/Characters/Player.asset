@@ -16,5 +16,5 @@ MonoBehaviour:
   entityPosition: {x: 0, y: 0}
   entitySpawnPoint: {x: 0, y: 0}
   entityMaxHP: 100
-  entitySpeed: 256
+  entitySpeed: 2750
   entityInventory: {fileID: 0}

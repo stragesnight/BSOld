@@ -20,15 +20,15 @@ namespace UnityEditor.Tilemaps
     internal enum EActionsAndDataMenuItemOrder
     {
         MapData = 150,
-        PlayerData,
-        Inventory,
         BuildingActions = 160,
         ResourceActions,
         TilemapActions
     }
 
-    internal enum ECustomItemsMenuItemOrder
+    internal enum EContentMenuItemOrder
     {
+        EntityData = 150,
+        Inventory,
         Resource = 170,
         MapZone
     }
@@ -75,18 +75,30 @@ namespace UnityEditor.Tilemaps
             ProjectWindowUtil.CreateAsset(ScriptableObject.CreateInstance<GatheringBuildingSO>(), "New Gathering BuildingSO.asset");
         }
 
-        // ============================================== CUSTOM ITEMS ==============================================
+        // ================================================ CONTENT ================================================
 
-        [MenuItem("Assets/Create/Content/Resource", priority = (int)ECustomItemsMenuItemOrder.Resource)]
+        [MenuItem("Assets/Create/Content/Resource", priority = (int)EContentMenuItemOrder.Resource)]
         static void CreateResource()
         {
             ProjectWindowUtil.CreateAsset(ScriptableObject.CreateInstance<Resource>(), "New Resource.asset");
         }
 
-        [MenuItem("Assets/Create/Content/Map Zone", priority = (int)ECustomItemsMenuItemOrder.MapZone)]
+        [MenuItem("Assets/Create/Content/Map Zone", priority = (int)EContentMenuItemOrder.MapZone)]
         static void CreateMapZone()
         {
             ProjectWindowUtil.CreateAsset(ScriptableObject.CreateInstance<MapZone>(), "New Map Zone.asset");
+        }
+
+        [MenuItem("Assets/Create/Content/Data/Entity", priority = (int)EContentMenuItemOrder.EntityData)]
+        static void CreatePlayerData()
+        {
+            ProjectWindowUtil.CreateAsset(ScriptableObject.CreateInstance<EntityData>(), "New Entity.asset");
+        }
+
+        [MenuItem("Assets/Create/Content/Data/Inventory", priority = (int)EContentMenuItemOrder.Inventory)]
+        static void CreateInventory()
+        {
+            ProjectWindowUtil.CreateAsset(ScriptableObject.CreateInstance<InventorySO>(), "New Inventory.asset");
         }
 
         //================================================= ACTIONS =================================================
@@ -115,18 +127,6 @@ namespace UnityEditor.Tilemaps
         static void CreateMapData()
         {
             ProjectWindowUtil.CreateAsset(ScriptableObject.CreateInstance<MapData>(), "New Map Data.asset");
-        }
-
-        [MenuItem("Assets/Create/Actions and Data/Data/Player Data", priority = (int)EActionsAndDataMenuItemOrder.PlayerData)]
-        static void CreatePlayerData()
-        {
-            ProjectWindowUtil.CreateAsset(ScriptableObject.CreateInstance<EntityData>(), "New Player Data.asset");
-        }
-
-        [MenuItem("Assets/Create/Actions and Data/Data/Inventory", priority = (int)EActionsAndDataMenuItemOrder.Inventory)]
-        static void CreateInventory()
-        {
-            ProjectWindowUtil.CreateAsset(ScriptableObject.CreateInstance<InventorySO>(), "New Inventory.asset");
         }
 
         /*

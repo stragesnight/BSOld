@@ -54,6 +54,8 @@ public class MapGenerator : MonoBehaviour
 
         // Generate map of resources
         GenerateResourceMap();
+
+        AstarPath.active.Scan();
     }
 
 
