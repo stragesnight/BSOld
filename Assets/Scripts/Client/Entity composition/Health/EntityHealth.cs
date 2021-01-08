@@ -7,7 +7,7 @@ using UnityEngine;
 [RequireComponent(typeof(EntityBehavoiur))]
 public class EntityHealth : MonoBehaviour
 {
-    private EntityBehavoiur entity;
+    private EntityBehavoiur _entity;
 
     [NonSerialized] public int healthPoints;
 
@@ -20,16 +20,15 @@ public class EntityHealth : MonoBehaviour
     // Get required components and variables
     public void Start()
     {
-        entity = GetComponent<EntityBehavoiur>();
+        _entity = GetComponent<EntityBehavoiur>();
 
-        healthPoints = entity.entityData.GetMaxHealthPoints();
+        healthPoints = _entity.entityData.GetMaxHealthPoints();
     }
 
 
     // Call whenever Entity's health must change
     public void OnHealthChange(int amount)
     {
-        print("OnHealthChange");
         healthPoints -= amount;
 
         if (amount >= 0)
@@ -47,7 +46,6 @@ public class EntityHealth : MonoBehaviour
     // Called when Entity dies
     private void OnDeath()
     {
-        print("dead");
         deathAction?.Invoke();
         Destroy(gameObject);
     }

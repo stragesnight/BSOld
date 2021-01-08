@@ -6,49 +6,49 @@ using UnityEngine;
 /// </summary>
 public class MapTileGenerator : MonoBehaviour
 {
-    private HashSet<MapZone> mapZoneDB;
+    private HashSet<MapZone> _mapZoneDB;
 
     // Maps
-    private float[,] heightMap;
-    private float[,] temperatureMap;
-    private float[,] fertilityMap;
+    private float[,] _heightMap;
+    private float[,] _temperatureMap;
+    private float[,] _fertilityMap;
 
     // Map Dictionaries
-    private Dictionary<Vector3Int, MapZone> walkableNatureMap;
-    private Dictionary<Vector3Int, MapZone> unWalkableNatureMap;
+    private Dictionary<Vector3Int, MapZone> _walkableNatureMap;
+    private Dictionary<Vector3Int, MapZone> _unWalkableNatureMap;
 
     // Zone and Biomes arrays
-    private ElevationZone[] elevationZones;
-    private TemperatureBiome[] temperatureBiomes;
-    private FertilityZone[] fertilityZones;
+    private ElevationZone[] _elevationZones;
+    private TemperatureBiome[] _temperatureBiomes;
+    private FertilityZone[] _fertilityZones;
 
 
     // Algorithm initialization
     public void Initialize()
     {
         // Map Dictionary initialization
-        walkableNatureMap = new Dictionary<Vector3Int, MapZone>();
-        unWalkableNatureMap = new Dictionary<Vector3Int, MapZone>();
+        _walkableNatureMap = new Dictionary<Vector3Int, MapZone>();
+        _unWalkableNatureMap = new Dictionary<Vector3Int, MapZone>();
 
         // Load Rule Tiles from Resource folder and Initializing RuleTile DataBase HashSet
-        mapZoneDB = new HashSet<MapZone>(Resources.LoadAll<MapZone>("Map Zones"));
+        _mapZoneDB = new HashSet<MapZone>(Resources.LoadAll<MapZone>("Map Zones"));
 
         // Maps initialization
-        heightMap = MapData.Instance.GetHeightMap();
-        temperatureMap = MapData.Instance.GetTemperatureMap();
-        fertilityMap = MapData.Instance.GetFertilityMap();
+        _heightMap = MapData.Instance.GetHeightMap();
+        _temperatureMap = MapData.Instance.GetTemperatureMap();
+        _fertilityMap = MapData.Instance.GetFertilityMap();
 
         // Fill Arrays
-        elevationZones = MapZones.GetValues<ElevationZone>();
-        temperatureBiomes = MapZones.GetValues<TemperatureBiome>();
-        fertilityZones = MapZones.GetValues<FertilityZone>();
+        _elevationZones = MapZones.GetValues<ElevationZone>();
+        _temperatureBiomes = MapZones.GetValues<TemperatureBiome>();
+        _fertilityZones = MapZones.GetValues<FertilityZone>();
 
         // Fill dictionary
         FillNatureMap();
 
         // Update natureMaps of a mapData
-        MapData.Instance.SetWalkableNatureMap(walkableNatureMap);
-        MapData.Instance.SetUnWalkableNatureMap(unWalkableNatureMap);
+        MapData.Instance.SetWalkableNatureMap(_walkableNatureMap);
+        MapData.Instance.SetUnWalkableNatureMap(_unWalkableNatureMap);
     }
 
 
@@ -66,9 +66,9 @@ public class MapTileGenerator : MonoBehaviour
                 if (isFound)
                 {
                     if (isWalkable)
-                        walkableNatureMap.Add(currSlot, mapZone);
+                        _walkableNatureMap.Add(currSlot, mapZone);
                     else
-                        unWalkableNatureMap.Add(currSlot, mapZone);
+                        _unWalkableNatureMap.Add(currSlot, mapZone);
                 }
             }
         }
@@ -79,17 +79,17 @@ public class MapTileGenerator : MonoBehaviour
     private bool ChooseValidMapZone(Vector3Int pos, out MapZone validMapZone, out bool isWalkable)
     {
         // Looping through every tile in DataBase
-        foreach (MapZone mapZone in mapZoneDB)
+        foreach (MapZone mapZone in _mapZoneDB)
         {
             // ADD ENTRY TO NEW BIOME/ZONE
             // Check Elevation Zone
-            if (((int)mapZone.elevationZone == GetCurrentMapEnumValue<ElevationZone>(heightMap[pos.x, pos.y])
+            if (((int)mapZone.elevationZone == GetCurrentMapEnumValue<ElevationZone>(_heightMap[pos.x, pos.y])
                 || !mapZone.isRestrictedByElevation)
                 // Check Temperature Zone
-                && ((int)mapZone.temperatureBiome == GetCurrentMapEnumValue<TemperatureBiome>(temperatureMap[pos.x, pos.y])
+                && ((int)mapZone.temperatureBiome == GetCurrentMapEnumValue<TemperatureBiome>(_temperatureMap[pos.x, pos.y])
                 || !mapZone.isRestrictedByTemperature)
                 // Check Fertility Zone
-                && ((int)mapZone.fertilityZone == GetCurrentMapEnumValue<FertilityZone>(fertilityMap[pos.x, pos.y])
+                && ((int)mapZone.fertilityZone == GetCurrentMapEnumValue<FertilityZone>(_fertilityMap[pos.x, pos.y])
                 || !mapZone.isRestrictedByFertility))
             {
                 // Assing values to out variables
@@ -113,7 +113,7 @@ public class MapTileGenerator : MonoBehaviour
         // Elevation Zone
         if (typeof(T) == typeof(ElevationZone))
         {
-            foreach (ElevationZone elevationZone in elevationZones)
+            foreach (ElevationZone elevationZone in _elevationZones)
             {
                 if (mapValue <= (int)elevationZone / 100f)
                     return (int)elevationZone;
@@ -122,7 +122,7 @@ public class MapTileGenerator : MonoBehaviour
         // Temperature Zone
         else if (typeof(T) == typeof(TemperatureBiome))
         {
-            foreach (TemperatureBiome temperatureBiome in temperatureBiomes)
+            foreach (TemperatureBiome temperatureBiome in _temperatureBiomes)
             {
                 if (mapValue <= (int)temperatureBiome / 100f)
                     return (int)temperatureBiome;
@@ -132,7 +132,7 @@ public class MapTileGenerator : MonoBehaviour
         // Fertility Zone
         else if (typeof(T) == typeof(FertilityZone))
         {
-            foreach (FertilityZone fertilityZone in fertilityZones)
+            foreach (FertilityZone fertilityZone in _fertilityZones)
             {
                 if (mapValue <= (int)fertilityZone / 100f)
                     return (int)fertilityZone;

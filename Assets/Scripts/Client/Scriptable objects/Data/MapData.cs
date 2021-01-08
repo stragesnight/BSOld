@@ -32,183 +32,183 @@ public class MapData : ScriptableObject
     // =========================================== BUILDINGS ===========================================
 
     // constructionMap
-    [SerializeField] private Dictionary<Vector3Int[], GameObject> constructionMap = new Dictionary<Vector3Int[], GameObject>();
+    [SerializeField] private Dictionary<Vector3Int[], GameObject> _constructionMap = new Dictionary<Vector3Int[], GameObject>();
     // Set
     public void SetConstructionAtPoint(Vector3Int[] positions, GameObject construction) 
     {
-        if (constructionMap.ContainsKey(positions))
-            constructionMap[positions] = construction;
+        if (_constructionMap.ContainsKey(positions))
+            _constructionMap[positions] = construction;
         else
-            constructionMap.Add(positions, construction);
+            _constructionMap.Add(positions, construction);
         constructionActions.OnPlaceConstruction(positions, construction); 
     }
     public void SetConstructionMap(Dictionary<Vector3Int[], GameObject> map) 
     { 
-        constructionMap = map;
+        _constructionMap = map;
         constructionActions.OnPlaceConstructionMap(map);
     }
     // Get
     public bool GetConstructionAtPoint(Vector3Int position, out GameObject construction)
     {
-        foreach (Vector3Int[] positions in constructionMap.Keys)
+        foreach (Vector3Int[] positions in _constructionMap.Keys)
         {
             if (positions.Contains(position))
-                return constructionMap.TryGetValue(positions, out construction);
+                return _constructionMap.TryGetValue(positions, out construction);
         }
 
         construction = null;
         return false;
     }
-    public Dictionary<Vector3Int[], GameObject> GetConstructionMap() => constructionMap;
+    public Dictionary<Vector3Int[], GameObject> GetConstructionMap() => _constructionMap;
 
     // =========================================== RESOURCES ===========================================
 
     // resourceMap
-    [SerializeField] private Dictionary<Vector3Int, Resource> resourceMap = new Dictionary<Vector3Int, Resource>();
+    [SerializeField] private Dictionary<Vector3Int, Resource> _resourceMap = new Dictionary<Vector3Int, Resource>();
     // Set
     public void SetResourceAtPoint(Vector3Int position, Resource resource) 
     {
-        if (resourceMap.ContainsKey(position))
-            resourceMap[position] = resource;
+        if (_resourceMap.ContainsKey(position))
+            _resourceMap[position] = resource;
         else
-            resourceMap.Add(position, resource);
+            _resourceMap.Add(position, resource);
         resourceActions.OnSetResourceAtPoint(position, resource);
     }
     public void SetResourceMap(Dictionary<Vector3Int, Resource> map) 
     {
-        resourceMap = map;
+        _resourceMap = map;
         resourceActions.OnSetResourceMap(map);
     }
     // Get
     public bool GetResourceAtPoint(Vector3Int position, out Resource resource)
     {
-        return resourceMap.TryGetValue(position, out resource);
+        return _resourceMap.TryGetValue(position, out resource);
     }
-    public Dictionary<Vector3Int, Resource> GetResourceMap() => resourceMap;
+    public Dictionary<Vector3Int, Resource> GetResourceMap() => _resourceMap;
 
     // resourceAmounts
-    [SerializeField] private Dictionary<Vector3Int, int> resourceAmounts = new Dictionary<Vector3Int, int>();
+    [SerializeField] private Dictionary<Vector3Int, int> _resourceAmounts = new Dictionary<Vector3Int, int>();
     // Set
     public void SetResourceAmountAtPoint(Vector3Int position, int amount) 
     {
-        if (resourceAmounts.ContainsKey(position))
-            resourceAmounts[position] = amount;
+        if (_resourceAmounts.ContainsKey(position))
+            _resourceAmounts[position] = amount;
         else
-            resourceAmounts.Add(position, amount);
+            _resourceAmounts.Add(position, amount);
         resourceActions.OnSetResourceAmountAtPoint(position, amount);
     }
     public void SetResourceAmounts(Dictionary<Vector3Int, int> amounts) 
     {
-        resourceAmounts = amounts;
+        _resourceAmounts = amounts;
         resourceActions.OnSetResourceAmounts(amounts);
     }
     // Get
     public bool GetResourceAmountAtPoint(Vector3Int position, out int amount)
     {
-        return resourceAmounts.TryGetValue(position, out amount);
+        return _resourceAmounts.TryGetValue(position, out amount);
     }
-    public Dictionary<Vector3Int, int> GetResourceAmounts() => resourceAmounts;
+    public Dictionary<Vector3Int, int> GetResourceAmounts() => _resourceAmounts;
 
     // ======================================== WALKABLE NATURE ========================================
 
-    [SerializeField] private Dictionary<Vector3Int, MapZone> walkableNatureMap = new Dictionary<Vector3Int, MapZone>();
+    [SerializeField] private Dictionary<Vector3Int, MapZone> _walkableNatureMap = new Dictionary<Vector3Int, MapZone>();
     // Set
     public void SetWalkableNatureAtPoint(Vector3Int position, MapZone tile) 
     { 
-        if (walkableNatureMap.ContainsKey(position))
-            walkableNatureMap[position] = tile;
+        if (_walkableNatureMap.ContainsKey(position))
+            _walkableNatureMap[position] = tile;
         else
-            walkableNatureMap.Add(position, tile);
+            _walkableNatureMap.Add(position, tile);
         tilemapActions.OnSetWalkableNatureTilemapEntry(position, tile);
     }
     public void SetWalkableNatureMap(Dictionary<Vector3Int, MapZone> map) 
     {
-        walkableNatureMap = map;
+        _walkableNatureMap = map;
         tilemapActions.OnSetWalkableNatureTilemap(map);
     }
     // Get
     public bool GetWalkableNatureAtPoint(Vector3Int position, out MapZone mapZone)
     {
-        return walkableNatureMap.TryGetValue(position, out mapZone);
+        return _walkableNatureMap.TryGetValue(position, out mapZone);
     }
-    public Dictionary<Vector3Int, MapZone> GetWalkableNatureMap() => walkableNatureMap;
+    public Dictionary<Vector3Int, MapZone> GetWalkableNatureMap() => _walkableNatureMap;
 
     // ======================================= UNWALKABLE NATURE =======================================
 
-    [SerializeField] private Dictionary<Vector3Int, MapZone> unWalkableNatureMap = new Dictionary<Vector3Int, MapZone>();
+    [SerializeField] private Dictionary<Vector3Int, MapZone> _unWalkableNatureMap = new Dictionary<Vector3Int, MapZone>();
     // Set
     public void SetUnWalkableNatureAtPoint(Vector3Int position, MapZone tile)
     {
-        if (unWalkableNatureMap.ContainsKey(position))
-            unWalkableNatureMap[position] = tile;
+        if (_unWalkableNatureMap.ContainsKey(position))
+            _unWalkableNatureMap[position] = tile;
         else
-            unWalkableNatureMap.Add(position, tile);
+            _unWalkableNatureMap.Add(position, tile);
         tilemapActions.OnSetUnWalkableNatureTilemapEntry(position, tile);
     }
     public void SetUnWalkableNatureMap(Dictionary<Vector3Int, MapZone> map)
     {
-        unWalkableNatureMap = map;
+        _unWalkableNatureMap = map;
         tilemapActions.OnSetUnWalkableNatureTilemap(map);
     }
     // Get
     public bool GetUnWalkableNatureAtPoint(Vector3Int position, out MapZone mapZone)
     {
-        return unWalkableNatureMap.TryGetValue(position, out mapZone);
+        return _unWalkableNatureMap.TryGetValue(position, out mapZone);
     }
-    public Dictionary<Vector3Int, MapZone> GetUnWalkableNatureMap() => unWalkableNatureMap;
+    public Dictionary<Vector3Int, MapZone> GetUnWalkableNatureMap() => _unWalkableNatureMap;
 
     // ===================================== PLACING ACCESSIBILITY =====================================
 
-    [SerializeField] private Dictionary<Vector3Int, bool> placingAccessibilityMap = new Dictionary<Vector3Int, bool>();
+    [SerializeField] private Dictionary<Vector3Int, bool> _placingAccessibilityMap = new Dictionary<Vector3Int, bool>();
     // Set
     public void SetPlacingAccessibilityMapAtPoint(Vector3Int position, bool value) 
     {
-        if (placingAccessibilityMap.ContainsKey(position))
-            placingAccessibilityMap[position] = value;
+        if (_placingAccessibilityMap.ContainsKey(position))
+            _placingAccessibilityMap[position] = value;
         else
-            placingAccessibilityMap.Add(position, value);
+            _placingAccessibilityMap.Add(position, value);
         tilemapActions.OnSetPlacingAccessibilityTilemapEntry(position, value);
     }
     public void SetPlacingAccessibilityMap(Dictionary<Vector3Int, bool> map) 
     {
-        placingAccessibilityMap = map;
+        _placingAccessibilityMap = map;
         tilemapActions.OnSetPlacingAccessibilityTilemap(map);
     }
     // Get
     public bool GetPlacingAccessibilityMapAtPoint(Vector3Int position, out bool accessible)
     {
-        return placingAccessibilityMap.TryGetValue(position, out accessible);
+        return _placingAccessibilityMap.TryGetValue(position, out accessible);
     }
-    public Dictionary<Vector3Int, bool> GetPlacingAccessibilityMap() => placingAccessibilityMap;
+    public Dictionary<Vector3Int, bool> GetPlacingAccessibilityMap() => _placingAccessibilityMap;
 
     // ========================================== NOISEMAPS ==========================================
 
     // heightMap
-    [SerializeField] private float[,] heightMap = new float[0, 0];
+    [SerializeField] private float[,] _heightMap = new float[0, 0];
     // Set
-    public void SetHeightAtPoint(Vector3Int position, float value) { heightMap[position.x, position.y] = value; }
-    public void SetHeightMap(float[,] map) { heightMap = map; }
+    public void SetHeightAtPoint(Vector3Int position, float value) { _heightMap[position.x, position.y] = value; }
+    public void SetHeightMap(float[,] map) { _heightMap = map; }
     // Get
-    public float GetHeightMapAtPoint(Vector3Int position) => heightMap[position.x, position.y];
-    public float[,] GetHeightMap() => heightMap;
+    public float GetHeightMapAtPoint(Vector3Int position) => _heightMap[position.x, position.y];
+    public float[,] GetHeightMap() => _heightMap;
 
 
     // temperatureMap
-    [SerializeField] private float[,] temperatureMap = new float[0, 0];
+    [SerializeField] private float[,] _temperatureMap = new float[0, 0];
     // Set
-    public void SetTemperatureAtPoint(Vector3Int position, float value) { temperatureMap[position.x, position.y] = value; }
-    public void SetTemperatureMap(float[,] map) { temperatureMap = map; }
+    public void SetTemperatureAtPoint(Vector3Int position, float value) { _temperatureMap[position.x, position.y] = value; }
+    public void SetTemperatureMap(float[,] map) { _temperatureMap = map; }
     // Get
-    public float GetTemperatureAtPoint(Vector3Int position) => temperatureMap[position.x, position.y];
-    public float[,] GetTemperatureMap() => temperatureMap;
+    public float GetTemperatureAtPoint(Vector3Int position) => _temperatureMap[position.x, position.y];
+    public float[,] GetTemperatureMap() => _temperatureMap;
 
 
     // fertilityMap
-    [SerializeField] private float[,] fertilityMap = new float[0, 0];
+    [SerializeField] private float[,] _fertilityMap = new float[0, 0];
     // Set
-    public void SetFertilityAtPoint(Vector3Int position, float value) { fertilityMap[position.x, position.y] = value; }
-    public void SetFertilityMap(float[,] map) { fertilityMap = map; }
+    public void SetFertilityAtPoint(Vector3Int position, float value) { _fertilityMap[position.x, position.y] = value; }
+    public void SetFertilityMap(float[,] map) { _fertilityMap = map; }
     // Get
-    public float GetFertilityAtPoint(Vector3Int position) => fertilityMap[position.x, position.y];
-    public float[,] GetFertilityMap() => fertilityMap;
+    public float GetFertilityAtPoint(Vector3Int position) => _fertilityMap[position.x, position.y];
+    public float[,] GetFertilityMap() => _fertilityMap;
 }

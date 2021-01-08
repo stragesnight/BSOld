@@ -5,17 +5,17 @@ using UnityEngine;
 /// </summary>
 public class EntityInputMovement : EntityMovement
 {
-    [SerializeField] private InputReader inputReader;
+    [SerializeField] private InputReader _inputReader;
 
 
     private void OnEnable()
     {
-        inputReader.moveAction += OnChangeMovementDirection;
+        _inputReader.moveAction += OnChangeMovementDirection;
     }
 
 
     private void OnDisable()
     {
-        inputReader.moveAction -= OnChangeMovementDirection;
+        _inputReader.moveAction -= OnChangeMovementDirection;
     }
 }

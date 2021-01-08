@@ -7,19 +7,19 @@ using Pathfinding;
 [RequireComponent(typeof(Seeker))]
 public class EntityPathfindingMovement : EntityMovement
 {
-    [SerializeField] private float nextWayPointThreshold = 1f;
-    private Seeker seeker;
+    [SerializeField] private float _nextWayPointThreshold = 1f;
+    private Seeker _seeker;
 
-    [SerializeField] private Transform target;
-    private Path currentPath;
-    int currentWayPoint;
+    [SerializeField] private Transform _target;
+    private Path _currentPath;
+    int _currentWayPoint;
 
 
     // Get required components and invoke repeating
     protected override void Start()
     {
         base.Start();
-        seeker = GetComponent<Seeker>();
+        _seeker = GetComponent<Seeker>();
         // Path will be updated every second
         InvokeRepeating(nameof(UpdatePath), 0f, 1f);
     }
@@ -28,8 +28,8 @@ public class EntityPathfindingMovement : EntityMovement
     // Start calculating new path if Seeker is not busy
     private void UpdatePath()
     {
-        if (seeker.IsDone())
-            seeker.StartPath(rb.position, target.position, OnPathComplete);
+        if (_seeker.IsDone())
+            _seeker.StartPath(_rb.position, _target.position, OnPathComplete);
     }
 
 
@@ -39,19 +39,19 @@ public class EntityPathfindingMovement : EntityMovement
         if (path.error) 
             return;
 
-        currentPath = path;
-        currentWayPoint = 0;
+        _currentPath = path;
+        _currentWayPoint = 0;
     }
 
 
     // Increment current waypoint index and change movement direction
     private void UpdateWayPoint()
     {
-        currentWayPoint++;
-        if (currentWayPoint < currentPath.vectorPath.Count)
-            OnChangeMovementDirection(((Vector2)currentPath.vectorPath[currentWayPoint] - rb.position).normalized);
+        _currentWayPoint++;
+        if (_currentWayPoint < _currentPath.vectorPath.Count)
+            OnChangeMovementDirection(((Vector2)_currentPath.vectorPath[_currentWayPoint] - _rb.position).normalized);
         else
-            currentPath = null;
+            _currentPath = null;
     }
 
 
@@ -59,14 +59,14 @@ public class EntityPathfindingMovement : EntityMovement
     protected override void FixedUpdate()
     {
         // Check if Entity has path
-        if (currentPath == null) 
+        if (_currentPath == null) 
             return;
 
         // Calculate distance to current waypoint
-        float distanceToWayPoint = Vector2.Distance(currentPath.vectorPath[currentWayPoint], rb.position);
+        float distanceToWayPoint = Vector2.Distance(_currentPath.vectorPath[_currentWayPoint], _rb.position);
 
         // update waypoint if threshold was reached
-        if (distanceToWayPoint < nextWayPointThreshold)
+        if (distanceToWayPoint < _nextWayPointThreshold)
             UpdateWayPoint();
 
         // Move Entity
@@ -74,6 +74,6 @@ public class EntityPathfindingMovement : EntityMovement
     }
 
 
-    public void SetTarget(Transform newTarget) { target = newTarget; }
-    public Transform GetTarget() => target;
+    public void SetTarget(Transform newTarget) { _target = newTarget; }
+    public Transform GetTarget() => _target;
 }

@@ -14,7 +14,7 @@ public abstract class ConstructionSO : ScriptableObject
     public int startingHealth;
 
     // Starting size of a building in tiles
-   public Vector3Int[] positions;
+    public Vector3Int[] positions;
 
     // Required resources, preferred and unwanted neighbours
     public RequiredResource[] requiredResources;

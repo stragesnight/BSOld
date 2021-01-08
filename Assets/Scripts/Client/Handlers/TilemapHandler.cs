@@ -9,118 +9,118 @@ using UnityEngine.Tilemaps;
 public class TilemapHandler : MonoBehaviour
 {
     [Header("Dependencies")]
-    [SerializeField] private ConstructionActions constructionActions;
-    [SerializeField] private ResourceActions resourceActions;
-    [SerializeField] private TilemapActions tilemapActions;
+    [SerializeField] private ConstructionActions _constructionActions;
+    [SerializeField] private ResourceActions _resourceActions;
+    [SerializeField] private TilemapActions _tilemapActions;
     [Header("Accessibility tiles")]
-    [SerializeField] private RuleTile accessibilityTile;
-    [SerializeField] private RuleTile nonAccessibilityTile;
+    [SerializeField] private RuleTile _accessibilityTile;
+    [SerializeField] private RuleTile _nonAccessibilityTile;
 
 
     // Subscribe to Actions
     private void OnEnable()
     {
         // Buildings
-        constructionActions.placeConstructionAction += SetConstructionTilemapEntry;
-        constructionActions.placeConstructionMapAction += SetConstructionTilemap;
+        _constructionActions.placeConstructionAction += SetConstructionTilemapEntry;
+        _constructionActions.placeConstructionMapAction += SetConstructionTilemap;
         // Resource Rilemap
-        resourceActions.setResouceAtPointAction += SetResourceTilemapEntry;
-        resourceActions.setResourceMapAction += SetResourceTilemap;
+        _resourceActions.setResouceAtPointAction += SetResourceTilemapEntry;
+        _resourceActions.setResourceMapAction += SetResourceTilemap;
         // Walkable Nature Tilemap
-        tilemapActions.setWalkableNatureTilemapEntryAction += SetWalkableNatureTilemapEntry;
-        tilemapActions.setWalkableNatureTilemapAction += SetWalkableNatureTilemap;
+        _tilemapActions.setWalkableNatureTilemapEntryAction += SetWalkableNatureTilemapEntry;
+        _tilemapActions.setWalkableNatureTilemapAction += SetWalkableNatureTilemap;
         // Unwalkable Nature Tilemap
-        tilemapActions.setUnWalkableNatureTilemapEntryAction += SetUnWalkableNatureTilemapEntry;
-        tilemapActions.setUnWalkableNatureTilemapAction += SetUnWalkableNatureTilemap;
+        _tilemapActions.setUnWalkableNatureTilemapEntryAction += SetUnWalkableNatureTilemapEntry;
+        _tilemapActions.setUnWalkableNatureTilemapAction += SetUnWalkableNatureTilemap;
         // Placing Accessibility Tilemap
-        tilemapActions.setPlacingAccessibilityTilemapEntryAction += SetPlacingAccessibilityTilemapEntry;
-        tilemapActions.setPlacingAccessibilityTilemapAction += SetPlacingAccessibilityTilemap;
+        _tilemapActions.setPlacingAccessibilityTilemapEntryAction += SetPlacingAccessibilityTilemapEntry;
+        _tilemapActions.setPlacingAccessibilityTilemapAction += SetPlacingAccessibilityTilemap;
     }
 
     // Unsubscribe from Actions
     private void OnDisable()
     {
         // Buildings
-        constructionActions.placeConstructionAction -= SetConstructionTilemapEntry;
-        constructionActions.placeConstructionMapAction -= SetConstructionTilemap;
+        _constructionActions.placeConstructionAction -= SetConstructionTilemapEntry;
+        _constructionActions.placeConstructionMapAction -= SetConstructionTilemap;
         // Resource Rilemap
-        resourceActions.setResouceAtPointAction -= SetResourceTilemapEntry;
-        resourceActions.setResourceMapAction -= SetResourceTilemap;
+        _resourceActions.setResouceAtPointAction -= SetResourceTilemapEntry;
+        _resourceActions.setResourceMapAction -= SetResourceTilemap;
         // Walkable Nature Tilemap
-        tilemapActions.setWalkableNatureTilemapEntryAction -= SetWalkableNatureTilemapEntry;
-        tilemapActions.setWalkableNatureTilemapAction -= SetWalkableNatureTilemap;
+        _tilemapActions.setWalkableNatureTilemapEntryAction -= SetWalkableNatureTilemapEntry;
+        _tilemapActions.setWalkableNatureTilemapAction -= SetWalkableNatureTilemap;
         // Unwalkable Nature Tilemap
-        tilemapActions.setUnWalkableNatureTilemapEntryAction -= SetUnWalkableNatureTilemapEntry;
-        tilemapActions.setUnWalkableNatureTilemapAction -= SetUnWalkableNatureTilemap;
+        _tilemapActions.setUnWalkableNatureTilemapEntryAction -= SetUnWalkableNatureTilemapEntry;
+        _tilemapActions.setUnWalkableNatureTilemapAction -= SetUnWalkableNatureTilemap;
         // Placing Accessibility Tilemap
-        tilemapActions.setPlacingAccessibilityTilemapEntryAction -= SetPlacingAccessibilityTilemapEntry;
-        tilemapActions.setPlacingAccessibilityTilemapAction -= SetPlacingAccessibilityTilemap;
+        _tilemapActions.setPlacingAccessibilityTilemapEntryAction -= SetPlacingAccessibilityTilemapEntry;
+        _tilemapActions.setPlacingAccessibilityTilemapAction -= SetPlacingAccessibilityTilemap;
     }
 
     [Header("Tilemaps")]
     // Construction Tilemap
-    [SerializeField] private Tilemap constructionTilemap;
+    [SerializeField] private Tilemap _constructionTilemap;
     private void SetConstructionTilemapEntry(Vector3Int[] positions, GameObject construction)
     {
-        constructionTilemap.SetTile(positions[0], construction.GetComponent<ConstructionBehavoiur>().type.ruleTile);
+        _constructionTilemap.SetTile(positions[0], construction.GetComponent<ConstructionBehavoiur>().type.ruleTile);
     }
     private void SetConstructionTilemap(Dictionary<Vector3Int[], GameObject> map)
     {
         TileBase[] constructions = map.Values.Select(x => x.GetComponent<ConstructionBehavoiur>().type.ruleTile).ToArray();
-        constructionTilemap.ClearAllTiles();
+        _constructionTilemap.ClearAllTiles();
         foreach (Vector3Int[] positions in map.Keys)
-            constructionTilemap.SetTiles(positions, constructions);
+            _constructionTilemap.SetTiles(positions, constructions);
     }
 
     // Resource Tilemap
-    [SerializeField] private Tilemap resourceTilemap;
+    [SerializeField] private Tilemap _resourceTilemap;
     private void SetResourceTilemapEntry(Vector3Int position, Resource resource)
     {
-        resourceTilemap.SetTile(position, resource.ruleTile);
+        _resourceTilemap.SetTile(position, resource.ruleTile);
     }
     private void SetResourceTilemap(Dictionary<Vector3Int, Resource> resources)
     {
-        resourceTilemap.ClearAllTiles();
-        resourceTilemap.SetTiles(resources.Keys.ToArray(), resources.Values.Select(x => x.ruleTile).ToArray());
+        _resourceTilemap.ClearAllTiles();
+        _resourceTilemap.SetTiles(resources.Keys.ToArray(), resources.Values.Select(x => x.ruleTile).ToArray());
     }
 
     // Walkable Nature Tilemap
-    [SerializeField] private Tilemap walkableNatureTilemap;
+    [SerializeField] private Tilemap _walkableNatureTilemap;
     private void SetWalkableNatureTilemapEntry(Vector3Int position, MapZone mapZone)
     {
-        walkableNatureTilemap.SetTile(position, mapZone.ruleTile);
+        _walkableNatureTilemap.SetTile(position, mapZone.ruleTile);
     }
     private void SetWalkableNatureTilemap(Dictionary<Vector3Int, MapZone> mapZones)
     {
-        walkableNatureTilemap.ClearAllTiles();
-        walkableNatureTilemap.SetTiles(mapZones.Keys.ToArray(), mapZones.Values.Select(x => x.ruleTile).ToArray());
+        _walkableNatureTilemap.ClearAllTiles();
+        _walkableNatureTilemap.SetTiles(mapZones.Keys.ToArray(), mapZones.Values.Select(x => x.ruleTile).ToArray());
     }
 
     // Unwalkable Nature Tilemap
-    [SerializeField] private Tilemap unWalkableNatureTilemap;
+    [SerializeField] private Tilemap _unWalkableNatureTilemap;
     private void SetUnWalkableNatureTilemapEntry(Vector3Int position, MapZone mapZone)
     {
-        unWalkableNatureTilemap.SetTile(position, mapZone.ruleTile);
+        _unWalkableNatureTilemap.SetTile(position, mapZone.ruleTile);
         UpdateCollider();
     }
     private void SetUnWalkableNatureTilemap(Dictionary<Vector3Int, MapZone> mapZones)
     {
-        unWalkableNatureTilemap.ClearAllTiles();
-        unWalkableNatureTilemap.SetTiles(mapZones.Keys.ToArray(), mapZones.Values.Select(x => x.ruleTile).ToArray());
+        _unWalkableNatureTilemap.ClearAllTiles();
+        _unWalkableNatureTilemap.SetTiles(mapZones.Keys.ToArray(), mapZones.Values.Select(x => x.ruleTile).ToArray());
         UpdateCollider();
     }
 
     // Placing Accessibility Tilemap
-    [SerializeField] private Tilemap placingAccessibilityTilemap;
+    [SerializeField] private Tilemap _placingAccessibilityTilemap;
     private void SetPlacingAccessibilityTilemapEntry(Vector3Int position, bool value)
     {
-        TileBase tile = value ? accessibilityTile : nonAccessibilityTile;
-        placingAccessibilityTilemap.SetTile(position, tile);
+        TileBase tile = value ? _accessibilityTile : _nonAccessibilityTile;
+        _placingAccessibilityTilemap.SetTile(position, tile);
     }
     private void SetPlacingAccessibilityTilemap(Dictionary<Vector3Int, bool> map)
     {
-        placingAccessibilityTilemap.ClearAllTiles();
-        placingAccessibilityTilemap.SetTiles(map.Keys.ToArray(), GetTilesFromBools(map.Values.ToArray()));
+        _placingAccessibilityTilemap.ClearAllTiles();
+        _placingAccessibilityTilemap.SetTiles(map.Keys.ToArray(), GetTilesFromBools(map.Values.ToArray()));
     }
 
 
@@ -131,7 +131,7 @@ public class TilemapHandler : MonoBehaviour
 
         for (int i = 0; i < values.Length; i++)
         {
-            tilesFromBools[i] = values[i] ? accessibilityTile : nonAccessibilityTile;
+            tilesFromBools[i] = values[i] ? _accessibilityTile : _nonAccessibilityTile;
         }
 
         return tilesFromBools;
@@ -140,7 +140,7 @@ public class TilemapHandler : MonoBehaviour
 
     private void UpdateCollider()
     {
-        TilemapCollider2D collider = unWalkableNatureTilemap.GetComponent<TilemapCollider2D>();
+        TilemapCollider2D collider = _unWalkableNatureTilemap.GetComponent<TilemapCollider2D>();
         collider.ProcessTilemapChanges();
         collider.composite.GenerateGeometry();
     }

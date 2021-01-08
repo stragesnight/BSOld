@@ -7,16 +7,16 @@ using UnityEngine;
 /// </summary>
 public class InventorySO : ScriptableObject
 {
-    private Dictionary<Vector3Int, InventorySlot> inventorySlots;
+    private Dictionary<Vector3Int, InventorySlot> _inventorySlots;
 
 
     // Single Slot
-    public void SetSlot(Vector3Int position, InventorySlot slot) { inventorySlots[position] = slot; }
-    public InventorySlot GetSlot(Vector3Int position) => inventorySlots[position];
+    public void SetSlot(Vector3Int position, InventorySlot slot) { _inventorySlots[position] = slot; }
+    public InventorySlot GetSlot(Vector3Int position) => _inventorySlots[position];
 
     // All Slots
-    public void SetSlots(Dictionary<Vector3Int, InventorySlot> slots) { inventorySlots = slots; }
-    public Dictionary<Vector3Int, InventorySlot> GetSlots() => inventorySlots;
+    public void SetSlots(Dictionary<Vector3Int, InventorySlot> slots) { _inventorySlots = slots; }
+    public Dictionary<Vector3Int, InventorySlot> GetSlots() => _inventorySlots;
 }
 
 

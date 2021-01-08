@@ -6,10 +6,10 @@ using UnityEngine;
 public class GeneralHandler : MonoBehaviour
 {
     [Header("Map")]
-    [SerializeField] private MapData mapData;
-    [SerializeField] private ConstructionActions buildingActions;
-    [SerializeField] private ResourceActions resourceActions;
-    [SerializeField] private TilemapActions tilemapActions;
+    [SerializeField] private MapData _mapData;
+    [SerializeField] private ConstructionActions _buildingActions;
+    [SerializeField] private ResourceActions _resourceActions;
+    [SerializeField] private TilemapActions _tilemapActions;
 
 
     private void Awake()
@@ -20,10 +20,10 @@ public class GeneralHandler : MonoBehaviour
 
     private void EnableMap()
     {
-        mapData.CheckInstance();
+        _mapData.CheckInstance();
 
-        mapData.constructionActions = buildingActions;
-        mapData.resourceActions = resourceActions;
-        mapData.tilemapActions = tilemapActions;
+        _mapData.constructionActions = _buildingActions;
+        _mapData.resourceActions = _resourceActions;
+        _mapData.tilemapActions = _tilemapActions;
     }
 }

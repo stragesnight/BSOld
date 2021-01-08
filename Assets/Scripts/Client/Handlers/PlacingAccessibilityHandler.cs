@@ -9,13 +9,13 @@ using UnityEngine.Tilemaps;
 public class PlacingAccessibilityHandler : MonoBehaviour
 {
     // Serialized variables
-    [SerializeField] private Tilemap placingAccessibilityTilemap;
-    [SerializeField] private MapData mapData;
+    [SerializeField] private Tilemap _placingAccessibilityTilemap;
+    [SerializeField] private MapData _mapData;
 
     // Unserialized variables
 
-    private Dictionary<Vector3Int, MapZone> natureMap;
-    private Dictionary<Vector3Int, bool> accessibilityMap;
+    private Dictionary<Vector3Int, MapZone> _natureMap;
+    private Dictionary<Vector3Int, bool> _accessibilityMap;
 
 
     private void Start()
@@ -30,8 +30,8 @@ public class PlacingAccessibilityHandler : MonoBehaviour
     // Get required components and initialize variables
     private void Initialize()
     {
-        natureMap = mapData.GetWalkableNatureMap();
-        accessibilityMap = new Dictionary<Vector3Int, bool>();
+        _natureMap = _mapData.GetWalkableNatureMap();
+        _accessibilityMap = new Dictionary<Vector3Int, bool>();
     }
 
 
@@ -39,13 +39,13 @@ public class PlacingAccessibilityHandler : MonoBehaviour
     public void GenerateAccessibilityMap()
     {
         // Get array of positions
-        Vector3Int[] mapPositions = natureMap.Keys.ToArray();
+        Vector3Int[] mapPositions = _natureMap.Keys.ToArray();
 
         foreach (Vector3Int position in mapPositions)
         {
             // Set accessibility to true if current tile is a land tile
             // Will be changed later
-            accessibilityMap.Add(position, natureMap[position].elevationZone == ElevationZone.land);
+            _accessibilityMap.Add(position, _natureMap[position].elevationZone == ElevationZone.land);
         }
     }
 }

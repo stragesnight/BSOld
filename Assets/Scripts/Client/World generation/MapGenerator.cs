@@ -6,23 +6,23 @@ using UnityEngine;
 public class MapGenerator : MonoBehaviour
 {
     [Header("Dependencies")]
-    private MapTileGenerator mapTileGenerator;
-    private ResourceMapGenerator resourceMapGenerator;
+    private MapTileGenerator _mapTileGenerator;
+    private ResourceMapGenerator _resourceMapGenerator;
 
     [Header("Map generation parameters")]
-    [SerializeField] private int mapWidth;    //in tiles
-    [SerializeField] private int mapHeight;   //in tiles
+    [SerializeField] private int _mapWidth;    //in tiles
+    [SerializeField] private int _mapHeight;   //in tiles
 
     [Header("Editor parameters")]
     [SerializeField] public bool autoUpdate;
 
     // Maps
-    [SerializeField] private NoiseMap heightMap;
-    [SerializeField] private NoiseMap temperatureMap;
-    [SerializeField] private NoiseMap fertilityMap;
+    [SerializeField] private NoiseMap _heightMap;
+    [SerializeField] private NoiseMap _temperatureMap;
+    [SerializeField] private NoiseMap _fertilityMap;
 
     // Resources
-    [SerializeField] private ResourceNoiseMap[] resourceNoiseMaps;
+    [SerializeField] private ResourceNoiseMap[] _resourceNoiseMaps;
 
 
     private void Start()
@@ -33,8 +33,8 @@ public class MapGenerator : MonoBehaviour
     // Get required components
     private void GetRequiredComponents()
     {
-        mapTileGenerator = GetComponent<MapTileGenerator>();
-        resourceMapGenerator = GetComponent<ResourceMapGenerator>();
+        _mapTileGenerator = GetComponent<MapTileGenerator>();
+        _resourceMapGenerator = GetComponent<ResourceMapGenerator>();
     }
 
 
@@ -44,13 +44,13 @@ public class MapGenerator : MonoBehaviour
         GetRequiredComponents();
 
         // Update mapData variables
-        MapData.Instance.SetMapWidth(mapWidth);
-        MapData.Instance.SetMapHeight(mapHeight);
+        MapData.Instance.SetMapWidth(_mapWidth);
+        MapData.Instance.SetMapHeight(_mapHeight);
 
         GenerateNoiseMaps();
 
         // Initialize tile generator
-        mapTileGenerator.Initialize();
+        _mapTileGenerator.Initialize();
 
         // Generate map of resources
         GenerateResourceMap();
@@ -62,45 +62,45 @@ public class MapGenerator : MonoBehaviour
     private void GenerateNoiseMaps()
     {
         // Height map generation
-        heightMap.map = Noise.GenerateNoiseMap
+        _heightMap.map = Noise.GenerateNoiseMap
             (
-            heightMap.seed,
-            heightMap.scale,
-            heightMap.octaves,
-            heightMap.persistance,
-            heightMap.lacunarity
+            _heightMap.seed,
+            _heightMap.scale,
+            _heightMap.octaves,
+            _heightMap.persistance,
+            _heightMap.lacunarity
             );
 
         // Temperature map generation
-        temperatureMap.map = Noise.GenerateNoiseMap
+        _temperatureMap.map = Noise.GenerateNoiseMap
             (
-            temperatureMap.seed,
-            temperatureMap.scale,
-            temperatureMap.octaves,
-            temperatureMap.persistance,
-            temperatureMap.lacunarity
+            _temperatureMap.seed,
+            _temperatureMap.scale,
+            _temperatureMap.octaves,
+            _temperatureMap.persistance,
+            _temperatureMap.lacunarity
             );
 
         // Fertility map generation
-        fertilityMap.map = Noise.GenerateNoiseMap
+        _fertilityMap.map = Noise.GenerateNoiseMap
             (
-            fertilityMap.seed,
-            fertilityMap.scale,
-            fertilityMap.octaves,
-            fertilityMap.persistance,
-            fertilityMap.lacunarity
+            _fertilityMap.seed,
+            _fertilityMap.scale,
+            _fertilityMap.octaves,
+            _fertilityMap.persistance,
+            _fertilityMap.lacunarity
             );
 
         // Update maps in mapData
-        MapData.Instance.SetHeightMap(heightMap.map);
-        MapData.Instance.SetTemperatureMap(temperatureMap.map);
-        MapData.Instance.SetFertilityMap(fertilityMap.map);
+        MapData.Instance.SetHeightMap(_heightMap.map);
+        MapData.Instance.SetTemperatureMap(_temperatureMap.map);
+        MapData.Instance.SetFertilityMap(_fertilityMap.map);
     }
 
 
     private void GenerateResourceMap()
     {
-        resourceMapGenerator.Initialize(resourceNoiseMaps);
+        _resourceMapGenerator.Initialize(_resourceNoiseMaps);
     }
 }
 

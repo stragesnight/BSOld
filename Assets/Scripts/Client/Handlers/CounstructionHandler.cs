@@ -7,26 +7,26 @@ using UnityEngine;
 public class CounstructionHandler : MonoBehaviour
 {
     [Header("Dependencies")]
-    [SerializeField] private ConstructionActions constructionActions;
+    [SerializeField] private ConstructionActions _constructionActions;
 
     /// <summary>
     /// Transform that will be parent object for all Buildings
     /// </summary>
-    [SerializeField] private Transform parentTransform;
+    [SerializeField] private Transform _parentTransform;
 
 
     // Subscrible to Actions
     private void OnEnable()
     {
-        constructionActions.placeConstructionAction += InstantiateConstructionObject;
-        constructionActions.placeConstructionMapAction += InstantiateConstructionMap;
+        _constructionActions.placeConstructionAction += InstantiateConstructionObject;
+        _constructionActions.placeConstructionMapAction += InstantiateConstructionMap;
     }
 
     // Unsubscribe from Actions
     private void OnDisable()
     {
-        constructionActions.placeConstructionAction -= InstantiateConstructionObject;
-        constructionActions.placeConstructionMapAction -= InstantiateConstructionMap;
+        _constructionActions.placeConstructionAction -= InstantiateConstructionObject;
+        _constructionActions.placeConstructionMapAction -= InstantiateConstructionMap;
     }
 
 
@@ -35,7 +35,7 @@ public class CounstructionHandler : MonoBehaviour
     {
         GameObject buildingObject = Instantiate(construction);
         buildingObject.transform.position = positions[0];
-        buildingObject.transform.SetParent(parentTransform);
+        buildingObject.transform.SetParent(_parentTransform);
     }
 
 
@@ -55,9 +55,9 @@ public class CounstructionHandler : MonoBehaviour
     private void ClearParent()
     {
         // This approach is more reliable than just looping through every child and destroying it
-        while (parentTransform.childCount > 0)
+        while (_parentTransform.childCount > 0)
         {
-            DestroyImmediate(parentTransform.GetChild(0));
+            DestroyImmediate(_parentTransform.GetChild(0));
         }
     }
 }

@@ -3,8 +3,8 @@ using UnityEngine;
 
 public class GatheringBuildingBehaviour : ConstructionBehavoiur
 {
-    private List<Resource> resourcesTouched;
-    private int amountGathered = 0;
+    private List<Resource> _resourcesTouched;
+    private int _amountGathered = 0;
 
 
     private void Start()
@@ -15,24 +15,24 @@ public class GatheringBuildingBehaviour : ConstructionBehavoiur
 
     private void Update()
     {
-        if (resourcesTouched.Count != 0)
+        if (_resourcesTouched.Count != 0)
             GatherResources();
     }
 
 
     private void GatherResources()
     {
-        foreach (Resource resource in resourcesTouched)
+        foreach (Resource resource in _resourcesTouched)
         {
-            amountGathered += resource.startingAmount;
+            _amountGathered += resource.startingAmount;
         }
-        print(amountGathered);
+        print(_amountGathered);
     }
 
 
     private void GetResourcesTouched()
     {
-        resourcesTouched = new List<Resource>();
+        _resourcesTouched = new List<Resource>();
 
         Vector3Int gridPosition = new Vector3Int((int)transform.position.x, (int)transform.position.y, 0);
 
@@ -42,10 +42,10 @@ public class GatheringBuildingBehaviour : ConstructionBehavoiur
             {
                 bool isResourcePresent = MapData.Instance.GetResourceAtPoint(new Vector3Int(gridPosition.x + x, gridPosition.y + y, 0), out Resource currResource);
                 if (isResourcePresent)
-                    resourcesTouched.Add(currResource);
+                    _resourcesTouched.Add(currResource);
             }
         }
 
-        print(resourcesTouched.Count);
+        print(_resourcesTouched.Count);
     }
 }

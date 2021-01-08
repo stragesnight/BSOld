@@ -8,33 +8,33 @@ using UnityEngine.Tilemaps;
 public class NoisemapHandler : MonoBehaviour
 {
     [Header("Dependencies")]
-    [SerializeField] private MapData mapData;
-    [SerializeField] private TilemapActions tilemapActions;
+    [SerializeField] private MapData _mapData;
+    [SerializeField] private TilemapActions _tilemapActions;
 
 
     // Subscribe to Actions
     private void OnEnable()
     {
-        tilemapActions.setWalkableNatureTilemapEntryAction += SetHeightNoisemapEntry;
-        tilemapActions.setWalkableNatureTilemapEntryAction += SetTemperatureNoisemapEntry;
-        tilemapActions.setWalkableNatureTilemapEntryAction += SetFertilityNoisemapEntry;
+        _tilemapActions.setWalkableNatureTilemapEntryAction += SetHeightNoisemapEntry;
+        _tilemapActions.setWalkableNatureTilemapEntryAction += SetTemperatureNoisemapEntry;
+        _tilemapActions.setWalkableNatureTilemapEntryAction += SetFertilityNoisemapEntry;
 
-        tilemapActions.setWalkableNatureTilemapAction += SetHeightNoisemap;
-        tilemapActions.setWalkableNatureTilemapAction += SetTemperatureNoisemap;
-        tilemapActions.setWalkableNatureTilemapAction += SetFertilityNoisemap;
+        _tilemapActions.setWalkableNatureTilemapAction += SetHeightNoisemap;
+        _tilemapActions.setWalkableNatureTilemapAction += SetTemperatureNoisemap;
+        _tilemapActions.setWalkableNatureTilemapAction += SetFertilityNoisemap;
 
     }
 
     // Unsublscribe from Actions
     private void OnDisable()
     {
-        tilemapActions.setWalkableNatureTilemapEntryAction -= SetHeightNoisemapEntry;
-        tilemapActions.setWalkableNatureTilemapEntryAction -= SetTemperatureNoisemapEntry;
-        tilemapActions.setWalkableNatureTilemapEntryAction -= SetFertilityNoisemapEntry;
+        _tilemapActions.setWalkableNatureTilemapEntryAction -= SetHeightNoisemapEntry;
+        _tilemapActions.setWalkableNatureTilemapEntryAction -= SetTemperatureNoisemapEntry;
+        _tilemapActions.setWalkableNatureTilemapEntryAction -= SetFertilityNoisemapEntry;
 
-        tilemapActions.setWalkableNatureTilemapAction -= SetHeightNoisemap;
-        tilemapActions.setWalkableNatureTilemapAction -= SetTemperatureNoisemap;
-        tilemapActions.setWalkableNatureTilemapAction -= SetFertilityNoisemap;
+        _tilemapActions.setWalkableNatureTilemapAction -= SetHeightNoisemap;
+        _tilemapActions.setWalkableNatureTilemapAction -= SetTemperatureNoisemap;
+        _tilemapActions.setWalkableNatureTilemapAction -= SetFertilityNoisemap;
 
     }
 
@@ -43,33 +43,33 @@ public class NoisemapHandler : MonoBehaviour
     private void SetHeightNoisemapEntry(Vector3Int position, MapZone mapZone)
     {
         if (mapZone.isRestrictedByTemperature)
-            mapData.SetHeightAtPoint(position, (int)mapZone.elevationZone / 100f);
+            _mapData.SetHeightAtPoint(position, (int)mapZone.elevationZone / 100f);
     }
     private void SetHeightNoisemap(Dictionary<Vector3Int, MapZone> map)
     {
-        mapData.SetHeightMap(GetElevationValues(map));
+        _mapData.SetHeightMap(GetElevationValues(map));
     }
 
     // Temperature map
     private void SetTemperatureNoisemapEntry(Vector3Int position, MapZone mapZone)
     {
         if (mapZone.isRestrictedByTemperature)
-            mapData.SetTemperatureAtPoint(position, (int)mapZone.temperatureBiome / 100f);
+            _mapData.SetTemperatureAtPoint(position, (int)mapZone.temperatureBiome / 100f);
     }
     private void SetTemperatureNoisemap(Dictionary<Vector3Int, MapZone> map)
     {
-        mapData.SetTemperatureMap(GetTemperatureValues(map));
+        _mapData.SetTemperatureMap(GetTemperatureValues(map));
     }    
     
     // Fertility map
     private void SetFertilityNoisemapEntry(Vector3Int position, MapZone mapZone)
     {
         if (mapZone.isRestrictedByFertility) 
-            mapData.SetFertilityAtPoint(position, (int)mapZone.fertilityZone / 100f);
+            _mapData.SetFertilityAtPoint(position, (int)mapZone.fertilityZone / 100f);
     }
     private void SetFertilityNoisemap(Dictionary<Vector3Int, MapZone> map)
     {
-        mapData.SetFertilityMap(GetFertilityValues(map));
+        _mapData.SetFertilityMap(GetFertilityValues(map));
     }
 
 
@@ -77,7 +77,7 @@ public class NoisemapHandler : MonoBehaviour
     // Transform Dictionary into elevation values
     private float[,] GetElevationValues(Dictionary<Vector3Int, MapZone> map)
     {
-        float[,] outputMap = mapData.GetHeightMap();
+        float[,] outputMap = _mapData.GetHeightMap();
 
         foreach (Vector3Int position in map.Keys)
         {
@@ -91,7 +91,7 @@ public class NoisemapHandler : MonoBehaviour
     // Transform Dictionary into temperature values
     private float[,] GetTemperatureValues(Dictionary<Vector3Int, MapZone> map)
     {
-        float[,] outputMap = mapData.GetTemperatureMap();
+        float[,] outputMap = _mapData.GetTemperatureMap();
 
         foreach (Vector3Int position in map.Keys)
         {
@@ -105,7 +105,7 @@ public class NoisemapHandler : MonoBehaviour
     // Transform Dictionary into fertility values
     private float[,] GetFertilityValues(Dictionary<Vector3Int, MapZone> map)
     {
-        float[,] outputMap = mapData.GetFertilityMap();
+        float[,] outputMap = _mapData.GetFertilityMap();
 
         foreach (Vector3Int position in map.Keys)
         {

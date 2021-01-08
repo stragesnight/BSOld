@@ -7,10 +7,10 @@ using UnityEngine;
 [RequireComponent(typeof(EntityBehavoiur))]
 public class EntityAttack : MonoBehaviour
 {
-    [SerializeField] private InputReader inputReader;
+    [SerializeField] private InputReader _inputReader;
 
-    private EntityBehavoiur entity;
-    private MeleeWeaponItemSO heldWeapon;
+    private EntityBehavoiur _entity;
+    private MeleeWeaponItemSO _heldWeapon;
 
     // Actions
     public Action<int> damageAction;
@@ -19,29 +19,34 @@ public class EntityAttack : MonoBehaviour
     // Get required components and variables
     public void Start()
     {
-        entity = GetComponent<EntityBehavoiur>();
+        _entity = GetComponent<EntityBehavoiur>();
 
-        heldWeapon = entity.entityData.GetHeldWeapon();
+        _heldWeapon = _entity.entityData.GetHeldWeapon();
     }
 
 
     private void OnEnable()
     {
-        inputReader.attackAction += OnAttack;
+        _inputReader.attackAction += OnAttackInputReceived;
     }
 
 
     private void OnDisable()
     {
-        inputReader.attackAction -= OnAttack;
+        _inputReader.attackAction -= OnAttackInputReceived;
     }
 
 
-    private void OnAttack()
+    private void OnAttackInputReceived()
     {
-        Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, heldWeapon.attackRadius);
+        if (_heldWeapon.GetType() == typeof(MeleeWeaponItemSO))
+            PreformMeleeAttack();
+    }
 
-        print(hits.Length);
+
+    private void PreformMeleeAttack()
+    {
+        Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, _heldWeapon.attackRadius);
 
         foreach (Collider2D hit in hits)
         {
@@ -49,7 +54,7 @@ public class EntityAttack : MonoBehaviour
             {
                 EntityHealth entityHealth = hit.gameObject.GetComponent<EntityHealth>();
                 if (entityHealth)
-                    entityHealth.OnHealthChange(heldWeapon.damage);
+                    entityHealth.OnHealthChange(_heldWeapon.damage);
             }
         }
     }
@@ -57,7 +62,7 @@ public class EntityAttack : MonoBehaviour
 
     private void OnDrawGizmos()
     {
-        if (heldWeapon != null)
-            Gizmos.DrawWireSphere(transform.position, heldWeapon.attackRadius);
+        if (_heldWeapon != null)
+            Gizmos.DrawWireSphere(transform.position, _heldWeapon.attackRadius);
     }
 }
