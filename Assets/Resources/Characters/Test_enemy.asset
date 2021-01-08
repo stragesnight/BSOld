@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1cd6083470f4bcc4badc0c2b3c7febd9, type: 3}
   m_Name: Test_enemy
   m_EditorClassIdentifier: 
-  entityName: test_enemy
-  entityPosition: {x: 0, y: 0}
-  entitySpawnPoint: {x: 10, y: 10}
-  entityMaxHealthPoints: 25
-  entitySpeed: 2000
-  entityInventory: {fileID: 0}
+  _name: asdasd
+  _position: {x: 0, y: 0}
+  _spawnPoint: {x: 0, y: 0}
+  _maxHealthPoints: 26
+  _speed: 2000
+  _inventory: {fileID: 0}
+  _heldWeapon: {fileID: 0}

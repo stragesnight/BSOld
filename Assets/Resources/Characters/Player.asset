@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1cd6083470f4bcc4badc0c2b3c7febd9, type: 3}
   m_Name: Player
   m_EditorClassIdentifier: 
-  entityName: kekus
-  entityPosition: {x: 0, y: 0}
-  entitySpawnPoint: {x: 0, y: 0}
-  entityMaxHealthPoints: 11
-  entitySpeed: 2750
-  entityInventory: {fileID: 0}
-  entityHeldWeapon: {fileID: 11400000, guid: 074838d5f955c7c409d7572619337b57, type: 2}
+  _name: asd
+  _position: {x: 0, y: 0}
+  _spawnPoint: {x: 0, y: 0}
+  _maxHealthPoints: 50
+  _speed: 2560
+  _inventory: {fileID: 0}
+  _heldWeapon: {fileID: 11400000, guid: 074838d5f955c7c409d7572619337b57, type: 2}

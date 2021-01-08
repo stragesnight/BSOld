@@ -58,7 +58,7 @@
     <Compile Include="Assets\Scripts\Client\Entity composition\Movement\EntityMovement.cs" />
     <Compile Include="Assets\Scripts\Client\Scriptable objects\Entity\InputReader.cs" />
     <Compile Include="Assets\Scripts\Client\Scriptable objects\MapResources\Resource.cs" />
-    <Compile Include="Assets\Scripts\Client\Scriptable objects\Items\MeleeWeaponItemSO.cs" />
+    <Compile Include="Assets\Scripts\Client\Scriptable objects\Items\Weapons\MeleeWeaponItemSO.cs" />
     <Compile Include="Assets\Scripts\Client\Scriptable objects\Tiles\RuleOverrideTile\RuleOverrideTile.cs" />
     <Compile Include="Assets\Scripts\Client\Scriptable objects\Items\ItemSO.cs" />
     <Compile Include="Assets\Scripts\Client\Scriptable objects\Actions\ConstructionActions.cs" />
@@ -93,8 +93,8 @@
     <Compile Include="Assets\Scripts\Client\Scriptable objects\Actions\ResourceActions.cs" />
     <Compile Include="Assets\Scripts\Client\Entity composition\EntityAttack.cs" />
     <Compile Include="Assets\Scripts\Client\BuildingMonoBehaviours\ConstructionBehavoiur.cs" />
-    <Compile Include="Assets\Scripts\Client\State Machine\IState.cs" />
     <Compile Include="Assets\Scripts\Client\State Machine\StateMachine.cs" />
+    <Compile Include="Assets\Scripts\Client\Scriptable objects\Items\Weapons\WeaponSO.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

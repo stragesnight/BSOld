@@ -6,5 +6,12 @@ using UnityEngine;
 public class EntityBehavoiur : MonoBehaviour
 {
     public EntityData entityData;
-    public ItemSO currentItem;
+    public StateMachine stateMachine;
+
+
+    protected virtual void Awake()
+    {
+        stateMachine = new StateMachine();
+        stateMachine.SetState(EState.Default);
+    }
 }

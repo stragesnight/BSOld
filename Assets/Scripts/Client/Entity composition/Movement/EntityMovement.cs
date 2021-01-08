@@ -7,6 +7,7 @@ using UnityEngine;
 public abstract class EntityMovement : MonoBehaviour
 {
     protected EntityBehavoiur _entity;
+    protected StateMachine _stateMachine;
     protected Rigidbody2D _rb;
 
     protected float _speed;
@@ -18,6 +19,7 @@ public abstract class EntityMovement : MonoBehaviour
     protected virtual void Start()
     {
         _entity = GetComponent<EntityBehavoiur>();
+        _stateMachine = _entity.stateMachine;
         _rb = GetComponent<Rigidbody2D>();
 
         _speed = _entity.entityData.GetSpeed();
@@ -27,7 +29,8 @@ public abstract class EntityMovement : MonoBehaviour
     // Change Rigidbody's velocity
     protected virtual void FixedUpdate()
     {
-        _rb.AddForce(_movementDirection * _speed * Time.fixedDeltaTime);
+        if (_stateMachine.GetState().Walkable)
+            _rb.AddForce(_movementDirection * _speed * Time.fixedDeltaTime);
     }
 
 

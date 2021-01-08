@@ -8,6 +8,7 @@ using UnityEngine;
 public class EntityHealth : MonoBehaviour
 {
     private EntityBehavoiur _entity;
+    private StateMachine _stateMachine;
 
     [NonSerialized] public int healthPoints;
 
@@ -21,6 +22,7 @@ public class EntityHealth : MonoBehaviour
     public void Start()
     {
         _entity = GetComponent<EntityBehavoiur>();
+        _stateMachine = _entity.stateMachine;
 
         healthPoints = _entity.entityData.GetMaxHealthPoints();
     }
@@ -36,10 +38,22 @@ public class EntityHealth : MonoBehaviour
         else
             healAction?.Invoke(amount);
 
-        GetComponentInChildren<SpriteRenderer>().color = Color.red;
-
         if (healthPoints <= 0)
             OnDeath();
+
+        StartCoroutine(StartIFrames());
+    }
+
+
+    System.Collections.Generic.IEnumerator<WaitForSeconds> StartIFrames()
+    {
+        _stateMachine.SetState(EState.Shocked);
+        GetComponentInChildren<SpriteRenderer>().color = Color.red;
+
+        yield return new WaitForSeconds(0.3f);
+
+        _stateMachine.SetState(EState.Default);
+        GetComponentInChildren<SpriteRenderer>().color = Color.white;
     }
 
 
