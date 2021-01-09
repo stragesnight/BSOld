@@ -33,6 +33,14 @@ public class @Controls : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""MousePosition"",
+                    ""type"": ""Value"",
+                    ""id"": ""fbff7cb7-a3f5-4d00-8213-ba4981b046cf"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -156,6 +164,39 @@ public class @Controls : IInputActionCollection, IDisposable
                     ""action"": ""Attack"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""2D Vector"",
+                    ""id"": ""6019adf1-ad84-4bf7-b89e-e4affe64bff7"",
+                    ""path"": ""2DVector(mode=2)"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""MousePosition"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""up"",
+                    ""id"": ""cfe352c5-0713-48f8-89a7-0520211ce289"",
+                    ""path"": ""<Mouse>/position/y"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard + mouse"",
+                    ""action"": ""MousePosition"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""d3637616-f06b-4073-8ec3-bc4bbd494148"",
+                    ""path"": ""<Mouse>/position/x"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard + mouse"",
+                    ""action"": ""MousePosition"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
                 }
             ]
         }
@@ -172,6 +213,7 @@ public class @Controls : IInputActionCollection, IDisposable
         m_Entity = asset.FindActionMap("Entity", throwIfNotFound: true);
         m_Entity_Move = m_Entity.FindAction("Move", throwIfNotFound: true);
         m_Entity_Attack = m_Entity.FindAction("Attack", throwIfNotFound: true);
+        m_Entity_MousePosition = m_Entity.FindAction("MousePosition", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -223,12 +265,14 @@ public class @Controls : IInputActionCollection, IDisposable
     private IEntityActions m_EntityActionsCallbackInterface;
     private readonly InputAction m_Entity_Move;
     private readonly InputAction m_Entity_Attack;
+    private readonly InputAction m_Entity_MousePosition;
     public struct EntityActions
     {
         private @Controls m_Wrapper;
         public EntityActions(@Controls wrapper) { m_Wrapper = wrapper; }
         public InputAction @Move => m_Wrapper.m_Entity_Move;
         public InputAction @Attack => m_Wrapper.m_Entity_Attack;
+        public InputAction @MousePosition => m_Wrapper.m_Entity_MousePosition;
         public InputActionMap Get() { return m_Wrapper.m_Entity; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -244,6 +288,9 @@ public class @Controls : IInputActionCollection, IDisposable
                 @Attack.started -= m_Wrapper.m_EntityActionsCallbackInterface.OnAttack;
                 @Attack.performed -= m_Wrapper.m_EntityActionsCallbackInterface.OnAttack;
                 @Attack.canceled -= m_Wrapper.m_EntityActionsCallbackInterface.OnAttack;
+                @MousePosition.started -= m_Wrapper.m_EntityActionsCallbackInterface.OnMousePosition;
+                @MousePosition.performed -= m_Wrapper.m_EntityActionsCallbackInterface.OnMousePosition;
+                @MousePosition.canceled -= m_Wrapper.m_EntityActionsCallbackInterface.OnMousePosition;
             }
             m_Wrapper.m_EntityActionsCallbackInterface = instance;
             if (instance != null)
@@ -254,6 +301,9 @@ public class @Controls : IInputActionCollection, IDisposable
                 @Attack.started += instance.OnAttack;
                 @Attack.performed += instance.OnAttack;
                 @Attack.canceled += instance.OnAttack;
+                @MousePosition.started += instance.OnMousePosition;
+                @MousePosition.performed += instance.OnMousePosition;
+                @MousePosition.canceled += instance.OnMousePosition;
             }
         }
     }
@@ -271,5 +321,6 @@ public class @Controls : IInputActionCollection, IDisposable
     {
         void OnMove(InputAction.CallbackContext context);
         void OnAttack(InputAction.CallbackContext context);
+        void OnMousePosition(InputAction.CallbackContext context);
     }
 }

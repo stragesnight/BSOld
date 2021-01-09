@@ -17,8 +17,8 @@ MonoBehaviour:
   _spawnPoint: {x: 0, y: 0}
   _defaultReaction: 2
   _attackReaction: 2
-  _maxHealthPoints: 50
+  _maxHealthPoints: 125
   _speed: 2560
   _visionRadius: 0
   _inventory: {fileID: 0}
-  _heldWeapon: {fileID: 11400000, guid: 074838d5f955c7c409d7572619337b57, type: 2}
+  _heldWeapon: {fileID: 11400000, guid: e5e5acd32b8209f4498d99cd4edbec10, type: 2}

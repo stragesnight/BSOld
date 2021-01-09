@@ -4,10 +4,10 @@ using UnityEngine;
 /// <summary>
 /// Entity Health handler.
 /// </summary>
-[RequireComponent(typeof(EntityBehavoiur))]
+[RequireComponent(typeof(EntityBehaviour))]
 public class EntityHealth : MonoBehaviour
 {
-    private EntityBehavoiur _entity;
+    private EntityBehaviour _entity;
     private StateMachine _stateMachine;
 
     [NonSerialized] public int healthPoints;
@@ -21,7 +21,7 @@ public class EntityHealth : MonoBehaviour
     // Get required components and variables
     public void Start()
     {
-        _entity = GetComponent<EntityBehavoiur>();
+        _entity = GetComponent<EntityBehaviour>();
         _stateMachine = _entity.stateMachine;
 
         healthPoints = _entity.entityData.GetMaxHealthPoints();
@@ -53,7 +53,7 @@ public class EntityHealth : MonoBehaviour
         yield return new WaitForSeconds(0.3f);
 
         _stateMachine.SetState(EState.Default);
-        GetComponentInChildren<SpriteRenderer>().color = Color.white;
+        GetComponentInChildren<SpriteRenderer>().color = Color.green;
     }
 
 

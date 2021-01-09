@@ -10,6 +10,7 @@ public class InputReader : ScriptableObject, Controls.IEntityActions
     // Actions
     public Action<Vector2> moveAction;
     public Action attackAction;
+    public Action<Vector2> mousePositionAction;
     //...
 
 
@@ -44,6 +45,12 @@ public class InputReader : ScriptableObject, Controls.IEntityActions
     {
         if (context.phase == InputActionPhase.Performed)
             attackAction?.Invoke();
+    }
+
+
+    public void OnMousePosition(InputAction.CallbackContext context)
+    {
+        mousePositionAction?.Invoke(Camera.main.ScreenToWorldPoint(context.ReadValue<Vector2>()));
     }
 
 

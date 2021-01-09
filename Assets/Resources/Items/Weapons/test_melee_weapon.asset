@@ -15,6 +15,6 @@ MonoBehaviour:
   sprite: {fileID: 0}
   inventoryIcon: {fileID: 0}
   attackType: 0
-  attackCalldown: 1
   damage: 10
-  attackRadius: 2
+  attackCalldown: 1
+  attackRange: 1

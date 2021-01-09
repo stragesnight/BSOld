@@ -10,11 +10,13 @@ public class EntityInputAttack : EntityAttack
     private void OnEnable()
     {
         _inputReader.attackAction += OnAttack;
+        _inputReader.mousePositionAction += OnTargetPositionChanged;
     }
 
 
     private void OnDisable()
     {
         _inputReader.attackAction -= OnAttack;
+        _inputReader.mousePositionAction -= OnTargetPositionChanged;
     }
 }

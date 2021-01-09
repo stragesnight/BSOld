@@ -72,7 +72,6 @@
     <Compile Include="Assets\Scripts\Client\World generation\Helper classes\Noise.cs" />
     <Compile Include="Assets\Scripts\Client\Scriptable objects\Tiles\RuleOverrideTile\AdvancedRuleOverrideTile.cs" />
     <Compile Include="Assets\Scripts\Client\State Machine\StateMachine.cs" />
-    <Compile Include="Assets\Scripts\Client\Entity composition\Behaviour\EntityBehavoiur.cs" />
     <Compile Include="Assets\Scripts\Client\Handlers\TilemapHandler.cs" />
     <Compile Include="Assets\Scripts\Client\BuildingMonoBehaviours\GatheringBuildingBehaviour.cs" />
     <Compile Include="Assets\Scripts\Client\Scriptable objects\MapZones\MapZone.cs" />
@@ -86,6 +85,8 @@
     <Compile Include="Assets\Scripts\Client\World generation\ResourceMapGenerator.cs" />
     <Compile Include="Assets\Scripts\Client\Scriptable objects\Actions\TilemapActions.cs" />
     <Compile Include="Assets\Scripts\Client\Scriptable objects\Entity\InventorySO.cs" />
+    <Compile Include="Assets\Scripts\Client\Entity composition\Attack\EntityAIAttack.cs" />
+    <Compile Include="Assets\Scripts\Client\Entity composition\Attack\EntityInputAttack.cs" />
     <Compile Include="Assets\Scripts\Client\Handlers\NoisemapHandler.cs" />
     <Compile Include="Assets\Scripts\Client\World generation\MapTileGenerator.cs" />
     <Compile Include="Assets\Scripts\Client\Handlers\PlacingAccessibilityHandler.cs" />
@@ -95,8 +96,7 @@
     <Compile Include="Assets\Scripts\Client\Scriptable objects\Actions\ResourceActions.cs" />
     <Compile Include="Assets\Scripts\Client\Entity composition\Attack\EntityAttack.cs" />
     <Compile Include="Assets\Scripts\Client\BuildingMonoBehaviours\ConstructionBehavoiur.cs" />
-    <Compile Include="Assets\Scripts\Client\Entity composition\Attack\EntityInputAttack.cs" />
-    <Compile Include="Assets\Scripts\Client\Entity composition\Attack\EntityAIAttack.cs" />
+    <Compile Include="Assets\Scripts\Client\Entity composition\Behaviour\EntityBehaviour.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

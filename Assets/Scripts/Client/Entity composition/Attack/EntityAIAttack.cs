@@ -3,31 +3,27 @@ using UnityEngine;
 /// <summary>
 /// Entity attack based on AI decision.
 /// </summary>
+[RequireComponent(typeof(EntityPathfindingMovement))]
 public class EntityAIAttack : EntityAttack
 {
     private EntityPathfindingMovement _entityMovement;
-    private bool _hasMovement;
 
 
     protected override void Start()
     {
         base.Start();
-        _hasMovement = TryGetComponent(out _entityMovement);
+        _entityMovement = GetComponent<EntityPathfindingMovement>();
+
         InvokeRepeating(nameof(CheckAttackPossibili111ty), 0f, 0.5f);
     }
 
 
     private void CheckAttackPossibili111ty()
     {
-        if (_isOnCalldown)
+        if (_isOnCalldown || !_entityMovement.isChasing)
             return;
 
-        if (_hasMovement)
-        {
-            if (_entityMovement.isChasing)
-                OnAttack();
-        }
-        else
-            OnAttack();
+        OnTargetPositionChanged(_entityMovement.GetTarget());
+        OnAttack();
     }
 }

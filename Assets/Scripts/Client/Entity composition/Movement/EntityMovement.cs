@@ -3,10 +3,10 @@ using UnityEngine;
 /// <summary>
 /// Base Entity Movement class that all movement types will inherit from.
 /// </summary>
-[RequireComponent(typeof(EntityBehavoiur), typeof(Rigidbody2D))]
+[RequireComponent(typeof(EntityBehaviour), typeof(Rigidbody2D))]
 public abstract class EntityMovement : MonoBehaviour
 {
-    protected EntityBehavoiur _entity;
+    protected EntityBehaviour _entity;
     protected StateMachine _stateMachine;
     protected Rigidbody2D _rb;
 
@@ -18,7 +18,7 @@ public abstract class EntityMovement : MonoBehaviour
     // Get required components and variables
     protected virtual void Start()
     {
-        _entity = GetComponent<EntityBehavoiur>();
+        _entity = GetComponent<EntityBehaviour>();
         _stateMachine = _entity.stateMachine;
         _rb = GetComponent<Rigidbody2D>();
 

@@ -9,15 +9,17 @@ public class EntityPathfindingMovement : EntityMovement
 {
     [SerializeField] private float _nextWayPointThreshold = 1f;
     [SerializeField] private EDefaultBehaviour _defaultBehaviour;
+    [SerializeField] private EChaseBehaviour _chaseBehaviour;
     private float _visionRadius;
     private Seeker _seeker;
 
-    private Vector2 _target;
+    [HideInInspector] private Vector2 _target;
+    public Vector2 GetTarget() => _target;
     private Path _currentPath;
     int _currentWayPoint;
 
     private bool _isReachedEndOfThePath = true;
-    public bool isChasing = false;
+    [HideInInspector] public bool isChasing = false;
 
 
     // Get required components and invoke repeating
@@ -34,7 +36,7 @@ public class EntityPathfindingMovement : EntityMovement
     // Start calculating new path
     private void UpdatePath()
     {
-        _target = GetTarget();
+        _target = GetNextPathTarget();
 
         // Start Path if Seeker is not busy and currently have target
         if (_seeker.IsDone() && _target != Vector2.zero)
@@ -89,7 +91,7 @@ public class EntityPathfindingMovement : EntityMovement
     }
 
 
-    private Vector2 GetTarget()
+    private Vector2 GetNextPathTarget()
     {
         isChasing = TryGetChasingTarget(out Vector2 target);
 
@@ -132,16 +134,27 @@ public class EntityPathfindingMovement : EntityMovement
         foreach (Collider2D hit in hits)
         {
             // Get checked entity
-            bool isEntity = hit.TryGetComponent(out EntityBehavoiur hitEntity);
+            bool isEntity = hit.TryGetComponent(out EntityBehaviour hitEntity);
 
             if (isEntity)
             {
                 // Get Reaction of a checked entity
-                EReaction _hitReaction = hitEntity.currentReaction;
+                EReaction checkedEntityReaction = hitEntity.currentReaction;
                 // If Entity is not caster and if their reaction are different
-                if (hit.gameObject != gameObject && _entity.currentReaction != _hitReaction)
+                if (hit.gameObject != gameObject && _entity.currentReaction != checkedEntityReaction)
                 {
-                    target = hit.transform.position;
+                    switch (_chaseBehaviour)
+                    {
+                        case EChaseBehaviour.Chase:
+                            target = hit.transform.position;
+                            break;
+                        case EChaseBehaviour.RunAway:
+                            target = transform.position + (transform.position - hit.transform.position);
+                            break;
+                        default:
+                            target = Vector2.zero;
+                            break;
+                    }
                     return true;
                 }
             }
@@ -153,6 +166,7 @@ public class EntityPathfindingMovement : EntityMovement
 
 
     internal enum EDefaultBehaviour { Idle, Patrol }
+    internal enum EChaseBehaviour { Chase, RunAway }
 
 
     private void OnDrawGizmos()
