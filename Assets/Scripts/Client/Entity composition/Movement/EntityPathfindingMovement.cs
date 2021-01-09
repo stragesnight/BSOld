@@ -8,28 +8,37 @@ using Pathfinding;
 public class EntityPathfindingMovement : EntityMovement
 {
     [SerializeField] private float _nextWayPointThreshold = 1f;
+    [SerializeField] private EDefaultBehaviour _defaultBehaviour;
+    private float _visionRadius;
     private Seeker _seeker;
 
-    [SerializeField] private Transform _target;
+    private Vector2 _target;
     private Path _currentPath;
     int _currentWayPoint;
+
+    private bool _isReachedEndOfThePath = true;
+    public bool isChasing = false;
 
 
     // Get required components and invoke repeating
     protected override void Start()
     {
         base.Start();
+        _visionRadius = _entity.entityData.GetVisionRadius();
         _seeker = GetComponent<Seeker>();
         // Path will be updated every second
         InvokeRepeating(nameof(UpdatePath), 0f, 1f);
     }
 
 
-    // Start calculating new path if Seeker is not busy
+    // Start calculating new path
     private void UpdatePath()
     {
-        if (_seeker.IsDone())
-            _seeker.StartPath(_rb.position, _target.position, OnPathComplete);
+        _target = GetTarget();
+
+        // Start Path if Seeker is not busy and currently have target
+        if (_seeker.IsDone() && _target != Vector2.zero)
+            _seeker.StartPath(_rb.position, _target, OnPathComplete);
     }
 
 
@@ -49,9 +58,15 @@ public class EntityPathfindingMovement : EntityMovement
     {
         _currentWayPoint++;
         if (_currentWayPoint < _currentPath.vectorPath.Count)
+        {
+            _isReachedEndOfThePath = false;
             OnChangeMovementDirection(((Vector2)_currentPath.vectorPath[_currentWayPoint] - _rb.position).normalized);
+        }
         else
+        {
+            _isReachedEndOfThePath = true;
             _currentPath = null;
+        }
     }
 
 
@@ -74,6 +89,74 @@ public class EntityPathfindingMovement : EntityMovement
     }
 
 
-    public void SetTarget(Transform newTarget) { _target = newTarget; }
-    public Transform GetTarget() => _target;
+    private Vector2 GetTarget()
+    {
+        isChasing = TryGetChasingTarget(out Vector2 target);
+
+        if (!isChasing && _isReachedEndOfThePath)
+        {
+            switch (_defaultBehaviour)
+            {
+                case EDefaultBehaviour.Patrol:
+                    target = GetNextPatrolTarget();
+                    break;
+                case EDefaultBehaviour.Idle:
+                    break;
+            }
+        }
+
+        return target;
+    }
+
+
+    private Vector2 GetNextPatrolTarget()
+    {
+        // Get 2 random values from -1 to 1
+        float patrolX = Random.Range(-1f, 1f);
+        float patrolY = Random.Range(-1f, 1f);
+
+        // Normalized vector multiplied by vision radius
+        Vector2 patrolTarget = new Vector2(patrolX, patrolY).normalized * _visionRadius;
+        // Add current position to it
+        patrolTarget += (Vector2)transform.position;
+
+        return patrolTarget;
+    }
+
+
+    private bool TryGetChasingTarget(out Vector2 target)
+    {
+        // Get all Colliders in radius
+        Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, _visionRadius);
+
+        foreach (Collider2D hit in hits)
+        {
+            // Get checked entity
+            bool isEntity = hit.TryGetComponent(out EntityBehavoiur hitEntity);
+
+            if (isEntity)
+            {
+                // Get Reaction of a checked entity
+                EReaction _hitReaction = hitEntity.currentReaction;
+                // If Entity is not caster and if their reaction are different
+                if (hit.gameObject != gameObject && _entity.currentReaction != _hitReaction)
+                {
+                    target = hit.transform.position;
+                    return true;
+                }
+            }
+        }
+
+        target = Vector2.zero;
+        return false;
+    }
+
+
+    internal enum EDefaultBehaviour { Idle, Patrol }
+
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.DrawWireSphere(transform.position, _visionRadius);
+    }
 }

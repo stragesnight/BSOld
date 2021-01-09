@@ -8,10 +8,14 @@ public class EntityBehavoiur : MonoBehaviour
     public EntityData entityData;
     public StateMachine stateMachine;
 
+    public EReaction currentReaction;
+
 
     protected virtual void Awake()
     {
         stateMachine = new StateMachine();
         stateMachine.SetState(EState.Default);
+
+        currentReaction = entityData.GetDefaultReaction();
     }
 }

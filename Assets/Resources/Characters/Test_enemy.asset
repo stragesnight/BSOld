@@ -15,7 +15,10 @@ MonoBehaviour:
   _name: asdasd
   _position: {x: 0, y: 0}
   _spawnPoint: {x: 0, y: 0}
+  _defaultReaction: 0
+  _attackReaction: 0
   _maxHealthPoints: 26
   _speed: 2000
+  _visionRadius: 5
   _inventory: {fileID: 0}
-  _heldWeapon: {fileID: 0}
+  _heldWeapon: {fileID: 11400000, guid: f8a4dbc2fe9f8f64b970cafa410e8cf4, type: 2}
