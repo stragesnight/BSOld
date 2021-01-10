@@ -11,6 +11,9 @@ public class EntityBehaviour : MonoBehaviour
     [Header("Properties")]
     public bool canPickupItems;
     public bool dropItemsOnDeath;
+
+    public ItemSO HeldItem;
+
     [HideInInspector] public EReaction currentReaction;
 
 

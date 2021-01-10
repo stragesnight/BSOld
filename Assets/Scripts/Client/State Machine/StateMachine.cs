@@ -10,6 +10,8 @@ public class StateMachine
     {
         { EState.Default,   new InternalState(true, true, true) },
         { EState.InMenu,    new InternalState(false, false, false)},
+        { EState.Attacking, new InternalState(false, false, true)},
+        { EState.Gathering, new InternalState(false, true, false)},
         { EState.Building,  new InternalState(true, true, false)},
         { EState.Shocked,   new InternalState(false, false, false)}
     };
@@ -41,4 +43,4 @@ public class StateMachine
 }
 
 
-public enum EState { Default, InMenu, Building, Shocked }
+public enum EState { Default, InMenu, Attacking, Gathering, Building, Shocked }

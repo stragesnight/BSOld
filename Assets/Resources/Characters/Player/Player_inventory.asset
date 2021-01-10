@@ -13,30 +13,30 @@ MonoBehaviour:
   m_Name: Player_inventory
   m_EditorClassIdentifier: 
   _inventorySlots:
+  - Item: {fileID: 11400000, guid: 074838d5f955c7c409d7572619337b57, type: 2}
+    Amount: 1
+    DropOnDeath: 0
   - Item: {fileID: 11400000, guid: 9bf0218971015e24d9817a4da784a855, type: 2}
-    Amount: 10
+    Amount: 4
     DropOnDeath: 1
-  - Item: {fileID: 11400000, guid: 074838d5f955c7c409d7572619337b57, type: 2}
-    Amount: 1
-    DropOnDeath: 1
-  - Item: {fileID: 11400000, guid: 074838d5f955c7c409d7572619337b57, type: 2}
-    Amount: 1
-    DropOnDeath: 1
-  - Item: {fileID: 11400000, guid: 9bf0218971015e24d9817a4da784a855, type: 2}
-    Amount: 5
-    DropOnDeath: 1
-  - Item: {fileID: 11400000, guid: 074838d5f955c7c409d7572619337b57, type: 2}
-    Amount: 1
-    DropOnDeath: 1
-  - Item: {fileID: 11400000, guid: 074838d5f955c7c409d7572619337b57, type: 2}
+  - Item: {fileID: 11400000, guid: e5e5acd32b8209f4498d99cd4edbec10, type: 2}
     Amount: 1
     DropOnDeath: 1
   - Item: {fileID: 0}
     Amount: 0
-    DropOnDeath: 0
+    DropOnDeath: 1
   - Item: {fileID: 0}
     Amount: 0
-    DropOnDeath: 0
+    DropOnDeath: 1
+  - Item: {fileID: 0}
+    Amount: 0
+    DropOnDeath: 1
+  - Item: {fileID: 0}
+    Amount: 0
+    DropOnDeath: 1
+  - Item: {fileID: 0}
+    Amount: 0
+    DropOnDeath: 1
   - Item: {fileID: 0}
     Amount: 0
     DropOnDeath: 0

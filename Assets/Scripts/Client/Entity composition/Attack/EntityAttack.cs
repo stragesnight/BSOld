@@ -7,7 +7,6 @@ using UnityEngine;
 [RequireComponent(typeof(EntityBehaviour))]
 public abstract class EntityAttack : MonoBehaviour
 {
-    [SerializeField] protected Mesh _testMesh;
     protected EntityBehaviour _entity;
     protected StateMachine _stateMachine;
 
@@ -24,16 +23,21 @@ public abstract class EntityAttack : MonoBehaviour
     {
         _entity = GetComponent<EntityBehaviour>();
 
-        _heldWeapon = _entity.entityData.GetHeldWeapon();
         _stateMachine = _entity.stateMachine;
     }
 
 
     protected virtual void OnAttack()
     {
+        // Get held weapon
+        _heldWeapon = (WeaponItemSO)_entity.HeldItem;
+
         // If Entity can attack in current state and if weapon is not on calldown
         if (_stateMachine.GetState().Attackable && !_isOnCalldown)
         {
+            // Change state to attacking
+            _stateMachine.SetState(EState.Attacking);
+
             // Find needed attack type
             switch (_heldWeapon.attackType)
             {
@@ -45,6 +49,9 @@ public abstract class EntityAttack : MonoBehaviour
                     InitiateMeleeLineAttack((MeleeWeaponItemSO)_heldWeapon);
                     break;
             }
+
+            // Change state to default
+            _stateMachine.SetState(EState.Default);
 
             // Call WeaponCalldown
             StartCoroutine(StartWeaponCalldown());
@@ -111,16 +118,5 @@ public abstract class EntityAttack : MonoBehaviour
         GetComponentInChildren<SpriteRenderer>().color = Color.white;
 
         _isOnCalldown = false;
-    }
-
-
-    protected virtual void OnDrawGizmos()
-    {
-        if (_heldWeapon == null) return;
-        Gizmos.color = Color.red;
-        //Gizmos.DrawWireSphere(transform.position, ((MeleeWeaponItemSO)_heldWeapon).attackRange);
-        //float attackRange = ((MeleeWeaponItemSO)_heldWeapon).attackRange;
-        //Gizmos.DrawWireMesh(_testMesh, 0, transform.position + (_weaponPositionOffset * attackRange / 2), Quaternion.Euler(0, 0, _angleToTarget), new Vector3(1, attackRange, 1));
-        Gizmos.color = Color.white;
     }
 }

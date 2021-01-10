@@ -5,6 +5,7 @@ using UnityEngine;
 /// </summary>
 public abstract class ItemSO : ScriptableObject
 {
+    public EItemType itemType;
     [Header("Graphics")]
     public Sprite sprite;
     public Sprite inventoryIcon;
@@ -15,3 +16,6 @@ public abstract class ItemSO : ScriptableObject
     [Header("Chance")]
     [Range(0, 1)] public float dropChance;
 }
+
+
+public enum EItemType { Weapon, Resource }

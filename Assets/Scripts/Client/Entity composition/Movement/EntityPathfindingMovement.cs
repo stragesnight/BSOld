@@ -4,32 +4,46 @@ using Pathfinding;
 /// <summary>
 /// Entity movement based on A* pathfinding algorithm.
 /// </summary>
-[RequireComponent(typeof(Seeker))]
+[RequireComponent(typeof(Seeker), typeof(AIVision))]
 public class EntityPathfindingMovement : EntityMovement
 {
-    [SerializeField] private float _nextWayPointThreshold = 1f;
     [SerializeField] private EDefaultBehaviour _defaultBehaviour;
     [SerializeField] private EChaseBehaviour _chaseBehaviour;
-    private float _visionRadius;
-    private Seeker _seeker;
+    [SerializeField] private float _nextWayPointThreshold = 1f;
 
-    [HideInInspector] private Vector2 _target;
-    public Vector2 GetTarget() => _target;
+    private Seeker _seeker;
+    private AIVision _vision;
+    private float _visionRadius;
+
+    private EntityBehaviour _entityTarget;
+    private Vector2 _target;
     private Path _currentPath;
     int _currentWayPoint;
 
     private bool _isReachedEndOfThePath = true;
-    [HideInInspector] public bool isChasing = false;
 
 
     // Get required components and invoke repeating
     protected override void Start()
     {
         base.Start();
-        _visionRadius = _entity.entityData.GetVisionRadius();
         _seeker = GetComponent<Seeker>();
+        _vision = GetComponent<AIVision>();
+
+        _visionRadius = _entity.entityData.GetVisionRadius();
+
+        _vision.enemySpotedAction += SetEntityTarget;
+        _vision.enemyLostAction += ClearEntityTarget;
+
         // Path will be updated every second
         InvokeRepeating(nameof(UpdatePath), 0f, 1f);
+    }
+
+
+    private void OnDisable()
+    {
+        _vision.enemySpotedAction -= SetEntityTarget;
+        _vision.enemyLostAction -= ClearEntityTarget;
     }
 
 
@@ -93,10 +107,24 @@ public class EntityPathfindingMovement : EntityMovement
 
     private Vector2 GetNextPathTarget()
     {
-        isChasing = TryGetChasingTarget(out Vector2 target);
+        Vector2 target = Vector2.zero;
+        // If Entity has other Entity as Target
+        if (_entityTarget)
+            // Choose path depending on behaviour
+            switch (_chaseBehaviour)
+            {
+                case EChaseBehaviour.Chase:
+                    target = _entityTarget.transform.position;
+                    break;
+                case EChaseBehaviour.RunAway:
+                    target = transform.position + (transform.position - _entityTarget.transform.position);
+                    break;
+            }
 
-        if (!isChasing && _isReachedEndOfThePath)
+        // If Entity has no other Enity target and have completed current path
+        else if (!_entityTarget && _isReachedEndOfThePath)
         {
+            // Choose path depending on behaviour
             switch (_defaultBehaviour)
             {
                 case EDefaultBehaviour.Patrol:
@@ -126,49 +154,10 @@ public class EntityPathfindingMovement : EntityMovement
     }
 
 
-    private bool TryGetChasingTarget(out Vector2 target)
-    {
-        // Get all Colliders in radius
-        Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, _visionRadius);
-
-        foreach (Collider2D hit in hits)
-        {
-            // Get checked entity
-            if (hit.TryGetComponent(out EntityBehaviour hitEntity))
-            {
-                // Get Reaction of a checked entity
-                EReaction checkedEntityReaction = hitEntity.currentReaction;
-                // If Entity is not caster and if their reaction are different
-                if (hit.gameObject != gameObject && _entity.currentReaction != checkedEntityReaction)
-                {
-                    switch (_chaseBehaviour)
-                    {
-                        case EChaseBehaviour.Chase:
-                            target = hit.transform.position;
-                            break;
-                        case EChaseBehaviour.RunAway:
-                            target = transform.position + (transform.position - hit.transform.position);
-                            break;
-                        default:
-                            target = Vector2.zero;
-                            break;
-                    }
-                    return true;
-                }
-            }
-        }
-
-        target = Vector2.zero;
-        return false;
-    }
+    private void SetEntityTarget(EntityBehaviour entityTarget) { _entityTarget = entityTarget; }
+    private void ClearEntityTarget() { _entityTarget = null; }
 
 
     internal enum EDefaultBehaviour { Idle, Patrol }
     internal enum EChaseBehaviour { Chase, RunAway }
-
-
-    private void OnDrawGizmos()
-    {
-        Gizmos.DrawWireSphere(transform.position, _visionRadius);
-    }
 }

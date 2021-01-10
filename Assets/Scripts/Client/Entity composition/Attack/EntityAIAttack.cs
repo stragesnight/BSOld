@@ -3,27 +3,42 @@ using UnityEngine;
 /// <summary>
 /// Entity attack based on AI decision.
 /// </summary>
-[RequireComponent(typeof(EntityPathfindingMovement))]
+[RequireComponent(typeof(AIVision))]
 public class EntityAIAttack : EntityAttack
 {
-    private EntityPathfindingMovement _entityMovement;
+    private AIVision _vision;
+    private EntityBehaviour _entityTarget;
 
 
     protected override void Start()
     {
         base.Start();
-        _entityMovement = GetComponent<EntityPathfindingMovement>();
 
-        InvokeRepeating(nameof(CheckAttackPossibili111ty), 0f, 0.5f);
+        _vision = GetComponent<AIVision>();
+        _vision.enemySpotedAction += SetEntityTarget;
+        _vision.enemyLostAction += ClearEntityTarget;
+
+        InvokeRepeating(nameof(CheckAttackPossibility), 0f, 0.5f);
     }
 
 
-    private void CheckAttackPossibili111ty()
+    private void OnDisable()
     {
-        if (_isOnCalldown || !_entityMovement.isChasing)
+        _vision.enemySpotedAction -= SetEntityTarget;
+        _vision.enemyLostAction -= ClearEntityTarget;
+    }
+
+
+    private void CheckAttackPossibility()
+    {
+        if (_isOnCalldown || !_entityTarget)
             return;
 
-        OnTargetPositionChanged(_entityMovement.GetTarget());
+        OnTargetPositionChanged(_entityTarget.transform.position);
         OnAttack();
     }
+
+
+    private void SetEntityTarget(EntityBehaviour entityTarget) { _entityTarget = entityTarget; }
+    private void ClearEntityTarget() { _entityTarget = null; }
 }

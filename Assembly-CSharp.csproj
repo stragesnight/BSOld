@@ -55,6 +55,7 @@
     <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio Tools for Unity\16.0\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\Client\Pickable items\PickableItemDropHandler.cs" />
     <Compile Include="Assets\Scripts\Client\Entity composition\Movement\EntityMovement.cs" />
     <Compile Include="Assets\Scripts\Client\Scriptable objects\Relayers\InputReader.cs" />
     <Compile Include="Assets\Scripts\Client\Scriptable objects\MapResources\ResourceItem.cs" />
@@ -72,6 +73,7 @@
     <Compile Include="Assets\Scripts\Client\World generation\Helper classes\Noise.cs" />
     <Compile Include="Assets\Scripts\Client\Scriptable objects\Tiles\RuleOverrideTile\AdvancedRuleOverrideTile.cs" />
     <Compile Include="Assets\Scripts\Client\State Machine\StateMachine.cs" />
+    <Compile Include="Assets\Scripts\Client\Entity composition\Gathering\EntityGathering.cs" />
     <Compile Include="Assets\Scripts\Client\Handlers\TilemapHandler.cs" />
     <Compile Include="Assets\Scripts\Client\Scriptable objects\MapZones\MapZone.cs" />
     <Compile Include="Assets\Scripts\Client\Entity composition\Movement\EntityPathfindingMovement.cs" />
@@ -90,15 +92,17 @@
     <Compile Include="Assets\Scripts\Client\Handlers\NoisemapHandler.cs" />
     <Compile Include="Assets\Scripts\Client\World generation\MapTileGenerator.cs" />
     <Compile Include="Assets\Scripts\Client\Handlers\PlacingAccessibilityHandler.cs" />
+    <Compile Include="Assets\Scripts\Client\Pickable items\PickableItem.cs" />
     <Compile Include="Assets\Scripts\Client\World generation\MapGenerator.cs" />
     <Compile Include="Assets\Scripts\Client\Scriptable objects\Tiles\RuleTile\RuleTile.cs" />
     <Compile Include="Assets\Scripts\Client\Entity composition\Movement\EntityInputMovement.cs" />
     <Compile Include="Assets\Scripts\Client\Scriptable objects\Actions\ResourceActions.cs" />
     <Compile Include="Assets\Scripts\Client\Entity composition\Attack\EntityAttack.cs" />
     <Compile Include="Assets\Scripts\Client\BuildingMonoBehaviours\ConstructionBehavoiur.cs" />
-    <Compile Include="Assets\Scripts\Client\Entity composition\Gathering\EntityGathering.cs" />
-    <Compile Include="Assets\Scripts\Client\Pickable items\PickableItem.cs" />
-    <Compile Include="Assets\Scripts\Client\Pickable items\PickableItemDropHandler.cs" />
+    <Compile Include="Assets\Scripts\Client\Entity composition\Inventory\EntityInventoryManager.cs" />
+    <Compile Include="Assets\Scripts\Client\Entity composition\Inventory\EntityInputInventoryManager.cs" />
+    <Compile Include="Assets\Scripts\Client\Entity composition\Inventory\EntityAIInventoryManager.cs" />
+    <Compile Include="Assets\Scripts\Client\Entity composition\AIVision.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

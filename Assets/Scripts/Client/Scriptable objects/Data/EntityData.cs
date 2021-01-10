@@ -56,11 +56,6 @@ public class EntityData : ScriptableObject
     [SerializeField] private InventorySO _inventory;
     public void SetInventory(InventorySO newInventory) { _inventory = newInventory; }
     public InventorySO GetInventory() => _inventory;
-
-    // Held Weapon
-    [SerializeField] private WeaponItemSO _heldWeapon;
-    public void SetHeldWeapon(WeaponItemSO newWeapon) { _heldWeapon = newWeapon; }
-    public WeaponItemSO GetHeldWeapon() => _heldWeapon;
 }
 
 
