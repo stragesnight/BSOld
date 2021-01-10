@@ -81,7 +81,7 @@ namespace UnityEditor.Tilemaps
         [MenuItem("Assets/Create/Content/Resource", priority = (int)EContentMenuItemOrder.Resource)]
         static void CreateResource()
         {
-            ProjectWindowUtil.CreateAsset(ScriptableObject.CreateInstance<Resource>(), "New Resource.asset");
+            ProjectWindowUtil.CreateAsset(ScriptableObject.CreateInstance<ResourceItem>(), "New Resource.asset");
         }
 
         [MenuItem("Assets/Create/Content/Map Zone", priority = (int)EContentMenuItemOrder.MapZone)]

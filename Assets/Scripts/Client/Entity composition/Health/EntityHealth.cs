@@ -53,7 +53,7 @@ public class EntityHealth : MonoBehaviour
         yield return new WaitForSeconds(0.3f);
 
         _stateMachine.SetState(EState.Default);
-        GetComponentInChildren<SpriteRenderer>().color = Color.green;
+        GetComponentInChildren<SpriteRenderer>().color = Color.white;
     }
 
 

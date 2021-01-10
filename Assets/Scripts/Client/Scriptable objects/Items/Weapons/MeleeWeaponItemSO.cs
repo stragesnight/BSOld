@@ -1,7 +1,7 @@
 /// <summary>
 /// Melee weapon description class.
 /// </summary>
-public class MeleeWeaponItemSO : WeaponSO
+public class MeleeWeaponItemSO : WeaponItemSO
 {
     public float attackRange;
 }

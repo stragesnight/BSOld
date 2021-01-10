@@ -15,11 +15,11 @@ D:/UnityProjects/Codename_connect
 -logFile
 Logs/AssetImportWorker1.log
 -srvPort
-53866
+57353
 Successfully changed project path to: D:/UnityProjects/Codename_connect
 D:/UnityProjects/Codename_connect
 Using Asset Import Pipeline V2.
-Refreshing native plugins compatible for Editor in 442.82 ms, found 1 plugins.
+Refreshing native plugins compatible for Editor in 74.90 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2020.2.0b2 (90b2443a8df1)
 [Subsystems] Discovering subsystems at path D:/Unity/2020.2.0b2/Editor/Data/Resources/UnitySubsystems
@@ -36,5 +36,30 @@ Initialize mono
 Mono path[0] = 'D:/Unity/2020.2.0b2/Editor/Data/Managed'
 Mono path[1] = 'D:/Unity/2020.2.0b2/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
 Mono config path = 'D:/Unity/2020.2.0b2/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56268
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56832
 Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: D:/Unity/2020.2.0b2/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.000903 seconds.
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 73.82 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in 19.561 seconds
+Registering precompiled user dll's ...
+Registered in 0.096572 seconds.
+Platform modules already initialized, skipping
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image D:\UnityProjects\Codename_connect\Library\PackageCache\com.unity.ext.nunit@1.0.0\net35\unity-custom\nunit.framework.dll
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 91.41 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.479 seconds
+Platform modules already initialized, skipping

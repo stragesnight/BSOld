@@ -64,29 +64,33 @@ public class MapData : ScriptableObject
     // =========================================== RESOURCES ===========================================
 
     // resourceMap
-    [SerializeField] private Dictionary<Vector3Int, Resource> _resourceMap = new Dictionary<Vector3Int, Resource>();
+    [SerializeField] private Dictionary<Vector3Int, ResourceItem> _resourceMap = new Dictionary<Vector3Int, ResourceItem>();
     // Set
-    public void SetResourceAtPoint(Vector3Int position, Resource resource) 
+    public void SetResourceAtPoint(Vector3Int position, ResourceItem resource) 
     {
         if (_resourceMap.ContainsKey(position))
             _resourceMap[position] = resource;
         else
             _resourceMap.Add(position, resource);
+
         resourceActions.OnSetResourceAtPoint(position, resource);
+        SetResourceAmountAtPoint(position, Random.Range(resource.minMapAmount, resource.maxMapAmount + 1));
     }
-    public void SetResourceMap(Dictionary<Vector3Int, Resource> map) 
+    public void SetResourceMap(Dictionary<Vector3Int, ResourceItem> map) 
     {
         _resourceMap = map;
         resourceActions.OnSetResourceMap(map);
+        SetResourceAmounts(GetStartingResourceAmounts(map));
     }
     // Get
-    public bool GetResourceAtPoint(Vector3Int position, out Resource resource)
+    public bool GetResourceAtPoint(Vector3Int position, out ResourceItem resource)
     {
         return _resourceMap.TryGetValue(position, out resource);
     }
-    public Dictionary<Vector3Int, Resource> GetResourceMap() => _resourceMap;
+    public Dictionary<Vector3Int, ResourceItem> GetResourceMap() => _resourceMap;
 
-    // resourceAmounts
+    // ======================================== RESOURCE AMOUNTS ========================================
+
     [SerializeField] private Dictionary<Vector3Int, int> _resourceAmounts = new Dictionary<Vector3Int, int>();
     // Set
     public void SetResourceAmountAtPoint(Vector3Int position, int amount) 
@@ -95,6 +99,18 @@ public class MapData : ScriptableObject
             _resourceAmounts[position] = amount;
         else
             _resourceAmounts.Add(position, amount);
+
+        if (_resourceAmounts[position] <= 0)
+            SetResourceAtPoint(position, null);
+
+        resourceActions.OnSetResourceAmountAtPoint(position, amount);
+    }
+    public void ChangeResourceAmountAtPoint(Vector3Int position, int amount)
+    {
+        _resourceAmounts[position] += amount;
+        if (_resourceAmounts[position] <= 0)
+            SetResourceAtPoint(position, null);
+
         resourceActions.OnSetResourceAmountAtPoint(position, amount);
     }
     public void SetResourceAmounts(Dictionary<Vector3Int, int> amounts) 
@@ -211,4 +227,19 @@ public class MapData : ScriptableObject
     // Get
     public float GetFertilityAtPoint(Vector3Int position) => _fertilityMap[position.x, position.y];
     public float[,] GetFertilityMap() => _fertilityMap;
+
+
+
+
+    private Dictionary<Vector3Int, int> GetStartingResourceAmounts(Dictionary<Vector3Int, ResourceItem> map)
+    {
+        Dictionary<Vector3Int, int> startingAmounts = new Dictionary<Vector3Int, int>();
+
+        foreach (Vector3Int position in map.Keys)
+        {
+            startingAmounts.Add(position, Random.Range(map[position].minMapAmount, map[position].maxMapAmount + 1));
+        }
+
+        return startingAmounts;
+    }
 }

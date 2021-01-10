@@ -11,7 +11,7 @@ public abstract class EntityAttack : MonoBehaviour
     protected EntityBehaviour _entity;
     protected StateMachine _stateMachine;
 
-    protected WeaponSO _heldWeapon;
+    protected WeaponItemSO _heldWeapon;
 
     protected float _angleToTarget;
     protected Vector3 _weaponPositionOffset;
@@ -79,13 +79,12 @@ public abstract class EntityAttack : MonoBehaviour
     }
 
 
-    protected virtual void PreformAttack(WeaponSO weapon, Collider2D[] hits)
+    protected virtual void PreformAttack(WeaponItemSO weapon, Collider2D[] hits)
     {
         foreach (Collider2D hit in hits)
         {
             // Try to get EntityBehaviour
-            EntityBehaviour checkedEntity = hit.GetComponent<EntityBehaviour>();
-            if (checkedEntity)
+            if (hit.TryGetComponent(out EntityBehaviour checkedEntity))
             {
                 // If checked Entity is not self and if their reaction are different
                 if (hit.gameObject != _entity.gameObject && _entity.currentReaction != checkedEntity.currentReaction)
@@ -109,7 +108,7 @@ public abstract class EntityAttack : MonoBehaviour
 
         yield return new WaitForSeconds(_heldWeapon.attackCalldown);
 
-        GetComponentInChildren<SpriteRenderer>().color = Color.red;
+        GetComponentInChildren<SpriteRenderer>().color = Color.white;
 
         _isOnCalldown = false;
     }

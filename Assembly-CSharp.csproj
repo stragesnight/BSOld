@@ -56,8 +56,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\Client\Entity composition\Movement\EntityMovement.cs" />
-    <Compile Include="Assets\Scripts\Client\Scriptable objects\Entity\InputReader.cs" />
-    <Compile Include="Assets\Scripts\Client\Scriptable objects\MapResources\Resource.cs" />
+    <Compile Include="Assets\Scripts\Client\Scriptable objects\Relayers\InputReader.cs" />
+    <Compile Include="Assets\Scripts\Client\Scriptable objects\MapResources\ResourceItem.cs" />
     <Compile Include="Assets\Scripts\Client\Scriptable objects\Items\Weapons\MeleeWeaponItemSO.cs" />
     <Compile Include="Assets\Scripts\Client\Scriptable objects\Tiles\RuleOverrideTile\RuleOverrideTile.cs" />
     <Compile Include="Assets\Scripts\Client\Scriptable objects\Items\ItemSO.cs" />
@@ -73,15 +73,15 @@
     <Compile Include="Assets\Scripts\Client\Scriptable objects\Tiles\RuleOverrideTile\AdvancedRuleOverrideTile.cs" />
     <Compile Include="Assets\Scripts\Client\State Machine\StateMachine.cs" />
     <Compile Include="Assets\Scripts\Client\Handlers\TilemapHandler.cs" />
-    <Compile Include="Assets\Scripts\Client\BuildingMonoBehaviours\GatheringBuildingBehaviour.cs" />
     <Compile Include="Assets\Scripts\Client\Scriptable objects\MapZones\MapZone.cs" />
     <Compile Include="Assets\Scripts\Client\Entity composition\Movement\EntityPathfindingMovement.cs" />
+    <Compile Include="Assets\Scripts\Client\Entity composition\Behaviour\EntityBehaviour.cs" />
     <Compile Include="Assets\Scripts\Client\Scriptable objects\Tiles\AnimatedTile\AnimatedTile.cs" />
     <Compile Include="Assets\Scripts\Client\World generation\Helper classes\MapZones.cs" />
     <Compile Include="Assets\Scripts\Client\Scriptable objects\Buildings\GatheringBuildingSO.cs" />
     <Compile Include="Assets\Scripts\Client\Scriptable objects\Tiles\RandomTile\RandomTile.cs" />
     <Compile Include="Assets\Dependencies\RuleTiles\GridInformation\GridInformation.cs" />
-    <Compile Include="Assets\Scripts\Client\Scriptable objects\Items\Weapons\WeaponSO.cs" />
+    <Compile Include="Assets\Scripts\Client\Scriptable objects\Items\Weapons\WeaponItemSO.cs" />
     <Compile Include="Assets\Scripts\Client\World generation\ResourceMapGenerator.cs" />
     <Compile Include="Assets\Scripts\Client\Scriptable objects\Actions\TilemapActions.cs" />
     <Compile Include="Assets\Scripts\Client\Scriptable objects\Entity\InventorySO.cs" />
@@ -96,7 +96,9 @@
     <Compile Include="Assets\Scripts\Client\Scriptable objects\Actions\ResourceActions.cs" />
     <Compile Include="Assets\Scripts\Client\Entity composition\Attack\EntityAttack.cs" />
     <Compile Include="Assets\Scripts\Client\BuildingMonoBehaviours\ConstructionBehavoiur.cs" />
-    <Compile Include="Assets\Scripts\Client\Entity composition\Behaviour\EntityBehaviour.cs" />
+    <Compile Include="Assets\Scripts\Client\Entity composition\Gathering\EntityGathering.cs" />
+    <Compile Include="Assets\Scripts\Client\Pickable items\PickableItem.cs" />
+    <Compile Include="Assets\Scripts\Client\Pickable items\PickableItemDropHandler.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

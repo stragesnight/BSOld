@@ -134,9 +134,7 @@ public class EntityPathfindingMovement : EntityMovement
         foreach (Collider2D hit in hits)
         {
             // Get checked entity
-            bool isEntity = hit.TryGetComponent(out EntityBehaviour hitEntity);
-
-            if (isEntity)
+            if (hit.TryGetComponent(out EntityBehaviour hitEntity))
             {
                 // Get Reaction of a checked entity
                 EReaction checkedEntityReaction = hitEntity.currentReaction;

@@ -1,0 +1,45 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1dd02f80d4d95c4ebb1357bc8bf0ec9, type: 3}
+  m_Name: Player_inventory
+  m_EditorClassIdentifier: 
+  _inventorySlots:
+  - Item: {fileID: 11400000, guid: 9bf0218971015e24d9817a4da784a855, type: 2}
+    Amount: 10
+    DropOnDeath: 1
+  - Item: {fileID: 11400000, guid: 074838d5f955c7c409d7572619337b57, type: 2}
+    Amount: 1
+    DropOnDeath: 1
+  - Item: {fileID: 11400000, guid: 074838d5f955c7c409d7572619337b57, type: 2}
+    Amount: 1
+    DropOnDeath: 1
+  - Item: {fileID: 11400000, guid: 9bf0218971015e24d9817a4da784a855, type: 2}
+    Amount: 5
+    DropOnDeath: 1
+  - Item: {fileID: 11400000, guid: 074838d5f955c7c409d7572619337b57, type: 2}
+    Amount: 1
+    DropOnDeath: 1
+  - Item: {fileID: 11400000, guid: 074838d5f955c7c409d7572619337b57, type: 2}
+    Amount: 1
+    DropOnDeath: 1
+  - Item: {fileID: 0}
+    Amount: 0
+    DropOnDeath: 0
+  - Item: {fileID: 0}
+    Amount: 0
+    DropOnDeath: 0
+  - Item: {fileID: 0}
+    Amount: 0
+    DropOnDeath: 0
+  - Item: {fileID: 0}
+    Amount: 0
+    DropOnDeath: 0

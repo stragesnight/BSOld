@@ -7,7 +7,7 @@ using UnityEngine;
 /// </summary>
 public class ResourceMapGenerator : MonoBehaviour
 {
-    private Dictionary<Vector3Int, Resource> resourceMap;
+    private Dictionary<Vector3Int, ResourceItem> resourceMap;
     private ResourceNoiseMap[] resourceNoiseMaps;
 
 
@@ -16,7 +16,7 @@ public class ResourceMapGenerator : MonoBehaviour
     {
         resourceNoiseMaps = _resourceNoiseMaps;
 
-        resourceMap = new Dictionary<Vector3Int, Resource>();
+        resourceMap = new Dictionary<Vector3Int, ResourceItem>();
 
         GenerateNoiseMaps();
         PopulateDictionary();
@@ -37,7 +37,7 @@ public class ResourceMapGenerator : MonoBehaviour
             for (int y = 0; y < mapHeight; y++)
             {
                 Vector3Int position = new Vector3Int(x, y, 0);
-                bool isFound = GetValidResource(position, out Resource resource);
+                bool isFound = GetValidResource(position, out ResourceItem resource);
 
                 if (isFound)
                     resourceMap.Add(position, resource);
@@ -65,7 +65,7 @@ public class ResourceMapGenerator : MonoBehaviour
 
 
     // Get resource that can appear at given point
-    private bool GetValidResource(Vector3Int position, out Resource resource)
+    private bool GetValidResource(Vector3Int position, out ResourceItem resource)
     {
         foreach (ResourceNoiseMap resourceNoiseMap in resourceNoiseMaps)
         {
@@ -98,7 +98,7 @@ public class ResourceMapGenerator : MonoBehaviour
 [System.Serializable]
 public struct ResourceNoiseMap
 {
-    public Resource resource;
+    public ResourceItem resource;
     public MapZone[] mapZones;
     [Range(0, 1)] public float minHeight;
     public NoiseMap noiseMap;

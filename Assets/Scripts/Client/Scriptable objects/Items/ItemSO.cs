@@ -5,6 +5,13 @@ using UnityEngine;
 /// </summary>
 public abstract class ItemSO : ScriptableObject
 {
+    [Header("Graphics")]
     public Sprite sprite;
     public Sprite inventoryIcon;
+    [Header("Amounts")]
+    public int maxInventoryAmount;
+    public int minDroppedAmount;
+    public int maxDroppedAmount;
+    [Header("Chance")]
+    [Range(0, 1)] public float dropChance;
 }

@@ -19,9 +19,9 @@ MonoBehaviour:
     width: 1857
     height: 1037
   m_ShowMode: 4
-  m_Title: Scene
+  m_Title: Controls (Input Actions)
   m_RootView: {fileID: 2}
-  m_MinSize: {x: 875, y: 542}
+  m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
   m_Maximized: 1
 --- !u!114 &2
@@ -46,7 +46,7 @@ MonoBehaviour:
     y: 0
     width: 1857
     height: 1037
-  m_MinSize: {x: 875, y: 542}
+  m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
   m_UseTopView: 1
   m_TopViewHeight: 30
@@ -119,10 +119,10 @@ MonoBehaviour:
     y: 30
     width: 1857
     height: 987
-  m_MinSize: {x: 579, y: 492}
+  m_MinSize: {x: 1079, y: 592}
   m_MaxSize: {x: 14002, y: 14042}
   vertical: 0
-  controlID: 7906
+  controlID: 69
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -170,10 +170,10 @@ MonoBehaviour:
     y: 0
     width: 1493
     height: 987
-  m_MinSize: {x: 303, y: 492}
+  m_MinSize: {x: 803, y: 592}
   m_MaxSize: {x: 10001, y: 14042}
   vertical: 1
-  controlID: 7907
+  controlID: 70
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -195,10 +195,10 @@ MonoBehaviour:
     y: 0
     width: 1493
     height: 667
-  m_MinSize: {x: 303, y: 221}
+  m_MinSize: {x: 803, y: 321}
   m_MaxSize: {x: 8003, y: 4021}
   vertical: 0
-  controlID: 7908
+  controlID: 71
 --- !u!114 &9
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -209,7 +209,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 1
   m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: SceneView
+  m_Name: InputActionEditorWindow
   m_EditorClassIdentifier: 
   m_Children: []
   m_Position:
@@ -218,15 +218,15 @@ MonoBehaviour:
     y: 0
     width: 1164
     height: 667
-  m_MinSize: {x: 101, y: 121}
-  m_MaxSize: {x: 4001, y: 4021}
-  m_ActualView: {fileID: 12}
+  m_MinSize: {x: 602, y: 321}
+  m_MaxSize: {x: 4002, y: 4021}
+  m_ActualView: {fileID: 14}
   m_Panes:
   - {fileID: 12}
   - {fileID: 14}
   - {fileID: 15}
-  m_Selected: 0
-  m_LastSelected: 1
+  m_Selected: 1
+  m_LastSelected: 0
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -246,8 +246,8 @@ MonoBehaviour:
     y: 0
     width: 329
     height: 667
-  m_MinSize: {x: 202, y: 221}
-  m_MaxSize: {x: 4002, y: 4021}
+  m_MinSize: {x: 201, y: 221}
+  m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 16}
   m_Panes:
   - {fileID: 16}
@@ -316,9 +316,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 54.260902, y: 35.54651, z: -46.788998}
+    m_Target: {x: 10.515022, y: 7.1900663, z: -1.7596405}
     speed: 2
-    m_Value: {x: 54.260902, y: 35.54651, z: -46.788998}
+    m_Value: {x: 10.515022, y: 7.1900663, z: -1.7596405}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -369,9 +369,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 50.75446
+    m_Target: 16.943464
     speed: 2
-    m_Value: 50.75446
+    m_Value: 16.943464
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -478,13 +478,13 @@ MonoBehaviour:
       m_IsRenaming: 0
       m_OriginalEventType: 11
       m_IsRenamingFilename: 0
-      m_ClientGUIView: {fileID: 0}
+      m_ClientGUIView: {fileID: 9}
     m_SearchString: 
   m_ActionsTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 6f60960e
-    m_LastClickedID: 244736111
-    m_ExpandedIDs: 99ff53d001095adb3c3e4907570bcc0e57834118390eac36677f436e
+    m_SelectedIDs: 3c3e4907
+    m_LastClickedID: 122240572
+    m_ExpandedIDs: eebf18b399ff53d001095adb570bcc0e5783411881d6d651677f436e
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -506,7 +506,7 @@ MonoBehaviour:
     m_AdvancedDropdownState:
       states:
       - itemId: 371857150
-        selectedIndex: 5
+        selectedIndex: 0
         scroll: {x: 0, y: 0}
       - itemId: 656259478
         selectedIndex: 0
@@ -524,9 +524,21 @@ MonoBehaviour:
         selectedIndex: 0
         scroll: {x: 0, y: 0}
       - itemId: 82801685
-        selectedIndex: 2
+        selectedIndex: 3
         scroll: {x: 0, y: 0}
       - itemId: -298396491
+        selectedIndex: -1
+        scroll: {x: 0, y: 0}
+      - itemId: 1943893468
+        selectedIndex: -1
+        scroll: {x: 0, y: 0}
+      - itemId: -1217029472
+        selectedIndex: 0
+        scroll: {x: 0, y: 0}
+      - itemId: -1273337413
+        selectedIndex: -1
+        scroll: {x: 0, y: 0}
+      - itemId: 1081013944
         selectedIndex: -1
         scroll: {x: 0, y: 0}
     m_ManualPathEditMode: 0
@@ -620,7 +632,99 @@ MonoBehaviour:
       \"path\": \"<Mouse>/position/x\",\n                    \"interactions\": \"\",\n                   
       \"processors\": \"\",\n                    \"groups\": \"Keyboard + mouse\",\n                   
       \"action\": \"MousePosition\",\n                    \"isComposite\": false,\n                   
-      \"isPartOfComposite\": true\n                }\n            ]\n        }\n   
+      \"isPartOfComposite\": true\n                }\n            ]\n        },\n       
+      {\n            \"name\": \"Inventory\",\n            \"id\": \"5106c146-0f86-47d9-80ec-2053e0f56bfe\",\n           
+      \"actions\": [\n                {\n                    \"name\": \"InventorySlot1\",\n                   
+      \"type\": \"Button\",\n                    \"id\": \"c651a8fa-319f-4c58-8dc6-8f9b318d84f4\",\n                   
+      \"expectedControlType\": \"Button\",\n                    \"processors\": \"\",\n                   
+      \"interactions\": \"\"\n                },\n                {\n                   
+      \"name\": \"InventorySlot2\",\n                    \"type\": \"Button\",\n                   
+      \"id\": \"dbed87eb-a429-4d14-906d-aa5139644689\",\n                    \"expectedControlType\":
+      \"Button\",\n                    \"processors\": \"\",\n                   
+      \"interactions\": \"\"\n                },\n                {\n                   
+      \"name\": \"InventorySlot3\",\n                    \"type\": \"Button\",\n                   
+      \"id\": \"9af36787-8606-4352-a617-d42f8a821fef\",\n                    \"expectedControlType\":
+      \"Button\",\n                    \"processors\": \"\",\n                   
+      \"interactions\": \"\"\n                },\n                {\n                   
+      \"name\": \"InventorySlot4\",\n                    \"type\": \"Button\",\n                   
+      \"id\": \"2df5bd03-1a02-48d4-a217-2f0b32b18038\",\n                    \"expectedControlType\":
+      \"Button\",\n                    \"processors\": \"\",\n                   
+      \"interactions\": \"\"\n                },\n                {\n                   
+      \"name\": \"InventorySlot5\",\n                    \"type\": \"Button\",\n                   
+      \"id\": \"77ba6f3c-3aad-4aa7-8b84-86e61b40861b\",\n                    \"expectedControlType\":
+      \"Button\",\n                    \"processors\": \"\",\n                   
+      \"interactions\": \"\"\n                },\n                {\n                   
+      \"name\": \"InventorySlot6\",\n                    \"type\": \"Button\",\n                   
+      \"id\": \"7e12a81d-356a-4515-870b-dd8d40439504\",\n                    \"expectedControlType\":
+      \"Button\",\n                    \"processors\": \"\",\n                   
+      \"interactions\": \"\"\n                },\n                {\n                   
+      \"name\": \"InventorySlot7\",\n                    \"type\": \"Button\",\n                   
+      \"id\": \"ee393727-ec43-46c9-a784-c9c794c52f2b\",\n                    \"expectedControlType\":
+      \"Button\",\n                    \"processors\": \"\",\n                   
+      \"interactions\": \"\"\n                },\n                {\n                   
+      \"name\": \"InventorySlot8\",\n                    \"type\": \"Button\",\n                   
+      \"id\": \"69c58c87-c611-44d2-990e-cb2f68af51ca\",\n                    \"expectedControlType\":
+      \"Button\",\n                    \"processors\": \"\",\n                   
+      \"interactions\": \"\"\n                },\n                {\n                   
+      \"name\": \"InventorySlot9\",\n                    \"type\": \"Button\",\n                   
+      \"id\": \"090c5a22-2f49-40d7-a413-a8b3fd430d2c\",\n                    \"expectedControlType\":
+      \"Button\",\n                    \"processors\": \"\",\n                   
+      \"interactions\": \"\"\n                },\n                {\n                   
+      \"name\": \"InventorySlot10\",\n                    \"type\": \"Button\",\n                   
+      \"id\": \"63d3a738-bf33-4691-96d7-f2724ec9c60c\",\n                    \"expectedControlType\":
+      \"Button\",\n                    \"processors\": \"\",\n                   
+      \"interactions\": \"\"\n                }\n            ],\n            \"bindings\":
+      [\n                {\n                    \"name\": \"\",\n                   
+      \"id\": \"d526357a-f320-47e4-a7c2-39853e6dd8e2\",\n                    \"path\":
+      \"<Keyboard>/1\",\n                    \"interactions\": \"\",\n                   
+      \"processors\": \"\",\n                    \"groups\": \"Keyboard + mouse\",\n                   
+      \"action\": \"InventorySlot1\",\n                    \"isComposite\": false,\n                   
+      \"isPartOfComposite\": false\n                },\n                {\n                   
+      \"name\": \"\",\n                    \"id\": \"4b1f59f1-9c66-4212-a610-4d2f661a40c9\",\n                   
+      \"path\": \"<Keyboard>/2\",\n                    \"interactions\": \"\",\n                   
+      \"processors\": \"\",\n                    \"groups\": \"Keyboard + mouse\",\n                   
+      \"action\": \"InventorySlot2\",\n                    \"isComposite\": false,\n                   
+      \"isPartOfComposite\": false\n                },\n                {\n                   
+      \"name\": \"\",\n                    \"id\": \"09c3c0c2-d815-4c19-b258-3e92be94eec6\",\n                   
+      \"path\": \"<Keyboard>/3\",\n                    \"interactions\": \"\",\n                   
+      \"processors\": \"\",\n                    \"groups\": \"Keyboard + mouse\",\n                   
+      \"action\": \"InventorySlot3\",\n                    \"isComposite\": false,\n                   
+      \"isPartOfComposite\": false\n                },\n                {\n                   
+      \"name\": \"\",\n                    \"id\": \"740db557-767e-4dfb-8679-21e4988e12d4\",\n                   
+      \"path\": \"<Keyboard>/4\",\n                    \"interactions\": \"\",\n                   
+      \"processors\": \"\",\n                    \"groups\": \"Keyboard + mouse\",\n                   
+      \"action\": \"InventorySlot4\",\n                    \"isComposite\": false,\n                   
+      \"isPartOfComposite\": false\n                },\n                {\n                   
+      \"name\": \"\",\n                    \"id\": \"3ffaefa6-7120-4ac2-8f27-31817692f975\",\n                   
+      \"path\": \"<Keyboard>/5\",\n                    \"interactions\": \"\",\n                   
+      \"processors\": \"\",\n                    \"groups\": \"Keyboard + mouse\",\n                   
+      \"action\": \"InventorySlot5\",\n                    \"isComposite\": false,\n                   
+      \"isPartOfComposite\": false\n                },\n                {\n                   
+      \"name\": \"\",\n                    \"id\": \"8058ffcc-3d83-45c3-a54f-20dbb94ed5ff\",\n                   
+      \"path\": \"<Keyboard>/6\",\n                    \"interactions\": \"\",\n                   
+      \"processors\": \"\",\n                    \"groups\": \"Keyboard + mouse\",\n                   
+      \"action\": \"InventorySlot6\",\n                    \"isComposite\": false,\n                   
+      \"isPartOfComposite\": false\n                },\n                {\n                   
+      \"name\": \"\",\n                    \"id\": \"92995684-c748-4c07-bd99-bc47359bf3f8\",\n                   
+      \"path\": \"<Keyboard>/7\",\n                    \"interactions\": \"\",\n                   
+      \"processors\": \"\",\n                    \"groups\": \"Keyboard + mouse\",\n                   
+      \"action\": \"InventorySlot7\",\n                    \"isComposite\": false,\n                   
+      \"isPartOfComposite\": false\n                },\n                {\n                   
+      \"name\": \"\",\n                    \"id\": \"38a06ce6-1bf8-48b3-b346-1a778c8a47af\",\n                   
+      \"path\": \"<Keyboard>/8\",\n                    \"interactions\": \"\",\n                   
+      \"processors\": \"\",\n                    \"groups\": \"Keyboard + mouse\",\n                   
+      \"action\": \"InventorySlot8\",\n                    \"isComposite\": false,\n                   
+      \"isPartOfComposite\": false\n                },\n                {\n                   
+      \"name\": \"\",\n                    \"id\": \"c72e7b79-d589-467d-bc3a-f73b222898c5\",\n                   
+      \"path\": \"<Keyboard>/9\",\n                    \"interactions\": \"\",\n                   
+      \"processors\": \"\",\n                    \"groups\": \"Keyboard + mouse\",\n                   
+      \"action\": \"InventorySlot9\",\n                    \"isComposite\": false,\n                   
+      \"isPartOfComposite\": false\n                },\n                {\n                   
+      \"name\": \"\",\n                    \"id\": \"4e9e0ca1-a368-410a-8782-0711370d1e9b\",\n                   
+      \"path\": \"<Keyboard>/0\",\n                    \"interactions\": \"\",\n                   
+      \"processors\": \"\",\n                    \"groups\": \"Keyboard + mouse\",\n                   
+      \"action\": \"InventorySlot10\",\n                    \"isComposite\": false,\n                   
+      \"isPartOfComposite\": false\n                }\n            ]\n        }\n   
       ],\n    \"controlSchemes\": [\n        {\n            \"name\": \"Keyboard
       + mouse\",\n            \"bindingGroup\": \"Keyboard + mouse\",\n           
       \"devices\": []\n        }\n    ]\n}"
@@ -690,8 +794,8 @@ MonoBehaviour:
     vZoomLockedByDefault: 0
     m_HBaseRangeMin: -581
     m_HBaseRangeMax: 581
-    m_VBaseRangeMin: -323
-    m_VBaseRangeMax: 323
+    m_VBaseRangeMin: -312.5
+    m_VBaseRangeMax: 312.5
     m_HAllowExceedBaseRangeMin: 1
     m_HAllowExceedBaseRangeMax: 1
     m_VAllowExceedBaseRangeMin: 1
@@ -708,11 +812,11 @@ MonoBehaviour:
     m_DrawArea:
       serializedVersion: 2
       x: 0
-      y: 0
+      y: 21
       width: 1162
-      height: 646
+      height: 625
     m_Scale: {x: 1, y: 1}
-    m_Translation: {x: 581, y: 323}
+    m_Translation: {x: 581, y: 312.5}
     m_MarginLeft: 0
     m_MarginRight: 0
     m_MarginTop: 0
@@ -720,9 +824,9 @@ MonoBehaviour:
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
       x: -581
-      y: -323
+      y: -312.5
       width: 1162
-      height: 646
+      height: 625
     m_MinimalGUI: 1
   m_defaultScale: 1
   m_LastWindowPixelSize: {x: 1162, y: 646}
@@ -759,9 +863,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 3ecdffff
-      m_LastClickedID: -12994
-      m_ExpandedIDs: b4faffff664b0000
+      m_SelectedIDs: be4b0000
+      m_LastClickedID: 0
+      m_ExpandedIDs: 40fbffff464b0000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -823,22 +927,22 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Resources/Characters
+    - Assets/Resources/Characters/Player
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 75
   m_LastFolders:
-  - Assets/Resources/Characters
+  - Assets/Resources/Characters/Player
   m_LastFoldersGridSize: 75
   m_LastProjectPath: D:\UnityProjects\Codename_connect
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 60}
-    m_SelectedIDs: 484c0000
-    m_LastClickedID: 19528
-    m_ExpandedIDs: 00000000d41e00002e4c0000304c0000324c0000344c0000364c0000384c00003a4c0000504c000000ca9a3b
+    scrollPos: {x: 0, y: 120}
+    m_SelectedIDs: 864c0000
+    m_LastClickedID: 19590
+    m_ExpandedIDs: 00000000bc1e0000fa4b0000fc4b0000fe4b0000004c0000024c0000044c0000064c0000084c0000464c000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -866,7 +970,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000d41e00002e4c0000304c0000324c0000344c0000364c0000384c00003a4c0000504c000000ca9a3b
+    m_ExpandedIDs: 00000000bc1e0000fa4b0000fc4b0000fe4b0000004c0000024c0000044c0000064c0000084c0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -893,7 +997,7 @@ MonoBehaviour:
   m_ListAreaState:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 0
+    m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: c6230000ae410000f04c0400623f000000000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
