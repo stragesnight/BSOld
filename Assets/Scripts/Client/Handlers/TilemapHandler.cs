@@ -74,11 +74,11 @@ public class TilemapHandler : MonoBehaviour
 
     // Resource Tilemap
     [SerializeField] private Tilemap _resourceTilemap;
-    private void SetResourceTilemapEntry(Vector3Int position, ResourceItem resource)
+    private void SetResourceTilemapEntry(Vector3Int position, ResourceItemSO resource)
     {
-        _resourceTilemap.SetTile(position, resource.ruleTile);
+        _resourceTilemap.SetTile(position, resource?.ruleTile);
     }
-    private void SetResourceTilemap(Dictionary<Vector3Int, ResourceItem> resources)
+    private void SetResourceTilemap(Dictionary<Vector3Int, ResourceItemSO> resources)
     {
         _resourceTilemap.ClearAllTiles();
         _resourceTilemap.SetTiles(resources.Keys.ToArray(), resources.Values.Select(x => x.ruleTile).ToArray());

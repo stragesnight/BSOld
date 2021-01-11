@@ -23,9 +23,9 @@ public abstract class ConstructionSO : ScriptableObject
 
 
     // Transforms RequiredResource array to Dictionary and returns it
-    public Dictionary<ResourceItem, int> GetRequiredResources()
+    public Dictionary<ResourceItemSO, int> GetRequiredResources()
     {
-        Dictionary<ResourceItem, int> output = new Dictionary<ResourceItem, int>();
+        Dictionary<ResourceItemSO, int> output = new Dictionary<ResourceItemSO, int>();
 
         foreach (RequiredResource r in requiredResources)
         {
@@ -43,6 +43,6 @@ public abstract class ConstructionSO : ScriptableObject
 [System.Serializable]
 public struct RequiredResource
 {
-    public ResourceItem resource;
+    public ResourceItemSO resource;
     public int requiredAmount;
 }

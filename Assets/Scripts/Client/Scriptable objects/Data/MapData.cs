@@ -64,9 +64,9 @@ public class MapData : ScriptableObject
     // =========================================== RESOURCES ===========================================
 
     // resourceMap
-    [SerializeField] private Dictionary<Vector3Int, ResourceItem> _resourceMap = new Dictionary<Vector3Int, ResourceItem>();
+    [SerializeField] private Dictionary<Vector3Int, ResourceItemSO> _resourceMap = new Dictionary<Vector3Int, ResourceItemSO>();
     // Set
-    public void SetResourceAtPoint(Vector3Int position, ResourceItem resource) 
+    public void SetResourceAtPoint(Vector3Int position, ResourceItemSO resource) 
     {
         if (_resourceMap.ContainsKey(position))
             _resourceMap[position] = resource;
@@ -74,20 +74,26 @@ public class MapData : ScriptableObject
             _resourceMap.Add(position, resource);
 
         resourceActions.OnSetResourceAtPoint(position, resource);
-        SetResourceAmountAtPoint(position, Random.Range(resource.minMapAmount, resource.maxMapAmount + 1));
+        // If resource is not null
+        if (resource)
+            // Set it's amount to starting amount
+            SetResourceAmountAtPoint(position, Random.Range(resource.minMapAmount, resource.maxMapAmount + 1));
+        else
+            // Else remove it from map
+            _resourceMap.Remove(position);
     }
-    public void SetResourceMap(Dictionary<Vector3Int, ResourceItem> map) 
+    public void SetResourceMap(Dictionary<Vector3Int, ResourceItemSO> map) 
     {
         _resourceMap = map;
         resourceActions.OnSetResourceMap(map);
         SetResourceAmounts(GetStartingResourceAmounts(map));
     }
     // Get
-    public bool GetResourceAtPoint(Vector3Int position, out ResourceItem resource)
+    public bool GetResourceAtPoint(Vector3Int position, out ResourceItemSO resource)
     {
         return _resourceMap.TryGetValue(position, out resource);
     }
-    public Dictionary<Vector3Int, ResourceItem> GetResourceMap() => _resourceMap;
+    public Dictionary<Vector3Int, ResourceItemSO> GetResourceMap() => _resourceMap;
 
     // ======================================== RESOURCE AMOUNTS ========================================
 
@@ -231,7 +237,7 @@ public class MapData : ScriptableObject
 
 
 
-    private Dictionary<Vector3Int, int> GetStartingResourceAmounts(Dictionary<Vector3Int, ResourceItem> map)
+    private Dictionary<Vector3Int, int> GetStartingResourceAmounts(Dictionary<Vector3Int, ResourceItemSO> map)
     {
         Dictionary<Vector3Int, int> startingAmounts = new Dictionary<Vector3Int, int>();
 

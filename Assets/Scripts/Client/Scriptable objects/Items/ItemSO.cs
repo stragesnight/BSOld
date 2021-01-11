@@ -5,6 +5,7 @@ using UnityEngine;
 /// </summary>
 public abstract class ItemSO : ScriptableObject
 {
+    [Header("General properties")]
     public EItemType itemType;
     [Header("Graphics")]
     public Sprite sprite;
@@ -18,4 +19,4 @@ public abstract class ItemSO : ScriptableObject
 }
 
 
-public enum EItemType { Weapon, Resource }
+public enum EItemType { Weapon, Instrument, Resource, Consumable }

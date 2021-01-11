@@ -56,9 +56,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\Client\Pickable items\PickableItemDropHandler.cs" />
+    <Compile Include="Assets\Scripts\Client\Entity composition\Inventory\EntityInventoryManager.cs" />
     <Compile Include="Assets\Scripts\Client\Entity composition\Movement\EntityMovement.cs" />
+    <Compile Include="Assets\Scripts\Client\Entity composition\Inventory\EntityAIInventoryManager.cs" />
     <Compile Include="Assets\Scripts\Client\Scriptable objects\Relayers\InputReader.cs" />
-    <Compile Include="Assets\Scripts\Client\Scriptable objects\MapResources\ResourceItem.cs" />
+    <Compile Include="Assets\Scripts\Client\Scriptable objects\Items\Resource Items\ResourceItemSO.cs" />
     <Compile Include="Assets\Scripts\Client\Scriptable objects\Items\Weapons\MeleeWeaponItemSO.cs" />
     <Compile Include="Assets\Scripts\Client\Scriptable objects\Tiles\RuleOverrideTile\RuleOverrideTile.cs" />
     <Compile Include="Assets\Scripts\Client\Scriptable objects\Items\ItemSO.cs" />
@@ -94,15 +96,14 @@
     <Compile Include="Assets\Scripts\Client\Handlers\PlacingAccessibilityHandler.cs" />
     <Compile Include="Assets\Scripts\Client\Pickable items\PickableItem.cs" />
     <Compile Include="Assets\Scripts\Client\World generation\MapGenerator.cs" />
+    <Compile Include="Assets\Scripts\Client\Entity composition\Inventory\EntityInputInventoryManager.cs" />
     <Compile Include="Assets\Scripts\Client\Scriptable objects\Tiles\RuleTile\RuleTile.cs" />
+    <Compile Include="Assets\Scripts\Client\Entity composition\AIVision.cs" />
     <Compile Include="Assets\Scripts\Client\Entity composition\Movement\EntityInputMovement.cs" />
     <Compile Include="Assets\Scripts\Client\Scriptable objects\Actions\ResourceActions.cs" />
     <Compile Include="Assets\Scripts\Client\Entity composition\Attack\EntityAttack.cs" />
     <Compile Include="Assets\Scripts\Client\BuildingMonoBehaviours\ConstructionBehavoiur.cs" />
-    <Compile Include="Assets\Scripts\Client\Entity composition\Inventory\EntityInventoryManager.cs" />
-    <Compile Include="Assets\Scripts\Client\Entity composition\Inventory\EntityInputInventoryManager.cs" />
-    <Compile Include="Assets\Scripts\Client\Entity composition\Inventory\EntityAIInventoryManager.cs" />
-    <Compile Include="Assets\Scripts\Client\Entity composition\AIVision.cs" />
+    <Compile Include="Assets\Scripts\Client\Scriptable objects\Items\Instrument Items\InstrumentItemSO.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

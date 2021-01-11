@@ -14,6 +14,8 @@ public abstract class EntityInventoryManager : MonoBehaviour
     {
         _entity = GetComponent<EntityBehaviour>();
         _inventory = _entity.entityData.GetInventory();
+
+        OnInventorySlotChanged(0);
     }
 
 
@@ -22,10 +24,11 @@ public abstract class EntityInventoryManager : MonoBehaviour
         // Update held item
         _entity.HeldItem = _inventory.GetSlot(index).Item;
 
-        if (_entity.HeldItem == null)
-            return;
-
+        // Update components
         if (TryGetComponent(out EntityAttack entityAttack))
-            entityAttack.enabled = _entity.HeldItem.itemType == EItemType.Weapon;
+            entityAttack.enabled = _entity.HeldItem?.itemType == EItemType.Weapon;
+
+        if (TryGetComponent(out EntityGathering entityGathering))
+            entityGathering.enabled = _entity.HeldItem?.itemType == EItemType.Instrument;
     }
 }

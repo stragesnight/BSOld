@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 466f04b0d35fe2f4a9871483ff196e9d, type: 3}
   m_Name: TreeResource
   m_EditorClassIdentifier: 
+  itemType: 2
   sprite: {fileID: 21300000, guid: bee9eadff5505774bb332bd799de3d47, type: 3}
   inventoryIcon: {fileID: 21300000, guid: bee9eadff5505774bb332bd799de3d47, type: 3}
   maxInventoryAmount: 10
@@ -21,3 +22,4 @@ MonoBehaviour:
   ruleTile: {fileID: 11400000, guid: 43ebf498b505ee945836a05c8e97b201, type: 2}
   minMapAmount: 2
   maxMapAmount: 5
+  requiredInstrumentType: 0

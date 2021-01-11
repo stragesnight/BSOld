@@ -17,20 +17,20 @@ MonoBehaviour:
     Amount: 1
     DropOnDeath: 0
   - Item: {fileID: 11400000, guid: 9bf0218971015e24d9817a4da784a855, type: 2}
-    Amount: 4
+    Amount: 10
     DropOnDeath: 1
   - Item: {fileID: 11400000, guid: e5e5acd32b8209f4498d99cd4edbec10, type: 2}
     Amount: 1
     DropOnDeath: 1
-  - Item: {fileID: 0}
-    Amount: 0
+  - Item: {fileID: 11400000, guid: 83c5bf0139eac504eaa1df9147c397ac, type: 2}
+    Amount: 1
     DropOnDeath: 1
-  - Item: {fileID: 0}
-    Amount: 0
-    DropOnDeath: 1
-  - Item: {fileID: 0}
-    Amount: 0
-    DropOnDeath: 1
+  - Item: {fileID: 11400000, guid: 9bf0218971015e24d9817a4da784a855, type: 2}
+    Amount: 10
+    DropOnDeath: 0
+  - Item: {fileID: 11400000, guid: 9bf0218971015e24d9817a4da784a855, type: 2}
+    Amount: 8
+    DropOnDeath: 0
   - Item: {fileID: 0}
     Amount: 0
     DropOnDeath: 1

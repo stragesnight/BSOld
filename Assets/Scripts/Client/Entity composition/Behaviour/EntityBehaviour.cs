@@ -44,6 +44,6 @@ public class EntityBehaviour : MonoBehaviour
 
     protected virtual void DropItems()
     {
-        PickableItemDropHandler.Instance.DropItems(this, entityData.GetInventory());
+        PickableItemDropHandler.Instance.DropItemsFromInventory(this, entityData.GetInventory());
     }
 }

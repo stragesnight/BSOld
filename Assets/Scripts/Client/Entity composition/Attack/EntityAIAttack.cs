@@ -31,11 +31,11 @@ public class EntityAIAttack : EntityAttack
 
     private void CheckAttackPossibility()
     {
-        if (_isOnCalldown || !_entityTarget)
+        if (_attackState != EAttackState.Done || !_entityTarget)
             return;
 
         OnTargetPositionChanged(_entityTarget.transform.position);
-        OnAttack();
+        OnAttackInputReceived();
     }
 
 

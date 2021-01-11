@@ -8,19 +8,19 @@ using UnityEngine;
 public class ResourceActions : ScriptableObject
 {
     // Actions
-    public Action<Vector3Int, ResourceItem> setResouceAtPointAction;
-    public Action<Dictionary<Vector3Int, ResourceItem>> setResourceMapAction;
+    public Action<Vector3Int, ResourceItemSO> setResouceAtPointAction;
+    public Action<Dictionary<Vector3Int, ResourceItemSO>> setResourceMapAction;
     public Action<Vector3Int, int> setResourceAmountAtPointAction;
     public Action<Dictionary<Vector3Int, int>> setResourceAmountsAction;
 
 
-    public void OnSetResourceAtPoint(Vector3Int position, ResourceItem resource)
+    public void OnSetResourceAtPoint(Vector3Int position, ResourceItemSO resource)
     {
         setResouceAtPointAction?.Invoke(position, resource);
     }
 
 
-    public void OnSetResourceMap(Dictionary<Vector3Int, ResourceItem> map)
+    public void OnSetResourceMap(Dictionary<Vector3Int, ResourceItemSO> map)
     {
         setResourceMapAction?.Invoke(map);
     }

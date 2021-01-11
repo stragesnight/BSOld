@@ -30,8 +30,7 @@ namespace UnityEditor.Tilemaps
         EntityData = 150,
         Inventory,
         Item,
-        Resource = 170,
-        MapZone
+        MapZone = 170
     }
 
     internal enum RelayersMenuItemOrder
@@ -78,12 +77,6 @@ namespace UnityEditor.Tilemaps
 
         // ================================================ CONTENT ================================================
 
-        [MenuItem("Assets/Create/Content/Resource", priority = (int)EContentMenuItemOrder.Resource)]
-        static void CreateResource()
-        {
-            ProjectWindowUtil.CreateAsset(ScriptableObject.CreateInstance<ResourceItem>(), "New Resource.asset");
-        }
-
         [MenuItem("Assets/Create/Content/Map Zone", priority = (int)EContentMenuItemOrder.MapZone)]
         static void CreateMapZone()
         {
@@ -102,10 +95,22 @@ namespace UnityEditor.Tilemaps
             ProjectWindowUtil.CreateAsset(ScriptableObject.CreateInstance<InventorySO>(), "New Inventory.asset");
         }
 
-        [MenuItem("Assets/Create/Content/Items/Melee Weapon", priority = (int)EContentMenuItemOrder.Item)]
+        [MenuItem("Assets/Create/Content/Item/Resource", priority = (int)EContentMenuItemOrder.Item)]
+        static void CreateResource()
+        {
+            ProjectWindowUtil.CreateAsset(ScriptableObject.CreateInstance<ResourceItemSO>(), "New Resource.asset");
+        }
+
+        [MenuItem("Assets/Create/Content/Item/Weapon/Melee Weapon", priority = (int)EContentMenuItemOrder.Item)]
         static void CreateItem()
         {
             ProjectWindowUtil.CreateAsset(ScriptableObject.CreateInstance<MeleeWeaponItemSO>(), "New Item.asset");
+        }
+
+        [MenuItem("Assets/Create/Content/Item/Instrument", priority = (int)EContentMenuItemOrder.Item)]
+        static void CreateInstrument()
+        {
+            ProjectWindowUtil.CreateAsset(ScriptableObject.CreateInstance<InstrumentItemSO>(), "New Instrument.asset");
         }
 
         //================================================= ACTIONS =================================================

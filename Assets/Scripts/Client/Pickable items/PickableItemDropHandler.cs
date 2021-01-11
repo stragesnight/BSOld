@@ -13,7 +13,7 @@ public class PickableItemDropHandler : MonoBehaviour
     private void Awake() { if (Instance == null) Instance = this; }
 
 
-    public void DropItems(EntityBehaviour entity, InventorySO inventory)
+    public void DropItemsFromInventory(EntityBehaviour entity, InventorySO inventory)
     {
         // Return if Entity cannot drop items on death
         if (!entity.dropItemsOnDeath) return;
@@ -32,6 +32,22 @@ public class PickableItemDropHandler : MonoBehaviour
                     // And Initialize Pickable Item behaviour
                     newItem.GetComponent<PickableItem>().Initialize(slot.Item, itemAmount, slot.DropOnDeath);
                 }
+        }
+    }
+
+
+    public void DropItemFromResource(Vector3Int position, ItemSO item)
+    {
+        // If RNG God satisfies Item drop chance
+        if (Random.value < item.dropChance)
+        {
+            // Instantiate Prefab
+            GameObject newItem = Instantiate(_prefab, position + GetRandomOffset(), Quaternion.identity);
+            int itemAmount = Random.Range(item.minDroppedAmount, item.maxDroppedAmount + 1);
+            // And Initialize Pickable Item behaviour
+            newItem.GetComponent<PickableItem>().Initialize(item, itemAmount, false);
+
+            MapData.Instance.ChangeResourceAmountAtPoint(position, -itemAmount);
         }
     }
 
