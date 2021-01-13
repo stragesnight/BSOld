@@ -43,5 +43,4 @@ public static class MapZones
 {
     // Returns array of certain Map Zone Enum
     public static T[] GetValues<T>() where T : Enum => Enum.GetValues(typeof(T)).Cast<T>().ToArray();
-
 }

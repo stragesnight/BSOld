@@ -5,12 +5,14 @@ using UnityEngine.InputSystem;
 /// <summary>
 /// Scriptable Object that relayers all input manipulations.
 /// </summary>
-public class InputReader : ScriptableObject, Controls.IEntityActions, Controls.IInventoryActions
+public class InputReader : ScriptableObject, Controls.IGlobalActions, Controls.IEntityActions, Controls.IInventoryActions
 {
+    // Global Actions
+    public Action<Vector2> mousePositionAction;
+
     // Entity Actions
     public Action<Vector2> moveAction;
     public Action attackAction;
-    public Action<Vector2> mousePositionAction;
 
     // Inventory Actions
     public Action<int> inventorySlotAction;
@@ -24,23 +26,29 @@ public class InputReader : ScriptableObject, Controls.IEntityActions, Controls.I
         if (controls == null)
         {
             controls = new Controls();
+            controls.Global.SetCallbacks(this);
+
             controls.Entity.SetCallbacks(this);
             controls.Inventory.SetCallbacks(this);
         }
 
-        controls.Entity.Enable();
-        controls.Inventory.Enable();
+        EnableEntityControls();
     }
 
     // Disable controls
     private void OnDisable()
     {
-        controls.Entity.Disable();
-        controls.Inventory.Disable();
+        DisableAllControls();
     }
 
 
-    // Methods
+    // GLOBAL
+    public void OnMousePosition(InputAction.CallbackContext context)
+    {
+        mousePositionAction?.Invoke(Camera.main.ScreenToWorldPoint(context.ReadValue<Vector2>()));
+    }
+
+    // ENTITY
     public void OnMove(InputAction.CallbackContext context)
     {
         moveAction?.Invoke(context.ReadValue<Vector2>());
@@ -54,12 +62,7 @@ public class InputReader : ScriptableObject, Controls.IEntityActions, Controls.I
     }
 
 
-    public void OnMousePosition(InputAction.CallbackContext context)
-    {
-        mousePositionAction?.Invoke(Camera.main.ScreenToWorldPoint(context.ReadValue<Vector2>()));
-    }
-
-
+    // INVENTORY
     public void OnInventorySlot1(InputAction.CallbackContext context) { if (context.phase == InputActionPhase.Performed) inventorySlotAction?.Invoke(0); }
     public void OnInventorySlot2(InputAction.CallbackContext context) { if (context.phase == InputActionPhase.Performed) inventorySlotAction?.Invoke(1); }
     public void OnInventorySlot3(InputAction.CallbackContext context) { if (context.phase == InputActionPhase.Performed) inventorySlotAction?.Invoke(2); }
@@ -71,4 +74,20 @@ public class InputReader : ScriptableObject, Controls.IEntityActions, Controls.I
     public void OnInventorySlot9(InputAction.CallbackContext context) { if (context.phase == InputActionPhase.Performed) inventorySlotAction?.Invoke(8); }
     public void OnInventorySlot10(InputAction.CallbackContext context) { if (context.phase == InputActionPhase.Performed) inventorySlotAction?.Invoke(9); }
     //...
+
+
+    private void EnableEntityControls()
+    {
+        controls.Global.Enable();
+        controls.Entity.Enable();
+        controls.Inventory.Enable();
+    }
+
+
+    private void DisableAllControls()
+    {
+        controls.Global.Disable();
+        controls.Entity.Disable();
+        controls.Inventory.Disable();
+    }
 }

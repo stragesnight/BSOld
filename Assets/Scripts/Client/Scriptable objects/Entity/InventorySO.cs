@@ -1,3 +1,5 @@
+using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 
@@ -29,6 +31,43 @@ public class InventorySO : ScriptableObject
         if (GetFreeSlot(out int index))
             // Add it
             _inventorySlots[index] = newSlot;
+    }
+
+
+    public void RemoveSlot(int index)
+    {
+        _inventorySlots[index].Item = null;
+        _inventorySlots[index].Amount = 0;
+    }
+
+
+    public void DepositItems(Dictionary<ItemSO, int> requiredItems, out Dictionary<ItemSO, int> depositedItems)
+    {
+        depositedItems = new Dictionary<ItemSO, int>();
+
+        // For each inventory slot
+        foreach (InventorySlot slot in _inventorySlots)
+        {
+            // For each needed item
+            foreach (ItemSO neededItem in requiredItems.Keys)
+            {
+                // If items are matching
+                if (neededItem.Compare(slot.Item))
+                {
+                    int inventorySlotIndex = Array.IndexOf(_inventorySlots, slot);
+                    // Remove slot from inventory if it's amount is below zero
+                    if (slot.SubtractAmount(requiredItems[neededItem], out int subtractedAmount))
+                        RemoveSlot(inventorySlotIndex);
+                    // Else apply inventory slot
+                    else
+                        _inventorySlots[inventorySlotIndex] = slot;
+
+                    // Add item do depositedItems if subtracted amount is not zero
+                    if (subtractedAmount > 0)
+                        depositedItems.Add(neededItem, subtractedAmount);
+                }
+            }
+        }
     }
 
 
@@ -92,6 +131,20 @@ public struct InventorySlot
         }
         overhead = this;
         return false;
+    }
+    public bool SubtractAmount(int amount, out int subtractedAmount)
+    {
+        subtractedAmount = Amount;
+        // Substract amount
+        Amount -= amount;
+        // If amount is <= 0 return true (should remove slot)
+        if (Amount <= 1) return true;
+        // Otherwise return false
+        else
+        {
+            subtractedAmount = amount;
+            return false;
+        }
     }
     public bool Compare(InventorySlot other) { return Item == other.Item; }
 }

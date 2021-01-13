@@ -34,13 +34,14 @@ public class MapData : ScriptableObject
     // constructionMap
     [SerializeField] private Dictionary<Vector3Int[], GameObject> _constructionMap = new Dictionary<Vector3Int[], GameObject>();
     // Set
-    public void SetConstructionAtPoint(Vector3Int[] positions, GameObject construction) 
+    public void SetConstructionAtPoint(Vector3Int[] positions, GameObject construction, bool isPrefab = false) 
     {
         if (_constructionMap.ContainsKey(positions))
             _constructionMap[positions] = construction;
         else
             _constructionMap.Add(positions, construction);
-        constructionActions.OnPlaceConstruction(positions, construction); 
+        if (isPrefab)
+            constructionActions.OnPlaceConstruction(positions, construction); 
     }
     public void SetConstructionMap(Dictionary<Vector3Int[], GameObject> map) 
     { 

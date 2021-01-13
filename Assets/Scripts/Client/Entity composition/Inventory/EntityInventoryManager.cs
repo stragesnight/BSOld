@@ -30,5 +30,8 @@ public abstract class EntityInventoryManager : MonoBehaviour
 
         if (TryGetComponent(out EntityGathering entityGathering))
             entityGathering.enabled = _entity.HeldItem?.itemType == EItemType.Instrument;
+
+        if (TryGetComponent(out EntityBuilding entityBuilding))
+            entityBuilding.enabled = _entity.HeldItem?.itemType == EItemType.Resource;
     }
 }

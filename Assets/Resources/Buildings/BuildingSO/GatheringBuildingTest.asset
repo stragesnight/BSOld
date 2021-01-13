@@ -14,10 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ruleTile: {fileID: 11400000, guid: 43ebf498b505ee945836a05c8e97b201, type: 2}
   startingHealth: 10
-  positions:
-  - {x: 0, y: 0, z: 0}
-  requiredResources: []
-  preferredNeighbours: []
-  unwantedNeighbours: []
+  _width: 1
+  _height: 1
+  requiredResources:
+  - resource: {fileID: 11400000, guid: 9bf0218971015e24d9817a4da784a855, type: 2}
+    requiredAmount: 5
   baseProduction: 0
   gatherableResources: []

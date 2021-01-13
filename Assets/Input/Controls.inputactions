@@ -20,14 +20,6 @@
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
-                },
-                {
-                    "name": "MousePosition",
-                    "type": "Value",
-                    "id": "fbff7cb7-a3f5-4d00-8213-ba4981b046cf",
-                    "expectedControlType": "Vector2",
-                    "processors": "",
-                    "interactions": ""
                 }
             ],
             "bindings": [
@@ -151,39 +143,6 @@
                     "action": "Attack",
                     "isComposite": false,
                     "isPartOfComposite": false
-                },
-                {
-                    "name": "2D Vector",
-                    "id": "6019adf1-ad84-4bf7-b89e-e4affe64bff7",
-                    "path": "2DVector(mode=2)",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "MousePosition",
-                    "isComposite": true,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "up",
-                    "id": "cfe352c5-0713-48f8-89a7-0520211ce289",
-                    "path": "<Mouse>/position/y",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Keyboard + mouse",
-                    "action": "MousePosition",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "right",
-                    "id": "d3637616-f06b-4073-8ec3-bc4bbd494148",
-                    "path": "<Mouse>/position/x",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Keyboard + mouse",
-                    "action": "MousePosition",
-                    "isComposite": false,
-                    "isPartOfComposite": true
                 }
             ]
         },
@@ -382,6 +341,55 @@
                     "action": "InventorySlot10",
                     "isComposite": false,
                     "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "Global",
+            "id": "59d2ce18-a2e0-4306-a5c7-ca24d712bd9c",
+            "actions": [
+                {
+                    "name": "MousePosition",
+                    "type": "Value",
+                    "id": "99001cba-b85b-4711-ab0f-2749dbac6774",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": ""
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "2D Vector",
+                    "id": "6ebfa9cd-7e97-49a0-825c-b38f673d06c1",
+                    "path": "2DVector(mode=2)",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "MousePosition",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "up",
+                    "id": "f9f2d8fe-ba47-4191-a7bd-4d1cedc6dfcc",
+                    "path": "<Mouse>/position/y",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard + mouse",
+                    "action": "MousePosition",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "right",
+                    "id": "4b95b93c-a402-4c24-9845-4f002c648267",
+                    "path": "<Mouse>/position/x",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard + mouse",
+                    "action": "MousePosition",
+                    "isComposite": false,
+                    "isPartOfComposite": true
                 }
             ]
         }

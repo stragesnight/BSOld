@@ -13,19 +13,16 @@ public abstract class ConstructionSO : ScriptableObject
     // Starting health of a construction
     public int startingHealth;
 
-    // Starting size of a building in tiles
-    public Vector3Int[] positions;
+    [SerializeField] private int _width;
+    [SerializeField] private int _height;
 
-    // Required resources, preferred and unwanted neighbours
     public RequiredResource[] requiredResources;
-    public ConstructionSO[] preferredNeighbours;
-    public ConstructionSO[] unwantedNeighbours;
 
 
     // Transforms RequiredResource array to Dictionary and returns it
-    public Dictionary<ResourceItemSO, int> GetRequiredResources()
+    public Dictionary<ItemSO, int> GetRequiredResources()
     {
-        Dictionary<ResourceItemSO, int> output = new Dictionary<ResourceItemSO, int>();
+        Dictionary<ItemSO, int> output = new Dictionary<ItemSO, int>();
 
         foreach (RequiredResource r in requiredResources)
         {
@@ -33,6 +30,24 @@ public abstract class ConstructionSO : ScriptableObject
         }
 
         return output;
+    }
+
+
+    public Vector3Int[] GetConstructionPositions(Vector3Int origin)
+    {
+        int i = 0;
+        Vector3Int[] positions = new Vector3Int[_width * _height];
+
+        for (int x = 0; x < _width; x++)
+        {
+            for (int y = 0; y < _height; y++)
+            {
+                positions[i] = new Vector3Int(origin.x + x, origin.y + y, 0);
+                i++;
+            }
+        }
+
+        return positions;
     }
 }
 
@@ -43,6 +58,6 @@ public abstract class ConstructionSO : ScriptableObject
 [System.Serializable]
 public struct RequiredResource
 {
-    public ResourceItemSO resource;
+    public ItemSO resource;
     public int requiredAmount;
 }

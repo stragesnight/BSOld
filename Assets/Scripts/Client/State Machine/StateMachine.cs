@@ -9,7 +9,6 @@ public class StateMachine
     private Dictionary<EState, InternalState> _states = new Dictionary<EState, InternalState>
     {
         { EState.Default,   new InternalState(true, true, true) },
-        { EState.InMenu,    new InternalState(false, false, false)},
         { EState.Attacking, new InternalState(false, false, true)},
         { EState.Gathering, new InternalState(false, true, false)},
         { EState.Building,  new InternalState(true, true, false)},
@@ -43,4 +42,4 @@ public class StateMachine
 }
 
 
-public enum EState { Default, InMenu, Attacking, Gathering, Building, Shocked }
+public enum EState { Default, Attacking, Gathering, Building, Shocked }

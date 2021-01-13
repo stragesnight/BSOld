@@ -36,6 +36,7 @@ public class CounstructionHandler : MonoBehaviour
         GameObject buildingObject = Instantiate(construction);
         buildingObject.transform.position = positions[0];
         buildingObject.transform.SetParent(_parentTransform);
+        MapData.Instance.SetConstructionAtPoint(positions, buildingObject);
     }
 
 

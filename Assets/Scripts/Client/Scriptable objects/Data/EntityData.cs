@@ -60,4 +60,3 @@ public class EntityData : ScriptableObject
 
 
 public enum EReaction { Aggressive, Neutral, Friendly }
-

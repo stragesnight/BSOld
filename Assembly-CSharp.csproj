@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{8A4916B7-36CE-FF0C-C60E-FD6981D37B23}</ProjectGuid>
+    <ProjectGuid>{33BF9404-AE7B-8B88-A35F-1EC4B340FD2A}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -61,11 +61,13 @@
     <Compile Include="Assets\Scripts\Client\Entity composition\Inventory\EntityAIInventoryManager.cs" />
     <Compile Include="Assets\Scripts\Client\Scriptable objects\Relayers\InputReader.cs" />
     <Compile Include="Assets\Scripts\Client\Scriptable objects\Items\Resource Items\ResourceItemSO.cs" />
+    <Compile Include="Assets\Scripts\Client\Entity composition\Building\EntityBuilding.cs" />
     <Compile Include="Assets\Scripts\Client\Scriptable objects\Items\Weapons\MeleeWeaponItemSO.cs" />
     <Compile Include="Assets\Scripts\Client\Scriptable objects\Tiles\RuleOverrideTile\RuleOverrideTile.cs" />
     <Compile Include="Assets\Scripts\Client\Scriptable objects\Items\ItemSO.cs" />
     <Compile Include="Assets\Scripts\Client\Scriptable objects\Actions\ConstructionActions.cs" />
     <Compile Include="Assets\Scripts\Client\Handlers\GeneralHandler.cs" />
+    <Compile Include="Assets\Scripts\Client\State Machine\GameState.cs" />
     <Compile Include="Assets\Scripts\Client\Scriptable objects\Data\EntityData.cs" />
     <Compile Include="Assets\Scripts\Client\Scriptable objects\Buildings\ConstructionSO.cs" />
     <Compile Include="Assets\Input\Controls.cs" />
@@ -102,8 +104,10 @@
     <Compile Include="Assets\Scripts\Client\Entity composition\Movement\EntityInputMovement.cs" />
     <Compile Include="Assets\Scripts\Client\Scriptable objects\Actions\ResourceActions.cs" />
     <Compile Include="Assets\Scripts\Client\Entity composition\Attack\EntityAttack.cs" />
-    <Compile Include="Assets\Scripts\Client\BuildingMonoBehaviours\ConstructionBehavoiur.cs" />
+    <Compile Include="Assets\Scripts\Client\BuildingMonoBehaviours\ConstructionBehaviour.cs" />
     <Compile Include="Assets\Scripts\Client\Scriptable objects\Items\Instrument Items\InstrumentItemSO.cs" />
+    <Compile Include="Assets\Scripts\Client\BuildingMonoBehaviours\ConstructionBlueprint.cs" />
+    <Compile Include="Assets\Scripts\Client\Entity composition\Building\EntityInputBuilding.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
@@ -799,15 +803,15 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="PackageToolsEditor.csproj">
-      <Project>{21464ABC-3823-56F2-F906-AE5FB8072DFD}</Project>
+      <Project>{CFAEFB4D-F3C6-3EAE-DC04-54DE87C0E453}</Project>
       <Name>PackageToolsEditor</Name>
     </ProjectReference>
     <ProjectReference Include="AstarPathfindingProject.csproj">
-      <Project>{0AFF7316-A459-7661-64BF-55D5B982EE51}</Project>
+      <Project>{4D950D61-3C0F-92CB-2553-9E218BEA0F1D}</Project>
       <Name>AstarPathfindingProject</Name>
     </ProjectReference>
     <ProjectReference Include="AstarPathfindingProjectEditor.csproj">
-      <Project>{4E161F08-04D5-9E1E-C038-8AE4F60C74A3}</Project>
+      <Project>{C9590EED-048B-13FE-0E90-C867DEE01EE2}</Project>
       <Name>AstarPathfindingProjectEditor</Name>
     </ProjectReference>
   </ItemGroup>

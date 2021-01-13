@@ -16,6 +16,9 @@ public abstract class ItemSO : ScriptableObject
     public int maxDroppedAmount;
     [Header("Chance")]
     [Range(0, 1)] public float dropChance;
+
+
+    public bool Compare(ItemSO other) => this == other;
 }
 
 

@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1857
     height: 1037
   m_ShowMode: 4
-  m_Title: Game
+  m_Title: Hierarchy
   m_RootView: {fileID: 2}
   m_MinSize: {x: 875, y: 542}
   m_MaxSize: {x: 10000, y: 10000}
@@ -46,7 +46,7 @@ MonoBehaviour:
     y: 0
     width: 1857
     height: 1037
-  m_MinSize: {x: 875, y: 542}
+  m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
   m_UseTopView: 1
   m_TopViewHeight: 30
@@ -119,10 +119,10 @@ MonoBehaviour:
     y: 30
     width: 1857
     height: 987
-  m_MinSize: {x: 580, y: 492}
-  m_MaxSize: {x: 14002, y: 14042}
+  m_MinSize: {x: 578, y: 492}
+  m_MaxSize: {x: 14001, y: 14042}
   vertical: 0
-  controlID: 3839
+  controlID: 91
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -142,8 +142,8 @@ MonoBehaviour:
     y: 0
     width: 364
     height: 987
-  m_MinSize: {x: 276, y: 121}
-  m_MaxSize: {x: 4001, y: 4021}
+  m_MinSize: {x: 275, y: 100}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 13}
   m_Panes:
   - {fileID: 13}
@@ -170,10 +170,10 @@ MonoBehaviour:
     y: 0
     width: 1493
     height: 987
-  m_MinSize: {x: 304, y: 492}
+  m_MinSize: {x: 303, y: 492}
   m_MaxSize: {x: 10001, y: 14042}
   vertical: 1
-  controlID: 3840
+  controlID: 92
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -195,10 +195,10 @@ MonoBehaviour:
     y: 0
     width: 1493
     height: 667
-  m_MinSize: {x: 304, y: 221}
-  m_MaxSize: {x: 8004, y: 4021}
+  m_MinSize: {x: 303, y: 221}
+  m_MaxSize: {x: 8003, y: 4021}
   vertical: 0
-  controlID: 3841
+  controlID: 93
 --- !u!114 &9
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -246,8 +246,8 @@ MonoBehaviour:
     y: 0
     width: 329
     height: 667
-  m_MinSize: {x: 202, y: 221}
-  m_MaxSize: {x: 4002, y: 4021}
+  m_MinSize: {x: 201, y: 221}
+  m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 16}
   m_Panes:
   - {fileID: 16}
@@ -319,7 +319,7 @@ MonoBehaviour:
   m_UseMipMap: 0
   m_VSyncEnabled: 0
   m_Gizmos: 1
-  m_Stats: 0
+  m_Stats: 1
   m_SelectedSizes: 00000000000000000000000000000000000000000000000000000000000000000000000000000000
   m_ZoomArea:
     m_HRangeLocked: 0
@@ -442,9 +442,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 4.907972, y: 7.193906, z: -5.502278}
+    m_Target: {x: 22.95102, y: 16.309456, z: -2.3235807}
     speed: 2
-    m_Value: {x: 4.907972, y: 7.193906, z: -5.502278}
+    m_Value: {x: 22.95102, y: 16.309456, z: -2.3235807}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -495,9 +495,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 9.886171
+    m_Target: 24.026533
     speed: 2
-    m_Value: 9.886171
+    m_Value: 24.026533
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -644,10 +644,6 @@ MonoBehaviour:
       {\n                    \"name\": \"Attack\",\n                    \"type\":
       \"Button\",\n                    \"id\": \"2d5d4061-87f1-4e6d-bbc5-9cc142d63535\",\n                   
       \"expectedControlType\": \"Button\",\n                    \"processors\": \"\",\n                   
-      \"interactions\": \"\"\n                },\n                {\n                   
-      \"name\": \"MousePosition\",\n                    \"type\": \"Value\",\n                   
-      \"id\": \"fbff7cb7-a3f5-4d00-8213-ba4981b046cf\",\n                    \"expectedControlType\":
-      \"Vector2\",\n                    \"processors\": \"\",\n                   
       \"interactions\": \"\"\n                }\n            ],\n            \"bindings\":
       [\n                {\n                    \"name\": \"WASD\",\n                   
       \"id\": \"c405d16e-48b5-4b7a-a2aa-f9d92ed8fd2a\",\n                    \"path\":
@@ -706,22 +702,7 @@ MonoBehaviour:
       \"<Mouse>/leftButton\",\n                    \"interactions\": \"\",\n                   
       \"processors\": \"\",\n                    \"groups\": \"Keyboard + mouse\",\n                   
       \"action\": \"Attack\",\n                    \"isComposite\": false,\n                   
-      \"isPartOfComposite\": false\n                },\n                {\n                   
-      \"name\": \"2D Vector\",\n                    \"id\": \"6019adf1-ad84-4bf7-b89e-e4affe64bff7\",\n                   
-      \"path\": \"2DVector(mode=2)\",\n                    \"interactions\": \"\",\n                   
-      \"processors\": \"\",\n                    \"groups\": \"\",\n                   
-      \"action\": \"MousePosition\",\n                    \"isComposite\": true,\n                   
-      \"isPartOfComposite\": false\n                },\n                {\n                   
-      \"name\": \"up\",\n                    \"id\": \"cfe352c5-0713-48f8-89a7-0520211ce289\",\n                   
-      \"path\": \"<Mouse>/position/y\",\n                    \"interactions\": \"\",\n                   
-      \"processors\": \"\",\n                    \"groups\": \"Keyboard + mouse\",\n                   
-      \"action\": \"MousePosition\",\n                    \"isComposite\": false,\n                   
-      \"isPartOfComposite\": true\n                },\n                {\n                   
-      \"name\": \"right\",\n                    \"id\": \"d3637616-f06b-4073-8ec3-bc4bbd494148\",\n                   
-      \"path\": \"<Mouse>/position/x\",\n                    \"interactions\": \"\",\n                   
-      \"processors\": \"\",\n                    \"groups\": \"Keyboard + mouse\",\n                   
-      \"action\": \"MousePosition\",\n                    \"isComposite\": false,\n                   
-      \"isPartOfComposite\": true\n                }\n            ]\n        },\n       
+      \"isPartOfComposite\": false\n                }\n            ]\n        },\n       
       {\n            \"name\": \"Inventory\",\n            \"id\": \"5106c146-0f86-47d9-80ec-2053e0f56bfe\",\n           
       \"actions\": [\n                {\n                    \"name\": \"InventorySlot1\",\n                   
       \"type\": \"Button\",\n                    \"id\": \"c651a8fa-319f-4c58-8dc6-8f9b318d84f4\",\n                   
@@ -813,7 +794,28 @@ MonoBehaviour:
       \"path\": \"<Keyboard>/0\",\n                    \"interactions\": \"\",\n                   
       \"processors\": \"\",\n                    \"groups\": \"Keyboard + mouse\",\n                   
       \"action\": \"InventorySlot10\",\n                    \"isComposite\": false,\n                   
-      \"isPartOfComposite\": false\n                }\n            ]\n        }\n   
+      \"isPartOfComposite\": false\n                }\n            ]\n        },\n       
+      {\n            \"name\": \"Global\",\n            \"id\": \"59d2ce18-a2e0-4306-a5c7-ca24d712bd9c\",\n           
+      \"actions\": [\n                {\n                    \"name\": \"MousePosition\",\n                   
+      \"type\": \"Value\",\n                    \"id\": \"99001cba-b85b-4711-ab0f-2749dbac6774\",\n                   
+      \"expectedControlType\": \"Vector2\",\n                    \"processors\":
+      \"\",\n                    \"interactions\": \"\"\n                }\n           
+      ],\n            \"bindings\": [\n                {\n                    \"name\":
+      \"2D Vector\",\n                    \"id\": \"6ebfa9cd-7e97-49a0-825c-b38f673d06c1\",\n                   
+      \"path\": \"2DVector(mode=2)\",\n                    \"interactions\": \"\",\n                   
+      \"processors\": \"\",\n                    \"groups\": \"\",\n                   
+      \"action\": \"MousePosition\",\n                    \"isComposite\": true,\n                   
+      \"isPartOfComposite\": false\n                },\n                {\n                   
+      \"name\": \"up\",\n                    \"id\": \"f9f2d8fe-ba47-4191-a7bd-4d1cedc6dfcc\",\n                   
+      \"path\": \"<Mouse>/position/y\",\n                    \"interactions\": \"\",\n                   
+      \"processors\": \"\",\n                    \"groups\": \"Keyboard + mouse\",\n                   
+      \"action\": \"MousePosition\",\n                    \"isComposite\": false,\n                   
+      \"isPartOfComposite\": true\n                },\n                {\n                   
+      \"name\": \"right\",\n                    \"id\": \"4b95b93c-a402-4c24-9845-4f002c648267\",\n                   
+      \"path\": \"<Mouse>/position/x\",\n                    \"interactions\": \"\",\n                   
+      \"processors\": \"\",\n                    \"groups\": \"Keyboard + mouse\",\n                   
+      \"action\": \"MousePosition\",\n                    \"isComposite\": false,\n                   
+      \"isPartOfComposite\": true\n                }\n            ]\n        }\n   
       ],\n    \"controlSchemes\": [\n        {\n            \"name\": \"Keyboard
       + mouse\",\n            \"bindingGroup\": \"Keyboard + mouse\",\n           
       \"devices\": []\n        }\n    ]\n}"
@@ -863,9 +865,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 644b0000
-      m_LastClickedID: 19300
-      m_ExpandedIDs: 40fbffff764b00009c4b0000
+      m_SelectedIDs: 6aa6ffff
+      m_LastClickedID: -22934
+      m_ExpandedIDs: 40fbffff184b00009e4b0000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -935,14 +937,14 @@ MonoBehaviour:
   m_LastFolders:
   - Assets/Resources/Characters/Player
   m_LastFoldersGridSize: 75
-  m_LastProjectPath: D:\UnityProjects\Codename_connect
+  m_LastProjectPath: D:\UnityProjects\Blacklight-Seraphim
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 60}
-    m_SelectedIDs: c04c0000
-    m_LastClickedID: 19648
-    m_ExpandedIDs: 00000000c41e00002c4c00002e4c0000304c0000324c0000344c0000364c0000384c00003a4c00007e4c0000b04c000000ca9a3b
+    m_SelectedIDs: a84c0000
+    m_LastClickedID: 19624
+    m_ExpandedIDs: 00000000ce1e00005c4c00005e4c0000604c0000624c0000644c0000664c0000684c00006a4c00006c4c00006e4c00009e4c0000a64c000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -970,7 +972,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000c41e00002c4c00002e4c0000304c0000324c0000344c0000364c0000384c00003a4c00007e4c0000b04c000000ca9a3b
+    m_ExpandedIDs: 00000000ce1e00005c4c00005e4c0000604c0000624c0000644c0000664c0000684c00006a4c00006c4c00006e4c0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -997,7 +999,7 @@ MonoBehaviour:
   m_ListAreaState:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 0
+    m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: c6230000ae410000f04c0400623f000000000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
