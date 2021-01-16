@@ -65,9 +65,7 @@ public class EntityBuilding : MonoBehaviour
             MapData.Instance.GetPlacingAccessibilityMapAtPoint(position, out bool accessible);
             // Return false if at least one tile is unaccessible
             if (!accessible)
-            {
-                return true;
-            }          
+                return false;       
         }
 
         // Return true if all tiles are accessible

@@ -33,10 +33,19 @@ public class CounstructionHandler : MonoBehaviour
     // Instantiate desired Construction prefab and set parent
     private void InstantiateConstructionObject(Vector3Int[] positions, GameObject construction)
     {
+        // Instantiate prefab
         GameObject buildingObject = Instantiate(construction);
+
+        // Apply proper object parameters
         buildingObject.transform.position = positions[0];
         buildingObject.transform.SetParent(_parentTransform);
+
+        // Set Construction at point (now as GameObject in scene, not as prefab)
         MapData.Instance.SetConstructionAtPoint(positions, buildingObject);
+
+        // Make all tiles taken by construction inaccessible
+        foreach (Vector3Int position in positions)
+            MapData.Instance.SetPlacingAccessibilityMapAtPoint(position, false);
     }
 
 

@@ -8,6 +8,7 @@ public class MapGenerator : MonoBehaviour
     [Header("Dependencies")]
     private MapTileGenerator _mapTileGenerator;
     private ResourceMapGenerator _resourceMapGenerator;
+    private PlacingAccessibilityHandler _placingAccessibilityHandler;
 
     [Header("Map generation parameters")]
     [SerializeField] private int _mapWidth;    //in tiles
@@ -35,6 +36,7 @@ public class MapGenerator : MonoBehaviour
     {
         _mapTileGenerator = GetComponent<MapTileGenerator>();
         _resourceMapGenerator = GetComponent<ResourceMapGenerator>();
+        _placingAccessibilityHandler = GetComponentInChildren<PlacingAccessibilityHandler>();
     }
 
 
@@ -48,12 +50,9 @@ public class MapGenerator : MonoBehaviour
         MapData.Instance.SetMapHeight(_mapHeight);
 
         GenerateNoiseMaps();
-
-        // Initialize tile generator
         _mapTileGenerator.Initialize();
-
-        // Generate map of resources
         GenerateResourceMap();
+        _placingAccessibilityHandler.GenerateAccesibilityMap();
 
         AstarPath.active.Scan();
     }

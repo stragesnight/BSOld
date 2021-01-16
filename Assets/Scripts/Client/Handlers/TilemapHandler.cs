@@ -119,18 +119,20 @@ public class TilemapHandler : MonoBehaviour
     }
     private void SetPlacingAccessibilityTilemap(Dictionary<Vector3Int, bool> map)
     {
+        print("accessibility tilemap draw started");
         _placingAccessibilityTilemap.ClearAllTiles();
         _placingAccessibilityTilemap.SetTiles(map.Keys.ToArray(), GetTilesFromBools(map.Values.ToArray()));
     }
 
 
-    // Get tiles from bool values for placingAccessibilityTilemap
     private TileBase[] GetTilesFromBools(bool[] values)
     {
         TileBase[] tilesFromBools = new TileBase[values.Length];
 
+        // For each value in array
         for (int i = 0; i < values.Length; i++)
         {
+            // Assign accesibility tile if current value is true
             tilesFromBools[i] = values[i] ? _accessibilityTile : _nonAccessibilityTile;
         }
 

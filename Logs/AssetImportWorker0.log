@@ -15,11 +15,11 @@ D:/UnityProjects/Blacklight-Seraphim
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-58494
+58423
 Successfully changed project path to: D:/UnityProjects/Blacklight-Seraphim
 D:/UnityProjects/Blacklight-Seraphim
 Using Asset Import Pipeline V2.
-Refreshing native plugins compatible for Editor in 138.16 ms, found 1 plugins.
+Refreshing native plugins compatible for Editor in 136.05 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2020.2.0b2 (90b2443a8df1)
 [Subsystems] Discovering subsystems at path D:/Unity/2020.2.0b2/Editor/Data/Resources/UnitySubsystems
@@ -36,52 +36,420 @@ Initialize mono
 Mono path[0] = 'D:/Unity/2020.2.0b2/Editor/Data/Managed'
 Mono path[1] = 'D:/Unity/2020.2.0b2/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
 Mono config path = 'D:/Unity/2020.2.0b2/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56924
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56452
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: D:/Unity/2020.2.0b2/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.001262 seconds.
+Registered in 0.001183 seconds.
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 70.76 ms, found 1 plugins.
+Refreshing native plugins compatible for Editor in 65.20 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Invoked RoslynAnalysisRunner static constructor.
 RoslynAnalysisRunner will not be running.
 RoslynAnalysisRunner has terminated.
 Mono: successfully reloaded assembly
-- Completed reload, in  2.722 seconds
+- Completed reload, in  3.580 seconds
 Registering precompiled user dll's ...
-Registered in 0.103176 seconds.
+Registered in 0.093430 seconds.
 Platform modules already initialized, skipping
 Begin MonoManager ReloadAssembly
 Symbol file LoadedFromMemory doesn't match image D:\UnityProjects\Blacklight-Seraphim\Library\PackageCache\com.unity.ext.nunit@1.0.0\net35\unity-custom\nunit.framework.dll
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 83.65 ms, found 1 plugins.
+Refreshing native plugins compatible for Editor in 121.72 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Invoked RoslynAnalysisRunner static constructor.
 RoslynAnalysisRunner will not be running.
 RoslynAnalysisRunner has terminated.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.807 seconds
+- Completed reload, in  1.782 seconds
 Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
 Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.64 seconds
-Refreshing native plugins compatible for Editor in 0.66 ms, found 1 plugins.
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.04 seconds
+Refreshing native plugins compatible for Editor in 0.72 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 3173 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 139.2 MB.
-System memory in use after: 139.4 MB.
+System memory in use before: 139.5 MB.
+System memory in use after: 139.7 MB.
 
 Unloading 9 unused Assets to reduce memory usage. Loaded Objects now: 3621.
-Total: 4.925646 ms (FindLiveObjects: 0.506032 ms CreateObjectMapping: 0.392509 ms MarkObjects: 3.955259 ms  DeleteObjects: 0.069669 ms)
+Total: 6.197101 ms (FindLiveObjects: 0.654700 ms CreateObjectMapping: 2.323641 ms MarkObjects: 3.134785 ms  DeleteObjects: 0.081488 ms)
 
 ========================================================================
 Received Import Request.
-  path: Assets/Resources/Buildings/BuildingPrefabs/GatheringBuilding.prefab
-  artifactKey: Guid(ec984808508297e4695d17e2787d5678) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Buildings/BuildingPrefabs/GatheringBuilding.prefab using Guid(ec984808508297e4695d17e2787d5678) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00a65836d2401db867f2d6b07d157aa8') in 0.395206 seconds
-  Import took 0.460913 seconds .
+  path: Assets/Resources/Characters/Player/Player_inventory.asset
+  artifactKey: Guid(12b62f4315b87074ea545165449ea0d2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Characters/Player/Player_inventory.asset using Guid(12b62f4315b87074ea545165449ea0d2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '579ebadceb0cd000628158ab1b9fd6f2') in 0.144908 seconds
+  Import took 0.154731 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 638.177370 seconds.
+  path: Assets/Resources/Actions
+  artifactKey: Guid(3dfdc00add7a73d499007fb2ec26e7d0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Actions using Guid(3dfdc00add7a73d499007fb2ec26e7d0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c22eeb987bacbfd8c5f28308af33defc') in 0.003589 seconds
+  Import took 0.024163 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000055 seconds.
+  path: Assets/Resources/Map Zones
+  artifactKey: Guid(f6c523fa19d921243b65e37aac019733) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Map Zones using Guid(f6c523fa19d921243b65e37aac019733) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7b6993612e376f1a87f26a73cf8738a8') in 0.005928 seconds
+  Import took 0.257775 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000256 seconds.
+  path: Assets/Resources/Tiles
+  artifactKey: Guid(a1f55b1c61c31f84688e5a1371887077) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Tiles using Guid(a1f55b1c61c31f84688e5a1371887077) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8b268a4e6ea7c46b1d2d735fa17a34fc') in 0.020387 seconds
+  Import took 0.076977 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000268 seconds.
+  path: Assets/Resources/DEFAULT_TILE
+  artifactKey: Guid(4f0869afe75cd87409fdd2e3f31baa32) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/DEFAULT_TILE using Guid(4f0869afe75cd87409fdd2e3f31baa32) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7652deec7d6f841c7737dd8dc7d42a9c') in 0.006994 seconds
+  Import took 0.073937 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000254 seconds.
+  path: Assets/Resources/Map Resources
+  artifactKey: Guid(6feadd9f09b2ce74788bae7a996a5b12) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Map Resources using Guid(6feadd9f09b2ce74788bae7a996a5b12) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '47e6625978c90fde2870b3a1bb44227b') in 0.005561 seconds
+  Import took 0.095735 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000262 seconds.
+  path: Assets/Resources/Data
+  artifactKey: Guid(4c4c225e07a6aa44ebf403abcc521f04) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Data using Guid(4c4c225e07a6aa44ebf403abcc521f04) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5069e2382cfc34bb6d183949094af4b4') in 0.004421 seconds
+  Import took 0.101676 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000272 seconds.
+  path: Assets/Resources/Realyers
+  artifactKey: Guid(aa1510eded81e26449c78a7bab59e649) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Realyers using Guid(aa1510eded81e26449c78a7bab59e649) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ac6e6de20181c4bfebf4b3b84d2a0906') in 0.005267 seconds
+  Import took 0.097831 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000280 seconds.
+  path: Assets/Resources/Characters
+  artifactKey: Guid(e5e36d3a129f55d42a60da601098d13e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Characters using Guid(e5e36d3a129f55d42a60da601098d13e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8a8bc06f426fe630d5bc593ce2cf4bd4') in 0.007014 seconds
+  Import took 0.103194 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000548 seconds.
+  path: Assets/Resources/Prefabs
+  artifactKey: Guid(2b76234e3cd471c4b83095727fb34ff3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Prefabs using Guid(2b76234e3cd471c4b83095727fb34ff3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '04cecdfc255f1af2a2c5a6c748501b51') in 0.006746 seconds
+  Import took 0.100372 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000270 seconds.
+  path: Assets/Resources/Graphics
+  artifactKey: Guid(15fa1dcd7aace7e49a75944856f83581) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Graphics using Guid(15fa1dcd7aace7e49a75944856f83581) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '390c80e359e7fa5d0b7a4478553eb02c') in 0.007057 seconds
+  Import took 0.103109 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000325 seconds.
+  path: Assets/Resources/Buildings
+  artifactKey: Guid(7a9edb63f7e5c834eab950f174b5360e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Buildings using Guid(7a9edb63f7e5c834eab950f174b5360e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f8e84bee20be600f32407b9bdf158c34') in 0.005781 seconds
+  Import took 0.116666 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 2.190881 seconds.
+  path: Assets/Resources/Graphics/Building sprites
+  artifactKey: Guid(90341d6954877ad4f8f531f7ada93d5a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Graphics/Building sprites using Guid(90341d6954877ad4f8f531f7ada93d5a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6875955e6adf5f93db7acf4519f6bff2') in 0.005228 seconds
+  Import took 0.016637 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000062 seconds.
+  path: Assets/Resources/Graphics/Map sprites
+  artifactKey: Guid(92cb05462cd2d254890d2740ccc0a8f4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Graphics/Map sprites using Guid(92cb05462cd2d254890d2740ccc0a8f4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ccf819b39685a840845f991b719c6a9e') in 0.019073 seconds
+  Import took 0.110474 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.788175 seconds.
+  path: Assets/Resources/Graphics/Map sprites/land_desert_low-sparce_high.png
+  artifactKey: Guid(ec1aed24ba862b5468a04aadbe28723a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Graphics/Map sprites/land_desert_low-sparce_high.png using Guid(ec1aed24ba862b5468a04aadbe28723a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7ea77a9c9d155192d64c34ede33d23e6') in 0.341225 seconds
+  Import took 0.355139 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000233 seconds.
+  path: Assets/Resources/Graphics/Map sprites/mountain_moderate_low-sparce-high.png
+  artifactKey: Guid(4c2a546ef9d8b1c4580270f13ecdf29d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Graphics/Map sprites/mountain_moderate_low-sparce-high.png using Guid(4c2a546ef9d8b1c4580270f13ecdf29d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2639a2ddee445a1e288395b1d8c87bd9') in 0.064176 seconds
+  Import took 0.087934 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000081 seconds.
+  path: Assets/Resources/Graphics/Map sprites/land_moderate_sparce-high.png
+  artifactKey: Guid(6e75c3a01e02dca45b794601f2ce2046) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Graphics/Map sprites/land_moderate_sparce-high.png using Guid(6e75c3a01e02dca45b794601f2ce2046) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c22a2c61e34dffcb2e7c621855360bb9') in 0.076075 seconds
+  Import took 0.095348 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000653 seconds.
+  path: Assets/Resources/Graphics/Map sprites/water_desert-moderate_low-sparce-high.png
+  artifactKey: Guid(e65e5debc8e9a6d48a25521a36c8d990) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Graphics/Map sprites/water_desert-moderate_low-sparce-high.png using Guid(e65e5debc8e9a6d48a25521a36c8d990) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '413707187f0b2ac21bf35b3b76ba7c74') in 0.036370 seconds
+  Import took 0.057750 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.004366 seconds.
+  path: Assets/Resources/Graphics/Map sprites/land_moderate_low.png
+  artifactKey: Guid(0592c5a0ae62b63469f681a5af661e30) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Graphics/Map sprites/land_moderate_low.png using Guid(0592c5a0ae62b63469f681a5af661e30) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd78465e0bed427b3777bbb8e9fb63fb6') in 0.044705 seconds
+  Import took 0.054912 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000300 seconds.
+  path: Assets/Resources/Graphics/Map sprites/mountain_snow_low-sparce-high.png
+  artifactKey: Guid(6b27e00a72b45f647b46e60ba19130c7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Graphics/Map sprites/mountain_snow_low-sparce-high.png using Guid(6b27e00a72b45f647b46e60ba19130c7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b368f599e49103c057f87295cc37bdc5') in 0.098448 seconds
+  Import took 0.111834 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.001766 seconds.
+  path: Assets/Resources/Graphics/Map sprites/land_snow_low-sparce-high.png
+  artifactKey: Guid(8c9a084e458c6e843bbab165de2d1a3c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Graphics/Map sprites/land_snow_low-sparce-high.png using Guid(8c9a084e458c6e843bbab165de2d1a3c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e076947accaec04a8dde3f77f4de2760') in 0.016686 seconds
+  Import took 0.227814 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000338 seconds.
+  path: Assets/Resources/Graphics/Map sprites/mountain_desert_low-sparce-high.png
+  artifactKey: Guid(2c2febea3edc44d4289d7c31554c0067) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Graphics/Map sprites/mountain_desert_low-sparce-high.png using Guid(2c2febea3edc44d4289d7c31554c0067) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6c2be2fcf0f1403e4fd00c8378bd00e0') in 0.057060 seconds
+  Import took 0.123818 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000265 seconds.
+  path: Assets/Resources/Graphics/Map sprites/water_snow_low-sparce-high.png
+  artifactKey: Guid(7426dabaa802b7542a3ec1b4a67c24a0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Graphics/Map sprites/water_snow_low-sparce-high.png using Guid(7426dabaa802b7542a3ec1b4a67c24a0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9a860ba1bdf27f5d2fcff3f3a4e21043') in 0.060817 seconds
+  Import took 0.115273 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 13.418749 seconds.
+  path: Assets/Resources/Graphics/Map sprites/accessibility.png
+  artifactKey: Guid(d617b3f70a9292e43ad062cbdfa23cb0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Graphics/Map sprites/accessibility.png using Guid(d617b3f70a9292e43ad062cbdfa23cb0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9c9ba21b6be94fb59f2ac91f9072603d') in 0.026560 seconds
+  Import took 0.044291 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000249 seconds.
+  path: Assets/Resources/Graphics/Map sprites/inaccessibility.png
+  artifactKey: Guid(663a9ea4cef2b7f4c8b040834c1c179d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Graphics/Map sprites/inaccessibility.png using Guid(663a9ea4cef2b7f4c8b040834c1c179d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4ee93cb7de3f621dabaf37156a4572a1') in 0.041267 seconds
+  Import took 0.049781 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.078285 seconds.
+  path: Assets/Resources/Graphics/Map sprites/inaccessibility.png
+  artifactKey: Guid(663a9ea4cef2b7f4c8b040834c1c179d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Graphics/Map sprites/inaccessibility.png using Guid(663a9ea4cef2b7f4c8b040834c1c179d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4ee93cb7de3f621dabaf37156a4572a1') in 0.014703 seconds
+  Import took 0.023672 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 9.129319 seconds.
+  path: Assets/Resources/Graphics/Map sprites/inaccessibility.png
+  artifactKey: Guid(663a9ea4cef2b7f4c8b040834c1c179d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Graphics/Map sprites/inaccessibility.png using Guid(663a9ea4cef2b7f4c8b040834c1c179d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ca80924671bbf11ac9a0ee01aa41593a') in 0.025016 seconds
+  Import took 0.035587 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 23.362281 seconds.
+  path: Assets/Resources/Graphics/Map sprites/accessibility.png
+  artifactKey: Guid(d617b3f70a9292e43ad062cbdfa23cb0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Graphics/Map sprites/accessibility.png using Guid(d617b3f70a9292e43ad062cbdfa23cb0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f85baa54c5cb7121e6a00ca29ca5a31d') in 0.017037 seconds
+  Import took 0.030158 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000055 seconds.
+  path: Assets/Resources/Graphics/Map sprites/inaccessibility.png
+  artifactKey: Guid(663a9ea4cef2b7f4c8b040834c1c179d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Graphics/Map sprites/inaccessibility.png using Guid(663a9ea4cef2b7f4c8b040834c1c179d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4fa4270b6013b66629486f545e8e254f') in 0.016762 seconds
+  Import took 0.083974 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 36.385838 seconds.
+  path: Assets/Resources/Tiles/BuildingRuleTiles
+  artifactKey: Guid(f6b3735944609fe4ca5d308ef492b4e9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Tiles/BuildingRuleTiles using Guid(f6b3735944609fe4ca5d308ef492b4e9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e85989324c19d1c20be5251aa966b436') in 1.126541 seconds
+  Import took 1.139869 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000052 seconds.
+  path: Assets/Resources/Tiles/ResourceRuleTiles
+  artifactKey: Guid(da1c19cd4126db04db449ed172f29072) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Tiles/ResourceRuleTiles using Guid(da1c19cd4126db04db449ed172f29072) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6b71acfa0b330fbb079f6f14d0e3fcf5') in 0.010030 seconds
+  Import took 0.098356 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000376 seconds.
+  path: Assets/Resources/Tiles/MapZoneRuleTiles
+  artifactKey: Guid(ff6926f28908f494cbf7b9a4a8ce17e6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Tiles/MapZoneRuleTiles using Guid(ff6926f28908f494cbf7b9a4a8ce17e6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd3ab43fcbb20637bd5c889d8069401b9') in 0.008250 seconds
+  Import took 0.100125 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 2.008366 seconds.
+  path: Assets/Resources/Tiles/MapZoneRuleTiles/Land_desert.asset
+  artifactKey: Guid(0f65deaa8233f4c4ab3238cf8e26fd85) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Tiles/MapZoneRuleTiles/Land_desert.asset using Guid(0f65deaa8233f4c4ab3238cf8e26fd85) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '04762bd56c2296c6dd7ed97b500d5219') in 0.154666 seconds
+  Import took 0.164862 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000057 seconds.
+  path: Assets/Resources/Tiles/MapZoneRuleTiles/Water_snow.asset
+  artifactKey: Guid(b2f96fc7cfaddce44b0b308ac095d002) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Tiles/MapZoneRuleTiles/Water_snow.asset using Guid(b2f96fc7cfaddce44b0b308ac095d002) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '667bb828427ea4604eaa1a2c8a64c204') in 0.057186 seconds
+  Import took 0.071948 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000286 seconds.
+  path: Assets/Resources/Tiles/MapZoneRuleTiles/Water_desert.asset
+  artifactKey: Guid(9bc6aea0efb443243bfde1e47368ddbf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Tiles/MapZoneRuleTiles/Water_desert.asset using Guid(9bc6aea0efb443243bfde1e47368ddbf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7bf4a50357747dcf90512a4489336657') in 0.040970 seconds
+  Import took 0.053910 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000311 seconds.
+  path: Assets/Resources/Tiles/MapZoneRuleTiles/Land_snow.asset
+  artifactKey: Guid(a957a98def930e642a1bc267e6e60266) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Tiles/MapZoneRuleTiles/Land_snow.asset using Guid(a957a98def930e642a1bc267e6e60266) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1f057266690c5df27d27f237c7b1e215') in 0.032101 seconds
+  Import took 0.048517 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.001104 seconds.
+  path: Assets/Resources/Tiles/MapZoneRuleTiles/Land_moderate_sparce.asset
+  artifactKey: Guid(31c8d77f2c723d547b6b3820408b700e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Tiles/MapZoneRuleTiles/Land_moderate_sparce.asset using Guid(31c8d77f2c723d547b6b3820408b700e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f3b46789f56862f92f040fa4cbf7febb') in 0.057317 seconds
+  Import took 0.076965 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000233 seconds.
+  path: Assets/Resources/Tiles/MapZoneRuleTiles/Mountain_desert 1.asset
+  artifactKey: Guid(7b8d904783795f7479e0fb6fb2467a26) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Tiles/MapZoneRuleTiles/Mountain_desert 1.asset using Guid(7b8d904783795f7479e0fb6fb2467a26) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5663d7bef1b4306b7919ecbbcc7ca0ec') in 0.066342 seconds
+  Import took 0.075209 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000250 seconds.
+  path: Assets/Resources/Tiles/MapZoneRuleTiles/Land_moderate_high.asset
+  artifactKey: Guid(6000045e45078f84ba3f75c5ccb0f0fa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Tiles/MapZoneRuleTiles/Land_moderate_high.asset using Guid(6000045e45078f84ba3f75c5ccb0f0fa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '65792c52f3276430ce0b5b3de57210db') in 0.039743 seconds
+  Import took 0.058639 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000059 seconds.
+  path: Assets/Resources/Tiles/MapZoneRuleTiles/Land_moderate_low.asset
+  artifactKey: Guid(f6fc010cf0a99704784f603b8f6a8f6f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Tiles/MapZoneRuleTiles/Land_moderate_low.asset using Guid(f6fc010cf0a99704784f603b8f6a8f6f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd1ee05a36b38d17b0c9ac0a9102368e9') in 0.035719 seconds
+  Import took 0.057503 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000300 seconds.
+  path: Assets/Resources/Tiles/MapZoneRuleTiles/Land_moderate_high.asset
+  artifactKey: Guid(6000045e45078f84ba3f75c5ccb0f0fa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Tiles/MapZoneRuleTiles/Land_moderate_high.asset using Guid(6000045e45078f84ba3f75c5ccb0f0fa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '65792c52f3276430ce0b5b3de57210db') in 0.030410 seconds
+  Import took 0.049398 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000285 seconds.
+  path: Assets/Resources/Tiles/MapZoneRuleTiles/Land_moderate_low.asset
+  artifactKey: Guid(f6fc010cf0a99704784f603b8f6a8f6f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Tiles/MapZoneRuleTiles/Land_moderate_low.asset using Guid(f6fc010cf0a99704784f603b8f6a8f6f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd1ee05a36b38d17b0c9ac0a9102368e9') in 0.027925 seconds
+  Import took 0.045749 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000234 seconds.
+  path: Assets/Resources/Tiles/MapZoneRuleTiles/Mountain_moderate.asset
+  artifactKey: Guid(72b71153cf6c1b0419bb79d502822ac2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Tiles/MapZoneRuleTiles/Mountain_moderate.asset using Guid(72b71153cf6c1b0419bb79d502822ac2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f1dfb02f6fba3e305cd717732d9d0f36') in 0.030687 seconds
+  Import took 0.047843 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000146 seconds.
+  path: Assets/Resources/Tiles/MapZoneRuleTiles/Mountain_snow.asset
+  artifactKey: Guid(277d02cdef5a87d45a6c9b2439e9436b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Tiles/MapZoneRuleTiles/Mountain_snow.asset using Guid(277d02cdef5a87d45a6c9b2439e9436b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3faaaafac0ba2e99eb36c6c7385bba73') in 0.051059 seconds
+  Import took 0.068201 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000560 seconds.
+  path: Assets/Resources/Tiles/MapZoneRuleTiles/Water_moderate.asset
+  artifactKey: Guid(e0ef807452b684d45a69c2848be51dd6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Tiles/MapZoneRuleTiles/Water_moderate.asset using Guid(e0ef807452b684d45a69c2848be51dd6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0ff72446fd8d05c3e48a4eeedc098fef') in 0.011958 seconds
+  Import took 0.027165 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 10.959511 seconds.
+  path: Assets/Resources/Tiles/MapZoneRuleTiles/New Rule Tile.asset
+  artifactKey: Guid(1f7123870bfccfa418fec2d46b3cfc0f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Tiles/MapZoneRuleTiles/New Rule Tile.asset using Guid(1f7123870bfccfa418fec2d46b3cfc0f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cdd2f80ceabde30cdb616646269f0cff') in 0.007256 seconds
+  Import took 0.030870 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 29.039298 seconds.
+  path: Assets/Resources/Tiles/MapZoneRuleTiles/Accessibility.asset
+  artifactKey: Guid(1f7123870bfccfa418fec2d46b3cfc0f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Tiles/MapZoneRuleTiles/Accessibility.asset using Guid(1f7123870bfccfa418fec2d46b3cfc0f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '816ed9f1f74b9fc60c9372630c4f174f') in 0.017708 seconds
+  Import took 0.028818 seconds .
 
 ========================================================================
 Received Prepare
@@ -89,199 +457,39 @@ Reloading mono domain
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: D:/Unity/2020.2.0b2/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.001369 seconds.
+Registered in 0.000686 seconds.
 Symbol file LoadedFromMemory doesn't match image D:\UnityProjects\Blacklight-Seraphim\Library\PackageCache\com.unity.ext.nunit@1.0.0\net35\unity-custom\nunit.framework.dll
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 78.74 ms, found 1 plugins.
+Refreshing native plugins compatible for Editor in 80.73 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Invoked RoslynAnalysisRunner static constructor.
 RoslynAnalysisRunner will not be running.
 RoslynAnalysisRunner has terminated.
 Mono: successfully reloaded assembly
-- Completed reload, in  2.062 seconds
+- Completed reload, in  4.155 seconds
 Registering precompiled user dll's ...
-Registered in 0.107384 seconds.
+Registered in 0.106327 seconds.
 Platform modules already initialized, skipping
 Begin MonoManager ReloadAssembly
 Symbol file LoadedFromMemory doesn't match image D:\UnityProjects\Blacklight-Seraphim\Library\PackageCache\com.unity.ext.nunit@1.0.0\net35\unity-custom\nunit.framework.dll
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.79 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Invoked RoslynAnalysisRunner static constructor.
-RoslynAnalysisRunner will not be running.
-RoslynAnalysisRunner has terminated.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.496 seconds
-Platform modules already initialized, skipping
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 0.99 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 10 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 73.7 MB.
-System memory in use after: 74.0 MB.
-
-Unloading 9 unused Assets to reduce memory usage. Loaded Objects now: 3626.
-Total: 7.492505 ms (FindLiveObjects: 0.710684 ms CreateObjectMapping: 0.665586 ms MarkObjects: 6.087933 ms  DeleteObjects: 0.025815 ms)
-
-========================================================================
-Received Prepare
-Reloading mono domain
-Begin MonoManager ReloadAssembly
-Registering precompiled unity dll's ...
-Register platform support module: D:/Unity/2020.2.0b2/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.003228 seconds.
-Symbol file LoadedFromMemory doesn't match image D:\UnityProjects\Blacklight-Seraphim\Library\PackageCache\com.unity.ext.nunit@1.0.0\net35\unity-custom\nunit.framework.dll
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 95.91 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Invoked RoslynAnalysisRunner static constructor.
-RoslynAnalysisRunner will not be running.
-RoslynAnalysisRunner has terminated.
-Mono: successfully reloaded assembly
-- Completed reload, in  2.579 seconds
-Registering precompiled user dll's ...
-Registered in 1.022990 seconds.
-Platform modules already initialized, skipping
-Begin MonoManager ReloadAssembly
-Symbol file LoadedFromMemory doesn't match image D:\UnityProjects\Blacklight-Seraphim\Library\PackageCache\com.unity.ext.nunit@1.0.0\net35\unity-custom\nunit.framework.dll
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.66 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Invoked RoslynAnalysisRunner static constructor.
-RoslynAnalysisRunner will not be running.
-RoslynAnalysisRunner has terminated.
-Mono: successfully reloaded assembly
-- Completed reload, in  2.180 seconds
-Platform modules already initialized, skipping
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 2.49 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 10 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 73.9 MB.
-System memory in use after: 74.1 MB.
-
-Unloading 9 unused Assets to reduce memory usage. Loaded Objects now: 3631.
-Total: 11.176553 ms (FindLiveObjects: 1.730523 ms CreateObjectMapping: 0.397174 ms MarkObjects: 9.025841 ms  DeleteObjects: 0.021149 ms)
-
-========================================================================
-Received Prepare
-Reloading mono domain
-Begin MonoManager ReloadAssembly
-Registering precompiled unity dll's ...
-Register platform support module: D:/Unity/2020.2.0b2/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.001346 seconds.
-Symbol file LoadedFromMemory doesn't match image D:\UnityProjects\Blacklight-Seraphim\Library\PackageCache\com.unity.ext.nunit@1.0.0\net35\unity-custom\nunit.framework.dll
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 96.64 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Invoked RoslynAnalysisRunner static constructor.
-RoslynAnalysisRunner will not be running.
-RoslynAnalysisRunner has terminated.
-Mono: successfully reloaded assembly
-- Completed reload, in  4.317 seconds
-Registering precompiled user dll's ...
-Registered in 0.144529 seconds.
-Platform modules already initialized, skipping
-Begin MonoManager ReloadAssembly
-Symbol file LoadedFromMemory doesn't match image D:\UnityProjects\Blacklight-Seraphim\Library\PackageCache\com.unity.ext.nunit@1.0.0\net35\unity-custom\nunit.framework.dll
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.74 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Invoked RoslynAnalysisRunner static constructor.
-RoslynAnalysisRunner will not be running.
-RoslynAnalysisRunner has terminated.
-Mono: successfully reloaded assembly
-- Completed reload, in  2.820 seconds
-Platform modules already initialized, skipping
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 6.94 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 10 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 74.6 MB.
-System memory in use after: 74.9 MB.
-
-Unloading 9 unused Assets to reduce memory usage. Loaded Objects now: 3636.
-Total: 4.677762 ms (FindLiveObjects: 0.518162 ms CreateObjectMapping: 0.195321 ms MarkObjects: 3.939708 ms  DeleteObjects: 0.022394 ms)
-
-========================================================================
-Received Prepare
-Reloading mono domain
-Begin MonoManager ReloadAssembly
-Registering precompiled unity dll's ...
-Register platform support module: D:/Unity/2020.2.0b2/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.000713 seconds.
-Symbol file LoadedFromMemory doesn't match image D:\UnityProjects\Blacklight-Seraphim\Library\PackageCache\com.unity.ext.nunit@1.0.0\net35\unity-custom\nunit.framework.dll
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 183.64 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Invoked RoslynAnalysisRunner static constructor.
-RoslynAnalysisRunner will not be running.
-RoslynAnalysisRunner has terminated.
-Mono: successfully reloaded assembly
-- Completed reload, in  4.150 seconds
-Registering precompiled user dll's ...
-Registered in 0.137924 seconds.
-Platform modules already initialized, skipping
-Begin MonoManager ReloadAssembly
-Symbol file LoadedFromMemory doesn't match image D:\UnityProjects\Blacklight-Seraphim\Library\PackageCache\com.unity.ext.nunit@1.0.0\net35\unity-custom\nunit.framework.dll
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.70 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Invoked RoslynAnalysisRunner static constructor.
-RoslynAnalysisRunner will not be running.
-RoslynAnalysisRunner has terminated.
-Mono: successfully reloaded assembly
-- Completed reload, in  2.374 seconds
-Platform modules already initialized, skipping
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 1.26 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 10 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 74.9 MB.
-System memory in use after: 75.1 MB.
-
-Unloading 9 unused Assets to reduce memory usage. Loaded Objects now: 3641.
-Total: 5.983429 ms (FindLiveObjects: 1.342368 ms CreateObjectMapping: 0.271833 ms MarkObjects: 4.341859 ms  DeleteObjects: 0.024882 ms)
-
-========================================================================
-Received Prepare
-Reloading mono domain
-Begin MonoManager ReloadAssembly
-Registering precompiled unity dll's ...
-Register platform support module: D:/Unity/2020.2.0b2/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.000704 seconds.
-Symbol file LoadedFromMemory doesn't match image D:\UnityProjects\Blacklight-Seraphim\Library\PackageCache\com.unity.ext.nunit@1.0.0\net35\unity-custom\nunit.framework.dll
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 123.76 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Invoked RoslynAnalysisRunner static constructor.
-RoslynAnalysisRunner will not be running.
-RoslynAnalysisRunner has terminated.
-Mono: successfully reloaded assembly
-- Completed reload, in  5.059 seconds
-Registering precompiled user dll's ...
-Registered in 0.155454 seconds.
-Platform modules already initialized, skipping
-Begin MonoManager ReloadAssembly
-Symbol file LoadedFromMemory doesn't match image D:\UnityProjects\Blacklight-Seraphim\Library\PackageCache\com.unity.ext.nunit@1.0.0\net35\unity-custom\nunit.framework.dll
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.96 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Invoked RoslynAnalysisRunner static constructor.
-RoslynAnalysisRunner will not be running.
-RoslynAnalysisRunner has terminated.
-Mono: successfully reloaded assembly
-- Completed reload, in  3.105 seconds
-Platform modules already initialized, skipping
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
 Refreshing native plugins compatible for Editor in 0.76 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  2.045 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 0.92 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 10 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 74.5 MB.
-System memory in use after: 74.8 MB.
+System memory in use before: 77.0 MB.
+System memory in use after: 77.2 MB.
 
-Unloading 9 unused Assets to reduce memory usage. Loaded Objects now: 3646.
-Total: 5.942997 ms (FindLiveObjects: 0.851888 ms CreateObjectMapping: 0.277431 ms MarkObjects: 4.786619 ms  DeleteObjects: 0.024882 ms)
+Unloading 11 unused Assets to reduce memory usage. Loaded Objects now: 3634.
+Total: 4.911028 ms (FindLiveObjects: 0.799636 ms CreateObjectMapping: 0.383489 ms MarkObjects: 3.688714 ms  DeleteObjects: 0.036701 ms)
 
 ========================================================================
 Received Prepare
@@ -289,18 +497,138 @@ Reloading mono domain
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: D:/Unity/2020.2.0b2/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.006876 seconds.
+Registered in 0.001589 seconds.
 Symbol file LoadedFromMemory doesn't match image D:\UnityProjects\Blacklight-Seraphim\Library\PackageCache\com.unity.ext.nunit@1.0.0\net35\unity-custom\nunit.framework.dll
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 120.41 ms, found 1 plugins.
+Refreshing native plugins compatible for Editor in 135.16 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Invoked RoslynAnalysisRunner static constructor.
 RoslynAnalysisRunner will not be running.
 RoslynAnalysisRunner has terminated.
 Mono: successfully reloaded assembly
-- Completed reload, in  4.479 seconds
+- Completed reload, in  1.967 seconds
 Registering precompiled user dll's ...
-Registered in 0.154503 seconds.
+Registered in 0.137675 seconds.
+Platform modules already initialized, skipping
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image D:\UnityProjects\Blacklight-Seraphim\Library\PackageCache\com.unity.ext.nunit@1.0.0\net35\unity-custom\nunit.framework.dll
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.68 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.523 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 1.14 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 10 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 77.1 MB.
+System memory in use after: 77.4 MB.
+
+Unloading 9 unused Assets to reduce memory usage. Loaded Objects now: 3639.
+Total: 5.557330 ms (FindLiveObjects: 0.710062 ms CreateObjectMapping: 0.414280 ms MarkObjects: 4.402508 ms  DeleteObjects: 0.028303 ms)
+
+========================================================================
+Received Prepare
+Reloading mono domain
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: D:/Unity/2020.2.0b2/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.000955 seconds.
+Symbol file LoadedFromMemory doesn't match image D:\UnityProjects\Blacklight-Seraphim\Library\PackageCache\com.unity.ext.nunit@1.0.0\net35\unity-custom\nunit.framework.dll
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 73.36 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  3.965 seconds
+Registering precompiled user dll's ...
+Registered in 0.145252 seconds.
+Platform modules already initialized, skipping
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image D:\UnityProjects\Blacklight-Seraphim\Library\PackageCache\com.unity.ext.nunit@1.0.0\net35\unity-custom\nunit.framework.dll
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 1.63 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  2.184 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 0.87 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 10 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 77.9 MB.
+System memory in use after: 78.1 MB.
+
+Unloading 9 unused Assets to reduce memory usage. Loaded Objects now: 3644.
+Total: 3.758382 ms (FindLiveObjects: 0.688290 ms CreateObjectMapping: 0.382245 ms MarkObjects: 2.658922 ms  DeleteObjects: 0.027681 ms)
+
+========================================================================
+Received Prepare
+Reloading mono domain
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: D:/Unity/2020.2.0b2/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.004819 seconds.
+Symbol file LoadedFromMemory doesn't match image D:\UnityProjects\Blacklight-Seraphim\Library\PackageCache\com.unity.ext.nunit@1.0.0\net35\unity-custom\nunit.framework.dll
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 78.92 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  5.626 seconds
+Registering precompiled user dll's ...
+Registered in 0.120413 seconds.
+Platform modules already initialized, skipping
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image D:\UnityProjects\Blacklight-Seraphim\Library\PackageCache\com.unity.ext.nunit@1.0.0\net35\unity-custom\nunit.framework.dll
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.73 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  2.352 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 1.09 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 10 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 78.1 MB.
+System memory in use after: 78.4 MB.
+
+Unloading 9 unused Assets to reduce memory usage. Loaded Objects now: 3649.
+Total: 4.984118 ms (FindLiveObjects: 0.712550 ms CreateObjectMapping: 0.414903 ms MarkObjects: 3.828362 ms  DeleteObjects: 0.026748 ms)
+
+========================================================================
+Received Prepare
+Reloading mono domain
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: D:/Unity/2020.2.0b2/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.000919 seconds.
+Symbol file LoadedFromMemory doesn't match image D:\UnityProjects\Blacklight-Seraphim\Library\PackageCache\com.unity.ext.nunit@1.0.0\net35\unity-custom\nunit.framework.dll
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 85.87 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.850 seconds
+Registering precompiled user dll's ...
+Registered in 0.118171 seconds.
 Platform modules already initialized, skipping
 Begin MonoManager ReloadAssembly
 Symbol file LoadedFromMemory doesn't match image D:\UnityProjects\Blacklight-Seraphim\Library\PackageCache\com.unity.ext.nunit@1.0.0\net35\unity-custom\nunit.framework.dll
@@ -311,17 +639,17 @@ Invoked RoslynAnalysisRunner static constructor.
 RoslynAnalysisRunner will not be running.
 RoslynAnalysisRunner has terminated.
 Mono: successfully reloaded assembly
-- Completed reload, in  2.699 seconds
+- Completed reload, in  1.551 seconds
 Platform modules already initialized, skipping
 Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 0.98 ms, found 1 plugins.
+Refreshing native plugins compatible for Editor in 0.99 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 10 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 74.9 MB.
-System memory in use after: 75.1 MB.
+System memory in use before: 77.8 MB.
+System memory in use after: 78.1 MB.
 
-Unloading 9 unused Assets to reduce memory usage. Loaded Objects now: 3651.
-Total: 4.876504 ms (FindLiveObjects: 0.718459 ms CreateObjectMapping: 0.272455 ms MarkObjects: 3.856354 ms  DeleteObjects: 0.027059 ms)
+Unloading 9 unused Assets to reduce memory usage. Loaded Objects now: 3654.
+Total: 5.300115 ms (FindLiveObjects: 0.643503 ms CreateObjectMapping: 0.378513 ms MarkObjects: 4.250729 ms  DeleteObjects: 0.025193 ms)
 
 ========================================================================
 Received Prepare
@@ -329,39 +657,39 @@ Reloading mono domain
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: D:/Unity/2020.2.0b2/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.000699 seconds.
+Registered in 0.000756 seconds.
 Symbol file LoadedFromMemory doesn't match image D:\UnityProjects\Blacklight-Seraphim\Library\PackageCache\com.unity.ext.nunit@1.0.0\net35\unity-custom\nunit.framework.dll
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 93.80 ms, found 1 plugins.
+Refreshing native plugins compatible for Editor in 77.92 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Invoked RoslynAnalysisRunner static constructor.
 RoslynAnalysisRunner will not be running.
 RoslynAnalysisRunner has terminated.
 Mono: successfully reloaded assembly
-- Completed reload, in  3.553 seconds
+- Completed reload, in 10.293 seconds
 Registering precompiled user dll's ...
-Registered in 0.150082 seconds.
+Registered in 0.125771 seconds.
 Platform modules already initialized, skipping
 Begin MonoManager ReloadAssembly
 Symbol file LoadedFromMemory doesn't match image D:\UnityProjects\Blacklight-Seraphim\Library\PackageCache\com.unity.ext.nunit@1.0.0\net35\unity-custom\nunit.framework.dll
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.65 ms, found 1 plugins.
+Refreshing native plugins compatible for Editor in 0.70 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Invoked RoslynAnalysisRunner static constructor.
 RoslynAnalysisRunner will not be running.
 RoslynAnalysisRunner has terminated.
 Mono: successfully reloaded assembly
-- Completed reload, in  2.597 seconds
+- Completed reload, in  1.627 seconds
 Platform modules already initialized, skipping
 Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 1.27 ms, found 1 plugins.
+Refreshing native plugins compatible for Editor in 0.89 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 10 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 74.5 MB.
-System memory in use after: 74.7 MB.
+System memory in use before: 78.2 MB.
+System memory in use after: 78.4 MB.
 
-Unloading 9 unused Assets to reduce memory usage. Loaded Objects now: 3656.
-Total: 4.400642 ms (FindLiveObjects: 0.611468 ms CreateObjectMapping: 0.275565 ms MarkObjects: 3.488727 ms  DeleteObjects: 0.023016 ms)
+Unloading 9 unused Assets to reduce memory usage. Loaded Objects now: 3659.
+Total: 5.061251 ms (FindLiveObjects: 1.174417 ms CreateObjectMapping: 1.262125 ms MarkObjects: 2.600761 ms  DeleteObjects: 0.022394 ms)
 
 ========================================================================
 Received Prepare
@@ -369,39 +697,359 @@ Reloading mono domain
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: D:/Unity/2020.2.0b2/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.000717 seconds.
+Registered in 0.000789 seconds.
 Symbol file LoadedFromMemory doesn't match image D:\UnityProjects\Blacklight-Seraphim\Library\PackageCache\com.unity.ext.nunit@1.0.0\net35\unity-custom\nunit.framework.dll
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 3656.06 ms, found 1 plugins.
+Refreshing native plugins compatible for Editor in 81.74 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Invoked RoslynAnalysisRunner static constructor.
 RoslynAnalysisRunner will not be running.
 RoslynAnalysisRunner has terminated.
 Mono: successfully reloaded assembly
-- Completed reload, in  8.842 seconds
+- Completed reload, in  1.741 seconds
 Registering precompiled user dll's ...
-Registered in 0.158109 seconds.
+Registered in 0.092469 seconds.
 Platform modules already initialized, skipping
 Begin MonoManager ReloadAssembly
 Symbol file LoadedFromMemory doesn't match image D:\UnityProjects\Blacklight-Seraphim\Library\PackageCache\com.unity.ext.nunit@1.0.0\net35\unity-custom\nunit.framework.dll
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.97 ms, found 1 plugins.
+Refreshing native plugins compatible for Editor in 0.67 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Invoked RoslynAnalysisRunner static constructor.
 RoslynAnalysisRunner will not be running.
 RoslynAnalysisRunner has terminated.
 Mono: successfully reloaded assembly
-- Completed reload, in  3.304 seconds
+- Completed reload, in  1.985 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 1.03 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 10 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 77.8 MB.
+System memory in use after: 78.0 MB.
+
+Unloading 9 unused Assets to reduce memory usage. Loaded Objects now: 3664.
+Total: 6.719617 ms (FindLiveObjects: 0.708507 ms CreateObjectMapping: 0.497634 ms MarkObjects: 5.487350 ms  DeleteObjects: 0.023327 ms)
+
+========================================================================
+Received Prepare
+Reloading mono domain
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: D:/Unity/2020.2.0b2/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.000684 seconds.
+Symbol file LoadedFromMemory doesn't match image D:\UnityProjects\Blacklight-Seraphim\Library\PackageCache\com.unity.ext.nunit@1.0.0\net35\unity-custom\nunit.framework.dll
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 214.92 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  4.067 seconds
+Registering precompiled user dll's ...
+Registered in 0.097456 seconds.
+Platform modules already initialized, skipping
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image D:\UnityProjects\Blacklight-Seraphim\Library\PackageCache\com.unity.ext.nunit@1.0.0\net35\unity-custom\nunit.framework.dll
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 3.23 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.855 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 0.87 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 10 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 78.2 MB.
+System memory in use after: 78.4 MB.
+
+Unloading 9 unused Assets to reduce memory usage. Loaded Objects now: 3669.
+Total: 6.626933 ms (FindLiveObjects: 0.782219 ms CreateObjectMapping: 0.419257 ms MarkObjects: 5.399020 ms  DeleteObjects: 0.024882 ms)
+
+========================================================================
+Received Prepare
+Reloading mono domain
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: D:/Unity/2020.2.0b2/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.002160 seconds.
+Symbol file LoadedFromMemory doesn't match image D:\UnityProjects\Blacklight-Seraphim\Library\PackageCache\com.unity.ext.nunit@1.0.0\net35\unity-custom\nunit.framework.dll
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 1616.37 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  5.220 seconds
+Registering precompiled user dll's ...
+Registered in 0.150294 seconds.
+Platform modules already initialized, skipping
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image D:\UnityProjects\Blacklight-Seraphim\Library\PackageCache\com.unity.ext.nunit@1.0.0\net35\unity-custom\nunit.framework.dll
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.71 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  2.406 seconds
 Platform modules already initialized, skipping
 Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
 Refreshing native plugins compatible for Editor in 0.88 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 10 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 74.9 MB.
-System memory in use after: 75.1 MB.
+System memory in use before: 77.7 MB.
+System memory in use after: 77.9 MB.
 
-Unloading 9 unused Assets to reduce memory usage. Loaded Objects now: 3661.
-Total: 5.124388 ms (FindLiveObjects: 1.703775 ms CreateObjectMapping: 0.620488 ms MarkObjects: 2.774933 ms  DeleteObjects: 0.023016 ms)
+Unloading 9 unused Assets to reduce memory usage. Loaded Objects now: 3674.
+Total: 4.186970 ms (FindLiveObjects: 0.762002 ms CreateObjectMapping: 0.434186 ms MarkObjects: 2.965900 ms  DeleteObjects: 0.022394 ms)
+
+========================================================================
+Received Prepare
+Reloading mono domain
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: D:/Unity/2020.2.0b2/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.000786 seconds.
+Symbol file LoadedFromMemory doesn't match image D:\UnityProjects\Blacklight-Seraphim\Library\PackageCache\com.unity.ext.nunit@1.0.0\net35\unity-custom\nunit.framework.dll
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 80.67 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  2.707 seconds
+Registering precompiled user dll's ...
+Registered in 0.095311 seconds.
+Platform modules already initialized, skipping
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image D:\UnityProjects\Blacklight-Seraphim\Library\PackageCache\com.unity.ext.nunit@1.0.0\net35\unity-custom\nunit.framework.dll
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.70 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  2.294 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 0.88 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 10 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 78.1 MB.
+System memory in use after: 78.4 MB.
+
+Unloading 9 unused Assets to reduce memory usage. Loaded Objects now: 3679.
+Total: 5.210541 ms (FindLiveObjects: 0.729345 ms CreateObjectMapping: 0.477107 ms MarkObjects: 3.976408 ms  DeleteObjects: 0.025193 ms)
+
+========================================================================
+Received Prepare
+Reloading mono domain
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: D:/Unity/2020.2.0b2/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.001242 seconds.
+Symbol file LoadedFromMemory doesn't match image D:\UnityProjects\Blacklight-Seraphim\Library\PackageCache\com.unity.ext.nunit@1.0.0\net35\unity-custom\nunit.framework.dll
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 83.60 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in 15.781 seconds
+Registering precompiled user dll's ...
+Registered in 0.252745 seconds.
+Platform modules already initialized, skipping
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image D:\UnityProjects\Blacklight-Seraphim\Library\PackageCache\com.unity.ext.nunit@1.0.0\net35\unity-custom\nunit.framework.dll
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.69 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  3.872 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 0.93 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 10 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 78.2 MB.
+System memory in use after: 78.5 MB.
+
+Unloading 9 unused Assets to reduce memory usage. Loaded Objects now: 3684.
+Total: 4.975409 ms (FindLiveObjects: 0.716904 ms CreateObjectMapping: 0.427654 ms MarkObjects: 3.690269 ms  DeleteObjects: 0.138093 ms)
+
+========================================================================
+Received Prepare
+Reloading mono domain
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: D:/Unity/2020.2.0b2/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.000750 seconds.
+Symbol file LoadedFromMemory doesn't match image D:\UnityProjects\Blacklight-Seraphim\Library\PackageCache\com.unity.ext.nunit@1.0.0\net35\unity-custom\nunit.framework.dll
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 89.34 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  3.859 seconds
+Registering precompiled user dll's ...
+Registered in 0.193924 seconds.
+Platform modules already initialized, skipping
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image D:\UnityProjects\Blacklight-Seraphim\Library\PackageCache\com.unity.ext.nunit@1.0.0\net35\unity-custom\nunit.framework.dll
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.68 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  4.188 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 2.17 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 10 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 78.0 MB.
+System memory in use after: 78.2 MB.
+
+Unloading 9 unused Assets to reduce memory usage. Loaded Objects now: 3689.
+Total: 10.201501 ms (FindLiveObjects: 1.916203 ms CreateObjectMapping: 0.424233 ms MarkObjects: 7.736657 ms  DeleteObjects: 0.122542 ms)
+
+========================================================================
+Received Prepare
+Reloading mono domain
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: D:/Unity/2020.2.0b2/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.001895 seconds.
+Symbol file LoadedFromMemory doesn't match image D:\UnityProjects\Blacklight-Seraphim\Library\PackageCache\com.unity.ext.nunit@1.0.0\net35\unity-custom\nunit.framework.dll
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 100.89 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  5.066 seconds
+Registering precompiled user dll's ...
+Registered in 0.118309 seconds.
+Platform modules already initialized, skipping
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image D:\UnityProjects\Blacklight-Seraphim\Library\PackageCache\com.unity.ext.nunit@1.0.0\net35\unity-custom\nunit.framework.dll
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.78 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  3.586 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 1.23 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 10 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 78.3 MB.
+System memory in use after: 78.5 MB.
+
+Unloading 9 unused Assets to reduce memory usage. Loaded Objects now: 3694.
+Total: 22.466941 ms (FindLiveObjects: 1.503166 ms CreateObjectMapping: 0.453469 ms MarkObjects: 20.379365 ms  DeleteObjects: 0.128452 ms)
+
+========================================================================
+Received Prepare
+Reloading mono domain
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: D:/Unity/2020.2.0b2/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.000710 seconds.
+Symbol file LoadedFromMemory doesn't match image D:\UnityProjects\Blacklight-Seraphim\Library\PackageCache\com.unity.ext.nunit@1.0.0\net35\unity-custom\nunit.framework.dll
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 95.38 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  3.574 seconds
+Registering precompiled user dll's ...
+Registered in 0.108210 seconds.
+Platform modules already initialized, skipping
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image D:\UnityProjects\Blacklight-Seraphim\Library\PackageCache\com.unity.ext.nunit@1.0.0\net35\unity-custom\nunit.framework.dll
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.75 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  2.313 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 1.51 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 10 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 77.9 MB.
+System memory in use after: 78.2 MB.
+
+Unloading 9 unused Assets to reduce memory usage. Loaded Objects now: 3699.
+Total: 6.566906 ms (FindLiveObjects: 1.472997 ms CreateObjectMapping: 0.420190 ms MarkObjects: 4.641372 ms  DeleteObjects: 0.029858 ms)
+
+========================================================================
+Received Prepare
+Reloading mono domain
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: D:/Unity/2020.2.0b2/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.000734 seconds.
+Symbol file LoadedFromMemory doesn't match image D:\UnityProjects\Blacklight-Seraphim\Library\PackageCache\com.unity.ext.nunit@1.0.0\net35\unity-custom\nunit.framework.dll
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 86.76 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  4.560 seconds
+Registering precompiled user dll's ...
+Registered in 0.120131 seconds.
+Platform modules already initialized, skipping
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image D:\UnityProjects\Blacklight-Seraphim\Library\PackageCache\com.unity.ext.nunit@1.0.0\net35\unity-custom\nunit.framework.dll
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 1.38 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  3.108 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 0.90 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 10 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 78.3 MB.
+System memory in use after: 78.5 MB.
+
+Unloading 9 unused Assets to reduce memory usage. Loaded Objects now: 3704.
+Total: 5.956682 ms (FindLiveObjects: 1.024815 ms CreateObjectMapping: 0.476174 ms MarkObjects: 4.422413 ms  DeleteObjects: 0.030480 ms)
 
 ========================================================================
 Received Prepare
@@ -412,711 +1060,15 @@ Register platform support module: D:/Unity/2020.2.0b2/Editor/Data/PlaybackEngine
 Registered in 0.000803 seconds.
 Symbol file LoadedFromMemory doesn't match image D:\UnityProjects\Blacklight-Seraphim\Library\PackageCache\com.unity.ext.nunit@1.0.0\net35\unity-custom\nunit.framework.dll
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 374.94 ms, found 1 plugins.
+Refreshing native plugins compatible for Editor in 118.29 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Invoked RoslynAnalysisRunner static constructor.
 RoslynAnalysisRunner will not be running.
 RoslynAnalysisRunner has terminated.
 Mono: successfully reloaded assembly
-- Completed reload, in  9.030 seconds
+- Completed reload, in 12.974 seconds
 Registering precompiled user dll's ...
-Registered in 0.552604 seconds.
-Platform modules already initialized, skipping
-Begin MonoManager ReloadAssembly
-Symbol file LoadedFromMemory doesn't match image D:\UnityProjects\Blacklight-Seraphim\Library\PackageCache\com.unity.ext.nunit@1.0.0\net35\unity-custom\nunit.framework.dll
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.73 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Invoked RoslynAnalysisRunner static constructor.
-RoslynAnalysisRunner will not be running.
-RoslynAnalysisRunner has terminated.
-Mono: successfully reloaded assembly
-- Completed reload, in  7.663 seconds
-Platform modules already initialized, skipping
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 2.99 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 10 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 74.9 MB.
-System memory in use after: 75.2 MB.
-
-Unloading 9 unused Assets to reduce memory usage. Loaded Objects now: 3666.
-Total: 4.415571 ms (FindLiveObjects: 0.597783 ms CreateObjectMapping: 0.393753 ms MarkObjects: 3.389200 ms  DeleteObjects: 0.032968 ms)
-
-========================================================================
-Received Prepare
-Reloading mono domain
-Begin MonoManager ReloadAssembly
-Registering precompiled unity dll's ...
-Register platform support module: D:/Unity/2020.2.0b2/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.000689 seconds.
-Symbol file LoadedFromMemory doesn't match image D:\UnityProjects\Blacklight-Seraphim\Library\PackageCache\com.unity.ext.nunit@1.0.0\net35\unity-custom\nunit.framework.dll
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 250.75 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Invoked RoslynAnalysisRunner static constructor.
-RoslynAnalysisRunner will not be running.
-RoslynAnalysisRunner has terminated.
-Mono: successfully reloaded assembly
-- Completed reload, in 72.570 seconds
-Registering precompiled user dll's ...
-Registered in 0.642997 seconds.
-Platform modules already initialized, skipping
-Begin MonoManager ReloadAssembly
-Symbol file LoadedFromMemory doesn't match image D:\UnityProjects\Blacklight-Seraphim\Library\PackageCache\com.unity.ext.nunit@1.0.0\net35\unity-custom\nunit.framework.dll
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.71 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Invoked RoslynAnalysisRunner static constructor.
-RoslynAnalysisRunner will not be running.
-RoslynAnalysisRunner has terminated.
-Mono: successfully reloaded assembly
-- Completed reload, in  6.071 seconds
-Platform modules already initialized, skipping
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 0.68 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 10 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 74.8 MB.
-System memory in use after: 75.0 MB.
-
-Unloading 9 unused Assets to reduce memory usage. Loaded Objects now: 3671.
-Total: 13.919140 ms (FindLiveObjects: 1.101638 ms CreateObjectMapping: 0.339324 ms MarkObjects: 12.327333 ms  DeleteObjects: 0.148979 ms)
-
-========================================================================
-Received Prepare
-Reloading mono domain
-Begin MonoManager ReloadAssembly
-Registering precompiled unity dll's ...
-Register platform support module: D:/Unity/2020.2.0b2/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.001352 seconds.
-Symbol file LoadedFromMemory doesn't match image D:\UnityProjects\Blacklight-Seraphim\Library\PackageCache\com.unity.ext.nunit@1.0.0\net35\unity-custom\nunit.framework.dll
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 108.79 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Invoked RoslynAnalysisRunner static constructor.
-RoslynAnalysisRunner will not be running.
-RoslynAnalysisRunner has terminated.
-Mono: successfully reloaded assembly
-- Completed reload, in  5.690 seconds
-Registering precompiled user dll's ...
-Registered in 0.133015 seconds.
-Platform modules already initialized, skipping
-Begin MonoManager ReloadAssembly
-Symbol file LoadedFromMemory doesn't match image D:\UnityProjects\Blacklight-Seraphim\Library\PackageCache\com.unity.ext.nunit@1.0.0\net35\unity-custom\nunit.framework.dll
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.75 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Invoked RoslynAnalysisRunner static constructor.
-RoslynAnalysisRunner will not be running.
-RoslynAnalysisRunner has terminated.
-Mono: successfully reloaded assembly
-- Completed reload, in  3.033 seconds
-Platform modules already initialized, skipping
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 0.68 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 10 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 75.0 MB.
-System memory in use after: 75.2 MB.
-
-Unloading 9 unused Assets to reduce memory usage. Loaded Objects now: 3676.
-Total: 5.785620 ms (FindLiveObjects: 2.171240 ms CreateObjectMapping: 0.222691 ms MarkObjects: 3.345035 ms  DeleteObjects: 0.044476 ms)
-
-========================================================================
-Received Prepare
-Reloading mono domain
-Begin MonoManager ReloadAssembly
-Registering precompiled unity dll's ...
-Register platform support module: D:/Unity/2020.2.0b2/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.000700 seconds.
-Symbol file LoadedFromMemory doesn't match image D:\UnityProjects\Blacklight-Seraphim\Library\PackageCache\com.unity.ext.nunit@1.0.0\net35\unity-custom\nunit.framework.dll
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 116.95 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Invoked RoslynAnalysisRunner static constructor.
-RoslynAnalysisRunner will not be running.
-RoslynAnalysisRunner has terminated.
-Mono: successfully reloaded assembly
-- Completed reload, in  4.190 seconds
-Registering precompiled user dll's ...
-Registered in 0.131072 seconds.
-Platform modules already initialized, skipping
-Begin MonoManager ReloadAssembly
-Symbol file LoadedFromMemory doesn't match image D:\UnityProjects\Blacklight-Seraphim\Library\PackageCache\com.unity.ext.nunit@1.0.0\net35\unity-custom\nunit.framework.dll
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.73 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Invoked RoslynAnalysisRunner static constructor.
-RoslynAnalysisRunner will not be running.
-RoslynAnalysisRunner has terminated.
-Mono: successfully reloaded assembly
-- Completed reload, in  3.368 seconds
-Platform modules already initialized, skipping
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 1.22 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 10 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 74.7 MB.
-System memory in use after: 74.9 MB.
-
-Unloading 9 unused Assets to reduce memory usage. Loaded Objects now: 3681.
-Total: 4.462535 ms (FindLiveObjects: 0.537445 ms CreateObjectMapping: 0.254727 ms MarkObjects: 3.538801 ms  DeleteObjects: 0.129385 ms)
-
-========================================================================
-Received Prepare
-Reloading mono domain
-Begin MonoManager ReloadAssembly
-Registering precompiled unity dll's ...
-Register platform support module: D:/Unity/2020.2.0b2/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.000829 seconds.
-Symbol file LoadedFromMemory doesn't match image D:\UnityProjects\Blacklight-Seraphim\Library\PackageCache\com.unity.ext.nunit@1.0.0\net35\unity-custom\nunit.framework.dll
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 139.15 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Invoked RoslynAnalysisRunner static constructor.
-RoslynAnalysisRunner will not be running.
-RoslynAnalysisRunner has terminated.
-Mono: successfully reloaded assembly
-- Completed reload, in  5.318 seconds
-Registering precompiled user dll's ...
-Registered in 0.380523 seconds.
-Platform modules already initialized, skipping
-Begin MonoManager ReloadAssembly
-Symbol file LoadedFromMemory doesn't match image D:\UnityProjects\Blacklight-Seraphim\Library\PackageCache\com.unity.ext.nunit@1.0.0\net35\unity-custom\nunit.framework.dll
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.65 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Invoked RoslynAnalysisRunner static constructor.
-RoslynAnalysisRunner will not be running.
-RoslynAnalysisRunner has terminated.
-Mono: successfully reloaded assembly
-- Completed reload, in  4.018 seconds
-Platform modules already initialized, skipping
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 0.87 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 10 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 75.0 MB.
-System memory in use after: 75.2 MB.
-
-Unloading 9 unused Assets to reduce memory usage. Loaded Objects now: 3686.
-Total: 5.768203 ms (FindLiveObjects: 0.680515 ms CreateObjectMapping: 0.365761 ms MarkObjects: 4.696423 ms  DeleteObjects: 0.023327 ms)
-
-========================================================================
-Received Prepare
-Reloading mono domain
-Begin MonoManager ReloadAssembly
-Registering precompiled unity dll's ...
-Register platform support module: D:/Unity/2020.2.0b2/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.000678 seconds.
-Symbol file LoadedFromMemory doesn't match image D:\UnityProjects\Blacklight-Seraphim\Library\PackageCache\com.unity.ext.nunit@1.0.0\net35\unity-custom\nunit.framework.dll
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 109.50 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Invoked RoslynAnalysisRunner static constructor.
-RoslynAnalysisRunner will not be running.
-RoslynAnalysisRunner has terminated.
-Mono: successfully reloaded assembly
-- Completed reload, in  5.114 seconds
-Registering precompiled user dll's ...
-Registered in 0.125442 seconds.
-Platform modules already initialized, skipping
-Begin MonoManager ReloadAssembly
-Symbol file LoadedFromMemory doesn't match image D:\UnityProjects\Blacklight-Seraphim\Library\PackageCache\com.unity.ext.nunit@1.0.0\net35\unity-custom\nunit.framework.dll
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.64 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Invoked RoslynAnalysisRunner static constructor.
-RoslynAnalysisRunner will not be running.
-RoslynAnalysisRunner has terminated.
-Mono: successfully reloaded assembly
-- Completed reload, in  3.847 seconds
-Platform modules already initialized, skipping
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 0.89 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 10 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 74.6 MB.
-System memory in use after: 74.9 MB.
-
-Unloading 9 unused Assets to reduce memory usage. Loaded Objects now: 3691.
-Total: 4.128498 ms (FindLiveObjects: 1.224802 ms CreateObjectMapping: 0.331238 ms MarkObjects: 2.549131 ms  DeleteObjects: 0.021460 ms)
-
-========================================================================
-Received Prepare
-Reloading mono domain
-Begin MonoManager ReloadAssembly
-Registering precompiled unity dll's ...
-Register platform support module: D:/Unity/2020.2.0b2/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.001107 seconds.
-Symbol file LoadedFromMemory doesn't match image D:\UnityProjects\Blacklight-Seraphim\Library\PackageCache\com.unity.ext.nunit@1.0.0\net35\unity-custom\nunit.framework.dll
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 96.54 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Invoked RoslynAnalysisRunner static constructor.
-RoslynAnalysisRunner will not be running.
-RoslynAnalysisRunner has terminated.
-Mono: successfully reloaded assembly
-- Completed reload, in  3.995 seconds
-Registering precompiled user dll's ...
-Registered in 0.121198 seconds.
-Platform modules already initialized, skipping
-Begin MonoManager ReloadAssembly
-Symbol file LoadedFromMemory doesn't match image D:\UnityProjects\Blacklight-Seraphim\Library\PackageCache\com.unity.ext.nunit@1.0.0\net35\unity-custom\nunit.framework.dll
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 2.20 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Invoked RoslynAnalysisRunner static constructor.
-RoslynAnalysisRunner will not be running.
-RoslynAnalysisRunner has terminated.
-Mono: successfully reloaded assembly
-- Completed reload, in  4.068 seconds
-Platform modules already initialized, skipping
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 1.25 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 10 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 75.0 MB.
-System memory in use after: 75.3 MB.
-
-Unloading 9 unused Assets to reduce memory usage. Loaded Objects now: 3696.
-Total: 7.062363 ms (FindLiveObjects: 0.585031 ms CreateObjectMapping: 0.248817 ms MarkObjects: 6.204566 ms  DeleteObjects: 0.021771 ms)
-
-========================================================================
-Received Prepare
-Reloading mono domain
-Begin MonoManager ReloadAssembly
-Registering precompiled unity dll's ...
-Register platform support module: D:/Unity/2020.2.0b2/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.000785 seconds.
-Symbol file LoadedFromMemory doesn't match image D:\UnityProjects\Blacklight-Seraphim\Library\PackageCache\com.unity.ext.nunit@1.0.0\net35\unity-custom\nunit.framework.dll
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 90.72 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Invoked RoslynAnalysisRunner static constructor.
-RoslynAnalysisRunner will not be running.
-RoslynAnalysisRunner has terminated.
-Mono: successfully reloaded assembly
-- Completed reload, in 22.304 seconds
-Registering precompiled user dll's ...
-Registered in 0.136771 seconds.
-Platform modules already initialized, skipping
-Begin MonoManager ReloadAssembly
-Symbol file LoadedFromMemory doesn't match image D:\UnityProjects\Blacklight-Seraphim\Library\PackageCache\com.unity.ext.nunit@1.0.0\net35\unity-custom\nunit.framework.dll
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 5.58 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Invoked RoslynAnalysisRunner static constructor.
-RoslynAnalysisRunner will not be running.
-RoslynAnalysisRunner has terminated.
-Mono: successfully reloaded assembly
-- Completed reload, in  3.834 seconds
-Platform modules already initialized, skipping
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 0.69 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 10 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 74.5 MB.
-System memory in use after: 74.8 MB.
-
-Unloading 9 unused Assets to reduce memory usage. Loaded Objects now: 3701.
-Total: 3.691513 ms (FindLiveObjects: 0.644436 ms CreateObjectMapping: 0.299514 ms MarkObjects: 2.721437 ms  DeleteObjects: 0.023949 ms)
-
-========================================================================
-Received Prepare
-Reloading mono domain
-Begin MonoManager ReloadAssembly
-Registering precompiled unity dll's ...
-Register platform support module: D:/Unity/2020.2.0b2/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.001104 seconds.
-Symbol file LoadedFromMemory doesn't match image D:\UnityProjects\Blacklight-Seraphim\Library\PackageCache\com.unity.ext.nunit@1.0.0\net35\unity-custom\nunit.framework.dll
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 108.88 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Invoked RoslynAnalysisRunner static constructor.
-RoslynAnalysisRunner will not be running.
-RoslynAnalysisRunner has terminated.
-Mono: successfully reloaded assembly
-- Completed reload, in  4.537 seconds
-Registering precompiled user dll's ...
-Registered in 0.150476 seconds.
-Platform modules already initialized, skipping
-Begin MonoManager ReloadAssembly
-Symbol file LoadedFromMemory doesn't match image D:\UnityProjects\Blacklight-Seraphim\Library\PackageCache\com.unity.ext.nunit@1.0.0\net35\unity-custom\nunit.framework.dll
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.97 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Invoked RoslynAnalysisRunner static constructor.
-RoslynAnalysisRunner will not be running.
-RoslynAnalysisRunner has terminated.
-Mono: successfully reloaded assembly
-- Completed reload, in  3.384 seconds
-Platform modules already initialized, skipping
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 0.71 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 10 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 75.0 MB.
-System memory in use after: 75.2 MB.
-
-Unloading 9 unused Assets to reduce memory usage. Loaded Objects now: 3706.
-Total: 4.283698 ms (FindLiveObjects: 0.540866 ms CreateObjectMapping: 0.183192 ms MarkObjects: 3.534447 ms  DeleteObjects: 0.023327 ms)
-
-========================================================================
-Received Prepare
-Reloading mono domain
-Begin MonoManager ReloadAssembly
-Registering precompiled unity dll's ...
-Register platform support module: D:/Unity/2020.2.0b2/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.000962 seconds.
-Symbol file LoadedFromMemory doesn't match image D:\UnityProjects\Blacklight-Seraphim\Library\PackageCache\com.unity.ext.nunit@1.0.0\net35\unity-custom\nunit.framework.dll
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 164.21 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Invoked RoslynAnalysisRunner static constructor.
-RoslynAnalysisRunner will not be running.
-RoslynAnalysisRunner has terminated.
-Mono: successfully reloaded assembly
-- Completed reload, in  4.234 seconds
-Registering precompiled user dll's ...
-Registered in 0.179051 seconds.
-Platform modules already initialized, skipping
-Begin MonoManager ReloadAssembly
-Symbol file LoadedFromMemory doesn't match image D:\UnityProjects\Blacklight-Seraphim\Library\PackageCache\com.unity.ext.nunit@1.0.0\net35\unity-custom\nunit.framework.dll
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 1.84 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Invoked RoslynAnalysisRunner static constructor.
-RoslynAnalysisRunner will not be running.
-RoslynAnalysisRunner has terminated.
-Mono: successfully reloaded assembly
-- Completed reload, in  4.176 seconds
-Platform modules already initialized, skipping
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 4.49 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 10 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 75.1 MB.
-System memory in use after: 75.3 MB.
-
-Unloading 9 unused Assets to reduce memory usage. Loaded Objects now: 3711.
-Total: 12.663547 ms (FindLiveObjects: 0.731211 ms CreateObjectMapping: 0.417391 ms MarkObjects: 10.966925 ms  DeleteObjects: 0.544598 ms)
-
-========================================================================
-Received Prepare
-Reloading mono domain
-Begin MonoManager ReloadAssembly
-Registering precompiled unity dll's ...
-Register platform support module: D:/Unity/2020.2.0b2/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.001253 seconds.
-Symbol file LoadedFromMemory doesn't match image D:\UnityProjects\Blacklight-Seraphim\Library\PackageCache\com.unity.ext.nunit@1.0.0\net35\unity-custom\nunit.framework.dll
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 152.41 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Invoked RoslynAnalysisRunner static constructor.
-RoslynAnalysisRunner will not be running.
-RoslynAnalysisRunner has terminated.
-Mono: successfully reloaded assembly
-- Completed reload, in  5.811 seconds
-Registering precompiled user dll's ...
-Registered in 0.118377 seconds.
-Platform modules already initialized, skipping
-Begin MonoManager ReloadAssembly
-Symbol file LoadedFromMemory doesn't match image D:\UnityProjects\Blacklight-Seraphim\Library\PackageCache\com.unity.ext.nunit@1.0.0\net35\unity-custom\nunit.framework.dll
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.66 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Invoked RoslynAnalysisRunner static constructor.
-RoslynAnalysisRunner will not be running.
-RoslynAnalysisRunner has terminated.
-Mono: successfully reloaded assembly
-- Completed reload, in  3.949 seconds
-Platform modules already initialized, skipping
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 0.69 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 10 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 74.9 MB.
-System memory in use after: 75.1 MB.
-
-Unloading 9 unused Assets to reduce memory usage. Loaded Objects now: 3716.
-Total: 3.844224 ms (FindLiveObjects: 0.596539 ms CreateObjectMapping: 0.225802 ms MarkObjects: 2.997002 ms  DeleteObjects: 0.023327 ms)
-
-========================================================================
-Received Import Request.
-  Time since last request: 5136.456615 seconds.
-  path: Assets/Resources/Buildings/BuildingPrefabs/GatheringBuilding.prefab
-  artifactKey: Guid(ec984808508297e4695d17e2787d5678) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Buildings/BuildingPrefabs/GatheringBuilding.prefab using Guid(ec984808508297e4695d17e2787d5678) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fbaf57855c347610256a4fd7388ab568') in 2.781134 seconds
-  Import took 2.882655 seconds .
-
-========================================================================
-Received Prepare
-Reloading mono domain
-Begin MonoManager ReloadAssembly
-Registering precompiled unity dll's ...
-Register platform support module: D:/Unity/2020.2.0b2/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.000906 seconds.
-Symbol file LoadedFromMemory doesn't match image D:\UnityProjects\Blacklight-Seraphim\Library\PackageCache\com.unity.ext.nunit@1.0.0\net35\unity-custom\nunit.framework.dll
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 145.89 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Invoked RoslynAnalysisRunner static constructor.
-RoslynAnalysisRunner will not be running.
-RoslynAnalysisRunner has terminated.
-Mono: successfully reloaded assembly
-- Completed reload, in  5.680 seconds
-Registering precompiled user dll's ...
-Registered in 0.708808 seconds.
-Platform modules already initialized, skipping
-Begin MonoManager ReloadAssembly
-Symbol file LoadedFromMemory doesn't match image D:\UnityProjects\Blacklight-Seraphim\Library\PackageCache\com.unity.ext.nunit@1.0.0\net35\unity-custom\nunit.framework.dll
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 2.82 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Invoked RoslynAnalysisRunner static constructor.
-RoslynAnalysisRunner will not be running.
-RoslynAnalysisRunner has terminated.
-Mono: successfully reloaded assembly
-- Completed reload, in  8.443 seconds
-Platform modules already initialized, skipping
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 1.45 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 10 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 75.1 MB.
-System memory in use after: 75.3 MB.
-
-Unloading 9 unused Assets to reduce memory usage. Loaded Objects now: 3721.
-Total: 6.135830 ms (FindLiveObjects: 0.721259 ms CreateObjectMapping: 0.240109 ms MarkObjects: 5.043834 ms  DeleteObjects: 0.128452 ms)
-
-========================================================================
-Received Import Request.
-  Time since last request: 56.411311 seconds.
-  path: Assets/Resources/Buildings/BuildingPrefabs/GatheringBuilding.prefab
-  artifactKey: Guid(ec984808508297e4695d17e2787d5678) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Buildings/BuildingPrefabs/GatheringBuilding.prefab using Guid(ec984808508297e4695d17e2787d5678) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3392e04b11bf6be841f67221ab84c5c3') in 7.121140 seconds
-  Import took 7.168295 seconds .
-
-========================================================================
-Received Prepare
-Reloading mono domain
-Begin MonoManager ReloadAssembly
-Registering precompiled unity dll's ...
-Register platform support module: D:/Unity/2020.2.0b2/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.000699 seconds.
-Symbol file LoadedFromMemory doesn't match image D:\UnityProjects\Blacklight-Seraphim\Library\PackageCache\com.unity.ext.nunit@1.0.0\net35\unity-custom\nunit.framework.dll
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 151.39 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Invoked RoslynAnalysisRunner static constructor.
-RoslynAnalysisRunner will not be running.
-RoslynAnalysisRunner has terminated.
-Mono: successfully reloaded assembly
-- Completed reload, in 14.829 seconds
-Registering precompiled user dll's ...
-Registered in 0.121370 seconds.
-Platform modules already initialized, skipping
-Begin MonoManager ReloadAssembly
-Symbol file LoadedFromMemory doesn't match image D:\UnityProjects\Blacklight-Seraphim\Library\PackageCache\com.unity.ext.nunit@1.0.0\net35\unity-custom\nunit.framework.dll
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 1.90 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Invoked RoslynAnalysisRunner static constructor.
-RoslynAnalysisRunner will not be running.
-RoslynAnalysisRunner has terminated.
-Mono: successfully reloaded assembly
-- Completed reload, in  5.346 seconds
-Platform modules already initialized, skipping
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 0.73 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 10 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 74.8 MB.
-System memory in use after: 75.1 MB.
-
-Unloading 9 unused Assets to reduce memory usage. Loaded Objects now: 3726.
-Total: 6.019197 ms (FindLiveObjects: 1.563505 ms CreateObjectMapping: 1.757582 ms MarkObjects: 2.673540 ms  DeleteObjects: 0.022394 ms)
-
-========================================================================
-Received Import Request.
-  Time since last request: 26.680535 seconds.
-  path: Assets/Resources/Buildings/BuildingPrefabs/GatheringBuilding.prefab
-  artifactKey: Guid(ec984808508297e4695d17e2787d5678) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Buildings/BuildingPrefabs/GatheringBuilding.prefab using Guid(ec984808508297e4695d17e2787d5678) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cc4e5fead83fc4a3af1d4e92673abc0b') in 0.052794 seconds
-  Import took 0.459007 seconds .
-
-========================================================================
-Received Prepare
-Reloading mono domain
-Begin MonoManager ReloadAssembly
-Registering precompiled unity dll's ...
-Register platform support module: D:/Unity/2020.2.0b2/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.002124 seconds.
-Symbol file LoadedFromMemory doesn't match image D:\UnityProjects\Blacklight-Seraphim\Library\PackageCache\com.unity.ext.nunit@1.0.0\net35\unity-custom\nunit.framework.dll
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 460.40 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Invoked RoslynAnalysisRunner static constructor.
-RoslynAnalysisRunner will not be running.
-RoslynAnalysisRunner has terminated.
-Mono: successfully reloaded assembly
-- Completed reload, in  5.575 seconds
-Registering precompiled user dll's ...
-Registered in 0.190129 seconds.
-Platform modules already initialized, skipping
-Begin MonoManager ReloadAssembly
-Symbol file LoadedFromMemory doesn't match image D:\UnityProjects\Blacklight-Seraphim\Library\PackageCache\com.unity.ext.nunit@1.0.0\net35\unity-custom\nunit.framework.dll
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.67 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Invoked RoslynAnalysisRunner static constructor.
-RoslynAnalysisRunner will not be running.
-RoslynAnalysisRunner has terminated.
-Mono: successfully reloaded assembly
-- Completed reload, in  3.916 seconds
-Platform modules already initialized, skipping
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 0.95 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 10 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 75.1 MB.
-System memory in use after: 75.4 MB.
-
-Unloading 9 unused Assets to reduce memory usage. Loaded Objects now: 3731.
-Total: 9.056632 ms (FindLiveObjects: 0.681448 ms CreateObjectMapping: 0.400596 ms MarkObjects: 7.948463 ms  DeleteObjects: 0.023949 ms)
-
-========================================================================
-Received Import Request.
-  Time since last request: 108.515919 seconds.
-  path: Assets/Resources/Buildings/BuildingPrefabs/GatheringBuilding.prefab
-  artifactKey: Guid(ec984808508297e4695d17e2787d5678) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Buildings/BuildingPrefabs/GatheringBuilding.prefab using Guid(ec984808508297e4695d17e2787d5678) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '15a4f4a99484b21f2ad2688b39376184') in 0.090859 seconds
-  Import took 0.806121 seconds .
-
-========================================================================
-Received Prepare
-Reloading mono domain
-Begin MonoManager ReloadAssembly
-Registering precompiled unity dll's ...
-Register platform support module: D:/Unity/2020.2.0b2/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.000828 seconds.
-Symbol file LoadedFromMemory doesn't match image D:\UnityProjects\Blacklight-Seraphim\Library\PackageCache\com.unity.ext.nunit@1.0.0\net35\unity-custom\nunit.framework.dll
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 101.61 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Invoked RoslynAnalysisRunner static constructor.
-RoslynAnalysisRunner will not be running.
-RoslynAnalysisRunner has terminated.
-Mono: successfully reloaded assembly
-- Completed reload, in  6.326 seconds
-Registering precompiled user dll's ...
-Registered in 0.137660 seconds.
-Platform modules already initialized, skipping
-Begin MonoManager ReloadAssembly
-Symbol file LoadedFromMemory doesn't match image D:\UnityProjects\Blacklight-Seraphim\Library\PackageCache\com.unity.ext.nunit@1.0.0\net35\unity-custom\nunit.framework.dll
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.87 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Invoked RoslynAnalysisRunner static constructor.
-RoslynAnalysisRunner will not be running.
-RoslynAnalysisRunner has terminated.
-Mono: successfully reloaded assembly
-- Completed reload, in  7.590 seconds
-Platform modules already initialized, skipping
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 0.78 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 10 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 74.7 MB.
-System memory in use after: 75.0 MB.
-
-Unloading 9 unused Assets to reduce memory usage. Loaded Objects now: 3736.
-Total: 4.022129 ms (FindLiveObjects: 0.556106 ms CreateObjectMapping: 0.289561 ms MarkObjects: 3.154068 ms  DeleteObjects: 0.021149 ms)
-
-========================================================================
-Received Import Request.
-  Time since last request: 28.453503 seconds.
-  path: Assets/Resources/Buildings/BuildingPrefabs/GatheringBuilding.prefab
-  artifactKey: Guid(ec984808508297e4695d17e2787d5678) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Buildings/BuildingPrefabs/GatheringBuilding.prefab using Guid(ec984808508297e4695d17e2787d5678) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '301393e256b4dd458e6bb9aa1f15319d') in 0.061458 seconds
-  Import took 0.128343 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 9.801025 seconds.
-  path: Assets/Resources/Buildings/BuildingPrefabs/GatheringBuilding.prefab
-  artifactKey: Guid(ec984808508297e4695d17e2787d5678) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Buildings/BuildingPrefabs/GatheringBuilding.prefab using Guid(ec984808508297e4695d17e2787d5678) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c513e853b137cb24d5540b33f9f64867') in 0.015131 seconds
-  Import took 0.061280 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 15.697095 seconds.
-  path: Assets/Resources/Buildings/BuildingPrefabs/GatheringBuilding.prefab
-  artifactKey: Guid(ec984808508297e4695d17e2787d5678) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Buildings/BuildingPrefabs/GatheringBuilding.prefab using Guid(ec984808508297e4695d17e2787d5678) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '329f3389ddd346d1e005f262a689351a') in 0.014087 seconds
-  Import took 0.028428 seconds .
-
-========================================================================
-Received Prepare
-Reloading mono domain
-Begin MonoManager ReloadAssembly
-Registering precompiled unity dll's ...
-Register platform support module: D:/Unity/2020.2.0b2/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.001156 seconds.
-Symbol file LoadedFromMemory doesn't match image D:\UnityProjects\Blacklight-Seraphim\Library\PackageCache\com.unity.ext.nunit@1.0.0\net35\unity-custom\nunit.framework.dll
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 185.14 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Invoked RoslynAnalysisRunner static constructor.
-RoslynAnalysisRunner will not be running.
-RoslynAnalysisRunner has terminated.
-Mono: successfully reloaded assembly
-- Completed reload, in  6.799 seconds
-Registering precompiled user dll's ...
-Registered in 0.134958 seconds.
-Platform modules already initialized, skipping
-Begin MonoManager ReloadAssembly
-Symbol file LoadedFromMemory doesn't match image D:\UnityProjects\Blacklight-Seraphim\Library\PackageCache\com.unity.ext.nunit@1.0.0\net35\unity-custom\nunit.framework.dll
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.66 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Invoked RoslynAnalysisRunner static constructor.
-RoslynAnalysisRunner will not be running.
-RoslynAnalysisRunner has terminated.
-Mono: successfully reloaded assembly
-- Completed reload, in  4.387 seconds
-Platform modules already initialized, skipping
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 0.94 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 10 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 75.2 MB.
-System memory in use after: 75.4 MB.
-
-Unloading 9 unused Assets to reduce memory usage. Loaded Objects now: 3741.
-Total: 4.650392 ms (FindLiveObjects: 0.547398 ms CreateObjectMapping: 0.294848 ms MarkObjects: 3.674407 ms  DeleteObjects: 0.131251 ms)
-
-========================================================================
-Received Prepare
-Reloading mono domain
-Begin MonoManager ReloadAssembly
-Registering precompiled unity dll's ...
-Register platform support module: D:/Unity/2020.2.0b2/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.000842 seconds.
-Symbol file LoadedFromMemory doesn't match image D:\UnityProjects\Blacklight-Seraphim\Library\PackageCache\com.unity.ext.nunit@1.0.0\net35\unity-custom\nunit.framework.dll
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 158.59 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Invoked RoslynAnalysisRunner static constructor.
-RoslynAnalysisRunner will not be running.
-RoslynAnalysisRunner has terminated.
-Mono: successfully reloaded assembly
-- Completed reload, in  9.746 seconds
-Registering precompiled user dll's ...
-Registered in 0.153403 seconds.
+Registered in 0.192005 seconds.
 Platform modules already initialized, skipping
 Begin MonoManager ReloadAssembly
 Symbol file LoadedFromMemory doesn't match image D:\UnityProjects\Blacklight-Seraphim\Library\PackageCache\com.unity.ext.nunit@1.0.0\net35\unity-custom\nunit.framework.dll
@@ -1127,17 +1079,17 @@ Invoked RoslynAnalysisRunner static constructor.
 RoslynAnalysisRunner will not be running.
 RoslynAnalysisRunner has terminated.
 Mono: successfully reloaded assembly
-- Completed reload, in  5.027 seconds
+- Completed reload, in  9.059 seconds
 Platform modules already initialized, skipping
 Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 0.92 ms, found 1 plugins.
+Refreshing native plugins compatible for Editor in 0.96 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 10 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 74.6 MB.
-System memory in use after: 74.9 MB.
+System memory in use before: 77.9 MB.
+System memory in use after: 78.1 MB.
 
-Unloading 9 unused Assets to reduce memory usage. Loaded Objects now: 3746.
-Total: 4.874949 ms (FindLiveObjects: 0.603070 ms CreateObjectMapping: 0.263746 ms MarkObjects: 3.974542 ms  DeleteObjects: 0.031102 ms)
+Unloading 9 unused Assets to reduce memory usage. Loaded Objects now: 3709.
+Total: 6.193680 ms (FindLiveObjects: 0.799636 ms CreateObjectMapping: 1.824140 ms MarkObjects: 3.435542 ms  DeleteObjects: 0.131251 ms)
 
 ========================================================================
 Received Prepare
@@ -1145,538 +1097,18 @@ Reloading mono domain
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: D:/Unity/2020.2.0b2/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.000773 seconds.
+Registered in 0.000856 seconds.
 Symbol file LoadedFromMemory doesn't match image D:\UnityProjects\Blacklight-Seraphim\Library\PackageCache\com.unity.ext.nunit@1.0.0\net35\unity-custom\nunit.framework.dll
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 107.73 ms, found 1 plugins.
+Refreshing native plugins compatible for Editor in 198.12 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Invoked RoslynAnalysisRunner static constructor.
 RoslynAnalysisRunner will not be running.
 RoslynAnalysisRunner has terminated.
 Mono: successfully reloaded assembly
-- Completed reload, in  5.270 seconds
+- Completed reload, in 12.531 seconds
 Registering precompiled user dll's ...
-Registered in 0.129181 seconds.
-Platform modules already initialized, skipping
-Begin MonoManager ReloadAssembly
-Symbol file LoadedFromMemory doesn't match image D:\UnityProjects\Blacklight-Seraphim\Library\PackageCache\com.unity.ext.nunit@1.0.0\net35\unity-custom\nunit.framework.dll
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.69 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Invoked RoslynAnalysisRunner static constructor.
-RoslynAnalysisRunner will not be running.
-RoslynAnalysisRunner has terminated.
-Mono: successfully reloaded assembly
-- Completed reload, in  5.806 seconds
-Platform modules already initialized, skipping
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 0.72 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 10 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 75.1 MB.
-System memory in use after: 75.3 MB.
-
-Unloading 9 unused Assets to reduce memory usage. Loaded Objects now: 3751.
-Total: 6.135208 ms (FindLiveObjects: 0.794660 ms CreateObjectMapping: 0.345856 ms MarkObjects: 4.862508 ms  DeleteObjects: 0.130007 ms)
-
-========================================================================
-Received Prepare
-Reloading mono domain
-Begin MonoManager ReloadAssembly
-Registering precompiled unity dll's ...
-Register platform support module: D:/Unity/2020.2.0b2/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.000882 seconds.
-Symbol file LoadedFromMemory doesn't match image D:\UnityProjects\Blacklight-Seraphim\Library\PackageCache\com.unity.ext.nunit@1.0.0\net35\unity-custom\nunit.framework.dll
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 88.48 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Invoked RoslynAnalysisRunner static constructor.
-RoslynAnalysisRunner will not be running.
-RoslynAnalysisRunner has terminated.
-Mono: successfully reloaded assembly
-- Completed reload, in 17.160 seconds
-Registering precompiled user dll's ...
-Registered in 0.166841 seconds.
-Platform modules already initialized, skipping
-Begin MonoManager ReloadAssembly
-Symbol file LoadedFromMemory doesn't match image D:\UnityProjects\Blacklight-Seraphim\Library\PackageCache\com.unity.ext.nunit@1.0.0\net35\unity-custom\nunit.framework.dll
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.66 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Invoked RoslynAnalysisRunner static constructor.
-RoslynAnalysisRunner will not be running.
-RoslynAnalysisRunner has terminated.
-Mono: successfully reloaded assembly
-- Completed reload, in  5.806 seconds
-Platform modules already initialized, skipping
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 1.59 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 10 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 75.2 MB.
-System memory in use after: 75.4 MB.
-
-Unloading 9 unused Assets to reduce memory usage. Loaded Objects now: 3756.
-Total: 5.728081 ms (FindLiveObjects: 1.021083 ms CreateObjectMapping: 0.359852 ms MarkObjects: 3.466022 ms  DeleteObjects: 0.878946 ms)
-
-========================================================================
-Received Prepare
-Reloading mono domain
-Begin MonoManager ReloadAssembly
-Registering precompiled unity dll's ...
-Register platform support module: D:/Unity/2020.2.0b2/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.000822 seconds.
-Symbol file LoadedFromMemory doesn't match image D:\UnityProjects\Blacklight-Seraphim\Library\PackageCache\com.unity.ext.nunit@1.0.0\net35\unity-custom\nunit.framework.dll
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 104.68 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Invoked RoslynAnalysisRunner static constructor.
-RoslynAnalysisRunner will not be running.
-RoslynAnalysisRunner has terminated.
-Mono: successfully reloaded assembly
-- Completed reload, in  5.283 seconds
-Registering precompiled user dll's ...
-Registered in 0.127127 seconds.
-Platform modules already initialized, skipping
-Begin MonoManager ReloadAssembly
-Symbol file LoadedFromMemory doesn't match image D:\UnityProjects\Blacklight-Seraphim\Library\PackageCache\com.unity.ext.nunit@1.0.0\net35\unity-custom\nunit.framework.dll
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.99 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Invoked RoslynAnalysisRunner static constructor.
-RoslynAnalysisRunner will not be running.
-RoslynAnalysisRunner has terminated.
-Mono: successfully reloaded assembly
-- Completed reload, in  4.597 seconds
-Platform modules already initialized, skipping
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 3.30 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 10 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 75.0 MB.
-System memory in use after: 75.2 MB.
-
-Unloading 9 unused Assets to reduce memory usage. Loaded Objects now: 3761.
-Total: 6.509367 ms (FindLiveObjects: 0.532469 ms CreateObjectMapping: 0.188168 ms MarkObjects: 5.764159 ms  DeleteObjects: 0.022083 ms)
-
-========================================================================
-Received Prepare
-Reloading mono domain
-Begin MonoManager ReloadAssembly
-Registering precompiled unity dll's ...
-Register platform support module: D:/Unity/2020.2.0b2/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.000736 seconds.
-Symbol file LoadedFromMemory doesn't match image D:\UnityProjects\Blacklight-Seraphim\Library\PackageCache\com.unity.ext.nunit@1.0.0\net35\unity-custom\nunit.framework.dll
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 107.89 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Invoked RoslynAnalysisRunner static constructor.
-RoslynAnalysisRunner will not be running.
-RoslynAnalysisRunner has terminated.
-Mono: successfully reloaded assembly
-- Completed reload, in  5.068 seconds
-Registering precompiled user dll's ...
-Registered in 0.134471 seconds.
-Platform modules already initialized, skipping
-Begin MonoManager ReloadAssembly
-Symbol file LoadedFromMemory doesn't match image D:\UnityProjects\Blacklight-Seraphim\Library\PackageCache\com.unity.ext.nunit@1.0.0\net35\unity-custom\nunit.framework.dll
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 1.27 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Invoked RoslynAnalysisRunner static constructor.
-RoslynAnalysisRunner will not be running.
-RoslynAnalysisRunner has terminated.
-Mono: successfully reloaded assembly
-- Completed reload, in  4.471 seconds
-Platform modules already initialized, skipping
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 1.47 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 10 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 75.2 MB.
-System memory in use after: 75.4 MB.
-
-Unloading 9 unused Assets to reduce memory usage. Loaded Objects now: 3766.
-Total: 9.761717 ms (FindLiveObjects: 0.874903 ms CreateObjectMapping: 0.268722 ms MarkObjects: 3.015663 ms  DeleteObjects: 5.599940 ms)
-
-========================================================================
-Received Prepare
-Reloading mono domain
-Begin MonoManager ReloadAssembly
-Registering precompiled unity dll's ...
-Register platform support module: D:/Unity/2020.2.0b2/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.000914 seconds.
-Symbol file LoadedFromMemory doesn't match image D:\UnityProjects\Blacklight-Seraphim\Library\PackageCache\com.unity.ext.nunit@1.0.0\net35\unity-custom\nunit.framework.dll
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 141.34 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Invoked RoslynAnalysisRunner static constructor.
-RoslynAnalysisRunner will not be running.
-RoslynAnalysisRunner has terminated.
-Mono: successfully reloaded assembly
-- Completed reload, in  5.114 seconds
-Registering precompiled user dll's ...
-Registered in 0.120691 seconds.
-Platform modules already initialized, skipping
-Begin MonoManager ReloadAssembly
-Symbol file LoadedFromMemory doesn't match image D:\UnityProjects\Blacklight-Seraphim\Library\PackageCache\com.unity.ext.nunit@1.0.0\net35\unity-custom\nunit.framework.dll
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 1.19 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Invoked RoslynAnalysisRunner static constructor.
-RoslynAnalysisRunner will not be running.
-RoslynAnalysisRunner has terminated.
-Mono: successfully reloaded assembly
-- Completed reload, in  4.239 seconds
-Platform modules already initialized, skipping
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 0.73 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 10 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 74.9 MB.
-System memory in use after: 75.1 MB.
-
-Unloading 9 unused Assets to reduce memory usage. Loaded Objects now: 3771.
-Total: 5.819210 ms (FindLiveObjects: 0.743963 ms CreateObjectMapping: 2.201409 ms MarkObjects: 2.849267 ms  DeleteObjects: 0.022705 ms)
-
-========================================================================
-Received Prepare
-Reloading mono domain
-Begin MonoManager ReloadAssembly
-Registering precompiled unity dll's ...
-Register platform support module: D:/Unity/2020.2.0b2/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.000777 seconds.
-Symbol file LoadedFromMemory doesn't match image D:\UnityProjects\Blacklight-Seraphim\Library\PackageCache\com.unity.ext.nunit@1.0.0\net35\unity-custom\nunit.framework.dll
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 167.64 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Invoked RoslynAnalysisRunner static constructor.
-RoslynAnalysisRunner will not be running.
-RoslynAnalysisRunner has terminated.
-Mono: successfully reloaded assembly
-- Completed reload, in  6.183 seconds
-Registering precompiled user dll's ...
-Registered in 0.121282 seconds.
-Platform modules already initialized, skipping
-Begin MonoManager ReloadAssembly
-Symbol file LoadedFromMemory doesn't match image D:\UnityProjects\Blacklight-Seraphim\Library\PackageCache\com.unity.ext.nunit@1.0.0\net35\unity-custom\nunit.framework.dll
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.71 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Invoked RoslynAnalysisRunner static constructor.
-RoslynAnalysisRunner will not be running.
-RoslynAnalysisRunner has terminated.
-Mono: successfully reloaded assembly
-- Completed reload, in  4.789 seconds
-Platform modules already initialized, skipping
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 0.67 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 10 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 75.3 MB.
-System memory in use after: 75.5 MB.
-
-Unloading 9 unused Assets to reduce memory usage. Loaded Objects now: 3776.
-Total: 4.757072 ms (FindLiveObjects: 0.574456 ms CreateObjectMapping: 0.243219 ms MarkObjects: 3.910472 ms  DeleteObjects: 0.027059 ms)
-
-========================================================================
-Received Prepare
-Reloading mono domain
-Begin MonoManager ReloadAssembly
-Registering precompiled unity dll's ...
-Register platform support module: D:/Unity/2020.2.0b2/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.005432 seconds.
-Symbol file LoadedFromMemory doesn't match image D:\UnityProjects\Blacklight-Seraphim\Library\PackageCache\com.unity.ext.nunit@1.0.0\net35\unity-custom\nunit.framework.dll
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 91.95 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Invoked RoslynAnalysisRunner static constructor.
-RoslynAnalysisRunner will not be running.
-RoslynAnalysisRunner has terminated.
-Mono: successfully reloaded assembly
-- Completed reload, in  6.768 seconds
-Registering precompiled user dll's ...
-Registered in 0.184611 seconds.
-Platform modules already initialized, skipping
-Begin MonoManager ReloadAssembly
-Symbol file LoadedFromMemory doesn't match image D:\UnityProjects\Blacklight-Seraphim\Library\PackageCache\com.unity.ext.nunit@1.0.0\net35\unity-custom\nunit.framework.dll
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.78 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Invoked RoslynAnalysisRunner static constructor.
-RoslynAnalysisRunner will not be running.
-RoslynAnalysisRunner has terminated.
-Mono: successfully reloaded assembly
-- Completed reload, in  6.603 seconds
-Platform modules already initialized, skipping
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 0.64 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 10 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 74.8 MB.
-System memory in use after: 75.0 MB.
-
-Unloading 9 unused Assets to reduce memory usage. Loaded Objects now: 3781.
-Total: 14.193461 ms (FindLiveObjects: 0.622354 ms CreateObjectMapping: 0.331549 ms MarkObjects: 13.047969 ms  DeleteObjects: 0.189412 ms)
-
-========================================================================
-Received Prepare
-Reloading mono domain
-Begin MonoManager ReloadAssembly
-Registering precompiled unity dll's ...
-Register platform support module: D:/Unity/2020.2.0b2/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.013521 seconds.
-Symbol file LoadedFromMemory doesn't match image D:\UnityProjects\Blacklight-Seraphim\Library\PackageCache\com.unity.ext.nunit@1.0.0\net35\unity-custom\nunit.framework.dll
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 599.54 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Invoked RoslynAnalysisRunner static constructor.
-RoslynAnalysisRunner will not be running.
-RoslynAnalysisRunner has terminated.
-Mono: successfully reloaded assembly
-- Completed reload, in  7.089 seconds
-Registering precompiled user dll's ...
-Registered in 0.132973 seconds.
-Platform modules already initialized, skipping
-Begin MonoManager ReloadAssembly
-Symbol file LoadedFromMemory doesn't match image D:\UnityProjects\Blacklight-Seraphim\Library\PackageCache\com.unity.ext.nunit@1.0.0\net35\unity-custom\nunit.framework.dll
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.65 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Invoked RoslynAnalysisRunner static constructor.
-RoslynAnalysisRunner will not be running.
-RoslynAnalysisRunner has terminated.
-Mono: successfully reloaded assembly
-- Completed reload, in  4.898 seconds
-Platform modules already initialized, skipping
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 0.89 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 10 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 75.3 MB.
-System memory in use after: 75.5 MB.
-
-Unloading 9 unused Assets to reduce memory usage. Loaded Objects now: 3786.
-Total: 4.156490 ms (FindLiveObjects: 0.595295 ms CreateObjectMapping: 0.329061 ms MarkObjects: 3.107726 ms  DeleteObjects: 0.122853 ms)
-
-========================================================================
-Received Prepare
-Reloading mono domain
-Begin MonoManager ReloadAssembly
-Registering precompiled unity dll's ...
-Register platform support module: D:/Unity/2020.2.0b2/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.000741 seconds.
-Symbol file LoadedFromMemory doesn't match image D:\UnityProjects\Blacklight-Seraphim\Library\PackageCache\com.unity.ext.nunit@1.0.0\net35\unity-custom\nunit.framework.dll
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 103.40 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Invoked RoslynAnalysisRunner static constructor.
-RoslynAnalysisRunner will not be running.
-RoslynAnalysisRunner has terminated.
-Mono: successfully reloaded assembly
-- Completed reload, in  6.122 seconds
-Registering precompiled user dll's ...
-Registered in 0.144554 seconds.
-Platform modules already initialized, skipping
-Begin MonoManager ReloadAssembly
-Symbol file LoadedFromMemory doesn't match image D:\UnityProjects\Blacklight-Seraphim\Library\PackageCache\com.unity.ext.nunit@1.0.0\net35\unity-custom\nunit.framework.dll
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.70 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Invoked RoslynAnalysisRunner static constructor.
-RoslynAnalysisRunner will not be running.
-RoslynAnalysisRunner has terminated.
-Mono: successfully reloaded assembly
-- Completed reload, in  4.783 seconds
-Platform modules already initialized, skipping
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 0.66 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 10 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 75.3 MB.
-System memory in use after: 75.5 MB.
-
-Unloading 9 unused Assets to reduce memory usage. Loaded Objects now: 3791.
-Total: 4.712285 ms (FindLiveObjects: 0.662787 ms CreateObjectMapping: 0.390954 ms MarkObjects: 3.531959 ms  DeleteObjects: 0.124720 ms)
-
-========================================================================
-Received Prepare
-Reloading mono domain
-Begin MonoManager ReloadAssembly
-Registering precompiled unity dll's ...
-Register platform support module: D:/Unity/2020.2.0b2/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.002253 seconds.
-Symbol file LoadedFromMemory doesn't match image D:\UnityProjects\Blacklight-Seraphim\Library\PackageCache\com.unity.ext.nunit@1.0.0\net35\unity-custom\nunit.framework.dll
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 83.19 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Invoked RoslynAnalysisRunner static constructor.
-RoslynAnalysisRunner will not be running.
-RoslynAnalysisRunner has terminated.
-Mono: successfully reloaded assembly
-- Completed reload, in  8.113 seconds
-Registering precompiled user dll's ...
-Registered in 0.127992 seconds.
-Platform modules already initialized, skipping
-Begin MonoManager ReloadAssembly
-Symbol file LoadedFromMemory doesn't match image D:\UnityProjects\Blacklight-Seraphim\Library\PackageCache\com.unity.ext.nunit@1.0.0\net35\unity-custom\nunit.framework.dll
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.71 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Invoked RoslynAnalysisRunner static constructor.
-RoslynAnalysisRunner will not be running.
-RoslynAnalysisRunner has terminated.
-Mono: successfully reloaded assembly
-- Completed reload, in  6.777 seconds
-Platform modules already initialized, skipping
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 0.94 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 10 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 75.2 MB.
-System memory in use after: 75.4 MB.
-
-Unloading 9 unused Assets to reduce memory usage. Loaded Objects now: 3796.
-Total: 4.573880 ms (FindLiveObjects: 0.539933 ms CreateObjectMapping: 0.600893 ms MarkObjects: 3.285319 ms  DeleteObjects: 0.145558 ms)
-
-========================================================================
-Received Prepare
-Reloading mono domain
-Begin MonoManager ReloadAssembly
-Registering precompiled unity dll's ...
-Register platform support module: D:/Unity/2020.2.0b2/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.002389 seconds.
-Symbol file LoadedFromMemory doesn't match image D:\UnityProjects\Blacklight-Seraphim\Library\PackageCache\com.unity.ext.nunit@1.0.0\net35\unity-custom\nunit.framework.dll
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 83.31 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Invoked RoslynAnalysisRunner static constructor.
-RoslynAnalysisRunner will not be running.
-RoslynAnalysisRunner has terminated.
-Mono: successfully reloaded assembly
-- Completed reload, in  5.761 seconds
-Registering precompiled user dll's ...
-Registered in 0.974273 seconds.
-Platform modules already initialized, skipping
-Begin MonoManager ReloadAssembly
-Symbol file LoadedFromMemory doesn't match image D:\UnityProjects\Blacklight-Seraphim\Library\PackageCache\com.unity.ext.nunit@1.0.0\net35\unity-custom\nunit.framework.dll
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.69 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Invoked RoslynAnalysisRunner static constructor.
-RoslynAnalysisRunner will not be running.
-RoslynAnalysisRunner has terminated.
-Mono: successfully reloaded assembly
-- Completed reload, in  4.534 seconds
-Platform modules already initialized, skipping
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 0.71 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 10 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 75.3 MB.
-System memory in use after: 75.6 MB.
-
-Unloading 9 unused Assets to reduce memory usage. Loaded Objects now: 3801.
-Total: 6.107838 ms (FindLiveObjects: 1.320286 ms CreateObjectMapping: 0.970698 ms MarkObjects: 3.792906 ms  DeleteObjects: 0.022394 ms)
-
-========================================================================
-Received Prepare
-Reloading mono domain
-Begin MonoManager ReloadAssembly
-Registering precompiled unity dll's ...
-Register platform support module: D:/Unity/2020.2.0b2/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.000771 seconds.
-Symbol file LoadedFromMemory doesn't match image D:\UnityProjects\Blacklight-Seraphim\Library\PackageCache\com.unity.ext.nunit@1.0.0\net35\unity-custom\nunit.framework.dll
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 149.38 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Invoked RoslynAnalysisRunner static constructor.
-RoslynAnalysisRunner will not be running.
-RoslynAnalysisRunner has terminated.
-Mono: successfully reloaded assembly
-- Completed reload, in  6.445 seconds
-Registering precompiled user dll's ...
-Registered in 0.107828 seconds.
-Platform modules already initialized, skipping
-Begin MonoManager ReloadAssembly
-Symbol file LoadedFromMemory doesn't match image D:\UnityProjects\Blacklight-Seraphim\Library\PackageCache\com.unity.ext.nunit@1.0.0\net35\unity-custom\nunit.framework.dll
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.65 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Invoked RoslynAnalysisRunner static constructor.
-RoslynAnalysisRunner will not be running.
-RoslynAnalysisRunner has terminated.
-Mono: successfully reloaded assembly
-- Completed reload, in  4.458 seconds
-Platform modules already initialized, skipping
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 0.68 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 10 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 75.1 MB.
-System memory in use after: 75.3 MB.
-
-Unloading 9 unused Assets to reduce memory usage. Loaded Objects now: 3806.
-Total: 3.610958 ms (FindLiveObjects: 0.543354 ms CreateObjectMapping: 0.189723 ms MarkObjects: 2.747252 ms  DeleteObjects: 0.129074 ms)
-
-========================================================================
-Received Prepare
-Reloading mono domain
-Begin MonoManager ReloadAssembly
-Registering precompiled unity dll's ...
-Register platform support module: D:/Unity/2020.2.0b2/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.000763 seconds.
-Symbol file LoadedFromMemory doesn't match image D:\UnityProjects\Blacklight-Seraphim\Library\PackageCache\com.unity.ext.nunit@1.0.0\net35\unity-custom\nunit.framework.dll
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 118.49 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Invoked RoslynAnalysisRunner static constructor.
-RoslynAnalysisRunner will not be running.
-RoslynAnalysisRunner has terminated.
-Mono: successfully reloaded assembly
-- Completed reload, in 41.315 seconds
-Registering precompiled user dll's ...
-Registered in 0.136013 seconds.
-Platform modules already initialized, skipping
-Begin MonoManager ReloadAssembly
-Symbol file LoadedFromMemory doesn't match image D:\UnityProjects\Blacklight-Seraphim\Library\PackageCache\com.unity.ext.nunit@1.0.0\net35\unity-custom\nunit.framework.dll
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.79 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Invoked RoslynAnalysisRunner static constructor.
-RoslynAnalysisRunner will not be running.
-RoslynAnalysisRunner has terminated.
-Mono: successfully reloaded assembly
-- Completed reload, in  4.563 seconds
-Platform modules already initialized, skipping
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 0.68 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 10 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 75.3 MB.
-System memory in use after: 75.6 MB.
-
-Unloading 9 unused Assets to reduce memory usage. Loaded Objects now: 3811.
-Total: 8.634576 ms (FindLiveObjects: 1.000556 ms CreateObjectMapping: 0.733388 ms MarkObjects: 6.873884 ms  DeleteObjects: 0.024882 ms)
-
-========================================================================
-Received Prepare
-Reloading mono domain
-Begin MonoManager ReloadAssembly
-Registering precompiled unity dll's ...
-Register platform support module: D:/Unity/2020.2.0b2/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.000943 seconds.
-Symbol file LoadedFromMemory doesn't match image D:\UnityProjects\Blacklight-Seraphim\Library\PackageCache\com.unity.ext.nunit@1.0.0\net35\unity-custom\nunit.framework.dll
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 88.71 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Invoked RoslynAnalysisRunner static constructor.
-RoslynAnalysisRunner will not be running.
-RoslynAnalysisRunner has terminated.
-Mono: successfully reloaded assembly
-- Completed reload, in  6.204 seconds
-Registering precompiled user dll's ...
-Registered in 0.187063 seconds.
+Registered in 0.216283 seconds.
 Platform modules already initialized, skipping
 Begin MonoManager ReloadAssembly
 Symbol file LoadedFromMemory doesn't match image D:\UnityProjects\Blacklight-Seraphim\Library\PackageCache\com.unity.ext.nunit@1.0.0\net35\unity-custom\nunit.framework.dll
@@ -1687,17 +1119,17 @@ Invoked RoslynAnalysisRunner static constructor.
 RoslynAnalysisRunner will not be running.
 RoslynAnalysisRunner has terminated.
 Mono: successfully reloaded assembly
-- Completed reload, in  5.635 seconds
+- Completed reload, in  8.151 seconds
 Platform modules already initialized, skipping
 Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 0.78 ms, found 1 plugins.
+Refreshing native plugins compatible for Editor in 0.95 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 10 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 75.0 MB.
-System memory in use after: 75.2 MB.
+System memory in use before: 78.3 MB.
+System memory in use after: 78.6 MB.
 
-Unloading 9 unused Assets to reduce memory usage. Loaded Objects now: 3816.
-Total: 10.699136 ms (FindLiveObjects: 0.727479 ms CreateObjectMapping: 0.559838 ms MarkObjects: 9.274969 ms  DeleteObjects: 0.134361 ms)
+Unloading 9 unused Assets to reduce memory usage. Loaded Objects now: 3714.
+Total: 95.513112 ms (FindLiveObjects: 1.395864 ms CreateObjectMapping: 0.552996 ms MarkObjects: 93.536571 ms  DeleteObjects: 0.025504 ms)
 
 ========================================================================
 Received Prepare
@@ -1705,18 +1137,18 @@ Reloading mono domain
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: D:/Unity/2020.2.0b2/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.001248 seconds.
+Registered in 0.000884 seconds.
 Symbol file LoadedFromMemory doesn't match image D:\UnityProjects\Blacklight-Seraphim\Library\PackageCache\com.unity.ext.nunit@1.0.0\net35\unity-custom\nunit.framework.dll
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 163.54 ms, found 1 plugins.
+Refreshing native plugins compatible for Editor in 338.26 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Invoked RoslynAnalysisRunner static constructor.
 RoslynAnalysisRunner will not be running.
 RoslynAnalysisRunner has terminated.
 Mono: successfully reloaded assembly
-- Completed reload, in  6.744 seconds
+- Completed reload, in  5.386 seconds
 Registering precompiled user dll's ...
-Registered in 0.216894 seconds.
+Registered in 0.185479 seconds.
 Platform modules already initialized, skipping
 Begin MonoManager ReloadAssembly
 Symbol file LoadedFromMemory doesn't match image D:\UnityProjects\Blacklight-Seraphim\Library\PackageCache\com.unity.ext.nunit@1.0.0\net35\unity-custom\nunit.framework.dll
@@ -1727,17 +1159,17 @@ Invoked RoslynAnalysisRunner static constructor.
 RoslynAnalysisRunner will not be running.
 RoslynAnalysisRunner has terminated.
 Mono: successfully reloaded assembly
-- Completed reload, in  5.441 seconds
+- Completed reload, in  5.216 seconds
 Platform modules already initialized, skipping
 Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 1.38 ms, found 1 plugins.
+Refreshing native plugins compatible for Editor in 0.99 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 10 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 75.4 MB.
-System memory in use after: 75.6 MB.
+System memory in use before: 78.3 MB.
+System memory in use after: 78.6 MB.
 
-Unloading 9 unused Assets to reduce memory usage. Loaded Objects now: 3821.
-Total: 5.114747 ms (FindLiveObjects: 0.664031 ms CreateObjectMapping: 0.275565 ms MarkObjects: 4.036125 ms  DeleteObjects: 0.136227 ms)
+Unloading 9 unused Assets to reduce memory usage. Loaded Objects now: 3719.
+Total: 6.025728 ms (FindLiveObjects: 0.915025 ms CreateObjectMapping: 0.399662 ms MarkObjects: 4.557085 ms  DeleteObjects: 0.150845 ms)
 
 ========================================================================
 Received Prepare
@@ -1745,38 +1177,318 @@ Reloading mono domain
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: D:/Unity/2020.2.0b2/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.000724 seconds.
+Registered in 0.000736 seconds.
 Symbol file LoadedFromMemory doesn't match image D:\UnityProjects\Blacklight-Seraphim\Library\PackageCache\com.unity.ext.nunit@1.0.0\net35\unity-custom\nunit.framework.dll
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 83.30 ms, found 1 plugins.
+Refreshing native plugins compatible for Editor in 77.75 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Invoked RoslynAnalysisRunner static constructor.
 RoslynAnalysisRunner will not be running.
 RoslynAnalysisRunner has terminated.
 Mono: successfully reloaded assembly
-- Completed reload, in  6.407 seconds
+- Completed reload, in  3.083 seconds
 Registering precompiled user dll's ...
-Registered in 0.110593 seconds.
+Registered in 0.093979 seconds.
 Platform modules already initialized, skipping
 Begin MonoManager ReloadAssembly
 Symbol file LoadedFromMemory doesn't match image D:\UnityProjects\Blacklight-Seraphim\Library\PackageCache\com.unity.ext.nunit@1.0.0\net35\unity-custom\nunit.framework.dll
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.78 ms, found 1 plugins.
+Refreshing native plugins compatible for Editor in 0.73 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Invoked RoslynAnalysisRunner static constructor.
 RoslynAnalysisRunner will not be running.
 RoslynAnalysisRunner has terminated.
 Mono: successfully reloaded assembly
-- Completed reload, in  4.598 seconds
+- Completed reload, in  2.691 seconds
 Platform modules already initialized, skipping
 Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 0.93 ms, found 1 plugins.
+Refreshing native plugins compatible for Editor in 1.80 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 10 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 74.9 MB.
-System memory in use after: 75.1 MB.
+System memory in use before: 78.2 MB.
+System memory in use after: 78.4 MB.
 
-Unloading 9 unused Assets to reduce memory usage. Loaded Objects now: 3826.
-Total: 7.857644 ms (FindLiveObjects: 4.617735 ms CreateObjectMapping: 0.413347 ms MarkObjects: 2.802303 ms  DeleteObjects: 0.022394 ms)
+Unloading 9 unused Assets to reduce memory usage. Loaded Objects now: 3724.
+Total: 10.720285 ms (FindLiveObjects: 0.991536 ms CreateObjectMapping: 0.429210 ms MarkObjects: 9.156781 ms  DeleteObjects: 0.140582 ms)
+
+========================================================================
+Received Prepare
+Reloading mono domain
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: D:/Unity/2020.2.0b2/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.000794 seconds.
+Symbol file LoadedFromMemory doesn't match image D:\UnityProjects\Blacklight-Seraphim\Library\PackageCache\com.unity.ext.nunit@1.0.0\net35\unity-custom\nunit.framework.dll
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 1580.64 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in 10.088 seconds
+Registering precompiled user dll's ...
+Registered in 0.095382 seconds.
+Platform modules already initialized, skipping
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image D:\UnityProjects\Blacklight-Seraphim\Library\PackageCache\com.unity.ext.nunit@1.0.0\net35\unity-custom\nunit.framework.dll
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.76 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  3.086 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 0.91 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 10 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 78.4 MB.
+System memory in use after: 78.6 MB.
+
+Unloading 9 unused Assets to reduce memory usage. Loaded Objects now: 3729.
+Total: 6.232558 ms (FindLiveObjects: 0.675538 ms CreateObjectMapping: 0.564504 ms MarkObjects: 4.963901 ms  DeleteObjects: 0.026437 ms)
+
+========================================================================
+Received Prepare
+Reloading mono domain
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: D:/Unity/2020.2.0b2/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.002044 seconds.
+Symbol file LoadedFromMemory doesn't match image D:\UnityProjects\Blacklight-Seraphim\Library\PackageCache\com.unity.ext.nunit@1.0.0\net35\unity-custom\nunit.framework.dll
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 74.23 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  2.689 seconds
+Registering precompiled user dll's ...
+Registered in 0.094755 seconds.
+Platform modules already initialized, skipping
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image D:\UnityProjects\Blacklight-Seraphim\Library\PackageCache\com.unity.ext.nunit@1.0.0\net35\unity-custom\nunit.framework.dll
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.70 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  2.590 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 0.95 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 10 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 78.1 MB.
+System memory in use after: 78.4 MB.
+
+Unloading 9 unused Assets to reduce memory usage. Loaded Objects now: 3734.
+Total: 5.318777 ms (FindLiveObjects: 1.489792 ms CreateObjectMapping: 0.434497 ms MarkObjects: 3.367429 ms  DeleteObjects: 0.025193 ms)
+
+========================================================================
+Received Prepare
+Reloading mono domain
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: D:/Unity/2020.2.0b2/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.001118 seconds.
+Symbol file LoadedFromMemory doesn't match image D:\UnityProjects\Blacklight-Seraphim\Library\PackageCache\com.unity.ext.nunit@1.0.0\net35\unity-custom\nunit.framework.dll
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 71.44 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  5.564 seconds
+Registering precompiled user dll's ...
+Registered in 0.094968 seconds.
+Platform modules already initialized, skipping
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image D:\UnityProjects\Blacklight-Seraphim\Library\PackageCache\com.unity.ext.nunit@1.0.0\net35\unity-custom\nunit.framework.dll
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.69 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  3.663 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 0.88 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 10 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 78.4 MB.
+System memory in use after: 78.6 MB.
+
+Unloading 9 unused Assets to reduce memory usage. Loaded Objects now: 3739.
+Total: 4.463468 ms (FindLiveObjects: 1.353876 ms CreateObjectMapping: 0.394686 ms MarkObjects: 2.688158 ms  DeleteObjects: 0.024882 ms)
+
+========================================================================
+Received Prepare
+Reloading mono domain
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: D:/Unity/2020.2.0b2/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.000769 seconds.
+Symbol file LoadedFromMemory doesn't match image D:\UnityProjects\Blacklight-Seraphim\Library\PackageCache\com.unity.ext.nunit@1.0.0\net35\unity-custom\nunit.framework.dll
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 182.14 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  5.079 seconds
+Registering precompiled user dll's ...
+Registered in 0.183731 seconds.
+Platform modules already initialized, skipping
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image D:\UnityProjects\Blacklight-Seraphim\Library\PackageCache\com.unity.ext.nunit@1.0.0\net35\unity-custom\nunit.framework.dll
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.77 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  4.300 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 3.49 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 10 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 78.0 MB.
+System memory in use after: 78.3 MB.
+
+Unloading 9 unused Assets to reduce memory usage. Loaded Objects now: 3744.
+Total: 4.171419 ms (FindLiveObjects: 0.814254 ms CreateObjectMapping: 0.419879 ms MarkObjects: 2.911160 ms  DeleteObjects: 0.023016 ms)
+
+========================================================================
+Received Prepare
+Reloading mono domain
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: D:/Unity/2020.2.0b2/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.000748 seconds.
+Symbol file LoadedFromMemory doesn't match image D:\UnityProjects\Blacklight-Seraphim\Library\PackageCache\com.unity.ext.nunit@1.0.0\net35\unity-custom\nunit.framework.dll
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 195.59 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  4.956 seconds
+Registering precompiled user dll's ...
+Registered in 0.098112 seconds.
+Platform modules already initialized, skipping
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image D:\UnityProjects\Blacklight-Seraphim\Library\PackageCache\com.unity.ext.nunit@1.0.0\net35\unity-custom\nunit.framework.dll
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.64 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  2.915 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 0.91 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 10 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 78.4 MB.
+System memory in use after: 78.7 MB.
+
+Unloading 9 unused Assets to reduce memory usage. Loaded Objects now: 3749.
+Total: 3.711418 ms (FindLiveObjects: 0.596850 ms CreateObjectMapping: 0.299514 ms MarkObjects: 2.792972 ms  DeleteObjects: 0.021149 ms)
+
+========================================================================
+Received Prepare
+Reloading mono domain
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: D:/Unity/2020.2.0b2/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.001285 seconds.
+Symbol file LoadedFromMemory doesn't match image D:\UnityProjects\Blacklight-Seraphim\Library\PackageCache\com.unity.ext.nunit@1.0.0\net35\unity-custom\nunit.framework.dll
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 106.55 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  3.541 seconds
+Registering precompiled user dll's ...
+Registered in 0.094769 seconds.
+Platform modules already initialized, skipping
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image D:\UnityProjects\Blacklight-Seraphim\Library\PackageCache\com.unity.ext.nunit@1.0.0\net35\unity-custom\nunit.framework.dll
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.64 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  4.637 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 0.99 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 10 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 78.0 MB.
+System memory in use after: 78.2 MB.
+
+Unloading 9 unused Assets to reduce memory usage. Loaded Objects now: 3754.
+Total: 5.377560 ms (FindLiveObjects: 1.309400 ms CreateObjectMapping: 0.468087 ms MarkObjects: 3.575191 ms  DeleteObjects: 0.023016 ms)
+
+========================================================================
+Received Prepare
+Reloading mono domain
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: D:/Unity/2020.2.0b2/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.001163 seconds.
+Symbol file LoadedFromMemory doesn't match image D:\UnityProjects\Blacklight-Seraphim\Library\PackageCache\com.unity.ext.nunit@1.0.0\net35\unity-custom\nunit.framework.dll
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 95.43 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  4.222 seconds
+Registering precompiled user dll's ...
+Registered in 0.105787 seconds.
+Platform modules already initialized, skipping
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image D:\UnityProjects\Blacklight-Seraphim\Library\PackageCache\com.unity.ext.nunit@1.0.0\net35\unity-custom\nunit.framework.dll
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.77 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  3.003 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 1.22 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 10 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 78.4 MB.
+System memory in use after: 78.7 MB.
+
+Unloading 9 unused Assets to reduce memory usage. Loaded Objects now: 3759.
+Total: 5.512854 ms (FindLiveObjects: 0.791238 ms CreateObjectMapping: 0.414903 ms MarkObjects: 4.270946 ms  DeleteObjects: 0.027681 ms)
 
 AssetImportWorkerClient::OnTransportError - code=2 error=End of file
